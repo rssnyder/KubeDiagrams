@@ -215,10 +215,10 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:25:05Z"
+      time: "2024-12-27T17:53:23Z"
     name: dashboard-metrics-scraper
     namespace: kubernetes-dashboard
-    resourceVersion: "452"
+    resourceVersion: "41924"
     uid: 7aa561d9-301d-43f1-86c2-e141963e3ecb
   spec:
     progressDeadlineSeconds: 600
@@ -286,18 +286,18 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-26T23:25:05Z"
-      lastUpdateTime: "2024-12-26T23:25:05Z"
-      message: Deployment has minimum availability.
-      reason: MinimumReplicasAvailable
-      status: "True"
-      type: Available
     - lastTransitionTime: "2024-12-26T23:24:32Z"
       lastUpdateTime: "2024-12-26T23:25:05Z"
       message: ReplicaSet "dashboard-metrics-scraper-5c6664855" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
       type: Progressing
+    - lastTransitionTime: "2024-12-27T17:53:23Z"
+      lastUpdateTime: "2024-12-27T17:53:23Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
     observedGeneration: 1
     readyReplicas: 1
     replicas: 1
@@ -437,10 +437,10 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:55Z"
+      time: "2024-12-27T17:53:24Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "433"
+    resourceVersion: "41932"
     uid: 720fea76-bd3d-4e82-9fb8-73958c7f4fb1
   spec:
     progressDeadlineSeconds: 600
@@ -511,18 +511,18 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-26T23:24:55Z"
-      lastUpdateTime: "2024-12-26T23:24:55Z"
-      message: Deployment has minimum availability.
-      reason: MinimumReplicasAvailable
-      status: "True"
-      type: Available
     - lastTransitionTime: "2024-12-26T23:24:32Z"
       lastUpdateTime: "2024-12-26T23:24:55Z"
       message: ReplicaSet "kubernetes-dashboard-55c4cbbc7c" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
       type: Progressing
+    - lastTransitionTime: "2024-12-27T17:53:24Z"
+      lastUpdateTime: "2024-12-27T17:53:24Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
     observedGeneration: 1
     readyReplicas: 1
     replicas: 1
@@ -648,7 +648,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:25:05Z"
+      time: "2024-12-27T17:53:23Z"
     name: dashboard-metrics-scraper-5c6664855-k286m
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -658,7 +658,7 @@ items:
       kind: ReplicaSet
       name: dashboard-metrics-scraper-5c6664855
       uid: 85ee6b54-1402-45b5-81f3-f66a794164e4
-    resourceVersion: "448"
+    resourceVersion: "41919"
     uid: 874b19e0-a9de-4807-a9d7-37bafe5471cb
   spec:
     containers:
@@ -895,7 +895,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:55Z"
+      time: "2024-12-27T17:53:24Z"
     name: kubernetes-dashboard-55c4cbbc7c-n9txz
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -905,7 +905,7 @@ items:
       kind: ReplicaSet
       name: kubernetes-dashboard-55c4cbbc7c
       uid: b535d664-9115-4831-a9ee-3f1a1cb5ed9b
-    resourceVersion: "429"
+    resourceVersion: "41928"
     uid: d1d2b39b-8000-4862-b979-98fcbebd0dcb
   spec:
     containers:
@@ -1136,7 +1136,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:25:05Z"
+      time: "2024-12-27T17:53:23Z"
     name: dashboard-metrics-scraper-5c6664855
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -1146,7 +1146,7 @@ items:
       kind: Deployment
       name: dashboard-metrics-scraper
       uid: 7aa561d9-301d-43f1-86c2-e141963e3ecb
-    resourceVersion: "451"
+    resourceVersion: "41923"
     uid: 85ee6b54-1402-45b5-81f3-f66a794164e4
   spec:
     replicas: 1
@@ -1324,7 +1324,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:55Z"
+      time: "2024-12-27T17:53:24Z"
     name: kubernetes-dashboard-55c4cbbc7c
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -1334,7 +1334,7 @@ items:
       kind: Deployment
       name: kubernetes-dashboard
       uid: 720fea76-bd3d-4e82-9fb8-73958c7f4fb1
-    resourceVersion: "432"
+    resourceVersion: "41931"
     uid: b535d664-9115-4831-a9ee-3f1a1cb5ed9b
   spec:
     replicas: 1

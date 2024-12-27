@@ -918,10 +918,10 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:35Z"
+      time: "2024-12-27T17:53:25Z"
     name: kube-proxy
     namespace: kube-system
-    resourceVersion: "409"
+    resourceVersion: "41943"
     uid: 1e7933c6-ff5a-4c53-ab62-74703a673cb9
   spec:
     revisionHistoryLimit: 10
@@ -1198,10 +1198,10 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:26:53Z"
+      time: "2024-12-27T17:53:23Z"
     name: ingress-nginx-controller
     namespace: ingress-nginx
-    resourceVersion: "676"
+    resourceVersion: "41920"
     uid: 3b92e91d-a21c-40ab-ada7-643805ec26d5
   spec:
     progressDeadlineSeconds: 600
@@ -1523,10 +1523,10 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:36Z"
+      time: "2024-12-27T17:53:23Z"
     name: coredns
     namespace: kube-system
-    resourceVersion: "417"
+    resourceVersion: "41913"
     uid: ade21f51-f5f9-48f0-9179-59925cbd215d
   spec:
     progressDeadlineSeconds: 600
@@ -1805,10 +1805,10 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:27:03Z"
+      time: "2024-12-27T17:53:24Z"
     name: metrics-server
     namespace: kube-system
-    resourceVersion: "701"
+    resourceVersion: "41938"
     uid: f877f1e1-0d53-40e1-aa65-54e3ad1f5212
   spec:
     progressDeadlineSeconds: 600
@@ -1889,18 +1889,18 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-26T23:27:03Z"
-      lastUpdateTime: "2024-12-26T23:27:03Z"
-      message: Deployment has minimum availability.
-      reason: MinimumReplicasAvailable
-      status: "True"
-      type: Available
     - lastTransitionTime: "2024-12-26T23:26:51Z"
       lastUpdateTime: "2024-12-26T23:27:03Z"
       message: ReplicaSet "metrics-server-5f8fcc9bb7" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
       type: Progressing
+    - lastTransitionTime: "2024-12-27T17:53:24Z"
+      lastUpdateTime: "2024-12-27T17:53:24Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
     observedGeneration: 1
     readyReplicas: 1
     replicas: 1
@@ -2041,10 +2041,10 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:25:05Z"
+      time: "2024-12-27T17:53:23Z"
     name: dashboard-metrics-scraper
     namespace: kubernetes-dashboard
-    resourceVersion: "452"
+    resourceVersion: "41924"
     uid: 7aa561d9-301d-43f1-86c2-e141963e3ecb
   spec:
     progressDeadlineSeconds: 600
@@ -2112,18 +2112,18 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-26T23:25:05Z"
-      lastUpdateTime: "2024-12-26T23:25:05Z"
-      message: Deployment has minimum availability.
-      reason: MinimumReplicasAvailable
-      status: "True"
-      type: Available
     - lastTransitionTime: "2024-12-26T23:24:32Z"
       lastUpdateTime: "2024-12-26T23:25:05Z"
       message: ReplicaSet "dashboard-metrics-scraper-5c6664855" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
       type: Progressing
+    - lastTransitionTime: "2024-12-27T17:53:23Z"
+      lastUpdateTime: "2024-12-27T17:53:23Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
     observedGeneration: 1
     readyReplicas: 1
     replicas: 1
@@ -2263,10 +2263,10 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:55Z"
+      time: "2024-12-27T17:53:24Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "433"
+    resourceVersion: "41932"
     uid: 720fea76-bd3d-4e82-9fb8-73958c7f4fb1
   spec:
     progressDeadlineSeconds: 600
@@ -2337,18 +2337,18 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-26T23:24:55Z"
-      lastUpdateTime: "2024-12-26T23:24:55Z"
-      message: Deployment has minimum availability.
-      reason: MinimumReplicasAvailable
-      status: "True"
-      type: Available
     - lastTransitionTime: "2024-12-26T23:24:32Z"
       lastUpdateTime: "2024-12-26T23:24:55Z"
       message: ReplicaSet "kubernetes-dashboard-55c4cbbc7c" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
       type: Progressing
+    - lastTransitionTime: "2024-12-27T17:53:24Z"
+      lastUpdateTime: "2024-12-27T17:53:24Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
     observedGeneration: 1
     readyReplicas: 1
     replicas: 1
@@ -2783,7 +2783,7 @@ items:
             v:"10.244.0.0/24": {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-26T23:24:31Z"
+      time: "2024-12-27T17:53:20Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -2791,10 +2791,22 @@ items:
           f:conditions:
             k:{"type":"DiskPressure"}:
               f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
             k:{"type":"MemoryPressure"}:
               f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
             k:{"type":"PIDPressure"}:
               f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
             k:{"type":"Ready"}:
               f:lastHeartbeatTime: {}
               f:lastTransitionTime: {}
@@ -2805,9 +2817,9 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-27T02:11:53Z"
+      time: "2024-12-27T19:03:37Z"
     name: minikube
-    resourceVersion: "10672"
+    resourceVersion: "45666"
     uid: 067e4911-dfc8-4e14-aa1a-bff67e325624
   spec:
     podCIDR: 10.244.0.0/24
@@ -2832,26 +2844,26 @@ items:
       memory: 8135160Ki
       pods: "110"
     conditions:
-    - lastHeartbeatTime: "2024-12-27T02:11:53Z"
-      lastTransitionTime: "2024-12-26T23:24:14Z"
+    - lastHeartbeatTime: "2024-12-27T19:03:37Z"
+      lastTransitionTime: "2024-12-27T17:53:20Z"
       message: kubelet has sufficient memory available
       reason: KubeletHasSufficientMemory
       status: "False"
       type: MemoryPressure
-    - lastHeartbeatTime: "2024-12-27T02:11:53Z"
-      lastTransitionTime: "2024-12-26T23:24:14Z"
+    - lastHeartbeatTime: "2024-12-27T19:03:37Z"
+      lastTransitionTime: "2024-12-27T17:53:20Z"
       message: kubelet has no disk pressure
       reason: KubeletHasNoDiskPressure
       status: "False"
       type: DiskPressure
-    - lastHeartbeatTime: "2024-12-27T02:11:53Z"
-      lastTransitionTime: "2024-12-26T23:24:14Z"
+    - lastHeartbeatTime: "2024-12-27T19:03:37Z"
+      lastTransitionTime: "2024-12-27T17:53:20Z"
       message: kubelet has sufficient PID available
       reason: KubeletHasSufficientPID
       status: "False"
       type: PIDPressure
-    - lastHeartbeatTime: "2024-12-27T02:11:53Z"
-      lastTransitionTime: "2024-12-26T23:24:22Z"
+    - lastHeartbeatTime: "2024-12-27T19:03:37Z"
+      lastTransitionTime: "2024-12-27T17:53:30Z"
       message: kubelet is posting ready status
       reason: KubeletReady
       status: "True"
@@ -3595,7 +3607,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:26:53Z"
+      time: "2024-12-27T17:53:23Z"
     name: ingress-nginx-controller-77669ff58-dzr84
     namespace: ingress-nginx
     ownerReferences:
@@ -3605,7 +3617,7 @@ items:
       kind: ReplicaSet
       name: ingress-nginx-controller-77669ff58
       uid: 52d07913-e848-49ad-b81c-8581f7f2ce6d
-    resourceVersion: "670"
+    resourceVersion: "41912"
     uid: c0fe70fb-5b02-44d4-8eaa-3a07788587c7
   spec:
     containers:
@@ -3940,7 +3952,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:35Z"
+      time: "2024-12-27T17:53:23Z"
     name: coredns-787d4945fb-h6jf5
     namespace: kube-system
     ownerReferences:
@@ -3950,7 +3962,7 @@ items:
       kind: ReplicaSet
       name: coredns-787d4945fb
       uid: e9f6aaf8-8687-40a6-9763-f7391066ff22
-    resourceVersion: "413"
+    resourceVersion: "41908"
     uid: 3bedc04a-b1b9-40f6-b3f9-8aef6c0d6a60
   spec:
     affinity:
@@ -4274,7 +4286,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:26Z"
+      time: "2024-12-27T17:53:23Z"
     name: etcd-minikube
     namespace: kube-system
     ownerReferences:
@@ -4283,7 +4295,7 @@ items:
       kind: Node
       name: minikube
       uid: 067e4911-dfc8-4e14-aa1a-bff67e325624
-    resourceVersion: "274"
+    resourceVersion: "41925"
     uid: 384a0b36-43c4-4cb8-b619-034d0ddf21b1
   spec:
     containers:
@@ -4592,7 +4604,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:31Z"
+      time: "2024-12-27T17:53:23Z"
     name: kube-apiserver-minikube
     namespace: kube-system
     ownerReferences:
@@ -4601,7 +4613,7 @@ items:
       kind: Node
       name: minikube
       uid: 067e4911-dfc8-4e14-aa1a-bff67e325624
-    resourceVersion: "299"
+    resourceVersion: "41907"
     uid: 1eb0f38d-a50a-434c-909c-151a45e11785
   spec:
     containers:
@@ -4944,7 +4956,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:31Z"
+      time: "2024-12-27T17:53:25Z"
     name: kube-controller-manager-minikube
     namespace: kube-system
     ownerReferences:
@@ -4953,7 +4965,7 @@ items:
       kind: Node
       name: minikube
       uid: 067e4911-dfc8-4e14-aa1a-bff67e325624
-    resourceVersion: "316"
+    resourceVersion: "41941"
     uid: 578a15a9-8037-48ba-9079-26d56ad55d3e
   spec:
     containers:
@@ -5234,7 +5246,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:35Z"
+      time: "2024-12-27T17:53:25Z"
     name: kube-proxy-frtq7
     namespace: kube-system
     ownerReferences:
@@ -5244,7 +5256,7 @@ items:
       kind: DaemonSet
       name: kube-proxy
       uid: 1e7933c6-ff5a-4c53-ab62-74703a673cb9
-    resourceVersion: "408"
+    resourceVersion: "41942"
     uid: 487447d7-1283-44ee-8821-3987ea19b295
   spec:
     affinity:
@@ -5539,7 +5551,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:29Z"
+      time: "2024-12-27T17:53:25Z"
     name: kube-scheduler-minikube
     namespace: kube-system
     ownerReferences:
@@ -5548,7 +5560,7 @@ items:
       kind: Node
       name: minikube
       uid: 067e4911-dfc8-4e14-aa1a-bff67e325624
-    resourceVersion: "291"
+    resourceVersion: "41939"
     uid: 18c6228f-48d8-4cf3-9fe3-833e56e9865e
   spec:
     containers:
@@ -5782,7 +5794,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:27:03Z"
+      time: "2024-12-27T17:53:24Z"
     name: metrics-server-5f8fcc9bb7-cnkld
     namespace: kube-system
     ownerReferences:
@@ -5792,7 +5804,7 @@ items:
       kind: ReplicaSet
       name: metrics-server-5f8fcc9bb7
       uid: 93ecb540-a33d-495f-a0e1-1b5fefb3fe04
-    resourceVersion: "696"
+    resourceVersion: "41933"
     uid: a3ffadb5-fc0c-45a3-bfe9-3ddd947ee12a
   spec:
     containers:
@@ -6037,10 +6049,10 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:25:05Z"
+      time: "2024-12-27T17:53:23Z"
     name: storage-provisioner
     namespace: kube-system
-    resourceVersion: "447"
+    resourceVersion: "41926"
     uid: a47d3b4c-2208-4e3c-83d4-1684afd53a26
   spec:
     containers:
@@ -6266,7 +6278,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:25:05Z"
+      time: "2024-12-27T17:53:23Z"
     name: dashboard-metrics-scraper-5c6664855-k286m
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -6276,7 +6288,7 @@ items:
       kind: ReplicaSet
       name: dashboard-metrics-scraper-5c6664855
       uid: 85ee6b54-1402-45b5-81f3-f66a794164e4
-    resourceVersion: "448"
+    resourceVersion: "41919"
     uid: 874b19e0-a9de-4807-a9d7-37bafe5471cb
   spec:
     containers:
@@ -6513,7 +6525,7 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:55Z"
+      time: "2024-12-27T17:53:24Z"
     name: kubernetes-dashboard-55c4cbbc7c-n9txz
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -6523,7 +6535,7 @@ items:
       kind: ReplicaSet
       name: kubernetes-dashboard-55c4cbbc7c
       uid: b535d664-9115-4831-a9ee-3f1a1cb5ed9b
-    resourceVersion: "429"
+    resourceVersion: "41928"
     uid: d1d2b39b-8000-4862-b979-98fcbebd0dcb
   spec:
     containers:
@@ -6822,7 +6834,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:26:53Z"
+      time: "2024-12-27T17:53:23Z"
     name: ingress-nginx-controller-77669ff58
     namespace: ingress-nginx
     ownerReferences:
@@ -6832,7 +6844,7 @@ items:
       kind: Deployment
       name: ingress-nginx-controller
       uid: 3b92e91d-a21c-40ab-ada7-643805ec26d5
-    resourceVersion: "671"
+    resourceVersion: "41918"
     uid: 52d07913-e848-49ad-b81c-8581f7f2ce6d
   spec:
     replicas: 1
@@ -7112,7 +7124,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:36Z"
+      time: "2024-12-27T17:53:23Z"
     name: coredns-787d4945fb
     namespace: kube-system
     ownerReferences:
@@ -7122,7 +7134,7 @@ items:
       kind: Deployment
       name: coredns
       uid: ade21f51-f5f9-48f0-9179-59925cbd215d
-    resourceVersion: "415"
+    resourceVersion: "41911"
     uid: e9f6aaf8-8687-40a6-9763-f7391066ff22
   spec:
     replicas: 1
@@ -7358,7 +7370,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:27:03Z"
+      time: "2024-12-27T17:53:24Z"
     name: metrics-server-5f8fcc9bb7
     namespace: kube-system
     ownerReferences:
@@ -7368,7 +7380,7 @@ items:
       kind: Deployment
       name: metrics-server
       uid: f877f1e1-0d53-40e1-aa65-54e3ad1f5212
-    resourceVersion: "699"
+    resourceVersion: "41936"
     uid: 93ecb540-a33d-495f-a0e1-1b5fefb3fe04
   spec:
     replicas: 1
@@ -7558,7 +7570,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:25:05Z"
+      time: "2024-12-27T17:53:23Z"
     name: dashboard-metrics-scraper-5c6664855
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -7568,7 +7580,7 @@ items:
       kind: Deployment
       name: dashboard-metrics-scraper
       uid: 7aa561d9-301d-43f1-86c2-e141963e3ecb
-    resourceVersion: "451"
+    resourceVersion: "41923"
     uid: 85ee6b54-1402-45b5-81f3-f66a794164e4
   spec:
     replicas: 1
@@ -7746,7 +7758,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-26T23:24:55Z"
+      time: "2024-12-27T17:53:24Z"
     name: kubernetes-dashboard-55c4cbbc7c
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -7756,7 +7768,7 @@ items:
       kind: Deployment
       name: kubernetes-dashboard
       uid: 720fea76-bd3d-4e82-9fb8-73958c7f4fb1
-    resourceVersion: "432"
+    resourceVersion: "41931"
     uid: b535d664-9115-4831-a9ee-3f1a1cb5ed9b
   spec:
     replicas: 1
