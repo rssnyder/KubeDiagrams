@@ -36,9 +36,11 @@ options:
   -v, --verbose         verbosity, set to false by default
 ```
 
-## Supported Kubernetes resources
+## Features
 
-List of supported `kind`/`apiVersion` resource types (25):
+### Kubernetes resources
+
+Supported `kind`/`apiVersion` resource types are 25 ones:
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
 * CustomResourceDefinition/apiextensions.k8s.io/v1
@@ -65,9 +67,7 @@ List of supported `kind`/`apiVersion` resource types (25):
 * StorageClass/storage.k8s.io/v1
 * User/rbac.authorization.k8s.io/v1
 
-## Unsupported Kubernetes resources
-
-List of unsupported `kind`/`apiGroup` resource types (34):
+Currently, unsupported `kind`/`apiVersion` resource types are 34 ones:
 * Binding/
 * ComponentStatus/
 * Endpoints/
@@ -102,6 +102,22 @@ List of unsupported `kind`/`apiGroup` resource types (34):
 * CSINode/storage.k8s.io
 * CSIStorageCapacity/storage.k8s.io
 * VolumeAttachment/storage.k8s.io
+
+## Kubernetes resources clustering
+
+With **KubeDiagrams**, Kubernetes resources can be clustered within the architecture diagrams automatically. **KubeDiagrams** uses the `metadata.namespace` resource field as first clustering criteria. Then, the `metadata.labels` keys can be used to define subclusters. Following table lists the predefined mappings between label keys and cluster titles as defined in the [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L13) file (see the `clusters` list).
+
+| Label | Cluster Title |
+| :--------: | :-------: |
+| `app` | Application |
+| `service` | Microservice |
+| `app.kubernetes.io/instance` | K8s Application |
+| `app.kubernetes.io/component` | K8s Component |
+| `k8s-app` | K8s Application |
+| `kubernetes.io/bootstrapping` | K8s Bootstrapping |
+| `tier` | K8s Tier |
+
+New mappings can be easily defined in custom configuration files and provided to **KubeDiagrams** via the `--config` command-line option.
 
 ## Examples
 
