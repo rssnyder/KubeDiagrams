@@ -11,12 +11,18 @@ edges:
   UNDEFINED:
     color: red
 clusters:
-  - label: K8s Application
-    path: metadata.labels.k8s-app
-  - label: Application
-    path: metadata.labels.app
-  - label: Microservice
-    path: metadata.labels.service
+  - label: app
+    title: Application
+  - label: service
+    title: Microservice
+  - label: app.kubernetes.io/instance
+    title: K8s Application
+  - label: k8s-app
+    title: K8s Application
+  - label: kubernetes.io/bootstrapping
+    title: K8s Bootstrapping
+  - label: tier
+    title: K8s Tier
 nodes:
   ClusterRole/rbac.authorization.k8s.io/v1:
     scope: Cluster
