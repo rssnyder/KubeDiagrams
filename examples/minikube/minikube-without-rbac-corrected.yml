@@ -7804,6 +7804,9 @@ items:
   kind: Secret
   metadata:
     creationTimestamp: "2024-12-22T12:34:48Z"
+    labels: #ADDED
+      app.kubernetes.io/instance: ingress-nginx #ADDED
+      app.kubernetes.io/name: ingress-nginx #ADDED
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
