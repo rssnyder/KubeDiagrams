@@ -18,16 +18,24 @@ $ ./generate.sh
 ```
 ## Generated architecture diagrams
 
+**Note**: In the following architecture diagrams, both red labels and red arrows indicate unfound Kubernetes resources.
+
 Architecture diagram of Kubernetes resources in the minikube `default` namespace:
 ![minikube default namespace](minikube-default.png)
 
 Architecture diagram of Kubernetes resources in the minikube `kubernetes-dashboard` namespace:
 ![minikube kubernetes-dashboard namespace](minikube-dashboard.png)
 
+Architecture diagram of Kubernetes resources in the minikube `ingress-nginx` namespace:
+![minikube ingress-nginx namespace](minikube-ingress-nginx.png)
+
+Architecture diagram of Kubernetes resources in the minikube `kube-system` namespace:
+![minikube kube-system namespace](minikube-kube-system.png)
+
 Architecture diagram of all minikube Kubernetes resources except for RBAC ones:
 ![minikube](minikube-without-rbac.png)
 
-**Note**: [minikube-without-rbac-corrected.yml](minikube-without-rbac-corrected.yml) was manually corrected to better group some Kubernetes resources (see `#ADDED:` and `#CHANGED:` comments).
+**Note**: [minikube-without-rbac-corrected.yml](minikube-without-rbac-corrected.yml) was manually corrected to better clustering some Kubernetes resources (see `#ADDED:` and `#CHANGED:` comments).
 
 Corrected architecture diagram of all minikube Kubernetes resources except for RBAC ones:
 ![minikube](minikube-without-rbac-corrected.png)
@@ -35,4 +43,5 @@ Corrected architecture diagram of all minikube Kubernetes resources except for R
 Architecture diagram of all minikube Kubernetes resources:
 ![Minikube](minikube.png)
 
-**Note**: In the previous architecture diagram, both red labels and red arrows indicate unfound Kubernetes resources.
+Architecture diagram of all minikube RBAC-related Kubernetes resources:
+![Minikube RBAC](minikube-rbac.png)

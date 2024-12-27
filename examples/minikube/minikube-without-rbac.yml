@@ -2817,9 +2817,9 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-27T19:03:37Z"
+      time: "2024-12-27T19:34:17Z"
     name: minikube
-    resourceVersion: "45666"
+    resourceVersion: "47379"
     uid: 067e4911-dfc8-4e14-aa1a-bff67e325624
   spec:
     podCIDR: 10.244.0.0/24
@@ -2844,25 +2844,25 @@ items:
       memory: 8135160Ki
       pods: "110"
     conditions:
-    - lastHeartbeatTime: "2024-12-27T19:03:37Z"
+    - lastHeartbeatTime: "2024-12-27T19:34:17Z"
       lastTransitionTime: "2024-12-27T17:53:20Z"
       message: kubelet has sufficient memory available
       reason: KubeletHasSufficientMemory
       status: "False"
       type: MemoryPressure
-    - lastHeartbeatTime: "2024-12-27T19:03:37Z"
+    - lastHeartbeatTime: "2024-12-27T19:34:17Z"
       lastTransitionTime: "2024-12-27T17:53:20Z"
       message: kubelet has no disk pressure
       reason: KubeletHasNoDiskPressure
       status: "False"
       type: DiskPressure
-    - lastHeartbeatTime: "2024-12-27T19:03:37Z"
+    - lastHeartbeatTime: "2024-12-27T19:34:17Z"
       lastTransitionTime: "2024-12-27T17:53:20Z"
       message: kubelet has sufficient PID available
       reason: KubeletHasSufficientPID
       status: "False"
       type: PIDPressure
-    - lastHeartbeatTime: "2024-12-27T19:03:37Z"
+    - lastHeartbeatTime: "2024-12-27T19:34:17Z"
       lastTransitionTime: "2024-12-27T17:53:30Z"
       message: kubelet is posting ready status
       reason: KubeletReady
