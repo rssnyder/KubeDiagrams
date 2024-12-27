@@ -1,0 +1,405 @@
+#!/usr/bin/env python3
+import argparse
+import copy
+from diagrams import Diagram, Edge, Cluster
+from diagrams.aws.enablement import ManagedServices
+import os
+import yaml
+from pprint import pprint
+
+# Query YAML data.
+def query_path(data, path, default=None):
+    paths = path.split(".")
+    tmp = data
+    for p in paths[:-1]:
+        tmp = tmp.get(p)
+        if tmp is None:
+            return default
+    return tmp.get(paths[-1], default)
+
+# Load configuration.
+config = {}
+with open(os.path.dirname(__file__) + "/kube-diagrams.yaml") as f:
+    config = yaml.safe_load(f) # load YAML config file
+
+# Undefined edge
+UNDEFINED_EDGE = query_path(config, "edges.UNDEFINED", {})
+
+# Get edge config.
+def get_edge_config(edge_name):
+    return config.get("edges", {}).get(edge_name, {})
+
+# Get config associated to a resource.
+def get_node_config(resource):
+    return config.get("nodes", {}).get(get_type(resource), {})
+
+# Get resource type, i.e., "kind/apiVersion".
+def get_type(resource):
+    return resource["kind"] + "/" + resource["apiVersion"]
+
+# Get the namespace of a resource.
+# If not defined then returns default namespace.
+def get_namespace(resource):
+    return query_path(resource, "metadata.namespace", config.get("default_namespace", "default"))
+
+# Create diagrams node.
+def create_diagram_node(resource, fontcolor="black"):
+    diagram_node_class = ManagedServices # default diagram node class
+    node_config = get_node_config(resource)
+    if node_config != None: # config found
+        # Get diagram node class name
+        diagram_node_classname = node_config.get("diagram_node_classname")
+        if diagram_node_classname != None: # classname defined
+            # Import Diagrams node class module
+            idx = diagram_node_classname.rfind('.')
+            if idx != -1:
+                exec("import " + diagram_node_classname[:idx])
+            # Get diagram node class
+            diagram_node_class = eval(diagram_node_classname)
+    # Create a diagram node
+    return diagram_node_class(resource["metadata"]["name"], fontcolor=fontcolor)
+
+class ResourceCluster(object):
+    def __init__(self):
+        self.resources = {} # dict<str, resource>
+        self.clusters = {} # dict<str, Cluster>
+
+    def get_or_create_cluster(self, name):
+        cluster = self.clusters.get(name)
+        if cluster is None:
+            cluster = ResourceCluster()
+            self.clusters[name] = cluster
+        return cluster
+
+class EdgesContext(list):
+    def __init__(self, resource):
+        list.__init__(self)
+        self.resource = resource
+        self.namespace = get_namespace(resource)
+
+    def add_resource(self, path):
+        target = query_path(self.resource, path)
+        self.append([
+            "%s/%s/%s/%s" % (
+              target["name"],
+              self.namespace,
+              target["kind"],
+              target["apiVersion"],
+            ),
+            "REFERENCE"
+        ])
+
+    def add_resources(self, path, name_path, namespace_path, kind, apiVersion):
+        resources = query_path(self.resource, path)
+        if resources is None:
+            return
+        for resource in resources:
+            self.append([
+                "%s/%s/%s/%s" % (
+                    resource[name_path],
+                    resource.get(namespace_path, self.namespace),
+                    kind,
+                    apiVersion
+                ),
+                "REFERENCE"
+            ])
+
+    def add_all_resources_matching_labels(self, kind, path, data=None):
+        if data is None:
+            data = self.resource
+        matchLabels = query_path(data, path)
+        if matchLabels is None:
+            return False
+        resourceFound = False
+        for rid, resource in resources.items():
+            if resource["kind"] != kind:
+                continue
+            labels = query_path(resource, "metadata.labels", {})
+            found = True
+            for sk, sv in matchLabels.items():
+                if labels.get(sk) != sv:
+                    found = False
+                    break
+            if found:
+                self.append([rid, "SELECTOR"])
+                resourceFound = True
+        return resourceFound
+
+    def add_all_volume_resources(self, path):
+        def add_volumes(volumes):
+            for volume in volumes:
+                if "configMap" in volume:
+                    self.append([
+                        "%s/%s/ConfigMap/v1" % (
+                            volume["configMap"]["name"],
+                            self.namespace
+                        ),
+                        "REFERENCE"
+                    ])
+                elif "secret" in volume:
+                    self.append([
+                        "%s/%s/Secret/v1" % (
+                            volume["secret"]["secretName"],
+                            self.namespace
+                        ),
+                        "REFERENCE"
+                    ])
+                elif "persistentVolumeClaim" in volume:
+                    self.append([
+                        "%s/%s/PersistentVolumeClaim/v1" % (
+                            volume["persistentVolumeClaim"]["claimName"],
+                            self.namespace
+                        ),
+                        "REFERENCE"
+                    ])
+                elif "projected" in volume:
+                    add_volumes(query_path(volume, "projected.sources"))
+
+        volumes = query_path(resource, path)
+        if volumes != None:
+            add_volumes(volumes)
+        return
+
+    def add_volume_claim_templates(self, path):
+        volumeClaimTemplates = query_path(self.resource, path)
+        if volumeClaimTemplates is None:
+            return
+        for volumeClaimTemplate in volumeClaimTemplates:
+            self.add_storage_class("spec.storageClassName", volumeClaimTemplate)
+
+    def add_storage_class(self, path, data=None):
+        if data is None:
+            data = self.resource
+        storageClassName = query_path(data, path)
+        if storageClassName != None:
+            self.append([
+                "%s/StorageClass/storage.k8s.io/v1" % storageClassName,
+                "REFERENCE"
+            ])
+
+    def add_volume(self, path):
+        volumeName = query_path(self.resource, path)
+        if volumeName != None:
+            self.append([
+                "%s/PersistentVolume/v1" % volumeName,
+                "REFERENCE"
+            ])
+
+    def add_wait_for_services(self, path):
+        initContainers = query_path(self.resource, path)
+        if initContainers is None:
+            return
+        for ic in initContainers:
+            if ic.get("name") == "wait-for-services":
+                for arg in ic.get("args", []):
+                    if arg.startswith("-service="):
+                        sn = arg[len("-service="):]
+                        self.append([
+                            "%s/%s/Service/v1" % (
+                                sn,
+                                self.namespace
+                            ),
+                            "DEPENDENCE"
+                        ])
+
+    def add_service_account(self, path):
+        serviceAccountName = query_path(self.resource, path)
+        if serviceAccountName != None:
+            self.append([
+                "%s/%s/ServiceAccount/v1" % (
+                    serviceAccountName,
+                    self.namespace
+                ),
+                "REFERENCE"
+            ])
+
+    def add_role(self, path):
+        roleRef = self.resource[path]
+        if self.resource["kind"] == "RoleBinding":
+            namespace = "/%s" % self.namespace
+        else:
+            namespace = ""
+        self.append([
+            "%s%s/%s/%s/v1" % (
+                roleRef["name"],
+                namespace,
+                roleRef["kind"],
+                roleRef.get("apiGroup", "rbac.authorization.k8s.io")
+            ),
+            "REFERENCE"
+      ])
+
+    def add_subjects(self):
+        for subject in self.resource.get("subjects", []):
+            if subject.get("namespace"):
+                rid = "%s/%s/%s/%s" % (
+                    subject["name"],
+                    subject["namespace"],
+                    subject["kind"],
+                    subject.get("apiGroup", "v1")
+                )
+            else:
+                rid = "%s/%s/%s/v1" % (
+                    subject["name"],
+                    subject["kind"],
+                    subject.get("apiGroup", "rbac.authorization.k8s.io")
+                )
+            self.append([rid,"REFERENCE"])
+
+    def add_service(self, path, data=None):
+        if data is None:
+            data = self.resource
+        name = query_path(data, path)
+        if name != None:
+            self.append([
+                "%s/%s/Service/v1" % (
+                    name,
+                    self.namespace
+                ),
+                "REFERENCE"
+            ])
+
+# Parse arguments
+parser = argparse.ArgumentParser(
+    prog="kube-diagrams",
+    description="Generate Kubernetes architecture diagrams from Kubernetes manifest files")
+parser.add_argument("filename",
+    help="the Kubernetes manifest filename to process")
+parser.add_argument("-o", "--output", type=str,
+    help="output diagram filename")
+parser.add_argument("-f", "--format", type=str,
+    help="output format, allowed formats are png (default), jpg, svg, pdf, and dot",
+    default="png")
+parser.add_argument("-c", "--config", type=str,
+    help="custom kube-diagrams configuration file")
+parser.add_argument("-v", "--verbose",
+    help="verbosity, set to false by default",
+    action="store_true", default=False)
+args = parser.parse_args()
+
+# Process arguments.
+if args.output is None:
+    args.output = args.filename[:args.filename.rfind('.')]
+
+if args.config != None:
+    with open(args.config) as f:
+        custom_config = yaml.safe_load(f) # load custom config file
+        if "default_namespace" in custom_config:
+            config["default_namespace"] = custom_config["default_namespace"]
+        if "edges" in custom_config:
+            config["edges"].update(custom_config["edges"])
+        if "clusters" in custom_config:
+            config["clusters"].extend(custom_config["clusters"])
+        if "nodes" in custom_config:
+            config["nodes"].update(custom_config["nodes"])
+
+# Load the Kubernetes manifest file.
+resources = {} # a map of all resources
+resource_cluster = ResourceCluster() # Clustering resources
+print("Load %s..." % args.filename)
+with open(args.filename) as f:
+    data = yaml.safe_load_all(f) # load YAML file
+    for resource in data:
+        def process_resource(resource):
+            name = resource["metadata"]["name"]
+            if get_node_config(resource).get("scope") == "Cluster":
+                rid = name + "/" + get_type(resource)
+                resources[rid] = resource
+                if resource["kind"] == "Namespace":
+                    cluster = resource_cluster.get_or_create_cluster("Namespace: %s" % name)
+                else:
+                    cluster = resource_cluster
+                cluster.resources[rid] = resource
+            else: # scope = Namespaced
+                rid = name + "/" + get_namespace(resource) + "/" + get_type(resource)
+                resources[rid] = resource
+                cluster = resource_cluster.get_or_create_cluster("Namespace: %s" % get_namespace(resource))
+                def process_clusters(cluster, resource, clusters):
+                    for cluster_config in clusters:
+                        data = query_path(resource, cluster_config["path"])
+                        if data != None:
+                            cluster = cluster.get_or_create_cluster("%s: %s" % (cluster_config["label"], data))
+                            clusters.remove(cluster_config)
+                            return process_clusters(cluster, resource, clusters)
+                    return cluster
+                cluster = process_clusters(
+                    cluster,
+                    resource,
+                    copy.deepcopy(config.get("clusters", []))
+                )
+                cluster.resources[rid] = resource
+
+        if resource["kind"] == "List":
+            for r in resource["items"]:
+                process_resource(r)
+        else:
+            process_resource(resource)
+
+# Print loaded Kubernetes resources
+if args.verbose:
+    def process_cluster(cluster, ident=0):
+        for rid, resource in cluster.resources.items():
+            print("  " * ident, "- Resource %s" % rid)
+        for cid, sub_cluster in cluster.clusters.items():
+            print("  " * ident, "- %s" % cid)
+            process_cluster(sub_cluster, ident + 1)
+    print("Loaded Kubernetes resources:")
+    process_cluster(resource_cluster)
+
+# Generate diagram
+with Diagram("", filename=args.output, show=False, direction="TB", outformat=args.format):
+    # Generate diagram nodes
+    diagram_nodes = {}
+    def create_nodes(cluster):
+        for rid, resource in cluster.resources.items():
+            diagram_nodes[rid] = create_diagram_node(resource)
+        for cid, sub_cluster in cluster.clusters.items():
+            with Cluster(cid):
+                create_nodes(sub_cluster)
+    create_nodes(resource_cluster)
+    # Generate diagram edges
+    undefined_nodes = {}
+    for resource_id, resource in resources.items():
+        edges = EdgesContext(resource)
+        # execute config code to generate edges
+        code_to_exec = get_node_config(resource).get("edges")
+        if code_to_exec:
+            try:
+                exec(code_to_exec)
+            except Exception as exc:
+                print("Error:", type(exc), ":", exc.args)
+                print("Edges script:\n", code_to_exec)
+                print("Resource:")
+                pprint(resource)
+        # generate diagram edges
+        for edge in edges:
+            edge_rid = edge[0]
+            edge_name = edge[1]
+            try:
+                diagram_nodes[resource_id] >> Edge(**get_edge_config(edge_name)) >> diagram_nodes[edge_rid]
+            except KeyError as ke:
+                print("Error: %s not found!" % ke)
+                tmp = str(edge_rid).split("/")
+                if tmp[2] in ["ServiceAccount", "Service", "ConfigMap"]: #TODO: avoid specific cases
+                    rsrc = {
+                        "apiVersion": tmp[3],
+                        "kind": tmp[2],
+                        "metadata": {
+                            "name": tmp[1] + "/" + tmp[0]
+                        }
+                    }
+                else:
+                    rsrc = {
+                        "apiVersion": tmp[2] + "/" + tmp[3],
+                        "kind": tmp[1],
+                        "metadata": {
+                            "name": tmp[0]
+                        }
+                    }
+                diagram_node = undefined_nodes.get(edge_rid)
+                if diagram_node is None:
+                    diagram_node = create_diagram_node(rsrc, UNDEFINED_EDGE.get("color"))
+                    undefined_nodes[edge_rid] = diagram_node
+                diagram_nodes[resource_id] >> Edge(**UNDEFINED_EDGE) >> diagram_node
+
+print("%s.%s generated." % (args.output, args.format))

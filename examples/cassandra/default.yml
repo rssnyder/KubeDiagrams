@@ -1,0 +1,1999 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-12-27T00:16:03Z"
+    generateName: cassandra-
+    labels:
+      app: cassandra
+      controller-revision-hash: cassandra-5659d8fd7f
+      statefulset.kubernetes.io/pod-name: cassandra-0
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:controller-revision-hash: {}
+            f:statefulset.kubernetes.io/pod-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"e75b4505-4245-4faa-a1be-b3e16f3c0e9a"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"cassandra"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"CASSANDRA_CLUSTER_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CASSANDRA_DC"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CASSANDRA_RACK"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CASSANDRA_SEEDS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"HEAP_NEWSIZE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"MAX_HEAP_SIZE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POD_IP"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:lifecycle:
+                .: {}
+                f:preStop:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":7000,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":7001,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":7199,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":9042,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:capabilities:
+                  .: {}
+                  f:add: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/cassandra_data"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostname: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:subdomain: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"cassandra-data"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-27T00:16:03Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.22"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:16:24Z"
+    name: cassandra-0
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: cassandra
+      uid: e75b4505-4245-4faa-a1be-b3e16f3c0e9a
+    resourceVersion: "4091"
+    uid: 11e25abe-5536-41d2-899c-003e69861a62
+  spec:
+    containers:
+    - env:
+      - name: MAX_HEAP_SIZE
+        value: 512M
+      - name: HEAP_NEWSIZE
+        value: 100M
+      - name: CASSANDRA_SEEDS
+        value: cassandra-0.cassandra.default.svc.cluster.local
+      - name: CASSANDRA_CLUSTER_NAME
+        value: K8Demo
+      - name: CASSANDRA_DC
+        value: DC1-K8Demo
+      - name: CASSANDRA_RACK
+        value: Rack1-K8Demo
+      - name: POD_IP
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: status.podIP
+      image: gcr.io/google-samples/cassandra:v13
+      imagePullPolicy: Always
+      lifecycle:
+        preStop:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - nodetool drain
+      name: cassandra
+      ports:
+      - containerPort: 7000
+        name: intra-node
+        protocol: TCP
+      - containerPort: 7001
+        name: tls-intra-node
+        protocol: TCP
+      - containerPort: 7199
+        name: jmx
+        protocol: TCP
+      - containerPort: 9042
+        name: cql
+        protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+          - /bin/bash
+          - -c
+          - echo OK
+        failureThreshold: 3
+        initialDelaySeconds: 15
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources:
+        limits:
+          cpu: 500m
+          memory: 1Gi
+        requests:
+          cpu: 500m
+          memory: 512M
+      securityContext:
+        capabilities:
+          add:
+          - IPC_LOCK
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /cassandra_data
+        name: cassandra-data
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-krrmm
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    hostname: cassandra-0
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    subdomain: cassandra
+    terminationGracePeriodSeconds: 500
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: cassandra-data
+      persistentVolumeClaim:
+        claimName: cassandra-data-cassandra-0
+    - name: kube-api-access-krrmm
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:03Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:24Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:24Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:03Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://d5e3238815d5149c5cc929e210180c04f82c5370d6741f3c73d7d52667465199
+      image: gcr.io/google-samples/cassandra:v13
+      imageID: docker-pullable://gcr.io/google-samples/cassandra@sha256:7a3d20afa0a46ed073a5c587b4f37e21fa860e83c60b9c42fec1e1e739d64007
+      lastState: {}
+      name: cassandra
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-12-27T00:16:05Z"
+    hostIP: 192.168.64.7
+    phase: Running
+    podIP: 10.244.0.22
+    podIPs:
+    - ip: 10.244.0.22
+    qosClass: Burstable
+    startTime: "2024-12-27T00:16:03Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-12-27T00:16:24Z"
+    generateName: cassandra-
+    labels:
+      app: cassandra
+      controller-revision-hash: cassandra-5659d8fd7f
+      statefulset.kubernetes.io/pod-name: cassandra-1
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:controller-revision-hash: {}
+            f:statefulset.kubernetes.io/pod-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"e75b4505-4245-4faa-a1be-b3e16f3c0e9a"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"cassandra"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"CASSANDRA_CLUSTER_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CASSANDRA_DC"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CASSANDRA_RACK"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CASSANDRA_SEEDS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"HEAP_NEWSIZE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"MAX_HEAP_SIZE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POD_IP"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:lifecycle:
+                .: {}
+                f:preStop:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":7000,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":7001,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":7199,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":9042,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:capabilities:
+                  .: {}
+                  f:add: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/cassandra_data"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostname: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:subdomain: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"cassandra-data"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-27T00:16:24Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.23"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:16:44Z"
+    name: cassandra-1
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: cassandra
+      uid: e75b4505-4245-4faa-a1be-b3e16f3c0e9a
+    resourceVersion: "4126"
+    uid: 895d1906-3967-4794-b175-0b6460c5f6f8
+  spec:
+    containers:
+    - env:
+      - name: MAX_HEAP_SIZE
+        value: 512M
+      - name: HEAP_NEWSIZE
+        value: 100M
+      - name: CASSANDRA_SEEDS
+        value: cassandra-0.cassandra.default.svc.cluster.local
+      - name: CASSANDRA_CLUSTER_NAME
+        value: K8Demo
+      - name: CASSANDRA_DC
+        value: DC1-K8Demo
+      - name: CASSANDRA_RACK
+        value: Rack1-K8Demo
+      - name: POD_IP
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: status.podIP
+      image: gcr.io/google-samples/cassandra:v13
+      imagePullPolicy: Always
+      lifecycle:
+        preStop:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - nodetool drain
+      name: cassandra
+      ports:
+      - containerPort: 7000
+        name: intra-node
+        protocol: TCP
+      - containerPort: 7001
+        name: tls-intra-node
+        protocol: TCP
+      - containerPort: 7199
+        name: jmx
+        protocol: TCP
+      - containerPort: 9042
+        name: cql
+        protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+          - /bin/bash
+          - -c
+          - echo OK
+        failureThreshold: 3
+        initialDelaySeconds: 15
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources:
+        limits:
+          cpu: 500m
+          memory: 1Gi
+        requests:
+          cpu: 500m
+          memory: 512M
+      securityContext:
+        capabilities:
+          add:
+          - IPC_LOCK
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /cassandra_data
+        name: cassandra-data
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-grd2x
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    hostname: cassandra-1
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    subdomain: cassandra
+    terminationGracePeriodSeconds: 500
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: cassandra-data
+      persistentVolumeClaim:
+        claimName: cassandra-data-cassandra-1
+    - name: kube-api-access-grd2x
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:24Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:44Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:44Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:24Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://fa59e374b827ca569af50add8f5a96c9c3ca9ccd89e8f47ba67866736719be37
+      image: gcr.io/google-samples/cassandra:v13
+      imageID: docker-pullable://gcr.io/google-samples/cassandra@sha256:7a3d20afa0a46ed073a5c587b4f37e21fa860e83c60b9c42fec1e1e739d64007
+      lastState: {}
+      name: cassandra
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-12-27T00:16:26Z"
+    hostIP: 192.168.64.7
+    phase: Running
+    podIP: 10.244.0.23
+    podIPs:
+    - ip: 10.244.0.23
+    qosClass: Burstable
+    startTime: "2024-12-27T00:16:24Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-12-27T00:16:44Z"
+    generateName: cassandra-
+    labels:
+      app: cassandra
+      controller-revision-hash: cassandra-5659d8fd7f
+      statefulset.kubernetes.io/pod-name: cassandra-2
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:controller-revision-hash: {}
+            f:statefulset.kubernetes.io/pod-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"e75b4505-4245-4faa-a1be-b3e16f3c0e9a"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"cassandra"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"CASSANDRA_CLUSTER_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CASSANDRA_DC"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CASSANDRA_RACK"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CASSANDRA_SEEDS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"HEAP_NEWSIZE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"MAX_HEAP_SIZE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POD_IP"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:lifecycle:
+                .: {}
+                f:preStop:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":7000,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":7001,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":7199,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":9042,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:capabilities:
+                  .: {}
+                  f:add: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/cassandra_data"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostname: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:subdomain: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"cassandra-data"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-27T00:16:44Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.24"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:17:35Z"
+    name: cassandra-2
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: cassandra
+      uid: e75b4505-4245-4faa-a1be-b3e16f3c0e9a
+    resourceVersion: "4201"
+    uid: e3c88823-8d7f-4d7b-bd55-c23776fcf533
+  spec:
+    containers:
+    - env:
+      - name: MAX_HEAP_SIZE
+        value: 512M
+      - name: HEAP_NEWSIZE
+        value: 100M
+      - name: CASSANDRA_SEEDS
+        value: cassandra-0.cassandra.default.svc.cluster.local
+      - name: CASSANDRA_CLUSTER_NAME
+        value: K8Demo
+      - name: CASSANDRA_DC
+        value: DC1-K8Demo
+      - name: CASSANDRA_RACK
+        value: Rack1-K8Demo
+      - name: POD_IP
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: status.podIP
+      image: gcr.io/google-samples/cassandra:v13
+      imagePullPolicy: Always
+      lifecycle:
+        preStop:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - nodetool drain
+      name: cassandra
+      ports:
+      - containerPort: 7000
+        name: intra-node
+        protocol: TCP
+      - containerPort: 7001
+        name: tls-intra-node
+        protocol: TCP
+      - containerPort: 7199
+        name: jmx
+        protocol: TCP
+      - containerPort: 9042
+        name: cql
+        protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+          - /bin/bash
+          - -c
+          - echo OK
+        failureThreshold: 3
+        initialDelaySeconds: 15
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources:
+        limits:
+          cpu: 500m
+          memory: 1Gi
+        requests:
+          cpu: 500m
+          memory: 512M
+      securityContext:
+        capabilities:
+          add:
+          - IPC_LOCK
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /cassandra_data
+        name: cassandra-data
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-6gvl5
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    hostname: cassandra-2
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    subdomain: cassandra
+    terminationGracePeriodSeconds: 500
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: cassandra-data
+      persistentVolumeClaim:
+        claimName: cassandra-data-cassandra-2
+    - name: kube-api-access-6gvl5
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:45Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:17:35Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:17:35Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-27T00:16:45Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://f3fca5a2e265a1b4279065551cda818541fde331312852e68125125705f98b89
+      image: gcr.io/google-samples/cassandra:v13
+      imageID: docker-pullable://gcr.io/google-samples/cassandra@sha256:7a3d20afa0a46ed073a5c587b4f37e21fa860e83c60b9c42fec1e1e739d64007
+      lastState:
+        terminated:
+          containerID: docker://625c1987c0308bf358adeee6efd7fad40c189460f22cade33cea8901949e61fe
+          exitCode: 3
+          finishedAt: "2024-12-27T00:17:10Z"
+          reason: Error
+          startedAt: "2024-12-27T00:16:47Z"
+      name: cassandra
+      ready: true
+      restartCount: 1
+      started: true
+      state:
+        running:
+          startedAt: "2024-12-27T00:17:12Z"
+    hostIP: 192.168.64.7
+    phase: Running
+    podIP: 10.244.0.24
+    podIPs:
+    - ip: 10.244.0.24
+    qosClass: Burstable
+    startTime: "2024-12-27T00:16:45Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"cassandra"},"name":"cassandra","namespace":"default"},"spec":{"clusterIP":"None","ports":[{"port":9042}],"selector":{"app":"cassandra"}}}
+    creationTimestamp: "2024-12-27T00:16:03Z"
+    labels:
+      app: cassandra
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:clusterIP: {}
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":9042,"protocol":"TCP"}:
+              .: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: kubectl
+      operation: Update
+      time: "2024-12-27T00:16:03Z"
+    name: cassandra
+    namespace: default
+    resourceVersion: "4045"
+    uid: 4d216912-6d0a-4856-95af-9a46ab7e3824
+  spec:
+    clusterIP: None
+    clusterIPs:
+    - None
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 9042
+      protocol: TCP
+      targetPort: 9042
+    selector:
+      app: cassandra
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2024-12-26T23:24:17Z"
+    labels:
+      component: apiserver
+      provider: kubernetes
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:component: {}
+            f:provider: {}
+        f:spec:
+          f:clusterIP: {}
+          f:internalTrafficPolicy: {}
+          f:ipFamilyPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2024-12-26T23:24:17Z"
+    name: kubernetes
+    namespace: default
+    resourceVersion: "195"
+    uid: b0a63e0d-7e92-4d91-b328-b2f9d73425ed
+  spec:
+    clusterIP: 10.96.0.1
+    clusterIPs:
+    - 10.96.0.1
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: StatefulSet
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"labels":{"app":"cassandra"},"name":"cassandra","namespace":"default"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"cassandra"}},"serviceName":"cassandra","template":{"metadata":{"labels":{"app":"cassandra"}},"spec":{"containers":[{"env":[{"name":"MAX_HEAP_SIZE","value":"512M"},{"name":"HEAP_NEWSIZE","value":"100M"},{"name":"CASSANDRA_SEEDS","value":"cassandra-0.cassandra.default.svc.cluster.local"},{"name":"CASSANDRA_CLUSTER_NAME","value":"K8Demo"},{"name":"CASSANDRA_DC","value":"DC1-K8Demo"},{"name":"CASSANDRA_RACK","value":"Rack1-K8Demo"},{"name":"POD_IP","valueFrom":{"fieldRef":{"fieldPath":"status.podIP"}}}],"image":"gcr.io/google-samples/cassandra:v13","imagePullPolicy":"Always","lifecycle":{"preStop":{"exec":{"command":["/bin/sh","-c","nodetool drain"]}}},"name":"cassandra","ports":[{"containerPort":7000,"name":"intra-node"},{"containerPort":7001,"name":"tls-intra-node"},{"containerPort":7199,"name":"jmx"},{"containerPort":9042,"name":"cql"}],"readinessProbe":{"exec":{"command":["/bin/bash","-c","echo OK"]},"initialDelaySeconds":15,"timeoutSeconds":5},"resources":{"limits":{"cpu":"500m","memory":"1Gi"},"requests":{"cpu":"500m","memory":"512M"}},"securityContext":{"capabilities":{"add":["IPC_LOCK"]}},"volumeMounts":[{"mountPath":"/cassandra_data","name":"cassandra-data"}]}],"terminationGracePeriodSeconds":500}},"volumeClaimTemplates":[{"metadata":{"name":"cassandra-data"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"512M"}},"storageClassName":"fast"}}]}}
+    creationTimestamp: "2024-12-27T00:16:03Z"
+    generation: 1
+    labels:
+      app: cassandra
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:podManagementPolicy: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:serviceName: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+            f:spec:
+              f:containers:
+                k:{"name":"cassandra"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CASSANDRA_CLUSTER_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CASSANDRA_DC"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CASSANDRA_RACK"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CASSANDRA_SEEDS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HEAP_NEWSIZE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"MAX_HEAP_SIZE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"POD_IP"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:lifecycle:
+                    .: {}
+                    f:preStop:
+                      .: {}
+                      f:exec:
+                        .: {}
+                        f:command: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":7000,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":7001,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":7199,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":9042,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:exec:
+                      .: {}
+                      f:command: {}
+                    f:failureThreshold: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    .: {}
+                    f:capabilities:
+                      .: {}
+                      f:add: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/cassandra_data"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+          f:updateStrategy:
+            f:rollingUpdate:
+              .: {}
+              f:partition: {}
+            f:type: {}
+          f:volumeClaimTemplates: {}
+      manager: kubectl
+      operation: Update
+      time: "2024-12-27T00:16:03Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:collisionCount: {}
+          f:currentReplicas: {}
+          f:currentRevision: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updateRevision: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:17:35Z"
+    name: cassandra
+    namespace: default
+    resourceVersion: "4204"
+    uid: e75b4505-4245-4faa-a1be-b3e16f3c0e9a
+  spec:
+    podManagementPolicy: OrderedReady
+    replicas: 3
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: cassandra
+    serviceName: cassandra
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: cassandra
+      spec:
+        containers:
+        - env:
+          - name: MAX_HEAP_SIZE
+            value: 512M
+          - name: HEAP_NEWSIZE
+            value: 100M
+          - name: CASSANDRA_SEEDS
+            value: cassandra-0.cassandra.default.svc.cluster.local
+          - name: CASSANDRA_CLUSTER_NAME
+            value: K8Demo
+          - name: CASSANDRA_DC
+            value: DC1-K8Demo
+          - name: CASSANDRA_RACK
+            value: Rack1-K8Demo
+          - name: POD_IP
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: status.podIP
+          image: gcr.io/google-samples/cassandra:v13
+          imagePullPolicy: Always
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                - /bin/sh
+                - -c
+                - nodetool drain
+          name: cassandra
+          ports:
+          - containerPort: 7000
+            name: intra-node
+            protocol: TCP
+          - containerPort: 7001
+            name: tls-intra-node
+            protocol: TCP
+          - containerPort: 7199
+            name: jmx
+            protocol: TCP
+          - containerPort: 9042
+            name: cql
+            protocol: TCP
+          readinessProbe:
+            exec:
+              command:
+              - /bin/bash
+              - -c
+              - echo OK
+            failureThreshold: 3
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+          resources:
+            limits:
+              cpu: 500m
+              memory: 1Gi
+            requests:
+              cpu: 500m
+              memory: 512M
+          securityContext:
+            capabilities:
+              add:
+              - IPC_LOCK
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /cassandra_data
+            name: cassandra-data
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 500
+    updateStrategy:
+      rollingUpdate:
+        partition: 0
+      type: RollingUpdate
+    volumeClaimTemplates:
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        creationTimestamp: null
+        name: cassandra-data
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 512M
+        storageClassName: fast
+        volumeMode: Filesystem
+      status:
+        phase: Pending
+  status:
+    availableReplicas: 3
+    collisionCount: 0
+    currentReplicas: 3
+    currentRevision: cassandra-5659d8fd7f
+    observedGeneration: 1
+    readyReplicas: 3
+    replicas: 3
+    updateRevision: cassandra-5659d8fd7f
+    updatedReplicas: 3
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+      volume.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-27T00:13:35Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: cassandra
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+            f:volume.kubernetes.io/storage-provisioner: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:storageClassName: {}
+          f:volumeMode: {}
+          f:volumeName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-27T00:13:35Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:13:35Z"
+    name: cassandra-data-cassandra-0
+    namespace: default
+    resourceVersion: "3759"
+    uid: a031f10f-ec6a-4c6f-8e59-632c771842e1
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 512M
+    storageClassName: fast
+    volumeMode: Filesystem
+    volumeName: pvc-a031f10f-ec6a-4c6f-8e59-632c771842e1
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+      volume.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-27T00:14:27Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: cassandra
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+            f:volume.kubernetes.io/storage-provisioner: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:storageClassName: {}
+          f:volumeMode: {}
+          f:volumeName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-27T00:14:27Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:14:27Z"
+    name: cassandra-data-cassandra-1
+    namespace: default
+    resourceVersion: "3838"
+    uid: db61b828-4396-4522-b58a-9edb0aad2a37
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 512M
+    storageClassName: fast
+    volumeMode: Filesystem
+    volumeName: pvc-db61b828-4396-4522-b58a-9edb0aad2a37
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+      volume.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-27T00:15:32Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: cassandra
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+            f:volume.kubernetes.io/storage-provisioner: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:storageClassName: {}
+          f:volumeMode: {}
+          f:volumeName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-27T00:15:32Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:15:32Z"
+    name: cassandra-data-cassandra-2
+    namespace: default
+    resourceVersion: "3986"
+    uid: 281d5709-402e-414b-8c4d-00984d18fd7d
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 512M
+    storageClassName: fast
+    volumeMode: Filesystem
+    volumeName: pvc-281d5709-402e-414b-8c4d-00984d18fd7d
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    phase: Bound
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    creationTimestamp: "2024-12-26T23:24:31Z"
+    name: default
+    namespace: default
+    resourceVersion: "314"
+    uid: 56ce5b99-fb97-40b6-a220-0eff6fd067e5
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p
+      a3ViZUNBMB4XDTIzMDIwNDA3NTMzNloXDTMzMDIwMjA3NTMzNlowFTETMBEGA1UE
+      AxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM3l
+      n8dtEkPntkBRSF7NBlwCbwI3BRxHL5LUSROCfr/tFyuJ8XiZa8yv/DbiCKDFWeBr
+      lJwWOJ3HjrjQc+nBIjbG3spMaOr9Kgut7UKyYEeIZxBSz5GBd7rlRuBwOkRqEXtS
+      /H/TxVzgrugfKbI+ALtzbtHTzKKLDGaYjAC5t2jQ/PtzQ3s4cB8Z/fk03n9woBC8
+      6makLFQXXPj65y09hb/slxIbi4hyRe4hdQYnxeY+PKmuEZIaed5gFrN/EDDtrtwn
+      bcPY3Pwc0/b1+S44TcB+eWMq28zPLeO/Kjziw8q+1wldKWIXJJSUAUU5dBOtlRol
+      yfr7t0ibsft1OTVCisECAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW
+      MBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW
+      BBS1Nak8XxDdSOq3r1qdAXNmQRttCzANBgkqhkiG9w0BAQsFAAOCAQEAxrabqVKs
+      u9hJTiUNhLEQTOVR7gMuonymonQ73488pQHKKIyAM8It+ClgP+YdZtRi+uxGgQ3m
+      kwbJbf1ybysY++tIKbUXfsal/wcrt2hbqk6HJxca/YaYL7qja6N/BElct07RQhLf
+      DpMtfqokyBh/yOlobBkrrA+RylGVi1ebWgFM7xtzmuPpeIYurNIcXGpp0d21RuRz
+      0Oxd9g/HHAzZihXbHfPeJJdiQBtPvQ83TZ+T2E0MCkLDUC1okRztR8R5YPG6nZli
+      zVRBh41095iSNFKJhFQyu5Qzme98wdBBQGoxcMOoXk6ioeDQUywHaJMjdCANqubf
+      I700WTtGVr503w==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-12-26T23:24:31Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:ca.crt: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubernetes.io/description: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-26T23:24:31Z"
+    name: kube-root-ca.crt
+    namespace: default
+    resourceVersion: "305"
+    uid: 2cb982e4-6045-41b4-9cf1-c00ac57e8162
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: 7ca66ea7-4c61-40f3-be7c-df0069a07d45
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-27T00:15:32Z"
+    finalizers:
+    - kubernetes.io/pv-protection
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:15:32Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:hostPathProvisionerIdentity: {}
+            f:pv.kubernetes.io/provisioned-by: {}
+        f:spec:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:claimRef:
+            .: {}
+            f:apiVersion: {}
+            f:kind: {}
+            f:name: {}
+            f:namespace: {}
+            f:resourceVersion: {}
+            f:uid: {}
+          f:hostPath:
+            .: {}
+            f:path: {}
+            f:type: {}
+          f:persistentVolumeReclaimPolicy: {}
+          f:storageClassName: {}
+          f:volumeMode: {}
+      manager: storage-provisioner
+      operation: Update
+      time: "2024-12-27T00:15:32Z"
+    name: pvc-281d5709-402e-414b-8c4d-00984d18fd7d
+    resourceVersion: "3984"
+    uid: 5232d615-2897-48a6-a070-5cae7273a520
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: cassandra-data-cassandra-2
+      namespace: default
+      resourceVersion: "3975"
+      uid: 281d5709-402e-414b-8c4d-00984d18fd7d
+    hostPath:
+      path: /tmp/hostpath-provisioner/default/cassandra-data-cassandra-2
+      type: ""
+    persistentVolumeReclaimPolicy: Delete
+    storageClassName: fast
+    volumeMode: Filesystem
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: 7ca66ea7-4c61-40f3-be7c-df0069a07d45
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-27T00:13:35Z"
+    finalizers:
+    - kubernetes.io/pv-protection
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:13:35Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:hostPathProvisionerIdentity: {}
+            f:pv.kubernetes.io/provisioned-by: {}
+        f:spec:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:claimRef:
+            .: {}
+            f:apiVersion: {}
+            f:kind: {}
+            f:name: {}
+            f:namespace: {}
+            f:resourceVersion: {}
+            f:uid: {}
+          f:hostPath:
+            .: {}
+            f:path: {}
+            f:type: {}
+          f:persistentVolumeReclaimPolicy: {}
+          f:storageClassName: {}
+          f:volumeMode: {}
+      manager: storage-provisioner
+      operation: Update
+      time: "2024-12-27T00:13:35Z"
+    name: pvc-a031f10f-ec6a-4c6f-8e59-632c771842e1
+    resourceVersion: "3757"
+    uid: 117f171a-2f8c-4c1e-b758-3b50db47095d
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: cassandra-data-cassandra-0
+      namespace: default
+      resourceVersion: "3750"
+      uid: a031f10f-ec6a-4c6f-8e59-632c771842e1
+    hostPath:
+      path: /tmp/hostpath-provisioner/default/cassandra-data-cassandra-0
+      type: ""
+    persistentVolumeReclaimPolicy: Delete
+    storageClassName: fast
+    volumeMode: Filesystem
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: 7ca66ea7-4c61-40f3-be7c-df0069a07d45
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-27T00:14:27Z"
+    finalizers:
+    - kubernetes.io/pv-protection
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-27T00:14:27Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:hostPathProvisionerIdentity: {}
+            f:pv.kubernetes.io/provisioned-by: {}
+        f:spec:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:claimRef:
+            .: {}
+            f:apiVersion: {}
+            f:kind: {}
+            f:name: {}
+            f:namespace: {}
+            f:resourceVersion: {}
+            f:uid: {}
+          f:hostPath:
+            .: {}
+            f:path: {}
+            f:type: {}
+          f:persistentVolumeReclaimPolicy: {}
+          f:storageClassName: {}
+          f:volumeMode: {}
+      manager: storage-provisioner
+      operation: Update
+      time: "2024-12-27T00:14:27Z"
+    name: pvc-db61b828-4396-4522-b58a-9edb0aad2a37
+    resourceVersion: "3834"
+    uid: e4896626-32c3-4e03-9a3f-dc771589989b
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: cassandra-data-cassandra-1
+      namespace: default
+      resourceVersion: "3824"
+      uid: db61b828-4396-4522-b58a-9edb0aad2a37
+    hostPath:
+      path: /tmp/hostpath-provisioner/default/cassandra-data-cassandra-1
+      type: ""
+    persistentVolumeReclaimPolicy: Delete
+    storageClassName: fast
+    volumeMode: Filesystem
+  status:
+    phase: Bound
+- apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"fast"},"parameters":{"type":"pd-ssd"},"provisioner":"k8s.io/minikube-hostpath"}
+    creationTimestamp: "2024-12-27T00:16:03Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:parameters:
+          .: {}
+          f:type: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: kubectl
+      operation: Update
+      time: "2024-12-27T00:16:03Z"
+    name: fast
+    resourceVersion: "4050"
+    uid: 38448ae8-ef5b-43e3-ac55-d1bc7ffe91aa
+  parameters:
+    type: pd-ssd
+  provisioner: k8s.io/minikube-hostpath
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+- apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"},"labels":{"addonmanager.kubernetes.io/mode":"EnsureExists"},"name":"standard"},"provisioner":"k8s.io/minikube-hostpath"}
+      storageclass.kubernetes.io/is-default-class: "true"
+    creationTimestamp: "2024-12-26T23:24:21Z"
+    labels:
+      addonmanager.kubernetes.io/mode: EnsureExists
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+            f:storageclass.kubernetes.io/is-default-class: {}
+          f:labels:
+            .: {}
+            f:addonmanager.kubernetes.io/mode: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2024-12-26T23:24:21Z"
+    name: standard
+    resourceVersion: "257"
+    uid: a0f6a5d0-35d1-43d3-81a9-ffb5834f2d97
+  provisioner: k8s.io/minikube-hostpath
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
