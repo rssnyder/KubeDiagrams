@@ -67,7 +67,7 @@ Supported `kind`/`apiVersion` resource types are 25 ones:
 * StorageClass/storage.k8s.io/v1
 * User/rbac.authorization.k8s.io/v1
 
-Currently, unsupported `kind`/`apiVersion` resource types are 34 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 34 ones:
 * Binding/
 * ComponentStatus/
 * Endpoints/
