@@ -149,4 +149,3 @@ This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) 
 * Add more examples
 * Add missed Kubernetes resource types as at least CronJob, Endpoint, LimitRange, NetworkPolicy, and ResourceQuota
 * Make `nodes/*/edges` more declarative
-* Add diagram node icon for IngressClass

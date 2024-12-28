@@ -81,7 +81,7 @@ nodes:
           edges.add_service("backend.service.name", path)
   IngressClass/networking.k8s.io/v1:
     scope: Cluster
-    diagram_node_classname: #TODO: to implement
+    custom_icon: $KD/icons/ic.png
     # no edges
   Job/batch/v1:
     scope: Namespaced
