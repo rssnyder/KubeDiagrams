@@ -29,7 +29,7 @@ items:
         kube-apiserver when using internal endpoints such as the internal service
         IP or kubernetes.default.svc. No other usage is guaranteed across distributions
         of Kubernetes clusters.
-    creationTimestamp: "2024-12-26T23:24:31Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -43,18 +43,18 @@ items:
             f:kubernetes.io/description: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-26T23:24:31Z"
+      time: "2024-12-28T15:01:53Z"
     name: kube-root-ca.crt
     namespace: kubernetes-dashboard
-    resourceVersion: "330"
-    uid: 8d8a75b0-b472-433a-9f11-248c2b1b1367
+    resourceVersion: "798"
+    uid: 7e64c754-94fe-471a-ba71-8ae68db9014f
 - apiVersion: v1
   kind: ConfigMap
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard-settings","namespace":"kubernetes-dashboard"}}
-    creationTimestamp: "2024-12-26T23:24:31Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -74,11 +74,11 @@ items:
             f:kubernetes.io/minikube-addons: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:24:31Z"
+      time: "2024-12-28T15:01:53Z"
     name: kubernetes-dashboard-settings
     namespace: kubernetes-dashboard
-    resourceVersion: "336"
-    uid: 2f5339dd-e6a2-4633-91a2-96bc4addf932
+    resourceVersion: "802"
+    uid: d8bc6073-b884-4e4b-9555-2cf6fcbeb2e3
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
@@ -86,7 +86,7 @@ items:
       deployment.kubernetes.io/revision: "1"
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"dashboard-metrics-scraper","kubernetes.io/minikube-addons":"dashboard"},"name":"dashboard-metrics-scraper","namespace":"kubernetes-dashboard"},"spec":{"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"k8s-app":"dashboard-metrics-scraper"}},"template":{"metadata":{"annotations":{"seccomp.security.alpha.kubernetes.io/pod":"runtime/default"},"labels":{"k8s-app":"dashboard-metrics-scraper"}},"spec":{"containers":[{"image":"docker.io/kubernetesui/metrics-scraper:v1.0.8@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c","livenessProbe":{"httpGet":{"path":"/","port":8000,"scheme":"HTTP"},"initialDelaySeconds":30,"timeoutSeconds":30},"name":"dashboard-metrics-scraper","ports":[{"containerPort":8000,"protocol":"TCP"}],"securityContext":{"allowPrivilegeEscalation":false,"readOnlyRootFilesystem":true,"runAsGroup":2001,"runAsUser":1001},"volumeMounts":[{"mountPath":"/tmp","name":"tmp-volume"}]}],"nodeSelector":{"kubernetes.io/os":"linux"},"serviceAccountName":"kubernetes-dashboard","tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/master"}],"volumes":[{"emptyDir":{},"name":"tmp-volume"}]}}}}
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     generation: 1
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
@@ -181,7 +181,7 @@ items:
                   f:name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -215,11 +215,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-27T17:53:23Z"
+      time: "2024-12-28T17:39:38Z"
     name: dashboard-metrics-scraper
     namespace: kubernetes-dashboard
-    resourceVersion: "41924"
-    uid: 7aa561d9-301d-43f1-86c2-e141963e3ecb
+    resourceVersion: "12392"
+    uid: 4036e035-2c69-4d4b-8ac0-3ba766ffcb00
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -286,14 +286,14 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-26T23:24:32Z"
-      lastUpdateTime: "2024-12-26T23:25:05Z"
+    - lastTransitionTime: "2024-12-28T15:01:53Z"
+      lastUpdateTime: "2024-12-28T15:02:21Z"
       message: ReplicaSet "dashboard-metrics-scraper-5c6664855" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
       type: Progressing
-    - lastTransitionTime: "2024-12-27T17:53:23Z"
-      lastUpdateTime: "2024-12-27T17:53:23Z"
+    - lastTransitionTime: "2024-12-28T17:39:38Z"
+      lastUpdateTime: "2024-12-28T17:39:38Z"
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: "True"
@@ -309,7 +309,7 @@ items:
       deployment.kubernetes.io/revision: "1"
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"spec":{"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"k8s-app":"kubernetes-dashboard"}},"template":{"metadata":{"labels":{"gcp-auth-skip-secret":"true","k8s-app":"kubernetes-dashboard"}},"spec":{"containers":[{"args":["--namespace=kubernetes-dashboard","--enable-skip-login","--disable-settings-authorizer"],"image":"docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93","livenessProbe":{"httpGet":{"path":"/","port":9090},"initialDelaySeconds":30,"timeoutSeconds":30},"name":"kubernetes-dashboard","ports":[{"containerPort":9090,"protocol":"TCP"}],"securityContext":{"allowPrivilegeEscalation":false,"readOnlyRootFilesystem":true,"runAsGroup":2001,"runAsUser":1001},"volumeMounts":[{"mountPath":"/tmp","name":"tmp-volume"}]}],"nodeSelector":{"kubernetes.io/os":"linux"},"serviceAccountName":"kubernetes-dashboard","tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/master"}],"volumes":[{"emptyDir":{},"name":"tmp-volume"}]}}}}
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     generation: 1
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
@@ -403,7 +403,7 @@ items:
                   f:name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -437,11 +437,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-27T17:53:24Z"
+      time: "2024-12-28T17:39:31Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "41932"
-    uid: 720fea76-bd3d-4e82-9fb8-73958c7f4fb1
+    resourceVersion: "12371"
+    uid: 39702987-5d68-4844-b2a5-b0eac8f36b18
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -511,14 +511,14 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-26T23:24:32Z"
-      lastUpdateTime: "2024-12-26T23:24:55Z"
+    - lastTransitionTime: "2024-12-28T15:01:53Z"
+      lastUpdateTime: "2024-12-28T15:02:14Z"
       message: ReplicaSet "kubernetes-dashboard-55c4cbbc7c" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
       type: Progressing
-    - lastTransitionTime: "2024-12-27T17:53:24Z"
-      lastUpdateTime: "2024-12-27T17:53:24Z"
+    - lastTransitionTime: "2024-12-28T17:39:31Z"
+      lastUpdateTime: "2024-12-28T17:39:31Z"
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: "True"
@@ -532,7 +532,7 @@ items:
   metadata:
     annotations:
       seccomp.security.alpha.kubernetes.io/pod: runtime/default
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T17:38:57Z"
     generateName: dashboard-metrics-scraper-5c6664855-
     labels:
       k8s-app: dashboard-metrics-scraper
@@ -552,7 +552,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"85ee6b54-1402-45b5-81f3-f66a794164e4"}: {}
+            k:{"uid":"e789999a-d708-47e9-96af-b6345c6b674f"}: {}
         f:spec:
           f:containers:
             k:{"name":"dashboard-metrics-scraper"}:
@@ -611,7 +611,7 @@ items:
               f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T17:38:57Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -641,15 +641,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.4"}:
+            k:{"ip":"10.244.0.15"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-27T17:53:23Z"
-    name: dashboard-metrics-scraper-5c6664855-k286m
+      time: "2024-12-28T17:39:38Z"
+    name: dashboard-metrics-scraper-5c6664855-947xk
     namespace: kubernetes-dashboard
     ownerReferences:
     - apiVersion: apps/v1
@@ -657,9 +657,9 @@ items:
       controller: true
       kind: ReplicaSet
       name: dashboard-metrics-scraper-5c6664855
-      uid: 85ee6b54-1402-45b5-81f3-f66a794164e4
-    resourceVersion: "41919"
-    uid: 874b19e0-a9de-4807-a9d7-37bafe5471cb
+      uid: e789999a-d708-47e9-96af-b6345c6b674f
+    resourceVersion: "12388"
+    uid: 10567950-21df-4ae8-8d4a-44e61586c7f6
   spec:
     containers:
     - image: docker.io/kubernetesui/metrics-scraper:v1.0.8@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
@@ -690,7 +690,7 @@ items:
       - mountPath: /tmp
         name: tmp-volume
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-swkzn
+        name: kube-api-access-vngf9
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -721,7 +721,7 @@ items:
     volumes:
     - emptyDir: {}
       name: tmp-volume
-    - name: kube-api-access-swkzn
+    - name: kube-api-access-vngf9
       projected:
         defaultMode: 420
         sources:
@@ -742,23 +742,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-26T23:24:32Z"
+      lastTransitionTime: "2024-12-28T17:38:57Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-26T23:25:05Z"
+      lastTransitionTime: "2024-12-28T17:39:38Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-26T23:25:05Z"
+      lastTransitionTime: "2024-12-28T17:39:38Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-26T23:24:32Z"
+      lastTransitionTime: "2024-12-28T17:38:57Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://dfdcb8fb8279417362fcae73cce3f8b7da29083a40014e340b0d81183a4e8ab9
+    - containerID: docker://3e26b2bc54097c663c4dcbab6f476b59d41c79360c858ef62006954d4aa4d2a1
       image: kubernetesui/metrics-scraper@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
       imageID: docker-pullable://kubernetesui/metrics-scraper@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
       lastState: {}
@@ -768,18 +768,18 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-26T23:25:04Z"
-    hostIP: 192.168.64.7
+          startedAt: "2024-12-28T17:39:37Z"
+    hostIP: 192.168.64.18
     phase: Running
-    podIP: 10.244.0.4
+    podIP: 10.244.0.15
     podIPs:
-    - ip: 10.244.0.4
+    - ip: 10.244.0.15
     qosClass: BestEffort
-    startTime: "2024-12-26T23:24:32Z"
+    startTime: "2024-12-28T17:38:57Z"
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T17:38:57Z"
     generateName: kubernetes-dashboard-55c4cbbc7c-
     labels:
       gcp-auth-skip-secret: "true"
@@ -798,7 +798,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"b535d664-9115-4831-a9ee-3f1a1cb5ed9b"}: {}
+            k:{"uid":"fb308688-b724-4c6b-83fe-472b12d0c855"}: {}
         f:spec:
           f:containers:
             k:{"name":"kubernetes-dashboard"}:
@@ -858,7 +858,7 @@ items:
               f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T17:38:57Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -888,15 +888,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.2"}:
+            k:{"ip":"10.244.0.14"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-27T17:53:24Z"
-    name: kubernetes-dashboard-55c4cbbc7c-n9txz
+      time: "2024-12-28T17:39:30Z"
+    name: kubernetes-dashboard-55c4cbbc7c-44j5z
     namespace: kubernetes-dashboard
     ownerReferences:
     - apiVersion: apps/v1
@@ -904,9 +904,9 @@ items:
       controller: true
       kind: ReplicaSet
       name: kubernetes-dashboard-55c4cbbc7c
-      uid: b535d664-9115-4831-a9ee-3f1a1cb5ed9b
-    resourceVersion: "41928"
-    uid: d1d2b39b-8000-4862-b979-98fcbebd0dcb
+      uid: fb308688-b724-4c6b-83fe-472b12d0c855
+    resourceVersion: "12367"
+    uid: cd5e03f5-fc8e-4d69-bc7b-79886699c452
   spec:
     containers:
     - args:
@@ -941,7 +941,7 @@ items:
       - mountPath: /tmp
         name: tmp-volume
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-mk9dc
+        name: kube-api-access-fjsx5
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -970,7 +970,7 @@ items:
     volumes:
     - emptyDir: {}
       name: tmp-volume
-    - name: kube-api-access-mk9dc
+    - name: kube-api-access-fjsx5
       projected:
         defaultMode: 420
         sources:
@@ -991,23 +991,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-26T23:24:32Z"
+      lastTransitionTime: "2024-12-28T17:38:57Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-26T23:24:55Z"
+      lastTransitionTime: "2024-12-28T17:39:30Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-26T23:24:55Z"
+      lastTransitionTime: "2024-12-28T17:39:30Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-26T23:24:32Z"
+      lastTransitionTime: "2024-12-28T17:38:57Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://e32d5c37392a1474ce358f0b11ca9796e9cbf3633919726803aeae040d793954
+    - containerID: docker://77b71f4a619c9fce34c49986d0451af6efc5a5cecbc47d7926796c93475be1ed
       image: kubernetesui/dashboard@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
       imageID: docker-pullable://kubernetesui/dashboard@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
       lastState: {}
@@ -1017,14 +1017,14 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-26T23:24:55Z"
-    hostIP: 192.168.64.7
+          startedAt: "2024-12-28T17:39:30Z"
+    hostIP: 192.168.64.18
     phase: Running
-    podIP: 10.244.0.2
+    podIP: 10.244.0.14
     podIPs:
-    - ip: 10.244.0.2
+    - ip: 10.244.0.14
     qosClass: BestEffort
-    startTime: "2024-12-26T23:24:32Z"
+    startTime: "2024-12-28T17:38:57Z"
 - apiVersion: apps/v1
   kind: ReplicaSet
   metadata:
@@ -1032,7 +1032,7 @@ items:
       deployment.kubernetes.io/desired-replicas: "1"
       deployment.kubernetes.io/max-replicas: "2"
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     generation: 1
     labels:
       k8s-app: dashboard-metrics-scraper
@@ -1053,7 +1053,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"7aa561d9-301d-43f1-86c2-e141963e3ecb"}: {}
+            k:{"uid":"4036e035-2c69-4d4b-8ac0-3ba766ffcb00"}: {}
         f:spec:
           f:replicas: {}
           f:selector: {}
@@ -1123,7 +1123,7 @@ items:
                   f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -1136,7 +1136,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-27T17:53:23Z"
+      time: "2024-12-28T17:39:38Z"
     name: dashboard-metrics-scraper-5c6664855
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -1145,9 +1145,9 @@ items:
       controller: true
       kind: Deployment
       name: dashboard-metrics-scraper
-      uid: 7aa561d9-301d-43f1-86c2-e141963e3ecb
-    resourceVersion: "41923"
-    uid: 85ee6b54-1402-45b5-81f3-f66a794164e4
+      uid: 4036e035-2c69-4d4b-8ac0-3ba766ffcb00
+    resourceVersion: "12389"
+    uid: e789999a-d708-47e9-96af-b6345c6b674f
   spec:
     replicas: 1
     selector:
@@ -1219,7 +1219,7 @@ items:
       deployment.kubernetes.io/desired-replicas: "1"
       deployment.kubernetes.io/max-replicas: "2"
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     generation: 1
     labels:
       gcp-auth-skip-secret: "true"
@@ -1242,7 +1242,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"720fea76-bd3d-4e82-9fb8-73958c7f4fb1"}: {}
+            k:{"uid":"39702987-5d68-4844-b2a5-b0eac8f36b18"}: {}
         f:spec:
           f:replicas: {}
           f:selector: {}
@@ -1311,7 +1311,7 @@ items:
                   f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -1324,7 +1324,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-27T17:53:24Z"
+      time: "2024-12-28T17:39:30Z"
     name: kubernetes-dashboard-55c4cbbc7c
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -1333,9 +1333,9 @@ items:
       controller: true
       kind: Deployment
       name: kubernetes-dashboard
-      uid: 720fea76-bd3d-4e82-9fb8-73958c7f4fb1
-    resourceVersion: "41931"
-    uid: b535d664-9115-4831-a9ee-3f1a1cb5ed9b
+      uid: 39702987-5d68-4844-b2a5-b0eac8f36b18
+    resourceVersion: "12370"
+    uid: fb308688-b724-4c6b-83fe-472b12d0c855
   spec:
     replicas: 1
     selector:
@@ -1409,7 +1409,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"Role","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"rules":[{"apiGroups":[""],"resourceNames":["kubernetes-dashboard-key-holder","kubernetes-dashboard-certs","kubernetes-dashboard-csrf"],"resources":["secrets"],"verbs":["get","update","delete"]},{"apiGroups":[""],"resourceNames":["kubernetes-dashboard-settings"],"resources":["configmaps"],"verbs":["get","update"]},{"apiGroups":[""],"resourceNames":["heapster","dashboard-metrics-scraper"],"resources":["services"],"verbs":["proxy"]},{"apiGroups":[""],"resourceNames":["heapster","http:heapster:","https:heapster:","dashboard-metrics-scraper","http:dashboard-metrics-scraper"],"resources":["services/proxy"],"verbs":["get"]}]}
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -1430,11 +1430,11 @@ items:
         f:rules: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "344"
-    uid: b5e66e4c-bb30-4ce7-8e68-9d85b3cb4564
+    resourceVersion: "815"
+    uid: 6dbdd262-18a3-4ef0-a0b7-3639bdb5f541
   rules:
   - apiGroups:
     - ""
@@ -1484,7 +1484,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"kubernetes-dashboard"},"subjects":[{"kind":"ServiceAccount","name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"}]}
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -1506,11 +1506,11 @@ items:
         f:subjects: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "346"
-    uid: a6e5a990-f256-4910-950e-2419bfa3230a
+    resourceVersion: "820"
+    uid: 4e2e857e-f29a-47c7-8ca1-2b30da28c347
   roleRef:
     apiGroup: rbac.authorization.k8s.io
     kind: Role
@@ -1525,7 +1525,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Secret","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard-certs","namespace":"kubernetes-dashboard"},"type":"Opaque"}
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -1546,21 +1546,21 @@ items:
         f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     name: kubernetes-dashboard-certs
     namespace: kubernetes-dashboard
-    resourceVersion: "359"
-    uid: 5cfb055d-d2da-4e48-9778-80656668fb61
+    resourceVersion: "824"
+    uid: 3798e837-4adc-4943-b258-26eef1683080
   type: Opaque
 - apiVersion: v1
   data:
-    csrf: ""
+    csrf: 3rlQH5I5lgjcn/Qnm+oliEMG3vvF3Y9EFzx6mcBwK5htqQAskhq4p8eK1H9trZ0beWqFGm4w7I1B0kJzHHSc6yqHfaQYMO/UMLK/Kr5XRANkcojsne+X07hBQGXEJFWSNR2tVg024ifAfkcySMW3Xbri7h8H6MtU2gR1DKa+qLAOKUUPpm4fCzHXOAAPqH/42oRA/mZgVpxC1aJnQS8qALaQCfd1vDaHmVgMGpP+y6Z1uPMUXNUG+oQAz7yCljIV2iX4wBzFeJ91QDqvuu0JTru1x0MfWc4kSILbA5a3xpYpTtCeTJeh7jYGxpaSlDfdMTXrmAcGQx67k4LEpVSymg==
   kind: Secret
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","data":{"csrf":""},"kind":"Secret","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard-csrf","namespace":"kubernetes-dashboard"},"type":"Opaque"}
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -1569,9 +1569,7 @@ items:
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
-        f:data:
-          .: {}
-          f:csrf: {}
+        f:data: {}
         f:metadata:
           f:annotations:
             .: {}
@@ -1584,27 +1582,35 @@ items:
         f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:36:43Z"
+      time: "2024-12-28T15:01:53Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          f:csrf: {}
+      manager: dashboard
+      operation: Update
+      time: "2024-12-28T15:02:13Z"
     name: kubernetes-dashboard-csrf
     namespace: kubernetes-dashboard
-    resourceVersion: "1246"
-    uid: bb9b5b45-1466-40dc-90c6-5064a0d68af9
+    resourceVersion: "890"
+    uid: 7b179a3f-a3f5-498d-ae3d-5349ba50528f
   type: Opaque
 - apiVersion: v1
   data:
-    priv: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBdkx2VXg2L1JvUDhvdENLemhnZnZXN2duakpaM1VHdXZNRUZ4YkdvcVB3cUNsRWd4CjVwdWM1TWh4QUhoSWVkVkgrdUQ0RGtVZUNrekhKZFoyZ0xSMFRORktZZmVPT0lwOGtBS2JsTlZDbzBtZEt5U2kKajZpbEJIQk52RVhFaGticDdKS2V1UGdPZ01EMXp3V1ZNcGFmNkEvZUZsb1dyS3dvL2tSK1RBdUpLWThjN0xoQQp6MGx5QlFkUGRrUW5TbnhNeDBUSDRDRDZTR1lSS1hjRkhBeitwMUZ4QUdKM1BiQlBHMTJQMHZaS3V0MWwxR0llCk9FdmZXbHI4MUlKWFNyT2NFaWxDVmN0RUF3SGxoK1pQSVNVVGpaRmE3K29IMkFldGhJeEd2ZzgwWXdEeDF5clUKdStJY3VlQ3JGZDhYRDRwTEhxQzc4MHRYUmwrUnhCWXZFcWpESndJREFRQUJBb0lCQVFDV0R0V29DeSttVFJtRQoxODVhODdZbys2dGVTVWdHUmdnZFd2c2VrdTZSL3Y1QmZZRkhkRlJ6UnJjcUEzakVmWUprZ3poV3lEZVJRdWhZCk9rTXdJOG9RUlp0WmR5VzU2TW9QQ2pPL1N5eFhmYkViMjEzdzBNcWJVOXRLcFVJUzdSRVNpcVR1TmpQNXhQSHIKcnVtb05rQmZsellpR1hETHkzb3dhQzd1c1lGVjYxYkhiZzNGNWRsV3Zham9tc1Zidkhwa0xPc2J0b3JXdG5xcgprT1dBcXBaaGlBcTE2cWdvMUFIdkwweGlCTWtwQ2d6aHM0d0Y5UTNGUGozTklyRCtnaFViaGxsTmlnbEZxOWVpCkdyYURhR0toN3JFZVB4K0l3RlV3TmpnNlpNbHVXckhIWllHODRNNGhqUmpWQlJQWkpYRFRCL2dCdXRoYUpDRFAKK3phZEovVlpBb0dCQVBjc1lmb21VKzFNQjRPWFA0NEhPb2NZVUI1d3ViVTBmZ1VNQnMxaWlzcTNZc0ZpU052UApyWnVQR2QrUGRDdGlmYUdOWDJJZGQ4SlZBLzRGT2Z4cHpkQXhDcG1iNVJuZWNESkY2S0FDZkRoRE0xRlhySnlOCjhiQnNxZEM3Tmo2YTZPSE55eUxmaGZWOHZOUThSODlzKzZUNnhaRGlld2tyeTRiYUxTUXk4bnlyQW9HQkFNTjUKTS9aOWpNaGJTTXVDM3pZUUFEQTVDdi91QmFsRVEySG1iTkZMM0UweStrRStPTDdDNjZra0xCYTQyb3VQSU1tcgpDcUJaVmZ2czkyN1pHeXk1b0w4Y3pOMHE4SnhLeTkrSW9MNFBPNzZMRE1SVS9ERFNIeWdTL1VKUm0zSVgvM1UxCmV5U1NYM2d3STZCSk5ZYnp4R1JmYlVlYUIxZzhBM3FSOTlQY2oxdDFBb0dBTE5RQjJRcUdnaTBkMThIZ3B2T3MKcTcrL0dDWTlxQjJqRldzKytKVDhzeE5iZDlOSmY0UkU2a2VqMjZYNjNidDVLWW1vV1BVYk9VV04rYzRjM0NpYwpTVHY3dml4Rit0RWE3Q005czNkLzYveFVIRmFZV2JSc3R5Q2VFOXRBVlU1bkdqem1zS1oxZHpadVVOZTE5bXEvCm9RWlNPcHE0MGNyOW1MR05LbG1MSFEwQ2dZQWNkRlJBR1Y2WSs5REk3ekFXNnBWY2I3Rk9PQlBTNUFEN0MxUGoKMDZzcUFiVzBNWjZKQms3UHZGZytwb0lKdHJnTEl6N1V3S3huazhNZys3R2MvUmlOT1dBSkFlc3NsU2JBVDE4Mgp5M2ppNzlMWDhaY1VkRUhjejRiV1ZKTFFOUFlXMWNZck9MTjFCMnpvTkQvNmVSbXBrc3FSbGJaai9iaHo2ek9zClAzc08wUUtCZ0JxQUNtVHh5aGdFSFpqRFBDWDQvUlhQRHpZMk1INncxMWw4R2xCYUZQdnU4dWNnQWFwbXZvdi8KS3FYREUrV1FaN1dWZ0RPRXErQ3dSSXl2bjNZR0owUUR4ZW1KSlR3WGR3cEJibzFsU3BUU0pqWW93c2NKTG0vOAo4U0V4eGdkOThIR1RaWDBNOW1VeVgzOU9QdnMvQkdvMzlGVndaWXBoTTI1d05QL1V3Z21VCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
-    pub: LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBdkx2VXg2L1JvUDhvdENLemhnZnYKVzdnbmpKWjNVR3V2TUVGeGJHb3FQd3FDbEVneDVwdWM1TWh4QUhoSWVkVkgrdUQ0RGtVZUNrekhKZFoyZ0xSMApUTkZLWWZlT09JcDhrQUtibE5WQ28wbWRLeVNpajZpbEJIQk52RVhFaGticDdKS2V1UGdPZ01EMXp3V1ZNcGFmCjZBL2VGbG9Xckt3by9rUitUQXVKS1k4YzdMaEF6MGx5QlFkUGRrUW5TbnhNeDBUSDRDRDZTR1lSS1hjRkhBeisKcDFGeEFHSjNQYkJQRzEyUDB2Wkt1dDFsMUdJZU9FdmZXbHI4MUlKWFNyT2NFaWxDVmN0RUF3SGxoK1pQSVNVVApqWkZhNytvSDJBZXRoSXhHdmc4MFl3RHgxeXJVdStJY3VlQ3JGZDhYRDRwTEhxQzc4MHRYUmwrUnhCWXZFcWpECkp3SURBUUFCCi0tLS0tRU5EIFJTQSBQVUJMSUMgS0VZLS0tLS0K
+    priv: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBM0RqYnozMzIxZ2ZXdHBXUXUwZnpxNjlNZzNISG9NR25CTjEvWllWVXBkYzIrYk9FCkhXcE9yZDhJVlh0aksvSXNrbHhqWmowcTlVV2tJdFE3U3BEeVdJUVZ5cTIwcHo4ZXVMa3NBWjRGR09PcmNTbUgKbkJxUHZkWkwxa3NiL01OVXZEbk53UnFPR3ppU2JINnFGRnBUY0ZGbDlCQXgxTTZMVkRpZ3c0YzRXN2syekJSZApWaXB6NEg1TUJZUEN3N2ljd2svakE0UzJvQlp5d2JjWld5VVV4a0FKM0xrY0FxSmQxQmJiMnlmNVdQQ3FkRmFDCmF5SytCUmltQ0xSK1NOcUtFekJlL0xJMWtzR1ByejEvYksyU1oyTW1Kb3VzMmQ5Szc1Z1BDdS8vSmJoWnFYK3cKODk0azh1SndodEtibCsxVTNaVXFzOHprem5WN3FMWHFTYVdTY3dJREFRQUJBb0lCQUFJcElLYjVnbWw1TERjZwpZb29qMjVVc3BDQ0tCajVpaUFQNU5GM0hvQnY4YjVLbG16ODZvc2o3N2pZQWZ1bVlkNjE3OEpHNU9lbXNKRDhmCk8vR3dXR0JiODJiSXE0UVVqM1dhZzM4RWtPSThvWnI3b0ZQOHdycEhGdmxrUlVNR201YzVMZmFlRHhUZlNqaDgKU2FqbmRmZ2RKRlh2cnIxNnhVMHZQUXlPRUJSK1NReWRMY3RhOEZFQmpZclNSV1RZK0hPWmpsNWowb0ZlcGxuSwoxdXR3emNPZ3JtbGlRdTJtejNsRkpUYmhwZFhOb3BoWGd0Y29OeTBSc2lzSS9yNjJ4eEd2M05DU1VrVFBXV0hYCmg5WHdrYlNjVE5tZCszZXZYekIvMVk1YUw3VEZrZTArOTNUUTVFWEtLaW1uN1RJZmM5blgvMHR4WnAyWWg3Q3YKWHlkK0pjRUNnWUVBOTBMMExidXU3eDY0aXBGNUNwQmp4OFNzVzV6SUZoci9JTmVCdUMyOHlHM1l4cjJKWXlXNwpqMDZSZ1M0SnYzRnNKQmszQVlLc1diRlNoamNJVTl3WkV1YTBFWnh0VlloZXRHOHBpa29SUzdzeDNRc08wR0tDCkJ5OWRvcHVFQUt0T3ljMHNMdnFqclk3ZUtNYWNlUTJhRVhHbWUwVEIyb1hKWXF5WStHR2lUcUVDZ1lFQTVBRkYKY3F6bkpUb1BseG9qVVc5TjhkUFU2UGN1N3VBenN1SXJpbmpEeVpYdnpuRlZCYnpCdXZzZlBUUWo2Yk1zeHR6ZgpWTmpwdDlKdWNMOUxHODlJNnRpQnJTZElIN0NQWHZUZGlxVnZiWjVCYlBqcXRtQzhFZ2tUeUZSemlRdWZDQ3VZCjVzbTJRQzFNWElaeVQraHN3UjBwamRDMUJSd0Y5a0wwekNNMjdKTUNnWUFHVEFFMTdQS3Vpa1MrMnFlUGVrL2cKTllVQ0xFTDROU1hNSzFEVlpPeksyZWxNWG1WU1RoS3h1cG1BQmJFZjIvNmFDTDVhM240UEpySG9VeHgyTGtQQgpOSGpmZmZGVzNVczBJeVNXcmY0MHhJYW5qM0dJSXdvV3JzRWV0QUV2bHkxQmZHVWtxU05qOXlCM1AxK2F3WnJyCjJNNFprNDJ3Ui9ueDlsMUs3Z21aSVFLQmdRQ3ZpM01HMmF5VmN1QngvQVBaUFJNTDc0WnJYM1RaSWZGcjlzcUQKTUh1OWh4MDlHdkRWSEFFa2p4ZjhMVnJCSWR5RnQ2U1RWUGFOT3cwZzdZZE1nQW1xRnN1d254L2VsamVzYW1idgp5blBDT0NneldHcU54R2pJa2dpVElzSlpiNE1mN1VFcDMzL2NaWVAzY09RdU5jc1YyL2dVWWU0ZFl2Z01KSDBKCmRzdGcxUUtCZ0RrSkFYZ2oraFc4SXdhVThDbG5VdkZIak1lUE1tWHRXZXptVURscnVnRlo4bHh0ZE5lZVBxa1IKbHowL0xrNkN2cWhnOERNYW45ZG1aTFF2YW9tanA2cGdWeTFGc0NJSnM3NEtSQS9iNjRRNWdyMW9TeXVxa242SQpGS3ZBeTllME4vaHRVWlh5dmZMQlJ0b0JHeDNVZXpkUXdUbEM1cXFYV1lTMEVVdmdGS1JJCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
+    pub: LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBM0RqYnozMzIxZ2ZXdHBXUXUwZnoKcTY5TWczSEhvTUduQk4xL1pZVlVwZGMyK2JPRUhXcE9yZDhJVlh0aksvSXNrbHhqWmowcTlVV2tJdFE3U3BEeQpXSVFWeXEyMHB6OGV1TGtzQVo0RkdPT3JjU21IbkJxUHZkWkwxa3NiL01OVXZEbk53UnFPR3ppU2JINnFGRnBUCmNGRmw5QkF4MU02TFZEaWd3NGM0VzdrMnpCUmRWaXB6NEg1TUJZUEN3N2ljd2svakE0UzJvQlp5d2JjWld5VVUKeGtBSjNMa2NBcUpkMUJiYjJ5ZjVXUENxZEZhQ2F5SytCUmltQ0xSK1NOcUtFekJlL0xJMWtzR1ByejEvYksyUwpaMk1tSm91czJkOUs3NWdQQ3UvL0piaFpxWCt3ODk0azh1SndodEtibCsxVTNaVXFzOHprem5WN3FMWHFTYVdTCmN3SURBUUFCCi0tLS0tRU5EIFJTQSBQVUJMSUMgS0VZLS0tLS0K
   kind: Secret
   metadata:
-    annotations:
-      kubectl.kubernetes.io/last-applied-configuration: |
-        {"apiVersion":"v1","kind":"Secret","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard-key-holder","namespace":"kubernetes-dashboard"},"type":"Opaque"}
-    creationTimestamp: "2024-12-26T23:24:32Z"
-    labels:
-      addonmanager.kubernetes.io/mode: Reconcile
-      k8s-app: kubernetes-dashboard
-      kubernetes.io/minikube-addons: dashboard
+    creationTimestamp: "2024-12-28T15:01:53Z"
     managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:type: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2024-12-28T15:01:53Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -1614,27 +1620,11 @@ items:
           f:pub: {}
       manager: dashboard
       operation: Update
-      time: "2024-12-26T23:24:56Z"
-    - apiVersion: v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:annotations:
-            .: {}
-            f:kubectl.kubernetes.io/last-applied-configuration: {}
-          f:labels:
-            .: {}
-            f:addonmanager.kubernetes.io/mode: {}
-            f:k8s-app: {}
-            f:kubernetes.io/minikube-addons: {}
-        f:type: {}
-      manager: kubectl-client-side-apply
-      operation: Update
-      time: "2024-12-26T23:36:43Z"
+      time: "2024-12-28T15:02:13Z"
     name: kubernetes-dashboard-key-holder
     namespace: kubernetes-dashboard
-    resourceVersion: "1247"
-    uid: 3947834c-e444-460e-8259-26b09e2dd2a1
+    resourceVersion: "891"
+    uid: 99765d78-0554-4dba-bf43-9ddda68daf02
   type: Opaque
 - apiVersion: v1
   kind: Service
@@ -1642,7 +1632,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"dashboard-metrics-scraper","kubernetes.io/minikube-addons":"dashboard"},"name":"dashboard-metrics-scraper","namespace":"kubernetes-dashboard"},"spec":{"ports":[{"port":8000,"targetPort":8000}],"selector":{"k8s-app":"dashboard-metrics-scraper"}}}
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: dashboard-metrics-scraper
@@ -1674,15 +1664,15 @@ items:
           f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     name: dashboard-metrics-scraper
     namespace: kubernetes-dashboard
-    resourceVersion: "375"
-    uid: 56590eda-bea7-47fa-a923-fef46b3386a7
+    resourceVersion: "854"
+    uid: 97189893-a1ec-4703-bc99-cac3771a333a
   spec:
-    clusterIP: 10.96.95.151
+    clusterIP: 10.108.248.247
     clusterIPs:
-    - 10.96.95.151
+    - 10.108.248.247
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -1703,7 +1693,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"spec":{"ports":[{"port":80,"targetPort":9090}],"selector":{"k8s-app":"kubernetes-dashboard"}}}
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -1735,15 +1725,15 @@ items:
           f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "364"
-    uid: 495ab54f-662a-455c-9caf-03cee938dcd2
+    resourceVersion: "850"
+    uid: 2abb98c5-59b2-406a-ac62-7085f7404914
   spec:
-    clusterIP: 10.108.47.85
+    clusterIP: 10.96.49.84
     clusterIPs:
-    - 10.108.47.85
+    - 10.96.49.84
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -1761,18 +1751,18 @@ items:
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-26T23:24:31Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     name: default
     namespace: kubernetes-dashboard
-    resourceVersion: "329"
-    uid: 8d4ba8e5-e6f8-438b-8a69-ab8378a289e6
+    resourceVersion: "799"
+    uid: 960e61a4-0ad2-4b74-802f-c80b4b9d3149
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"}}
-    creationTimestamp: "2024-12-26T23:24:32Z"
+    creationTimestamp: "2024-12-28T15:01:53Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -1792,11 +1782,11 @@ items:
             f:kubernetes.io/minikube-addons: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-26T23:24:32Z"
+      time: "2024-12-28T15:01:53Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "356"
-    uid: e8ba225d-faa4-4069-add1-ebb00db88d0c
+    resourceVersion: "822"
+    uid: 147a6c0c-6099-4f83-993a-c06ae160d42b
 kind: List
 metadata:
   resourceVersion: ""

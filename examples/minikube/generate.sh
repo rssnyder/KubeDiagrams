@@ -32,7 +32,7 @@ kubectl get configmap,ds,deployment,hpa,ingress,job,pod,replicaset,role,rolebind
 $BIN/kube-diagrams -v ${cluster_name}-dashboard.yml
 
 # Get all Kubernetes resources in the ingress-nginx namespace.
-kubectl get configmap,ds,deployment,hpa,ingress,job,pod,replicaset,role,rolebinding,secret,service,serviceaccount -n ingress-nginx -o=yaml > ${cluster_name}-ingress-nginx.yml
+kubectl get configmap,ds,deployment,hpa,ingress,ingressclass,job,pod,replicaset,role,rolebinding,secret,service,serviceaccount -n ingress-nginx -o=yaml > ${cluster_name}-ingress-nginx.yml
 # Generate Kubernetes architecture diagram.
 $BIN/kube-diagrams -v ${cluster_name}-ingress-nginx.yml
 
