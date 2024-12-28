@@ -14,7 +14,7 @@ Architecture diagram of the Minikube Ingress Addon:
 ![Minikube Ingress Addon](examples/minikube/minikube-ingress-nginx.png)
 
 All the examples are
-* [official Kubernetes Cassandra example](examples/cassandra/)
+* [official Kubernetes Cassandra tutorial](examples/cassandra/)
 * [minikube architecture diagrams](examples/minikube/)
 * [Train Ticket](examples/train-ticket/)
 
