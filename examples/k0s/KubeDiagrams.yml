@@ -1,0 +1,4 @@
+# Configuration of kube-diagrams
+edges:
+  UNDEFINED:
+    color: black # this is red by default

@@ -24,6 +24,7 @@ All the examples are
 * [official Kubernetes ZooKeeper tutorial](examples/zookeeper/)
 * [official Kubernetes Cassandra tutorial](examples/cassandra/)
 * [minikube architecture diagrams](examples/minikube/)
+* [k0s architecture diagrams](examples/k0s/)
 * [Train Ticket](examples/train-ticket/)
 
 ## Prerequisites
