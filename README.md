@@ -123,6 +123,7 @@ New mappings can be easily defined in custom configuration files and provided to
 
 * [official Kubernetes Cassandra example](examples/cassandra/)
 * [minikube architecture diagrams](examples/minikube/)
+* [Train Ticket](examples/train-ticket/)
 
 ## License
 
