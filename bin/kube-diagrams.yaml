@@ -53,6 +53,7 @@ nodes:
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
       edges.add_service_account("spec.template.spec.serviceAccountName")
       edges.add_all_volume_resources("spec.template.spec.volumes")
+      edges.add_containers_env_valueFrom_secretKeyRef("spec.template.spec.containers")
   Deployment/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Deploy
@@ -61,6 +62,7 @@ nodes:
       edges.add_service_account("spec.template.spec.serviceAccountName")
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_all_volume_resources("spec.template.spec.volumes")
+      edges.add_containers_env_valueFrom_secretKeyRef("spec.template.spec.containers")
   Group/rbac.authorization.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.rbac.Group
@@ -88,6 +90,7 @@ nodes:
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
       edges.add_service_account("spec.template.spec.serviceAccountName")
       edges.add_all_volume_resources("spec.template.spec.volumes")
+      edges.add_containers_env_valueFrom_secretKeyRef("spec.template.spec.containers")
   Namespace/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.group.NS
@@ -114,6 +117,7 @@ nodes:
       edges.add_service_account("spec.serviceAccountName")
       edges.add_wait_for_services("spec.initContainers")
       edges.add_all_volume_resources("spec.volumes")
+      edges.add_containers_env_valueFrom_secretKeyRef("spec.containers")
   ReplicaSet/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.RS
@@ -122,6 +126,7 @@ nodes:
       edges.add_service_account("spec.template.spec.serviceAccountName")
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_all_volume_resources("spec.template.spec.volumes")
+      edges.add_containers_env_valueFrom_secretKeyRef("spec.template.spec.containers")
   Role/rbac.authorization.k8s.io/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.rbac.Role

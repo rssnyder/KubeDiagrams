@@ -160,6 +160,24 @@ class EdgesContext(list):
             add_volumes(volumes)
         return
 
+    def add_containers_env_valueFrom_secretKeyRef(self, path):
+        containers = query_path(self.resource, path)
+        if containers is None:
+            return
+        target_resources = set()
+        for container in containers:
+            for env in container.get("env", []):
+                secretKeyRefName = query_path(env, "valueFrom.secretKeyRef.name")
+                if secretKeyRefName != None:
+                    target_resources.add(
+                        "%s/%s/Secret/v1" % (
+                            secretKeyRefName,
+                            self.namespace
+                        )
+                    )
+        for target_resource in target_resources:
+            self.append([target_resource, "REFERENCE"])
+
     def add_volume_claim_templates(self, path):
         volumeClaimTemplates = query_path(self.resource, path)
         if volumeClaimTemplates is None:
