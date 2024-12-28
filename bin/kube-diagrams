@@ -104,7 +104,7 @@ class EdgesContext(list):
                 "REFERENCE"
             ])
 
-    def add_all_resources_matching_labels(self, kind, path, data=None):
+    def add_all_resources_matching_labels(self, kind, path, data=None, resource_labels_path="metadata.labels"):
         if data is None:
             data = self.resource
         matchLabels = query_path(data, path)
@@ -114,7 +114,7 @@ class EdgesContext(list):
         for rid, resource in resources.items():
             if resource["kind"] != kind:
                 continue
-            labels = query_path(resource, "metadata.labels", {})
+            labels = query_path(resource, resource_labels_path, {})
             found = True
             for sk, sv in matchLabels.items():
                 if labels.get(sk) != sv:
