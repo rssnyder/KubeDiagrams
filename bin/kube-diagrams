@@ -55,7 +55,7 @@ def create_diagram_node(resource, fontcolor="black"):
         if custom_icon != None: # custom_icon defined
             return Custom(
                 resource["metadata"]["name"],
-                custom_icon.replace("$KD", DIRNAME),
+                os.path.abspath(custom_icon.replace("$KD", DIRNAME)),
                 fontcolor=fontcolor
             )
         # Get diagram node class name
