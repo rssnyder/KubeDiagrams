@@ -18,7 +18,7 @@ The main originality of **KubeDiagrams** is its **[configurability](bin/kube-dia
 
 ```sh
 $ kube-diagrams -h
-usage: kube-diagrams [-h] [-o OUTPUT] [-f FORMAT] [-v] filename
+usage: kube-diagrams [-h] [-o OUTPUT] [-f FORMAT] [-c CONFIG] [-v] filename [filename ...]
 
 Generate Kubernetes architecture diagrams from Kubernetes manifest files
 

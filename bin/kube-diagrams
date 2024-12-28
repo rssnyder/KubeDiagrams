@@ -263,7 +263,7 @@ class EdgesContext(list):
 parser = argparse.ArgumentParser(
     prog="kube-diagrams",
     description="Generate Kubernetes architecture diagrams from Kubernetes manifest files")
-parser.add_argument("filename",
+parser.add_argument("filename", nargs='+',
     help="the Kubernetes manifest filename to process")
 parser.add_argument("-o", "--output", type=str,
     help="output diagram filename")
@@ -279,7 +279,7 @@ args = parser.parse_args()
 
 # Process arguments.
 if args.output is None:
-    args.output = args.filename[:args.filename.rfind('.')]
+    args.output = args.filename[0][:args.filename[0].rfind('.')]
 
 if args.config != None:
     with open(args.config) as f:
@@ -296,10 +296,9 @@ if args.config != None:
 # Load the Kubernetes manifest file.
 resources = {} # a map of all resources
 resource_cluster = ResourceCluster() # Clustering resources
-print("Load %s..." % args.filename)
-with open(args.filename) as f:
-    data = yaml.safe_load_all(f) # load YAML file
-    for resource in data:
+for filename in args.filename:
+    print("Load %s..." % filename)
+    with open(filename) as f:
         def process_resource(resource):
             name = resource["metadata"]["name"]
             if get_node_config(resource).get("scope") == "Cluster":
@@ -335,11 +334,15 @@ with open(args.filename) as f:
             )
             cluster.resources[rid] = resource
 
-        if resource["kind"] == "List":
-            for r in resource["items"]:
-                process_resource(r)
-        else:
-            process_resource(resource)
+        data = yaml.safe_load_all(f) # load YAML file
+        for resource in data:
+            if resource is None:
+                continue # Skip empty YAML content
+            if resource["kind"] == "List":
+                for r in resource["items"]:
+                    process_resource(r)
+            else:
+                process_resource(resource)
 
 # Print loaded Kubernetes resources
 if args.verbose:
