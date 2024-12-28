@@ -26,9 +26,6 @@ config = {}
 with open(DIRNAME + "/kube-diagrams.yaml") as f:
     config = yaml.safe_load(f) # load YAML config file
 
-# Undefined edge
-UNDEFINED_EDGE = query_path(config, "edges.UNDEFINED", {})
-
 # Get edge config.
 def get_edge_config(edge_name):
     return config.get("edges", {}).get(edge_name, {})
@@ -395,8 +392,10 @@ with Diagram("", filename=args.output, show=False, direction="TB", outformat=arg
             with Cluster(cid):
                 create_nodes(sub_cluster)
     create_nodes(resource_cluster)
+
     # Generate diagram edges
     undefined_nodes = {}
+    UNDEFINED_EDGE = query_path(config, "edges.UNDEFINED", {})
     for resource_id, resource in resources.items():
         edges = EdgesContext(resource)
         # execute config code to generate edges
