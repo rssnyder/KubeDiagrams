@@ -5,6 +5,19 @@ Generate Kubernetes architecture diagrams from Kubernetes manifest files.
 There are several tools to generate Kubernetes architecture diagrams (see **[here](https://github.com/philippemerle/Awesome-Kubernetes-Architecture-Diagrams)**).
 The main originality of **KubeDiagrams** is its **[configurability](bin/kube-diagrams.yaml)** allowing for instance to deal with custom Kubernetes resources.
 
+## Examples
+
+Architecture diagram of a deployed Cassandra instance:
+![Deployed Cassandra Instance](examples/cassandra/default.png)
+
+Architecture diagram of the Minikube Ingress Addon:
+![Minikube Ingress Addon](examples/minikube/minikube-ingress-nginx.png)
+
+All the examples are
+* [official Kubernetes Cassandra example](examples/cassandra/)
+* [minikube architecture diagrams](examples/minikube/)
+* [Train Ticket](examples/train-ticket/)
+
 ## Prerequisites
 
 * [Python 3.x](https://www.python.org/)
@@ -118,12 +131,6 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 | `tier` | K8s Tier |
 
 New mappings can be easily defined in custom configuration files and provided to **KubeDiagrams** via the `--config` command-line option.
-
-## Examples
-
-* [official Kubernetes Cassandra example](examples/cassandra/)
-* [minikube architecture diagrams](examples/minikube/)
-* [Train Ticket](examples/train-ticket/)
 
 ## License
 
