@@ -1,0 +1,1994 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-12-28T17:15:05Z"
+    generateName: zk-
+    labels:
+      app: zk
+      controller-revision-hash: zk-6458bdc7b8
+      statefulset.kubernetes.io/pod-name: zk-0
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:controller-revision-hash: {}
+            f:statefulset.kubernetes.io/pod-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"bcc7d248-e502-4fa5-a24d-649fb3ecfb48"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:podAntiAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"kubernetes-zookeeper"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":2181,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":2888,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":3888,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/foo"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostname: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:runAsUser: {}
+          f:subdomain: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"datadir"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-28T17:15:05Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:05Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.1.19"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:27Z"
+    name: zk-0
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: zk
+      uid: bcc7d248-e502-4fa5-a24d-649fb3ecfb48
+    resourceVersion: "10426"
+    uid: a4f01818-6440-41b7-96bc-625ffd0a7b76
+  spec:
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - zk
+          topologyKey: kubernetes.io/hostname
+    containers:
+    - command:
+      - sh
+      - -c
+      - start-zookeeper --servers=3 --data_dir=/var/lib/zookeeper/data --data_log_dir=/var/lib/zookeeper/data/log
+        --conf_dir=/opt/zookeeper/conf --client_port=2181 --election_port=3888 --server_port=2888
+        --tick_time=2000 --init_limit=10 --sync_limit=5 --heap=512M --max_client_cnxns=60
+        --snap_retain_count=3 --purge_interval=12 --max_session_timeout=40000 --min_session_timeout=4000
+        --log_level=INFO
+      image: registry.k8s.io/kubernetes-zookeeper:1.0-3.4.10
+      imagePullPolicy: Always
+      livenessProbe:
+        exec:
+          command:
+          - sh
+          - -c
+          - zookeeper-ready 2181
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      name: kubernetes-zookeeper
+      ports:
+      - containerPort: 2181
+        name: client
+        protocol: TCP
+      - containerPort: 2888
+        name: server
+        protocol: TCP
+      - containerPort: 3888
+        name: leader-election
+        protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+          - sh
+          - -c
+          - zookeeper-ready 2181
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources:
+        requests:
+          cpu: 500m
+          memory: 1Gi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /foo
+        name: datadir
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-hdt9s
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    hostname: zk-0
+    nodeName: minikube-m02
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000
+      runAsUser: 1000
+    serviceAccount: default
+    serviceAccountName: default
+    subdomain: zk-hs
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: datadir
+      persistentVolumeClaim:
+        claimName: datadir-zk-0
+    - name: kube-api-access-hdt9s
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:07Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:27Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:27Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:07Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://644dd20474691d494a0a990feacf49a2556577b1366c249fdb2873f620189579
+      image: registry.k8s.io/kubernetes-zookeeper:1.0-3.4.10
+      imageID: docker-pullable://registry.k8s.io/kubernetes-zookeeper@sha256:f7704afda9379c77d3684d70eb98da0c8fab9b5eb4cede61d866d9c205ef4616
+      lastState: {}
+      name: kubernetes-zookeeper
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-12-28T17:15:08Z"
+    hostIP: 192.168.64.19
+    phase: Running
+    podIP: 10.244.1.19
+    podIPs:
+    - ip: 10.244.1.19
+    qosClass: Burstable
+    startTime: "2024-12-28T17:15:07Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-12-28T17:15:27Z"
+    generateName: zk-
+    labels:
+      app: zk
+      controller-revision-hash: zk-6458bdc7b8
+      statefulset.kubernetes.io/pod-name: zk-1
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:controller-revision-hash: {}
+            f:statefulset.kubernetes.io/pod-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"bcc7d248-e502-4fa5-a24d-649fb3ecfb48"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:podAntiAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"kubernetes-zookeeper"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":2181,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":2888,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":3888,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/foo"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostname: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:runAsUser: {}
+          f:subdomain: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"datadir"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-28T17:15:27Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:27Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.2.9"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:49Z"
+    name: zk-1
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: zk
+      uid: bcc7d248-e502-4fa5-a24d-649fb3ecfb48
+    resourceVersion: "10481"
+    uid: 56831282-116e-487e-a62d-a17a428b2195
+  spec:
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - zk
+          topologyKey: kubernetes.io/hostname
+    containers:
+    - command:
+      - sh
+      - -c
+      - start-zookeeper --servers=3 --data_dir=/var/lib/zookeeper/data --data_log_dir=/var/lib/zookeeper/data/log
+        --conf_dir=/opt/zookeeper/conf --client_port=2181 --election_port=3888 --server_port=2888
+        --tick_time=2000 --init_limit=10 --sync_limit=5 --heap=512M --max_client_cnxns=60
+        --snap_retain_count=3 --purge_interval=12 --max_session_timeout=40000 --min_session_timeout=4000
+        --log_level=INFO
+      image: registry.k8s.io/kubernetes-zookeeper:1.0-3.4.10
+      imagePullPolicy: Always
+      livenessProbe:
+        exec:
+          command:
+          - sh
+          - -c
+          - zookeeper-ready 2181
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      name: kubernetes-zookeeper
+      ports:
+      - containerPort: 2181
+        name: client
+        protocol: TCP
+      - containerPort: 2888
+        name: server
+        protocol: TCP
+      - containerPort: 3888
+        name: leader-election
+        protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+          - sh
+          - -c
+          - zookeeper-ready 2181
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources:
+        requests:
+          cpu: 500m
+          memory: 1Gi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /foo
+        name: datadir
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-l7g6z
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    hostname: zk-1
+    nodeName: minikube-m03
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000
+      runAsUser: 1000
+    serviceAccount: default
+    serviceAccountName: default
+    subdomain: zk-hs
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: datadir
+      persistentVolumeClaim:
+        claimName: datadir-zk-1
+    - name: kube-api-access-l7g6z
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:29Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:49Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:49Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:29Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://f37b75a84ee5af334880c0e44ecaf21a5ecde4ea06eccc258a8070e4edd90ad4
+      image: registry.k8s.io/kubernetes-zookeeper:1.0-3.4.10
+      imageID: docker-pullable://registry.k8s.io/kubernetes-zookeeper@sha256:f7704afda9379c77d3684d70eb98da0c8fab9b5eb4cede61d866d9c205ef4616
+      lastState: {}
+      name: kubernetes-zookeeper
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-12-28T17:15:30Z"
+    hostIP: 192.168.64.20
+    phase: Running
+    podIP: 10.244.2.9
+    podIPs:
+    - ip: 10.244.2.9
+    qosClass: Burstable
+    startTime: "2024-12-28T17:15:29Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-12-28T17:15:49Z"
+    generateName: zk-
+    labels:
+      app: zk
+      controller-revision-hash: zk-6458bdc7b8
+      statefulset.kubernetes.io/pod-name: zk-2
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:controller-revision-hash: {}
+            f:statefulset.kubernetes.io/pod-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"bcc7d248-e502-4fa5-a24d-649fb3ecfb48"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:podAntiAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"kubernetes-zookeeper"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":2181,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":2888,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":3888,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/foo"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostname: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:runAsUser: {}
+          f:subdomain: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"datadir"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-28T17:15:49Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:49Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.8"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:53Z"
+    name: zk-2
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: zk
+      uid: bcc7d248-e502-4fa5-a24d-649fb3ecfb48
+    resourceVersion: "10515"
+    uid: d38c9de6-6c3f-4b94-816b-2e1fd14db331
+  spec:
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - zk
+          topologyKey: kubernetes.io/hostname
+    containers:
+    - command:
+      - sh
+      - -c
+      - start-zookeeper --servers=3 --data_dir=/var/lib/zookeeper/data --data_log_dir=/var/lib/zookeeper/data/log
+        --conf_dir=/opt/zookeeper/conf --client_port=2181 --election_port=3888 --server_port=2888
+        --tick_time=2000 --init_limit=10 --sync_limit=5 --heap=512M --max_client_cnxns=60
+        --snap_retain_count=3 --purge_interval=12 --max_session_timeout=40000 --min_session_timeout=4000
+        --log_level=INFO
+      image: registry.k8s.io/kubernetes-zookeeper:1.0-3.4.10
+      imagePullPolicy: Always
+      livenessProbe:
+        exec:
+          command:
+          - sh
+          - -c
+          - zookeeper-ready 2181
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      name: kubernetes-zookeeper
+      ports:
+      - containerPort: 2181
+        name: client
+        protocol: TCP
+      - containerPort: 2888
+        name: server
+        protocol: TCP
+      - containerPort: 3888
+        name: leader-election
+        protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+          - sh
+          - -c
+          - zookeeper-ready 2181
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources:
+        requests:
+          cpu: 500m
+          memory: 1Gi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /foo
+        name: datadir
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-9zlrf
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    hostname: zk-2
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000
+      runAsUser: 1000
+    serviceAccount: default
+    serviceAccountName: default
+    subdomain: zk-hs
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: datadir
+      persistentVolumeClaim:
+        claimName: datadir-zk-2
+    - name: kube-api-access-9zlrf
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:51Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:51Z"
+      message: 'containers with unready status: [kubernetes-zookeeper]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:51Z"
+      message: 'containers with unready status: [kubernetes-zookeeper]'
+      reason: ContainersNotReady
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-12-28T17:15:51Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://4a483209dd10a855efa434738d44d6302c972784b97397631f3ddd8925a842a4
+      image: registry.k8s.io/kubernetes-zookeeper:1.0-3.4.10
+      imageID: docker-pullable://registry.k8s.io/kubernetes-zookeeper@sha256:f7704afda9379c77d3684d70eb98da0c8fab9b5eb4cede61d866d9c205ef4616
+      lastState: {}
+      name: kubernetes-zookeeper
+      ready: false
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-12-28T17:15:52Z"
+    hostIP: 192.168.64.18
+    phase: Running
+    podIP: 10.244.0.8
+    podIPs:
+    - ip: 10.244.0.8
+    qosClass: Burstable
+    startTime: "2024-12-28T17:15:51Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2024-12-28T14:57:39Z"
+    labels:
+      component: apiserver
+      provider: kubernetes
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:component: {}
+            f:provider: {}
+        f:spec:
+          f:clusterIP: {}
+          f:internalTrafficPolicy: {}
+          f:ipFamilyPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2024-12-28T14:57:39Z"
+    name: kubernetes
+    namespace: default
+    resourceVersion: "195"
+    uid: 6b11071b-3a08-403d-beb4-62b5b12af1c6
+  spec:
+    clusterIP: 10.96.0.1
+    clusterIPs:
+    - 10.96.0.1
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"zk"},"name":"zk-cs","namespace":"default"},"spec":{"ports":[{"name":"client","port":2181}],"selector":{"app":"zk"}}}
+    creationTimestamp: "2024-12-28T17:15:05Z"
+    labels:
+      app: zk
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":2181,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: kubectl
+      operation: Update
+      time: "2024-12-28T17:15:05Z"
+    name: zk-cs
+    namespace: default
+    resourceVersion: "10368"
+    uid: 48ac12a7-c0a8-495d-8ffa-2fba6b473bf0
+  spec:
+    clusterIP: 10.108.72.66
+    clusterIPs:
+    - 10.108.72.66
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: client
+      port: 2181
+      protocol: TCP
+      targetPort: 2181
+    selector:
+      app: zk
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"zk"},"name":"zk-hs","namespace":"default"},"spec":{"clusterIP":"None","ports":[{"name":"server","port":2888},{"name":"leader-election","port":3888}],"selector":{"app":"zk"}}}
+    creationTimestamp: "2024-12-28T17:15:05Z"
+    labels:
+      app: zk
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:clusterIP: {}
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":2888,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+            k:{"port":3888,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: kubectl
+      operation: Update
+      time: "2024-12-28T17:15:05Z"
+    name: zk-hs
+    namespace: default
+    resourceVersion: "10364"
+    uid: 448808f3-84d8-43d6-b523-b2510a5bd13b
+  spec:
+    clusterIP: None
+    clusterIPs:
+    - None
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: server
+      port: 2888
+      protocol: TCP
+      targetPort: 2888
+    - name: leader-election
+      port: 3888
+      protocol: TCP
+      targetPort: 3888
+    selector:
+      app: zk
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: StatefulSet
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"zk","namespace":"default"},"spec":{"podManagementPolicy":"OrderedReady","replicas":3,"selector":{"matchLabels":{"app":"zk"}},"serviceName":"zk-hs","template":{"metadata":{"labels":{"app":"zk"}},"spec":{"affinity":{"podAntiAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":[{"labelSelector":{"matchExpressions":[{"key":"app","operator":"In","values":["zk"]}]},"topologyKey":"kubernetes.io/hostname"}]}},"containers":[{"command":["sh","-c","start-zookeeper --servers=3 --data_dir=/var/lib/zookeeper/data --data_log_dir=/var/lib/zookeeper/data/log --conf_dir=/opt/zookeeper/conf --client_port=2181 --election_port=3888 --server_port=2888 --tick_time=2000 --init_limit=10 --sync_limit=5 --heap=512M --max_client_cnxns=60 --snap_retain_count=3 --purge_interval=12 --max_session_timeout=40000 --min_session_timeout=4000 --log_level=INFO"],"image":"registry.k8s.io/kubernetes-zookeeper:1.0-3.4.10","imagePullPolicy":"Always","livenessProbe":{"exec":{"command":["sh","-c","zookeeper-ready 2181"]},"initialDelaySeconds":10,"timeoutSeconds":5},"name":"kubernetes-zookeeper","ports":[{"containerPort":2181,"name":"client"},{"containerPort":2888,"name":"server"},{"containerPort":3888,"name":"leader-election"}],"readinessProbe":{"exec":{"command":["sh","-c","zookeeper-ready 2181"]},"initialDelaySeconds":10,"timeoutSeconds":5},"resources":{"requests":{"cpu":"0.5","memory":"1Gi"}},"volumeMounts":[{"mountPath":"/foo","name":"datadir"}]}],"securityContext":{"fsGroup":1000,"runAsUser":1000}}},"updateStrategy":{"type":"RollingUpdate"},"volumeClaimTemplates":[{"metadata":{"name":"datadir"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"512M"}}}}]}}
+    creationTimestamp: "2024-12-28T17:15:05Z"
+    generation: 1
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:podManagementPolicy: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:serviceName: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+              f:containers:
+                k:{"name":"kubernetes-zookeeper"}:
+                  .: {}
+                  f:command: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:exec:
+                      .: {}
+                      f:command: {}
+                    f:failureThreshold: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":2181,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":2888,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":3888,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:exec:
+                      .: {}
+                      f:command: {}
+                    f:failureThreshold: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/foo"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:fsGroup: {}
+                f:runAsUser: {}
+              f:terminationGracePeriodSeconds: {}
+          f:updateStrategy:
+            f:type: {}
+          f:volumeClaimTemplates: {}
+      manager: kubectl
+      operation: Update
+      time: "2024-12-28T17:15:05Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:collisionCount: {}
+          f:currentReplicas: {}
+          f:currentRevision: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updateRevision: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:49Z"
+    name: zk
+    namespace: default
+    resourceVersion: "10497"
+    uid: bcc7d248-e502-4fa5-a24d-649fb3ecfb48
+  spec:
+    podManagementPolicy: OrderedReady
+    replicas: 3
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: zk
+    serviceName: zk-hs
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: zk
+      spec:
+        affinity:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - zk
+              topologyKey: kubernetes.io/hostname
+        containers:
+        - command:
+          - sh
+          - -c
+          - start-zookeeper --servers=3 --data_dir=/var/lib/zookeeper/data --data_log_dir=/var/lib/zookeeper/data/log
+            --conf_dir=/opt/zookeeper/conf --client_port=2181 --election_port=3888
+            --server_port=2888 --tick_time=2000 --init_limit=10 --sync_limit=5 --heap=512M
+            --max_client_cnxns=60 --snap_retain_count=3 --purge_interval=12 --max_session_timeout=40000
+            --min_session_timeout=4000 --log_level=INFO
+          image: registry.k8s.io/kubernetes-zookeeper:1.0-3.4.10
+          imagePullPolicy: Always
+          livenessProbe:
+            exec:
+              command:
+              - sh
+              - -c
+              - zookeeper-ready 2181
+            failureThreshold: 3
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+          name: kubernetes-zookeeper
+          ports:
+          - containerPort: 2181
+            name: client
+            protocol: TCP
+          - containerPort: 2888
+            name: server
+            protocol: TCP
+          - containerPort: 3888
+            name: leader-election
+            protocol: TCP
+          readinessProbe:
+            exec:
+              command:
+              - sh
+              - -c
+              - zookeeper-ready 2181
+            failureThreshold: 3
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+          resources:
+            requests:
+              cpu: 500m
+              memory: 1Gi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /foo
+            name: datadir
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext:
+          fsGroup: 1000
+          runAsUser: 1000
+        terminationGracePeriodSeconds: 30
+    updateStrategy:
+      type: RollingUpdate
+    volumeClaimTemplates:
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        creationTimestamp: null
+        name: datadir
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 512M
+        volumeMode: Filesystem
+      status:
+        phase: Pending
+  status:
+    availableReplicas: 2
+    collisionCount: 0
+    currentReplicas: 3
+    currentRevision: zk-6458bdc7b8
+    observedGeneration: 1
+    readyReplicas: 2
+    replicas: 3
+    updateRevision: zk-6458bdc7b8
+    updatedReplicas: 3
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    creationTimestamp: "2024-12-28T14:57:53Z"
+    name: default
+    namespace: default
+    resourceVersion: "364"
+    uid: 7c6c4f94-aef0-4311-962d-a08bd687510c
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p
+      a3ViZUNBMB4XDTIzMDIwNDA3NTMzNloXDTMzMDIwMjA3NTMzNlowFTETMBEGA1UE
+      AxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM3l
+      n8dtEkPntkBRSF7NBlwCbwI3BRxHL5LUSROCfr/tFyuJ8XiZa8yv/DbiCKDFWeBr
+      lJwWOJ3HjrjQc+nBIjbG3spMaOr9Kgut7UKyYEeIZxBSz5GBd7rlRuBwOkRqEXtS
+      /H/TxVzgrugfKbI+ALtzbtHTzKKLDGaYjAC5t2jQ/PtzQ3s4cB8Z/fk03n9woBC8
+      6makLFQXXPj65y09hb/slxIbi4hyRe4hdQYnxeY+PKmuEZIaed5gFrN/EDDtrtwn
+      bcPY3Pwc0/b1+S44TcB+eWMq28zPLeO/Kjziw8q+1wldKWIXJJSUAUU5dBOtlRol
+      yfr7t0ibsft1OTVCisECAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW
+      MBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW
+      BBS1Nak8XxDdSOq3r1qdAXNmQRttCzANBgkqhkiG9w0BAQsFAAOCAQEAxrabqVKs
+      u9hJTiUNhLEQTOVR7gMuonymonQ73488pQHKKIyAM8It+ClgP+YdZtRi+uxGgQ3m
+      kwbJbf1ybysY++tIKbUXfsal/wcrt2hbqk6HJxca/YaYL7qja6N/BElct07RQhLf
+      DpMtfqokyBh/yOlobBkrrA+RylGVi1ebWgFM7xtzmuPpeIYurNIcXGpp0d21RuRz
+      0Oxd9g/HHAzZihXbHfPeJJdiQBtPvQ83TZ+T2E0MCkLDUC1okRztR8R5YPG6nZli
+      zVRBh41095iSNFKJhFQyu5Qzme98wdBBQGoxcMOoXk6ioeDQUywHaJMjdCANqubf
+      I700WTtGVr503w==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-12-28T14:57:53Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:ca.crt: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubernetes.io/description: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-28T14:57:53Z"
+    name: kube-root-ca.crt
+    namespace: default
+    resourceVersion: "380"
+    uid: 1e1d8a85-26a7-42aa-ac55-c7d91bca85a8
+- apiVersion: policy/v1
+  kind: PodDisruptionBudget
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policy/v1","kind":"PodDisruptionBudget","metadata":{"annotations":{},"name":"zk-pdb","namespace":"default"},"spec":{"maxUnavailable":1,"selector":{"matchLabels":{"app":"zk"}}}}
+    creationTimestamp: "2024-12-28T17:15:05Z"
+    generation: 1
+    managedFields:
+    - apiVersion: policy/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:maxUnavailable: {}
+          f:selector: {}
+      manager: kubectl
+      operation: Update
+      time: "2024-12-28T17:15:05Z"
+    - apiVersion: policy/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"DisruptionAllowed"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:currentHealthy: {}
+          f:desiredHealthy: {}
+          f:expectedPods: {}
+          f:observedGeneration: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:49Z"
+    name: zk-pdb
+    namespace: default
+    resourceVersion: "10482"
+    uid: f229f886-56dc-464c-a463-e242f6e6d1ac
+  spec:
+    maxUnavailable: 1
+    selector:
+      matchLabels:
+        app: zk
+  status:
+    conditions:
+    - lastTransitionTime: "2024-12-28T17:15:49Z"
+      message: ""
+      observedGeneration: 1
+      reason: InsufficientPods
+      status: "False"
+      type: DisruptionAllowed
+    currentHealthy: 2
+    desiredHealthy: 2
+    disruptionsAllowed: 0
+    expectedPods: 3
+    observedGeneration: 1
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+      volume.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-28T17:15:05Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: zk
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+            f:volume.kubernetes.io/storage-provisioner: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:volumeMode: {}
+          f:volumeName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-28T17:15:06Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:06Z"
+    name: datadir-zk-0
+    namespace: default
+    resourceVersion: "10390"
+    uid: d4c7bc22-96d7-47a0-8f26-ac3f78bebb94
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 512M
+    storageClassName: standard
+    volumeMode: Filesystem
+    volumeName: pvc-d4c7bc22-96d7-47a0-8f26-ac3f78bebb94
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+      volume.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-28T17:15:27Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: zk
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+            f:volume.kubernetes.io/storage-provisioner: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:volumeMode: {}
+          f:volumeName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-28T17:15:27Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:27Z"
+    name: datadir-zk-1
+    namespace: default
+    resourceVersion: "10446"
+    uid: 5c933cdc-5139-4a9d-ae46-6e6b2e5ed576
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 512M
+    storageClassName: standard
+    volumeMode: Filesystem
+    volumeName: pvc-5c933cdc-5139-4a9d-ae46-6e6b2e5ed576
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+      volume.kubernetes.io/storage-provisioner: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-28T17:15:49Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: zk
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+            f:volume.kubernetes.io/storage-provisioner: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:volumeMode: {}
+          f:volumeName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2024-12-28T17:15:49Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:49Z"
+    name: datadir-zk-2
+    namespace: default
+    resourceVersion: "10501"
+    uid: 065c4f4d-c2a1-44b2-9f33-f5747f12ab70
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 512M
+    storageClassName: standard
+    volumeMode: Filesystem
+    volumeName: pvc-065c4f4d-c2a1-44b2-9f33-f5747f12ab70
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: 0bd4c528-f4c8-46c3-9902-51cb94143c22
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-28T17:15:49Z"
+    finalizers:
+    - kubernetes.io/pv-protection
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:49Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:hostPathProvisionerIdentity: {}
+            f:pv.kubernetes.io/provisioned-by: {}
+        f:spec:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:claimRef:
+            .: {}
+            f:apiVersion: {}
+            f:kind: {}
+            f:name: {}
+            f:namespace: {}
+            f:resourceVersion: {}
+            f:uid: {}
+          f:hostPath:
+            .: {}
+            f:path: {}
+            f:type: {}
+          f:persistentVolumeReclaimPolicy: {}
+          f:storageClassName: {}
+          f:volumeMode: {}
+      manager: storage-provisioner
+      operation: Update
+      time: "2024-12-28T17:15:49Z"
+    name: pvc-065c4f4d-c2a1-44b2-9f33-f5747f12ab70
+    resourceVersion: "10496"
+    uid: 6c8b1a72-9f47-4522-85a2-a124832bb6ee
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: datadir-zk-2
+      namespace: default
+      resourceVersion: "10490"
+      uid: 065c4f4d-c2a1-44b2-9f33-f5747f12ab70
+    hostPath:
+      path: /tmp/hostpath-provisioner/default/datadir-zk-2
+      type: ""
+    persistentVolumeReclaimPolicy: Delete
+    storageClassName: standard
+    volumeMode: Filesystem
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: 0bd4c528-f4c8-46c3-9902-51cb94143c22
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-28T17:15:27Z"
+    finalizers:
+    - kubernetes.io/pv-protection
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:27Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:hostPathProvisionerIdentity: {}
+            f:pv.kubernetes.io/provisioned-by: {}
+        f:spec:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:claimRef:
+            .: {}
+            f:apiVersion: {}
+            f:kind: {}
+            f:name: {}
+            f:namespace: {}
+            f:resourceVersion: {}
+            f:uid: {}
+          f:hostPath:
+            .: {}
+            f:path: {}
+            f:type: {}
+          f:persistentVolumeReclaimPolicy: {}
+          f:storageClassName: {}
+          f:volumeMode: {}
+      manager: storage-provisioner
+      operation: Update
+      time: "2024-12-28T17:15:27Z"
+    name: pvc-5c933cdc-5139-4a9d-ae46-6e6b2e5ed576
+    resourceVersion: "10443"
+    uid: b32f42ec-2732-481b-aace-3323f6655174
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: datadir-zk-1
+      namespace: default
+      resourceVersion: "10435"
+      uid: 5c933cdc-5139-4a9d-ae46-6e6b2e5ed576
+    hostPath:
+      path: /tmp/hostpath-provisioner/default/datadir-zk-1
+      type: ""
+    persistentVolumeReclaimPolicy: Delete
+    storageClassName: standard
+    volumeMode: Filesystem
+  status:
+    phase: Bound
+- apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      hostPathProvisionerIdentity: 0bd4c528-f4c8-46c3-9902-51cb94143c22
+      pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+    creationTimestamp: "2024-12-28T17:15:06Z"
+    finalizers:
+    - kubernetes.io/pv-protection
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2024-12-28T17:15:06Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:hostPathProvisionerIdentity: {}
+            f:pv.kubernetes.io/provisioned-by: {}
+        f:spec:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:claimRef:
+            .: {}
+            f:apiVersion: {}
+            f:kind: {}
+            f:name: {}
+            f:namespace: {}
+            f:resourceVersion: {}
+            f:uid: {}
+          f:hostPath:
+            .: {}
+            f:path: {}
+            f:type: {}
+          f:persistentVolumeReclaimPolicy: {}
+          f:storageClassName: {}
+          f:volumeMode: {}
+      manager: storage-provisioner
+      operation: Update
+      time: "2024-12-28T17:15:06Z"
+    name: pvc-d4c7bc22-96d7-47a0-8f26-ac3f78bebb94
+    resourceVersion: "10388"
+    uid: c15df3b9-67e3-413c-9f57-734553eff5e1
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 512M
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: datadir-zk-0
+      namespace: default
+      resourceVersion: "10378"
+      uid: d4c7bc22-96d7-47a0-8f26-ac3f78bebb94
+    hostPath:
+      path: /tmp/hostpath-provisioner/default/datadir-zk-0
+      type: ""
+    persistentVolumeReclaimPolicy: Delete
+    storageClassName: standard
+    volumeMode: Filesystem
+  status:
+    phase: Bound
+- apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"},"labels":{"addonmanager.kubernetes.io/mode":"EnsureExists"},"name":"standard"},"provisioner":"k8s.io/minikube-hostpath"}
+      storageclass.kubernetes.io/is-default-class: "true"
+    creationTimestamp: "2024-12-28T14:57:43Z"
+    labels:
+      addonmanager.kubernetes.io/mode: EnsureExists
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+            f:storageclass.kubernetes.io/is-default-class: {}
+          f:labels:
+            .: {}
+            f:addonmanager.kubernetes.io/mode: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2024-12-28T14:57:43Z"
+    name: standard
+    resourceVersion: "283"
+    uid: 14c92914-f324-473c-ab93-4df5d1b9df6b
+  provisioner: k8s.io/minikube-hostpath
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
