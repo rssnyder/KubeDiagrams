@@ -7,6 +7,9 @@ The main originality of **KubeDiagrams** is its **[configurability](bin/kube-dia
 
 ## Examples
 
+Architecture diagram for WordPress manifests:
+![Deployed Cassandra Instance](examples/wordpress/wordpress.png)
+
 Architecture diagram of a deployed Cassandra instance:
 ![Deployed Cassandra Instance](examples/cassandra/default.png)
 
@@ -14,6 +17,7 @@ Architecture diagram of the Minikube Ingress Addon:
 ![Minikube Ingress Addon](examples/minikube/minikube-ingress-nginx.png)
 
 All the examples are
+* [official Kubernetes WordPress tutorial](examples/wordpress/)
 * [official Kubernetes Cassandra tutorial](examples/cassandra/)
 * [minikube architecture diagrams](examples/minikube/)
 * [Train Ticket](examples/train-ticket/)
