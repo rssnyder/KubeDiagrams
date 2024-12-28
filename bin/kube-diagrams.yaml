@@ -118,6 +118,15 @@ nodes:
       edges.add_wait_for_services("spec.initContainers")
       edges.add_all_volume_resources("spec.volumes")
       edges.add_containers_env_valueFrom_secretKeyRef("spec.containers")
+  PodDisruptionBudget/policy/v1:
+    scope: Namespaced
+    custom_icon: $KD/icons/pdb.png
+    edges: |
+      if not edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels"):
+        if not edges.add_all_resources_matching_labels("Deployment", "spec.selector.matchLabels",
+          resource_labels_path="spec.template.metadata.labels"):
+            edges.add_all_resources_matching_labels("StatefulSet", "spec.selector.matchLabels",
+              resource_labels_path="spec.template.metadata.labels")
   ReplicaSet/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.RS

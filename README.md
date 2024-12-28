@@ -57,7 +57,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 25 ones:
+Supported `kind`/`apiVersion` resource types are 26 ones:
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
 * CustomResourceDefinition/apiextensions.k8s.io/v1
@@ -74,6 +74,7 @@ Supported `kind`/`apiVersion` resource types are 25 ones:
 * PersistentVolume/v1
 * PersistentVolumeClaim/v1
 * Pod/v1
+* PodDisruptionBudget/policy/v1
 * ReplicaSet/apps/v1
 * Role/rbac.authorization.k8s.io/v1
 * RoleBinding/rbac.authorization.k8s.io/v1
@@ -84,7 +85,7 @@ Supported `kind`/`apiVersion` resource types are 25 ones:
 * StorageClass/storage.k8s.io/v1
 * User/rbac.authorization.k8s.io/v1
 
-Currently, unsupported `kind`/`apiGroup` resource types are 34 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 33 ones:
 * Binding/
 * ComponentStatus/
 * Endpoints/
@@ -113,7 +114,6 @@ Currently, unsupported `kind`/`apiGroup` resource types are 34 ones:
 * PodMetrics/metrics.k8s.io
 * NetworkPolicy/networking.k8s.io
 * RuntimeClass/node.k8s.io
-* PodDisruptionBudget/policy
 * PriorityClass/scheduling.k8s.io
 * CSIDriver/storage.k8s.io
 * CSINode/storage.k8s.io
@@ -143,6 +143,6 @@ This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) 
 ## Todo List
 
 * Add more examples
-* Add missed Kubernetes resource types as at least CronJob, Endpoint, LimitRange, NetworkPolicy, PodDisruptionBudget and ResourceQuota
+* Add missed Kubernetes resource types as at least CronJob, Endpoint, LimitRange, NetworkPolicy, and ResourceQuota
 * Make `nodes/*/edges` more declarative
 * Add diagram node icon for IngressClass
