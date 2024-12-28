@@ -3,6 +3,7 @@ import argparse
 import copy
 from diagrams import Diagram, Edge, Cluster
 from diagrams.aws.enablement import ManagedServices
+from diagrams.custom import Custom
 import os
 import yaml
 from pprint import pprint
@@ -17,9 +18,12 @@ def query_path(data, path, default=None):
             return default
     return tmp.get(paths[-1], default)
 
+# Directory where this script is.
+DIRNAME = os.path.dirname(__file__)
+
 # Load configuration.
 config = {}
-with open(os.path.dirname(__file__) + "/kube-diagrams.yaml") as f:
+with open(DIRNAME + "/kube-diagrams.yaml") as f:
     config = yaml.safe_load(f) # load YAML config file
 
 # Undefined edge
@@ -47,6 +51,13 @@ def create_diagram_node(resource, fontcolor="black"):
     diagram_node_class = ManagedServices # default diagram node class
     node_config = get_node_config(resource)
     if node_config != None: # config found
+        custom_icon = node_config.get("custom_icon")
+        if custom_icon != None: # custom_icon defined
+            return Custom(
+                resource["metadata"]["name"],
+                custom_icon.replace("$KD", DIRNAME),
+                fontcolor=fontcolor
+            )
         # Get diagram node class name
         diagram_node_classname = node_config.get("diagram_node_classname")
         if diagram_node_classname != None: # classname defined
