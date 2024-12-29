@@ -29,7 +29,7 @@ items:
         kube-apiserver when using internal endpoints such as the internal service
         IP or kubernetes.default.svc. No other usage is guaranteed across distributions
         of Kubernetes clusters.
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:08Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -43,15 +43,15 @@ items:
             f:kubernetes.io/description: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:57:53Z"
+      time: "2024-12-29T05:31:08Z"
     name: kube-root-ca.crt
     namespace: default
-    resourceVersion: "380"
-    uid: 1e1d8a85-26a7-42aa-ac55-c7d91bca85a8
+    resourceVersion: "330"
+    uid: 6bbe7a32-ce3e-4648-9823-b8b2f5a0c8ae
 - apiVersion: v1
   kind: Service
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:30:54Z"
     labels:
       component: apiserver
       provider: kubernetes
@@ -80,11 +80,11 @@ items:
           f:type: {}
       manager: kube-apiserver
       operation: Update
-      time: "2024-12-28T14:57:39Z"
+      time: "2024-12-29T05:30:54Z"
     name: kubernetes
     namespace: default
-    resourceVersion: "195"
-    uid: 6b11071b-3a08-403d-beb4-62b5b12af1c6
+    resourceVersion: "193"
+    uid: 99513b31-88ba-4b46-8634-4cb9502c06b1
   spec:
     clusterIP: 10.96.0.1
     clusterIPs:
@@ -105,11 +105,11 @@ items:
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:09Z"
     name: default
     namespace: default
-    resourceVersion: "364"
-    uid: 7c6c4f94-aef0-4311-962d-a08bd687510c
+    resourceVersion: "336"
+    uid: 904e6180-bd60-4f23-9268-c0b67812feab
 kind: List
 metadata:
   resourceVersion: ""

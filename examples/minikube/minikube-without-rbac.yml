@@ -29,7 +29,7 @@ items:
         kube-apiserver when using internal endpoints such as the internal service
         IP or kubernetes.default.svc. No other usage is guaranteed across distributions
         of Kubernetes clusters.
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:08Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -43,11 +43,11 @@ items:
             f:kubernetes.io/description: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:57:53Z"
+      time: "2024-12-29T05:31:08Z"
     name: kube-root-ca.crt
     namespace: default
-    resourceVersion: "380"
-    uid: 1e1d8a85-26a7-42aa-ac55-c7d91bca85a8
+    resourceVersion: "330"
+    uid: 6bbe7a32-ce3e-4648-9823-b8b2f5a0c8ae
 - apiVersion: v1
   data:
     hsts: "false"
@@ -56,7 +56,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","data":{"hsts":"false"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-controller","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -79,11 +79,11 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-controller
     namespace: ingress-nginx
-    resourceVersion: "11945"
-    uid: e8dd21b0-0797-471d-9334-cc685959370a
+    resourceVersion: "552"
+    uid: 5a4161fe-e980-4f88-a13b-ab2f0a959731
 - apiVersion: v1
   data:
     ca.crt: |
@@ -113,7 +113,7 @@ items:
         kube-apiserver when using internal endpoints such as the internal service
         IP or kubernetes.default.svc. No other usage is guaranteed across distributions
         of Kubernetes clusters.
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -127,18 +127,18 @@ items:
             f:kubernetes.io/description: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: kube-root-ca.crt
     namespace: ingress-nginx
-    resourceVersion: "11933"
-    uid: e4dfe0e4-ff3b-47f0-a8cd-d0dd9e8829d3
+    resourceVersion: "541"
+    uid: 3ebf0553-97ab-4b96-a92c-d383c6e1745a
 - apiVersion: v1
   kind: ConfigMap
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"tcp-services","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -158,18 +158,18 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: tcp-services
     namespace: ingress-nginx
-    resourceVersion: "11946"
-    uid: 6b9fd985-e460-4241-8317-c141c5de5ae5
+    resourceVersion: "553"
+    uid: 1ea28da3-2343-4001-863e-13583fba1c4b
 - apiVersion: v1
   kind: ConfigMap
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"udp-services","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -189,11 +189,11 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: udp-services
     namespace: ingress-nginx
-    resourceVersion: "11947"
-    uid: 25349563-a007-407c-9184-249b3ae20537
+    resourceVersion: "554"
+    uid: 46d2bb00-f9f9-4a54-a9ad-8a3dad6fc69b
 - apiVersion: v1
   data:
     ca.crt: |
@@ -223,7 +223,7 @@ items:
         kube-apiserver when using internal endpoints such as the internal service
         IP or kubernetes.default.svc. No other usage is guaranteed across distributions
         of Kubernetes clusters.
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:08Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -237,16 +237,14 @@ items:
             f:kubernetes.io/description: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:57:53Z"
+      time: "2024-12-29T05:31:08Z"
     name: kube-root-ca.crt
     namespace: kube-node-lease
-    resourceVersion: "379"
-    uid: 77373051-9c45-4895-9f35-9a4abd2ff54c
+    resourceVersion: "329"
+    uid: a452c77e-efa4-4d4e-8865-e3678890c8ad
 - apiVersion: v1
   data:
-    jws-kubeconfig-bcjo9w: eyJhbGciOiJIUzI1NiIsImtpZCI6ImJjam85dyJ9..tJuaNKfcmuixMHuv9IXq6rl4-cYcanCx871HEM-u2rs
-    jws-kubeconfig-f1nfc9: eyJhbGciOiJIUzI1NiIsImtpZCI6ImYxbmZjOSJ9..cTu8WjJ9sCMGvf6L-DR42OfAJZmxV7QQ1oluS4Jvj6Q
-    jws-kubeconfig-wdlbfl: eyJhbGciOiJIUzI1NiIsImtpZCI6IndkbGJmbCJ9..8sniai93XbSi83-L1KwxL1uqJbc2Ev9BOa9d9z4eGDg
+    jws-kubeconfig-f3mrdq: eyJhbGciOiJIUzI1NiIsImtpZCI6ImYzbXJkcSJ9..oJ9_1cZofVJeiF9vX-tOo0H-i45oE3imP-1uE6gLSDc
     kubeconfig: |
       apiVersion: v1
       clusters:
@@ -261,7 +259,7 @@ items:
       users: null
   kind: ConfigMap
   metadata:
-    creationTimestamp: "2024-12-28T14:57:40Z"
+    creationTimestamp: "2024-12-29T05:30:56Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -271,21 +269,19 @@ items:
           f:kubeconfig: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:40Z"
+      time: "2024-12-29T05:30:56Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
         f:data:
-          f:jws-kubeconfig-bcjo9w: {}
-          f:jws-kubeconfig-f1nfc9: {}
-          f:jws-kubeconfig-wdlbfl: {}
+          f:jws-kubeconfig-f3mrdq: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:58:48Z"
+      time: "2024-12-29T05:31:09Z"
     name: cluster-info
     namespace: kube-public
-    resourceVersion: "512"
-    uid: 6a83f7ea-6d65-4198-a68c-868f63c2cc62
+    resourceVersion: "338"
+    uid: 9fb9af3e-9eba-4dd7-850f-a6fa7c3eef6b
 - apiVersion: v1
   data:
     ca.crt: |
@@ -315,7 +311,7 @@ items:
         kube-apiserver when using internal endpoints such as the internal service
         IP or kubernetes.default.svc. No other usage is guaranteed across distributions
         of Kubernetes clusters.
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:08Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -329,11 +325,11 @@ items:
             f:kubernetes.io/description: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:57:53Z"
+      time: "2024-12-29T05:31:08Z"
     name: kube-root-ca.crt
     namespace: kube-public
-    resourceVersion: "378"
-    uid: 7bc3a6ef-7bcf-4064-be2b-7f0b9c695364
+    resourceVersion: "328"
+    uid: 9e2f3c40-b151-44b4-8f83-0551ff263286
 - apiVersion: v1
   data:
     Corefile: |
@@ -364,7 +360,7 @@ items:
       }
   kind: ConfigMap
   metadata:
-    creationTimestamp: "2024-12-28T14:57:40Z"
+    creationTimestamp: "2024-12-29T05:30:57Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -372,7 +368,7 @@ items:
         f:data: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:40Z"
+      time: "2024-12-29T05:30:57Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -380,11 +376,11 @@ items:
           f:Corefile: {}
       manager: kubectl-replace
       operation: Update
-      time: "2024-12-28T14:57:43Z"
+      time: "2024-12-29T05:30:59Z"
     name: coredns
     namespace: kube-system
-    resourceVersion: "280"
-    uid: 679bd184-574c-404d-9943-d6c2d3e6cbbd
+    resourceVersion: "260"
+    uid: 40028b9a-21e7-415d-b1b0-bc15bf126812
 - apiVersion: v1
   data:
     client-ca-file: |
@@ -411,29 +407,29 @@ items:
     requestheader-client-ca-file: |
       -----BEGIN CERTIFICATE-----
       MIIDCjCCAfKgAwIBAgIBADANBgkqhkiG9w0BAQsFADAZMRcwFQYDVQQDEw5mcm9u
-      dC1wcm94eS1jYTAeFw0yNDEyMjgxNDU3MjRaFw0zNDEyMjYxNDU3MjRaMBkxFzAV
+      dC1wcm94eS1jYTAeFw0yNDEyMjkwNTMwMzlaFw0zNDEyMjcwNTMwMzlaMBkxFzAV
       BgNVBAMTDmZyb250LXByb3h5LWNhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB
-      CgKCAQEAtl0fII0UhyJja05h+wQNqnD/Vu/JHP6ixKdK1NnXVCi5VXo0el1q/3c4
-      tcJw5nADUARfJgJj1HtRi3DMUwSHiMxLLbhKEJ1ZILmU7Z+8g+yMkOQWdeYEc6RQ
-      XHXm2fc6Km/447En63y/4FUXtshmqussBxQH3U8QeDEcNP3/WnfgeSVa+a7pQ2EQ
-      i4WM5HFMU4sSTj0hh+Qg9WJ+fPvrpnrJXTnt1Lm2m2wZjduCoBQQvqewwM2i2B3v
-      t5u/Anp+9j/r2d23fDD/bJEqYki3J6KS/8jfl3IoSLjUDM7D1QgxZBtob825k7DF
-      MtcifMAV5gRfjpcR8uPdgC7mncncnwIDAQABo10wWzAOBgNVHQ8BAf8EBAMCAqQw
-      DwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUEHAWXUDwdHYaCrZzjrmmjgGMGAUw
-      GQYDVR0RBBIwEIIOZnJvbnQtcHJveHktY2EwDQYJKoZIhvcNAQELBQADggEBAFRb
-      IpMiJitNRRlQIx33Z6YmXhJbI2Q4FqxsJz2fnWJ2Y5pFWSI5AT1olU1j+H8JbepV
-      nibJvzN5nIbj93ZT2kcshJjRNMkYxcDUKsbsOnGkNp3etBEJPYOMlURZQ7PbLmlw
-      NBgg15Et+yGJHasS3Sa2VOivKmddY7ZhpTv9COeLemBLPK9+onU6IZ3wkr1LpTKj
-      CqbykfNy89Yx36QKcJ4s5NUMGeEAshS33T+Ywdg8mYXayLhNoA8vSTsW3lnI8P+c
-      0APPH4KgboI6sbHyjo4NAxKdU0vzwKEIC8D+dCY+8C1E45X3u7PT0ia5Iq1f8+q6
-      4uANbSZMsvP1wjm0hro=
+      CgKCAQEAuvcJbae6UiDCrM9uT5G9Oo711s+kn7LMZcalJjzjLrkDl69Ji1xGDvNe
+      J1hSsqqF/jD/1k3dKq/g2v0PuyuJLtXrcomLSTDFz3HnxXIN6zFqxGxc4PQnsgaf
+      AuynD3nc65+3t0VoU+hJM7SDWhUpNXnncVfTfuYa8jM9/xOx/dmR4WcUFwroWEY9
+      BldWXE66yXZ43IhnixxLGbRw0xpwNDYsPGYwe28T4KzAueTCBp2z/j9jFUXsX7Vx
+      O+uk/WlxE0FW233JtdPZj87TKsZ5PU0cv24jcogPpBeOcofSj+blrs10k5mJ/6cL
+      qsq2b9kjHklE2edTXX90UM5ljmyVvwIDAQABo10wWzAOBgNVHQ8BAf8EBAMCAqQw
+      DwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUyHf6PYTjvK0pYku961m798HN+aUw
+      GQYDVR0RBBIwEIIOZnJvbnQtcHJveHktY2EwDQYJKoZIhvcNAQELBQADggEBADzl
+      m0qvqoAS0q2AkmWnj8Ht3H12StimHQV2rmWSW5YoRnoQU2nj34RcC9++KzFgOPkT
+      syhQ9Ded2jHq141WDss0dR6XoXQUc0ubzK2+g/KHJhU7ZmW6x1Uie3iW4huv5n7R
+      JBUyZ5Mh6hU49bq5YS4zmpqcoVHQXeE+XTEuUnZHgN72mdmz8vxbcrMvbxhCEZ00
+      y18yu4093Qg7ZMqYTbtFdiyzC3tLLLxU/1qMRVsyfNzmCxoFqae+iATe4E/x/PKl
+      BuxrDmJH0EkscQkQk7TfRUn98EdA7o0kWtsCGyZOOMxj2+9Iy2HKOq6YbbSxk24H
+      jtCBTMWRfRT2oaoM0Nw=
       -----END CERTIFICATE-----
     requestheader-extra-headers-prefix: '["X-Remote-Extra-"]'
     requestheader-group-headers: '["X-Remote-Group"]'
     requestheader-username-headers: '["X-Remote-User"]'
   kind: ConfigMap
   metadata:
-    creationTimestamp: "2024-12-28T14:57:37Z"
+    creationTimestamp: "2024-12-29T05:30:52Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -448,11 +444,11 @@ items:
           f:requestheader-username-headers: {}
       manager: kube-apiserver
       operation: Update
-      time: "2024-12-28T14:57:37Z"
+      time: "2024-12-29T05:30:52Z"
     name: extension-apiserver-authentication
     namespace: kube-system
-    resourceVersion: "34"
-    uid: b603bdec-e710-46be-8238-7be4d90e5dde
+    resourceVersion: "29"
+    uid: 97eddabd-932d-4b87-973f-490812e35b29
 - apiVersion: v1
   data:
     config.conf: |-
@@ -528,7 +524,7 @@ items:
           tokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
   kind: ConfigMap
   metadata:
-    creationTimestamp: "2024-12-28T14:57:41Z"
+    creationTimestamp: "2024-12-29T05:30:57Z"
     labels:
       app: kube-proxy
     managedFields:
@@ -545,11 +541,11 @@ items:
             f:app: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:41Z"
+      time: "2024-12-29T05:30:57Z"
     name: kube-proxy
     namespace: kube-system
-    resourceVersion: "249"
-    uid: 5218431f-da36-417f-8d19-dcfe6fa281e1
+    resourceVersion: "240"
+    uid: 0d3f146f-a683-4d7d-853f-f643b013fc09
 - apiVersion: v1
   data:
     ca.crt: |
@@ -579,7 +575,7 @@ items:
         kube-apiserver when using internal endpoints such as the internal service
         IP or kubernetes.default.svc. No other usage is guaranteed across distributions
         of Kubernetes clusters.
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:08Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -593,11 +589,11 @@ items:
             f:kubernetes.io/description: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:57:53Z"
+      time: "2024-12-29T05:31:08Z"
     name: kube-root-ca.crt
     namespace: kube-system
-    resourceVersion: "377"
-    uid: c0bf597c-f22f-437b-90ba-10f5772ef230
+    resourceVersion: "331"
+    uid: 13723cb8-c6bf-4eba-8eda-0af2e3abf80e
 - apiVersion: v1
   data:
     ClusterConfiguration: |
@@ -605,7 +601,7 @@ items:
         certSANs:
         - 127.0.0.1
         - localhost
-        - 192.168.64.18
+        - 192.168.64.21
         extraArgs:
           authorization-mode: Node,RBAC
           enable-admission-plugins: NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota
@@ -636,7 +632,7 @@ items:
           leader-elect: "false"
   kind: ConfigMap
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:30:54Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -646,11 +642,11 @@ items:
           f:ClusterConfiguration: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:39Z"
+      time: "2024-12-29T05:30:54Z"
     name: kubeadm-config
     namespace: kube-system
-    resourceVersion: "208"
-    uid: beafb4f2-00ec-4d0b-bc51-a383787be41f
+    resourceVersion: "203"
+    uid: 5ec11a12-d0d1-408e-894a-834bbb8b9eb2
 - apiVersion: v1
   data:
     kubelet: |
@@ -707,7 +703,7 @@ items:
       volumeStatsAggPeriod: 0s
   kind: ConfigMap
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:30:54Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -717,11 +713,11 @@ items:
           f:kubelet: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:39Z"
+      time: "2024-12-29T05:30:54Z"
     name: kubelet-config
     namespace: kube-system
-    resourceVersion: "211"
-    uid: 49b74236-77f2-447c-839e-fa48857ec0fe
+    resourceVersion: "206"
+    uid: 8702cdd3-211c-4328-817e-4926717bee2a
 - apiVersion: v1
   data:
     ca.crt: |
@@ -751,7 +747,7 @@ items:
         kube-apiserver when using internal endpoints such as the internal service
         IP or kubernetes.default.svc. No other usage is guaranteed across distributions
         of Kubernetes clusters.
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -765,18 +761,18 @@ items:
             f:kubernetes.io/description: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     name: kube-root-ca.crt
     namespace: kubernetes-dashboard
-    resourceVersion: "798"
-    uid: 7e64c754-94fe-471a-ba71-8ae68db9014f
+    resourceVersion: "459"
+    uid: 315581c1-eb4c-4884-9b64-aa1ae1a8e28b
 - apiVersion: v1
   kind: ConfigMap
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard-settings","namespace":"kubernetes-dashboard"}}
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -796,261 +792,17 @@ items:
             f:kubernetes.io/minikube-addons: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     name: kubernetes-dashboard-settings
     namespace: kubernetes-dashboard
-    resourceVersion: "802"
-    uid: d8bc6073-b884-4e4b-9555-2cf6fcbeb2e3
+    resourceVersion: "462"
+    uid: d3d851f1-7f2f-47ac-8795-7839d0e4699d
 - apiVersion: apps/v1
   kind: DaemonSet
   metadata:
     annotations:
       deprecated.daemonset.template.generation: "1"
-      kubectl.kubernetes.io/last-applied-configuration: |
-        {"apiVersion":"apps/v1","kind":"DaemonSet","metadata":{"annotations":{},"labels":{"app":"kindnet","k8s-app":"kindnet","tier":"node"},"name":"kindnet","namespace":"kube-system"},"spec":{"selector":{"matchLabels":{"app":"kindnet"}},"template":{"metadata":{"labels":{"app":"kindnet","k8s-app":"kindnet","tier":"node"}},"spec":{"containers":[{"env":[{"name":"HOST_IP","valueFrom":{"fieldRef":{"fieldPath":"status.hostIP"}}},{"name":"POD_IP","valueFrom":{"fieldRef":{"fieldPath":"status.podIP"}}},{"name":"POD_SUBNET","value":"10.244.0.0/16"}],"image":"kindest/kindnetd:v20221004-44d545d1","name":"kindnet-cni","resources":{"limits":{"cpu":"100m","memory":"50Mi"},"requests":{"cpu":"100m","memory":"50Mi"}},"securityContext":{"capabilities":{"add":["NET_RAW","NET_ADMIN"]},"privileged":false},"volumeMounts":[{"mountPath":"/etc/cni/net.d","name":"cni-cfg"},{"mountPath":"/run/xtables.lock","name":"xtables-lock","readOnly":false},{"mountPath":"/lib/modules","name":"lib-modules","readOnly":true}]}],"hostNetwork":true,"serviceAccountName":"kindnet","tolerations":[{"effect":"NoSchedule","operator":"Exists"}],"volumes":[{"hostPath":{"path":"/etc/cni/net.d","type":"DirectoryOrCreate"},"name":"cni-cfg"},{"hostPath":{"path":"/run/xtables.lock","type":"FileOrCreate"},"name":"xtables-lock"},{"hostPath":{"path":"/lib/modules"},"name":"lib-modules"}]}}}}
-    creationTimestamp: "2024-12-28T14:57:42Z"
-    generation: 1
-    labels:
-      app: kindnet
-      k8s-app: kindnet
-      tier: node
-    managedFields:
-    - apiVersion: apps/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:annotations:
-            .: {}
-            f:deprecated.daemonset.template.generation: {}
-            f:kubectl.kubernetes.io/last-applied-configuration: {}
-          f:labels:
-            .: {}
-            f:app: {}
-            f:k8s-app: {}
-            f:tier: {}
-        f:spec:
-          f:revisionHistoryLimit: {}
-          f:selector: {}
-          f:template:
-            f:metadata:
-              f:labels:
-                .: {}
-                f:app: {}
-                f:k8s-app: {}
-                f:tier: {}
-            f:spec:
-              f:containers:
-                k:{"name":"kindnet-cni"}:
-                  .: {}
-                  f:env:
-                    .: {}
-                    k:{"name":"HOST_IP"}:
-                      .: {}
-                      f:name: {}
-                      f:valueFrom:
-                        .: {}
-                        f:fieldRef: {}
-                    k:{"name":"POD_IP"}:
-                      .: {}
-                      f:name: {}
-                      f:valueFrom:
-                        .: {}
-                        f:fieldRef: {}
-                    k:{"name":"POD_SUBNET"}:
-                      .: {}
-                      f:name: {}
-                      f:value: {}
-                  f:image: {}
-                  f:imagePullPolicy: {}
-                  f:name: {}
-                  f:resources:
-                    .: {}
-                    f:limits:
-                      .: {}
-                      f:cpu: {}
-                      f:memory: {}
-                    f:requests:
-                      .: {}
-                      f:cpu: {}
-                      f:memory: {}
-                  f:securityContext:
-                    .: {}
-                    f:capabilities:
-                      .: {}
-                      f:add: {}
-                    f:privileged: {}
-                  f:terminationMessagePath: {}
-                  f:terminationMessagePolicy: {}
-                  f:volumeMounts:
-                    .: {}
-                    k:{"mountPath":"/etc/cni/net.d"}:
-                      .: {}
-                      f:mountPath: {}
-                      f:name: {}
-                    k:{"mountPath":"/lib/modules"}:
-                      .: {}
-                      f:mountPath: {}
-                      f:name: {}
-                      f:readOnly: {}
-                    k:{"mountPath":"/run/xtables.lock"}:
-                      .: {}
-                      f:mountPath: {}
-                      f:name: {}
-              f:dnsPolicy: {}
-              f:hostNetwork: {}
-              f:restartPolicy: {}
-              f:schedulerName: {}
-              f:securityContext: {}
-              f:serviceAccount: {}
-              f:serviceAccountName: {}
-              f:terminationGracePeriodSeconds: {}
-              f:tolerations: {}
-              f:volumes:
-                .: {}
-                k:{"name":"cni-cfg"}:
-                  .: {}
-                  f:hostPath:
-                    .: {}
-                    f:path: {}
-                    f:type: {}
-                  f:name: {}
-                k:{"name":"lib-modules"}:
-                  .: {}
-                  f:hostPath:
-                    .: {}
-                    f:path: {}
-                    f:type: {}
-                  f:name: {}
-                k:{"name":"xtables-lock"}:
-                  .: {}
-                  f:hostPath:
-                    .: {}
-                    f:path: {}
-                    f:type: {}
-                  f:name: {}
-          f:updateStrategy:
-            f:rollingUpdate:
-              .: {}
-              f:maxSurge: {}
-              f:maxUnavailable: {}
-            f:type: {}
-      manager: kubectl-client-side-apply
-      operation: Update
-      time: "2024-12-28T14:57:42Z"
-    - apiVersion: apps/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:status:
-          f:currentNumberScheduled: {}
-          f:desiredNumberScheduled: {}
-          f:numberAvailable: {}
-          f:numberReady: {}
-          f:observedGeneration: {}
-          f:updatedNumberScheduled: {}
-      manager: kube-controller-manager
-      operation: Update
-      subresource: status
-      time: "2024-12-28T17:39:32Z"
-    name: kindnet
-    namespace: kube-system
-    resourceVersion: "12380"
-    uid: 1d27de96-caab-4cb2-ae2c-59a98f583793
-  spec:
-    revisionHistoryLimit: 10
-    selector:
-      matchLabels:
-        app: kindnet
-    template:
-      metadata:
-        creationTimestamp: null
-        labels:
-          app: kindnet
-          k8s-app: kindnet
-          tier: node
-      spec:
-        containers:
-        - env:
-          - name: HOST_IP
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: status.hostIP
-          - name: POD_IP
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: status.podIP
-          - name: POD_SUBNET
-            value: 10.244.0.0/16
-          image: kindest/kindnetd:v20221004-44d545d1
-          imagePullPolicy: IfNotPresent
-          name: kindnet-cni
-          resources:
-            limits:
-              cpu: 100m
-              memory: 50Mi
-            requests:
-              cpu: 100m
-              memory: 50Mi
-          securityContext:
-            capabilities:
-              add:
-              - NET_RAW
-              - NET_ADMIN
-            privileged: false
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          volumeMounts:
-          - mountPath: /etc/cni/net.d
-            name: cni-cfg
-          - mountPath: /run/xtables.lock
-            name: xtables-lock
-          - mountPath: /lib/modules
-            name: lib-modules
-            readOnly: true
-        dnsPolicy: ClusterFirst
-        hostNetwork: true
-        restartPolicy: Always
-        schedulerName: default-scheduler
-        securityContext: {}
-        serviceAccount: kindnet
-        serviceAccountName: kindnet
-        terminationGracePeriodSeconds: 30
-        tolerations:
-        - effect: NoSchedule
-          operator: Exists
-        volumes:
-        - hostPath:
-            path: /etc/cni/net.d
-            type: DirectoryOrCreate
-          name: cni-cfg
-        - hostPath:
-            path: /run/xtables.lock
-            type: FileOrCreate
-          name: xtables-lock
-        - hostPath:
-            path: /lib/modules
-            type: ""
-          name: lib-modules
-    updateStrategy:
-      rollingUpdate:
-        maxSurge: 0
-        maxUnavailable: 1
-      type: RollingUpdate
-  status:
-    currentNumberScheduled: 1
-    desiredNumberScheduled: 1
-    numberAvailable: 1
-    numberMisscheduled: 0
-    numberReady: 1
-    observedGeneration: 1
-    updatedNumberScheduled: 1
-- apiVersion: apps/v1
-  kind: DaemonSet
-  metadata:
-    annotations:
-      deprecated.daemonset.template.generation: "1"
-    creationTimestamp: "2024-12-28T14:57:41Z"
+    creationTimestamp: "2024-12-29T05:30:57Z"
     generation: 1
     labels:
       k8s-app: kube-proxy
@@ -1152,7 +904,7 @@ items:
             f:type: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:41Z"
+      time: "2024-12-29T05:30:57Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -1166,11 +918,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:39:32Z"
+      time: "2024-12-29T05:31:10Z"
     name: kube-proxy
     namespace: kube-system
-    resourceVersion: "12379"
-    uid: 78f1343e-1392-4860-8502-9efeb3aab700
+    resourceVersion: "368"
+    uid: e5a5ffd9-c42f-47dc-8094-e420b48fbc3c
   spec:
     revisionHistoryLimit: 10
     selector:
@@ -1255,7 +1007,7 @@ items:
       deployment.kubernetes.io/revision: "1"
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-controller","namespace":"ingress-nginx"},"spec":{"minReadySeconds":0,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"}},"strategy":{"rollingUpdate":{"maxUnavailable":1},"type":"RollingUpdate"},"template":{"metadata":{"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx","gcp-auth-skip-secret":"true"}},"spec":{"containers":[{"args":["/nginx-ingress-controller","--election-id=ingress-nginx-leader","--controller-class=k8s.io/ingress-nginx","--watch-ingress-without-class=true","--configmap=$(POD_NAMESPACE)/ingress-nginx-controller","--tcp-services-configmap=$(POD_NAMESPACE)/tcp-services","--udp-services-configmap=$(POD_NAMESPACE)/udp-services","--validating-webhook=:8443","--validating-webhook-certificate=/usr/local/certificates/cert","--validating-webhook-key=/usr/local/certificates/key"],"env":[{"name":"POD_NAME","valueFrom":{"fieldRef":{"fieldPath":"metadata.name"}}},{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}},{"name":"LD_PRELOAD","value":"/usr/local/lib/libmimalloc.so"}],"image":"registry.k8s.io/ingress-nginx/controller:v1.5.1@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629","imagePullPolicy":"IfNotPresent","lifecycle":{"preStop":{"exec":{"command":["/wait-shutdown"]}}},"livenessProbe":{"failureThreshold":5,"httpGet":{"path":"/healthz","port":10254,"scheme":"HTTP"},"initialDelaySeconds":10,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"name":"controller","ports":[{"containerPort":80,"hostPort":80,"name":"http","protocol":"TCP"},{"containerPort":443,"hostPort":443,"name":"https","protocol":"TCP"},{"containerPort":8443,"name":"webhook","protocol":"TCP"}],"readinessProbe":{"failureThreshold":3,"httpGet":{"path":"/healthz","port":10254,"scheme":"HTTP"},"initialDelaySeconds":10,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"resources":{"requests":{"cpu":"100m","memory":"90Mi"}},"securityContext":{"allowPrivilegeEscalation":true,"capabilities":{"add":["NET_BIND_SERVICE"],"drop":["ALL"]},"runAsUser":101},"volumeMounts":[{"mountPath":"/usr/local/certificates/","name":"webhook-cert","readOnly":true}]}],"dnsPolicy":"ClusterFirst","nodeSelector":{"kubernetes.io/os":"linux","minikube.k8s.io/primary":"true"},"serviceAccountName":"ingress-nginx","terminationGracePeriodSeconds":0,"tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/master","operator":"Equal"}],"volumes":[{"name":"webhook-cert","secret":{"secretName":"ingress-nginx-admission"}}]}}}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: controller
@@ -1412,7 +1164,7 @@ items:
                     f:secretName: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -1446,11 +1198,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:38:10Z"
+      time: "2024-12-29T05:34:53Z"
     name: ingress-nginx-controller
     namespace: ingress-nginx
-    resourceVersion: "12156"
-    uid: 7d5b52fd-09e0-42b1-8622-bbb806b7e374
+    resourceVersion: "780"
+    uid: f9faf5ce-1df5-4824-acdf-0df9cfc81939
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -1579,14 +1331,14 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-28T17:37:04Z"
-      lastUpdateTime: "2024-12-28T17:37:04Z"
+    - lastTransitionTime: "2024-12-29T05:33:21Z"
+      lastUpdateTime: "2024-12-29T05:33:21Z"
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: "True"
       type: Available
-    - lastTransitionTime: "2024-12-28T17:37:04Z"
-      lastUpdateTime: "2024-12-28T17:38:10Z"
+    - lastTransitionTime: "2024-12-29T05:33:21Z"
+      lastUpdateTime: "2024-12-29T05:34:53Z"
       message: ReplicaSet "ingress-nginx-controller-77669ff58" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
@@ -1600,7 +1352,7 @@ items:
   metadata:
     annotations:
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2024-12-28T14:57:40Z"
+    creationTimestamp: "2024-12-29T05:30:57Z"
     generation: 2
     labels:
       k8s-app: kube-dns
@@ -1736,7 +1488,7 @@ items:
                   f:name: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:40Z"
+      time: "2024-12-29T05:30:57Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -1771,11 +1523,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T14:58:09Z"
+      time: "2024-12-29T05:31:11Z"
     name: coredns
     namespace: kube-system
-    resourceVersion: "426"
-    uid: a4976868-2b73-4ced-938c-cfeccaaf175d
+    resourceVersion: "380"
+    uid: 8c8d4f34-e46a-4253-834a-d6426be1dd71
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -1888,14 +1640,14 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-28T14:57:52Z"
-      lastUpdateTime: "2024-12-28T14:57:52Z"
+    - lastTransitionTime: "2024-12-29T05:31:09Z"
+      lastUpdateTime: "2024-12-29T05:31:09Z"
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: "True"
       type: Available
-    - lastTransitionTime: "2024-12-28T14:57:52Z"
-      lastUpdateTime: "2024-12-28T14:58:09Z"
+    - lastTransitionTime: "2024-12-29T05:31:09Z"
+      lastUpdateTime: "2024-12-29T05:31:11Z"
       message: ReplicaSet "coredns-787d4945fb" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
@@ -1911,7 +1663,7 @@ items:
       deployment.kubernetes.io/revision: "1"
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"metrics-server","kubernetes.io/minikube-addons":"metrics-server"},"name":"metrics-server","namespace":"kube-system"},"spec":{"selector":{"matchLabels":{"k8s-app":"metrics-server"}},"strategy":{"rollingUpdate":{"maxUnavailable":0}},"template":{"metadata":{"labels":{"k8s-app":"metrics-server"},"name":"metrics-server"},"spec":{"containers":[{"args":["--cert-dir=/tmp","--secure-port=4443","--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname","--kubelet-use-node-status-port","--metric-resolution=60s","--kubelet-insecure-tls"],"image":"registry.k8s.io/metrics-server/metrics-server:v0.6.2@sha256:f977ad859fb500c1302d9c3428c6271db031bb7431e7076213b676b345a88dc2","imagePullPolicy":"IfNotPresent","livenessProbe":{"failureThreshold":3,"httpGet":{"path":"/livez","port":"https","scheme":"HTTPS"},"periodSeconds":10},"name":"metrics-server","ports":[{"containerPort":4443,"name":"https","protocol":"TCP"}],"readinessProbe":{"failureThreshold":3,"httpGet":{"path":"/readyz","port":"https","scheme":"HTTPS"},"periodSeconds":10},"resources":{"requests":{"cpu":"100m","memory":"200Mi"}},"securityContext":{"readOnlyRootFilesystem":true,"runAsNonRoot":true,"runAsUser":1000},"volumeMounts":[{"mountPath":"/tmp","name":"tmp-dir"}]}],"priorityClassName":"system-cluster-critical","serviceAccountName":"metrics-server","volumes":[{"emptyDir":{},"name":"tmp-dir"}]}}}}
-    creationTimestamp: "2024-12-28T17:37:59Z"
+    creationTimestamp: "2024-12-29T05:34:41Z"
     generation: 1
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
@@ -2019,7 +1771,7 @@ items:
                   f:name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:59Z"
+      time: "2024-12-29T05:34:41Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -2053,11 +1805,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:40:17Z"
+      time: "2024-12-29T05:34:54Z"
     name: metrics-server
     namespace: kube-system
-    resourceVersion: "12446"
-    uid: 762e0387-a327-4091-b822-57017b871cbe
+    resourceVersion: "790"
+    uid: 8a6bc2a6-59d1-4ce4-98cb-eb4f6a94e172
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -2137,18 +1889,18 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-28T17:37:59Z"
-      lastUpdateTime: "2024-12-28T17:38:20Z"
-      message: ReplicaSet "metrics-server-5f8fcc9bb7" has successfully progressed.
-      reason: NewReplicaSetAvailable
-      status: "True"
-      type: Progressing
-    - lastTransitionTime: "2024-12-28T17:40:17Z"
-      lastUpdateTime: "2024-12-28T17:40:17Z"
+    - lastTransitionTime: "2024-12-29T05:34:54Z"
+      lastUpdateTime: "2024-12-29T05:34:54Z"
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: "True"
       type: Available
+    - lastTransitionTime: "2024-12-29T05:34:41Z"
+      lastUpdateTime: "2024-12-29T05:34:54Z"
+      message: ReplicaSet "metrics-server-5f8fcc9bb7" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
     observedGeneration: 1
     readyReplicas: 1
     replicas: 1
@@ -2160,7 +1912,7 @@ items:
       deployment.kubernetes.io/revision: "1"
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"dashboard-metrics-scraper","kubernetes.io/minikube-addons":"dashboard"},"name":"dashboard-metrics-scraper","namespace":"kubernetes-dashboard"},"spec":{"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"k8s-app":"dashboard-metrics-scraper"}},"template":{"metadata":{"annotations":{"seccomp.security.alpha.kubernetes.io/pod":"runtime/default"},"labels":{"k8s-app":"dashboard-metrics-scraper"}},"spec":{"containers":[{"image":"docker.io/kubernetesui/metrics-scraper:v1.0.8@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c","livenessProbe":{"httpGet":{"path":"/","port":8000,"scheme":"HTTP"},"initialDelaySeconds":30,"timeoutSeconds":30},"name":"dashboard-metrics-scraper","ports":[{"containerPort":8000,"protocol":"TCP"}],"securityContext":{"allowPrivilegeEscalation":false,"readOnlyRootFilesystem":true,"runAsGroup":2001,"runAsUser":1001},"volumeMounts":[{"mountPath":"/tmp","name":"tmp-volume"}]}],"nodeSelector":{"kubernetes.io/os":"linux"},"serviceAccountName":"kubernetes-dashboard","tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/master"}],"volumes":[{"emptyDir":{},"name":"tmp-volume"}]}}}}
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     generation: 1
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
@@ -2255,7 +2007,7 @@ items:
                   f:name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -2289,11 +2041,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:39:38Z"
+      time: "2024-12-29T05:33:36Z"
     name: dashboard-metrics-scraper
     namespace: kubernetes-dashboard
-    resourceVersion: "12392"
-    uid: 4036e035-2c69-4d4b-8ac0-3ba766ffcb00
+    resourceVersion: "631"
+    uid: 74268ed8-9bcb-4dca-a7e3-171604660d9e
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -2360,18 +2112,18 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-28T15:01:53Z"
-      lastUpdateTime: "2024-12-28T15:02:21Z"
-      message: ReplicaSet "dashboard-metrics-scraper-5c6664855" has successfully progressed.
-      reason: NewReplicaSetAvailable
-      status: "True"
-      type: Progressing
-    - lastTransitionTime: "2024-12-28T17:39:38Z"
-      lastUpdateTime: "2024-12-28T17:39:38Z"
+    - lastTransitionTime: "2024-12-29T05:33:36Z"
+      lastUpdateTime: "2024-12-29T05:33:36Z"
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: "True"
       type: Available
+    - lastTransitionTime: "2024-12-29T05:32:55Z"
+      lastUpdateTime: "2024-12-29T05:33:36Z"
+      message: ReplicaSet "dashboard-metrics-scraper-5c6664855" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
     observedGeneration: 1
     readyReplicas: 1
     replicas: 1
@@ -2383,7 +2135,7 @@ items:
       deployment.kubernetes.io/revision: "1"
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"spec":{"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"k8s-app":"kubernetes-dashboard"}},"template":{"metadata":{"labels":{"gcp-auth-skip-secret":"true","k8s-app":"kubernetes-dashboard"}},"spec":{"containers":[{"args":["--namespace=kubernetes-dashboard","--enable-skip-login","--disable-settings-authorizer"],"image":"docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93","livenessProbe":{"httpGet":{"path":"/","port":9090},"initialDelaySeconds":30,"timeoutSeconds":30},"name":"kubernetes-dashboard","ports":[{"containerPort":9090,"protocol":"TCP"}],"securityContext":{"allowPrivilegeEscalation":false,"readOnlyRootFilesystem":true,"runAsGroup":2001,"runAsUser":1001},"volumeMounts":[{"mountPath":"/tmp","name":"tmp-volume"}]}],"nodeSelector":{"kubernetes.io/os":"linux"},"serviceAccountName":"kubernetes-dashboard","tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/master"}],"volumes":[{"emptyDir":{},"name":"tmp-volume"}]}}}}
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     generation: 1
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
@@ -2477,7 +2229,7 @@ items:
                   f:name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -2511,11 +2263,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:39:31Z"
+      time: "2024-12-29T05:33:26Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "12371"
-    uid: 39702987-5d68-4844-b2a5-b0eac8f36b18
+    resourceVersion: "613"
+    uid: 5f677412-d153-4371-b5da-a58966099e93
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -2585,18 +2337,18 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-28T15:01:53Z"
-      lastUpdateTime: "2024-12-28T15:02:14Z"
-      message: ReplicaSet "kubernetes-dashboard-55c4cbbc7c" has successfully progressed.
-      reason: NewReplicaSetAvailable
-      status: "True"
-      type: Progressing
-    - lastTransitionTime: "2024-12-28T17:39:31Z"
-      lastUpdateTime: "2024-12-28T17:39:31Z"
+    - lastTransitionTime: "2024-12-29T05:33:26Z"
+      lastUpdateTime: "2024-12-29T05:33:26Z"
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: "True"
       type: Available
+    - lastTransitionTime: "2024-12-29T05:32:55Z"
+      lastUpdateTime: "2024-12-29T05:33:26Z"
+      message: ReplicaSet "kubernetes-dashboard-55c4cbbc7c" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
     observedGeneration: 1
     readyReplicas: 1
     replicas: 1
@@ -2608,7 +2360,7 @@ items:
       ingressclass.kubernetes.io/is-default-class: "true"
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"networking.k8s.io/v1","kind":"IngressClass","metadata":{"annotations":{"ingressclass.kubernetes.io/is-default-class":"true"},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"nginx"},"spec":{"controller":"k8s.io/ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: controller
@@ -2632,10 +2384,10 @@ items:
           f:controller: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: nginx
-    resourceVersion: "11971"
-    uid: 53ecd2dc-dd34-46f2-812d-5eb843f27da3
+    resourceVersion: "587"
+    uid: 2bea61d5-05d2-4a7b-b63d-f343a47180f1
   spec:
     controller: k8s.io/ingress-nginx
 - apiVersion: batch/v1
@@ -2645,7 +2397,7 @@ items:
       batch.kubernetes.io/job-tracking: ""
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"batch/v1","kind":"Job","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission-create","namespace":"ingress-nginx"},"spec":{"template":{"metadata":{"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission-create"},"spec":{"containers":[{"args":["create","--host=ingress-nginx-controller-admission,ingress-nginx-controller-admission.$(POD_NAMESPACE).svc","--namespace=$(POD_NAMESPACE)","--secret-name=ingress-nginx-admission"],"env":[{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}}],"image":"registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20220916-gd32f8c343@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f","imagePullPolicy":"IfNotPresent","name":"create","securityContext":{"allowPrivilegeEscalation":false}}],"nodeSelector":{"kubernetes.io/os":"linux","minikube.k8s.io/primary":"true"},"restartPolicy":"OnFailure","securityContext":{"runAsNonRoot":true,"runAsUser":2000},"serviceAccountName":"ingress-nginx-admission"}}}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: admission-webhook
@@ -2713,7 +2465,7 @@ items:
               f:terminationGracePeriodSeconds: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: batch/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -2727,11 +2479,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:37:19Z"
+      time: "2024-12-29T05:33:48Z"
     name: ingress-nginx-admission-create
     namespace: ingress-nginx
-    resourceVersion: "12028"
-    uid: f41ccc53-96b0-4812-8b59-91c390628c7e
+    resourceVersion: "663"
+    uid: f3920a1a-1e91-4960-8a04-a533332108af
   spec:
     backoffLimit: 6
     completionMode: NonIndexed
@@ -2739,7 +2491,7 @@ items:
     parallelism: 1
     selector:
       matchLabels:
-        controller-uid: f41ccc53-96b0-4812-8b59-91c390628c7e
+        controller-uid: f3920a1a-1e91-4960-8a04-a533332108af
     suspend: false
     template:
       metadata:
@@ -2748,7 +2500,7 @@ items:
           app.kubernetes.io/component: admission-webhook
           app.kubernetes.io/instance: ingress-nginx
           app.kubernetes.io/name: ingress-nginx
-          controller-uid: f41ccc53-96b0-4812-8b59-91c390628c7e
+          controller-uid: f3920a1a-1e91-4960-8a04-a533332108af
           job-name: ingress-nginx-admission-create
         name: ingress-nginx-admission-create
       spec:
@@ -2785,14 +2537,14 @@ items:
         serviceAccountName: ingress-nginx-admission
         terminationGracePeriodSeconds: 30
   status:
-    completionTime: "2024-12-28T17:37:19Z"
+    completionTime: "2024-12-29T05:33:48Z"
     conditions:
-    - lastProbeTime: "2024-12-28T17:37:19Z"
-      lastTransitionTime: "2024-12-28T17:37:19Z"
+    - lastProbeTime: "2024-12-29T05:33:48Z"
+      lastTransitionTime: "2024-12-29T05:33:48Z"
       status: "True"
       type: Complete
     ready: 0
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
     succeeded: 1
     uncountedTerminatedPods: {}
 - apiVersion: batch/v1
@@ -2802,7 +2554,7 @@ items:
       batch.kubernetes.io/job-tracking: ""
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"batch/v1","kind":"Job","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission-patch","namespace":"ingress-nginx"},"spec":{"template":{"metadata":{"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission-patch"},"spec":{"containers":[{"args":["patch","--webhook-name=ingress-nginx-admission","--namespace=$(POD_NAMESPACE)","--patch-mutating=false","--secret-name=ingress-nginx-admission","--patch-failure-policy=Fail"],"env":[{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}}],"image":"registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20220916-gd32f8c343@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f","imagePullPolicy":"IfNotPresent","name":"patch","securityContext":{"allowPrivilegeEscalation":false}}],"nodeSelector":{"kubernetes.io/os":"linux","minikube.k8s.io/primary":"true"},"restartPolicy":"OnFailure","securityContext":{"runAsNonRoot":true,"runAsUser":2000},"serviceAccountName":"ingress-nginx-admission"}}}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: admission-webhook
@@ -2870,7 +2622,7 @@ items:
               f:terminationGracePeriodSeconds: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: batch/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -2884,11 +2636,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:37:20Z"
+      time: "2024-12-29T05:33:48Z"
     name: ingress-nginx-admission-patch
     namespace: ingress-nginx
-    resourceVersion: "12035"
-    uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
+    resourceVersion: "666"
+    uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
   spec:
     backoffLimit: 6
     completionMode: NonIndexed
@@ -2896,7 +2648,7 @@ items:
     parallelism: 1
     selector:
       matchLabels:
-        controller-uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
+        controller-uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
     suspend: false
     template:
       metadata:
@@ -2905,7 +2657,7 @@ items:
           app.kubernetes.io/component: admission-webhook
           app.kubernetes.io/instance: ingress-nginx
           app.kubernetes.io/name: ingress-nginx
-          controller-uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
+          controller-uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
           job-name: ingress-nginx-admission-patch
         name: ingress-nginx-admission-patch
       spec:
@@ -2944,14 +2696,14 @@ items:
         serviceAccountName: ingress-nginx-admission
         terminationGracePeriodSeconds: 30
   status:
-    completionTime: "2024-12-28T17:37:20Z"
+    completionTime: "2024-12-29T05:33:48Z"
     conditions:
-    - lastProbeTime: "2024-12-28T17:37:20Z"
-      lastTransitionTime: "2024-12-28T17:37:20Z"
+    - lastProbeTime: "2024-12-29T05:33:48Z"
+      lastTransitionTime: "2024-12-29T05:33:48Z"
       status: "True"
       type: Complete
     ready: 0
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
     succeeded: 1
     uncountedTerminatedPods: {}
 - apiVersion: v1
@@ -2961,7 +2713,7 @@ items:
       kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/cri-dockerd.sock
       node.alpha.kubernetes.io/ttl: "0"
       volumes.kubernetes.io/controller-managed-attach-detach: "true"
-    creationTimestamp: "2024-12-28T14:57:37Z"
+    creationTimestamp: "2024-12-29T05:30:52Z"
     labels:
       beta.kubernetes.io/arch: amd64
       beta.kubernetes.io/os: linux
@@ -2971,7 +2723,7 @@ items:
       minikube.k8s.io/commit: ddac20b4b34a9c8c857fc602203b6ba2679794d3
       minikube.k8s.io/name: minikube
       minikube.k8s.io/primary: "true"
-      minikube.k8s.io/updated_at: 2024_12_28T15_57_42_0700
+      minikube.k8s.io/updated_at: 2024_12_29T06_30_57_0700
       minikube.k8s.io/version: v1.29.0
       node-role.kubernetes.io/control-plane: ""
       node.kubernetes.io/exclude-from-external-load-balancers: ""
@@ -2992,7 +2744,7 @@ items:
             f:kubernetes.io/os: {}
       manager: kubelet
       operation: Update
-      time: "2024-12-28T14:57:37Z"
+      time: "2024-12-29T05:30:52Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -3004,7 +2756,7 @@ items:
             f:node.kubernetes.io/exclude-from-external-load-balancers: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:40Z"
+      time: "2024-12-29T05:30:55Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -3017,7 +2769,7 @@ items:
             f:minikube.k8s.io/version: {}
       manager: kubectl-label
       operation: Update
-      time: "2024-12-28T14:57:42Z"
+      time: "2024-12-29T05:30:57Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -3031,7 +2783,7 @@ items:
             v:"10.244.0.0/24": {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:57:52Z"
+      time: "2024-12-29T05:31:09Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -3053,53 +2805,53 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:39:49Z"
+      time: "2024-12-29T05:35:02Z"
     name: minikube
-    resourceVersion: "12406"
-    uid: aa54b6c8-6298-4a2a-a08a-ebc445c04636
+    resourceVersion: "799"
+    uid: 4f30e5d7-579c-4498-849f-0a87d7fe1a1b
   spec:
     podCIDR: 10.244.0.0/24
     podCIDRs:
     - 10.244.0.0/24
   status:
     addresses:
-    - address: 192.168.64.18
+    - address: 192.168.64.21
       type: InternalIP
     - address: minikube
       type: Hostname
     allocatable:
       cpu: "2"
-      ephemeral-storage: 4412780Ki
+      ephemeral-storage: 17784752Ki
       hugepages-2Mi: "0"
-      memory: 2017572Ki
+      memory: 3914660Ki
       pods: "110"
     capacity:
       cpu: "2"
-      ephemeral-storage: 4412780Ki
+      ephemeral-storage: 17784752Ki
       hugepages-2Mi: "0"
-      memory: 2017572Ki
+      memory: 3914660Ki
       pods: "110"
     conditions:
-    - lastHeartbeatTime: "2024-12-28T17:39:49Z"
-      lastTransitionTime: "2024-12-28T14:57:34Z"
+    - lastHeartbeatTime: "2024-12-29T05:35:02Z"
+      lastTransitionTime: "2024-12-29T05:30:49Z"
       message: kubelet has sufficient memory available
       reason: KubeletHasSufficientMemory
       status: "False"
       type: MemoryPressure
-    - lastHeartbeatTime: "2024-12-28T17:39:49Z"
-      lastTransitionTime: "2024-12-28T14:57:34Z"
+    - lastHeartbeatTime: "2024-12-29T05:35:02Z"
+      lastTransitionTime: "2024-12-29T05:30:49Z"
       message: kubelet has no disk pressure
       reason: KubeletHasNoDiskPressure
       status: "False"
       type: DiskPressure
-    - lastHeartbeatTime: "2024-12-28T17:39:49Z"
-      lastTransitionTime: "2024-12-28T14:57:34Z"
+    - lastHeartbeatTime: "2024-12-29T05:35:02Z"
+      lastTransitionTime: "2024-12-29T05:30:49Z"
       message: kubelet has sufficient PID available
       reason: KubeletHasSufficientPID
       status: "False"
       type: PIDPressure
-    - lastHeartbeatTime: "2024-12-28T17:39:49Z"
-      lastTransitionTime: "2024-12-28T14:58:07Z"
+    - lastHeartbeatTime: "2024-12-29T05:35:02Z"
+      lastTransitionTime: "2024-12-29T05:30:57Z"
       message: kubelet is posting ready status
       reason: KubeletReady
       status: "True"
@@ -3112,10 +2864,6 @@ items:
       - registry.k8s.io/etcd@sha256:dd75ec974b0a2a6f6bb47001ba09207976e625db898d1b16735528c009cb171c
       - registry.k8s.io/etcd:3.5.6-0
       sizeBytes: 299475478
-    - names:
-      - registry.k8s.io/kubernetes-zookeeper@sha256:f7704afda9379c77d3684d70eb98da0c8fab9b5eb4cede61d866d9c205ef4616
-      - registry.k8s.io/kubernetes-zookeeper:1.0-3.4.10
-      sizeBytes: 272925858
     - names:
       - registry.k8s.io/ingress-nginx/controller@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
       sizeBytes: 269046403
@@ -3137,10 +2885,6 @@ items:
       - registry.k8s.io/kube-proxy@sha256:85f705e7d98158a67432c53885b0d470c673b0fad3693440b45d07efebcda1c3
       - registry.k8s.io/kube-proxy:v1.26.1
       sizeBytes: 65623686
-    - names:
-      - kindest/kindnetd@sha256:273469d84ede51824194a31f6a405e3d3686b8b87cd161ea40f6bc3ff8e04ffe
-      - kindest/kindnetd:v20221004-44d545d1
-      sizeBytes: 61770893
     - names:
       - registry.k8s.io/kube-scheduler@sha256:af0292c2c4fa6d09ee8544445eef373c1c280113cb6c968398a37da3744c41e4
       - registry.k8s.io/kube-scheduler:v1.26.1
@@ -3169,25 +2913,25 @@ items:
       sizeBytes: 682696
     nodeInfo:
       architecture: amd64
-      bootID: 9b5fb922-4c5d-4299-bd43-e8741396bf4f
+      bootID: b3151a78-7662-4f35-b52a-6746e85d48f3
       containerRuntimeVersion: docker://20.10.23
       kernelVersion: 5.10.57
       kubeProxyVersion: v1.26.1
       kubeletVersion: v1.26.1
-      machineID: 1998f13a63474535a4c6df6dd5c7c4ae
+      machineID: e88d32488e5c42b0bb9cca79fe631525
       operatingSystem: linux
       osImage: Buildroot 2021.02.12
-      systemUUID: f9ac11ef-0000-0000-82af-60f81dcd9370
+      systemUUID: f45e11ef-0000-0000-a7fd-60f81dcd9370
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generateName: ingress-nginx-admission-create-
     labels:
       app.kubernetes.io/component: admission-webhook
       app.kubernetes.io/instance: ingress-nginx
       app.kubernetes.io/name: ingress-nginx
-      controller-uid: f41ccc53-96b0-4812-8b59-91c390628c7e
+      controller-uid: f3920a1a-1e91-4960-8a04-a533332108af
       job-name: ingress-nginx-admission-create
     managedFields:
     - apiVersion: v1
@@ -3204,7 +2948,7 @@ items:
             f:job-name: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"f41ccc53-96b0-4812-8b59-91c390628c7e"}: {}
+            k:{"uid":"f3920a1a-1e91-4960-8a04-a533332108af"}: {}
         f:spec:
           f:containers:
             k:{"name":"create"}:
@@ -3241,7 +2985,7 @@ items:
           f:terminationGracePeriodSeconds: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -3274,15 +3018,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.11"}:
+            k:{"ip":"10.244.0.6"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:37:18Z"
-    name: ingress-nginx-admission-create-rjzph
+      time: "2024-12-29T05:33:47Z"
+    name: ingress-nginx-admission-create-9fs98
     namespace: ingress-nginx
     ownerReferences:
     - apiVersion: batch/v1
@@ -3290,9 +3034,9 @@ items:
       controller: true
       kind: Job
       name: ingress-nginx-admission-create
-      uid: f41ccc53-96b0-4812-8b59-91c390628c7e
-    resourceVersion: "12027"
-    uid: e1db96fc-1734-4d87-8c6a-505762624db9
+      uid: f3920a1a-1e91-4960-8a04-a533332108af
+    resourceVersion: "661"
+    uid: 474fc74b-099a-4109-b23f-a3de709083b1
   spec:
     containers:
     - args:
@@ -3316,7 +3060,7 @@ items:
       terminationMessagePolicy: File
       volumeMounts:
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-6gqv8
+        name: kube-api-access-5srr2
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -3344,7 +3088,7 @@ items:
       operator: Exists
       tolerationSeconds: 300
     volumes:
-    - name: kube-api-access-6gqv8
+    - name: kube-api-access-5srr2
       projected:
         defaultMode: 420
         sources:
@@ -3365,26 +3109,26 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "False"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "False"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://1d062ae7baed8d3c9527d19f6cc29865393a9f25551dffea020e2d46764ad513
+    - containerID: docker://90db5dfb7dd5ac5fa65e28f25ff8199d81305611e57655095897f1fa053797bf
       image: registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
       imageID: docker-pullable://registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
       lastState: {}
@@ -3394,28 +3138,28 @@ items:
       started: false
       state:
         terminated:
-          containerID: docker://1d062ae7baed8d3c9527d19f6cc29865393a9f25551dffea020e2d46764ad513
+          containerID: docker://90db5dfb7dd5ac5fa65e28f25ff8199d81305611e57655095897f1fa053797bf
           exitCode: 0
-          finishedAt: "2024-12-28T17:37:15Z"
+          finishedAt: "2024-12-29T05:33:44Z"
           reason: Completed
-          startedAt: "2024-12-28T17:37:15Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:33:44Z"
+    hostIP: 192.168.64.21
     phase: Succeeded
-    podIP: 10.244.0.11
+    podIP: 10.244.0.6
     podIPs:
-    - ip: 10.244.0.11
+    - ip: 10.244.0.6
     qosClass: BestEffort
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generateName: ingress-nginx-admission-patch-
     labels:
       app.kubernetes.io/component: admission-webhook
       app.kubernetes.io/instance: ingress-nginx
       app.kubernetes.io/name: ingress-nginx
-      controller-uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
+      controller-uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
       job-name: ingress-nginx-admission-patch
     managedFields:
     - apiVersion: v1
@@ -3432,7 +3176,7 @@ items:
             f:job-name: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"aff3dfb3-4d71-4ece-bf0b-403f2958214a"}: {}
+            k:{"uid":"861512ff-34d8-42ff-ae85-88c8a1b10459"}: {}
         f:spec:
           f:containers:
             k:{"name":"patch"}:
@@ -3469,7 +3213,7 @@ items:
           f:terminationGracePeriodSeconds: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -3502,15 +3246,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.10"}:
+            k:{"ip":"10.244.0.5"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:37:19Z"
-    name: ingress-nginx-admission-patch-2dns9
+      time: "2024-12-29T05:33:47Z"
+    name: ingress-nginx-admission-patch-thx7w
     namespace: ingress-nginx
     ownerReferences:
     - apiVersion: batch/v1
@@ -3518,9 +3262,9 @@ items:
       controller: true
       kind: Job
       name: ingress-nginx-admission-patch
-      uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
-    resourceVersion: "12034"
-    uid: eb273bc8-5203-4c15-8603-edf89a57a44c
+      uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
+    resourceVersion: "664"
+    uid: a587f124-2768-47e3-b2e8-9deb08d7aa2e
   spec:
     containers:
     - args:
@@ -3546,7 +3290,7 @@ items:
       terminationMessagePolicy: File
       volumeMounts:
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-tlc52
+        name: kube-api-access-kvwjv
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -3574,7 +3318,7 @@ items:
       operator: Exists
       tolerationSeconds: 300
     volumes:
-    - name: kube-api-access-tlc52
+    - name: kube-api-access-kvwjv
       projected:
         defaultMode: 420
         sources:
@@ -3595,26 +3339,26 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "False"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "False"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://d2158c595670ee7e568f3bc5f552bc3a2926cab37c28af4f3cbd90cd074007b3
+    - containerID: docker://a6d96a2d8797349a5e1b561761af9406e7bf4991cb8b13bd3cdaf292258ca800
       image: sha256:520347519a8caefcdff1c480be13cea37a66bccf517302949b569a654b0656b5
       imageID: docker-pullable://registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
       lastState: {}
@@ -3624,22 +3368,22 @@ items:
       started: false
       state:
         terminated:
-          containerID: docker://d2158c595670ee7e568f3bc5f552bc3a2926cab37c28af4f3cbd90cd074007b3
+          containerID: docker://a6d96a2d8797349a5e1b561761af9406e7bf4991cb8b13bd3cdaf292258ca800
           exitCode: 0
-          finishedAt: "2024-12-28T17:37:16Z"
+          finishedAt: "2024-12-29T05:33:44Z"
           reason: Completed
-          startedAt: "2024-12-28T17:37:16Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:33:44Z"
+    hostIP: 192.168.64.21
     phase: Succeeded
-    podIP: 10.244.0.10
+    podIP: 10.244.0.5
     podIPs:
-    - ip: 10.244.0.10
+    - ip: 10.244.0.5
     qosClass: BestEffort
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generateName: ingress-nginx-controller-77669ff58-
     labels:
       app.kubernetes.io/component: controller
@@ -3662,7 +3406,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"97f0cafa-8e3d-4e1c-bb3c-58d47e3af0ac"}: {}
+            k:{"uid":"3db1be9c-0a39-48c1-80c6-43eef21bb4ba"}: {}
         f:spec:
           f:containers:
             k:{"name":"controller"}:
@@ -3783,7 +3527,7 @@ items:
                 f:secretName: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -3813,15 +3557,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.12"}:
+            k:{"ip":"10.244.0.7"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:38:10Z"
-    name: ingress-nginx-controller-77669ff58-j8kgd
+      time: "2024-12-29T05:34:53Z"
+    name: ingress-nginx-controller-77669ff58-ffkzd
     namespace: ingress-nginx
     ownerReferences:
     - apiVersion: apps/v1
@@ -3829,9 +3573,9 @@ items:
       controller: true
       kind: ReplicaSet
       name: ingress-nginx-controller-77669ff58
-      uid: 97f0cafa-8e3d-4e1c-bb3c-58d47e3af0ac
-    resourceVersion: "12150"
-    uid: 529fcc1e-a935-446f-96fe-33bb783333a9
+      uid: 3db1be9c-0a39-48c1-80c6-43eef21bb4ba
+    resourceVersion: "774"
+    uid: 2bf1b272-7937-4b82-9e2d-3b691243eb2e
   spec:
     containers:
     - args:
@@ -3917,7 +3661,7 @@ items:
         name: webhook-cert
         readOnly: true
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-j7pj6
+        name: kube-api-access-dbhx7
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -3950,7 +3694,7 @@ items:
       secret:
         defaultMode: 420
         secretName: ingress-nginx-admission
-    - name: kube-api-access-j7pj6
+    - name: kube-api-access-dbhx7
       projected:
         defaultMode: 420
         sources:
@@ -3971,23 +3715,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:10Z"
+      lastTransitionTime: "2024-12-29T05:34:53Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:10Z"
+      lastTransitionTime: "2024-12-29T05:34:53Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://d1bf993f9160a181ea455322ff40fd8ba3a4846dfd0d592af69258e57cf0b461
+    - containerID: docker://c87f6141ebd9b14f265bc09a819ceecee60b4523053686a13962b912d1fa299e
       image: registry.k8s.io/ingress-nginx/controller@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
       imageID: docker-pullable://registry.k8s.io/ingress-nginx/controller@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
       lastState: {}
@@ -3997,18 +3741,18 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T17:37:51Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:34:39Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 10.244.0.12
+    podIP: 10.244.0.7
     podIPs:
-    - ip: 10.244.0.12
+    - ip: 10.244.0.7
     qosClass: Burstable
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:09Z"
     generateName: coredns-787d4945fb-
     labels:
       k8s-app: kube-dns
@@ -4025,7 +3769,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"3eea038e-c87e-4e43-a068-58117593b14d"}: {}
+            k:{"uid":"4609ef20-e72f-4a2e-9f11-e2462d0dcdd0"}: {}
         f:spec:
           f:affinity:
             .: {}
@@ -4128,25 +3872,7 @@ items:
               f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:57:53Z"
-    - apiVersion: v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:status:
-          f:conditions:
-            .: {}
-            k:{"type":"PodScheduled"}:
-              .: {}
-              f:lastProbeTime: {}
-              f:lastTransitionTime: {}
-              f:message: {}
-              f:reason: {}
-              f:status: {}
-              f:type: {}
-      manager: kube-scheduler
-      operation: Update
-      subresource: status
-      time: "2024-12-28T14:57:53Z"
+      time: "2024-12-29T05:31:09Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -4183,8 +3909,8 @@ items:
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T14:58:09Z"
-    name: coredns-787d4945fb-sntn4
+      time: "2024-12-29T05:31:11Z"
+    name: coredns-787d4945fb-bjdp8
     namespace: kube-system
     ownerReferences:
     - apiVersion: apps/v1
@@ -4192,9 +3918,9 @@ items:
       controller: true
       kind: ReplicaSet
       name: coredns-787d4945fb
-      uid: 3eea038e-c87e-4e43-a068-58117593b14d
-    resourceVersion: "422"
-    uid: 82b7dfbd-07ca-4377-94a9-2589f101b17d
+      uid: 4609ef20-e72f-4a2e-9f11-e2462d0dcdd0
+    resourceVersion: "376"
+    uid: 41122541-972b-4ce4-88f2-6e2be2b1cfc3
   spec:
     affinity:
       podAntiAffinity:
@@ -4265,7 +3991,7 @@ items:
         name: config-volume
         readOnly: true
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-5fcvt
+        name: kube-api-access-slhnc
         readOnly: true
     dnsPolicy: Default
     enableServiceLinks: true
@@ -4302,7 +4028,7 @@ items:
           path: Corefile
         name: coredns
       name: config-volume
-    - name: kube-api-access-5fcvt
+    - name: kube-api-access-slhnc
       projected:
         defaultMode: 420
         sources:
@@ -4323,23 +4049,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:07Z"
+      lastTransitionTime: "2024-12-29T05:31:09Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:09Z"
+      lastTransitionTime: "2024-12-29T05:31:11Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:09Z"
+      lastTransitionTime: "2024-12-29T05:31:11Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:07Z"
+      lastTransitionTime: "2024-12-29T05:31:09Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://19071cb31e7594b54e6ba50aa7d6de5ce4ea0cb107449cf329829f2abac677f7
+    - containerID: docker://bdf00e1b7828e110ea2e7ceb7d0264e248f182ccdeeb13b7dda3e9b732e65c6d
       image: registry.k8s.io/coredns/coredns:v1.9.3
       imageID: docker-pullable://registry.k8s.io/coredns/coredns@sha256:8e352a029d304ca7431c6507b56800636c321cb52289686a581ab70aaa8a2e2a
       lastState: {}
@@ -4349,24 +4075,24 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T14:58:08Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:31:10Z"
+    hostIP: 192.168.64.21
     phase: Running
     podIP: 10.244.0.2
     podIPs:
     - ip: 10.244.0.2
     qosClass: Burstable
-    startTime: "2024-12-28T14:58:07Z"
+    startTime: "2024-12-29T05:31:09Z"
 - apiVersion: v1
   kind: Pod
   metadata:
     annotations:
-      kubeadm.kubernetes.io/etcd.advertise-client-urls: https://192.168.64.18:2379
-      kubernetes.io/config.hash: 88b867dbfd623ff2e0551d08492b32df
-      kubernetes.io/config.mirror: 88b867dbfd623ff2e0551d08492b32df
-      kubernetes.io/config.seen: "2024-12-28T14:57:41.179635727Z"
+      kubeadm.kubernetes.io/etcd.advertise-client-urls: https://192.168.64.21:2379
+      kubernetes.io/config.hash: 425880a0f56905f16ce275f4fbd642de
+      kubernetes.io/config.mirror: 425880a0f56905f16ce275f4fbd642de
+      kubernetes.io/config.seen: "2024-12-29T05:30:57.518163956Z"
       kubernetes.io/config.source: file
-    creationTimestamp: "2024-12-28T14:57:41Z"
+    creationTimestamp: "2024-12-29T05:30:57Z"
     labels:
       component: etcd
       tier: control-plane
@@ -4388,7 +4114,7 @@ items:
             f:tier: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"aa54b6c8-6298-4a2a-a08a-ebc445c04636"}: {}
+            k:{"uid":"4f30e5d7-579c-4498-849f-0a87d7fe1a1b"}: {}
         f:spec:
           f:containers:
             k:{"name":"etcd"}:
@@ -4473,7 +4199,7 @@ items:
               f:name: {}
       manager: kubelet
       operation: Update
-      time: "2024-12-28T14:57:41Z"
+      time: "2024-12-29T05:30:57Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -4510,14 +4236,14 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"192.168.64.18"}:
+            k:{"ip":"192.168.64.21"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T14:58:01Z"
+      time: "2024-12-29T05:31:07Z"
     name: etcd-minikube
     namespace: kube-system
     ownerReferences:
@@ -4525,25 +4251,25 @@ items:
       controller: true
       kind: Node
       name: minikube
-      uid: aa54b6c8-6298-4a2a-a08a-ebc445c04636
-    resourceVersion: "390"
-    uid: 117b64ca-6a92-42c5-9bf4-7561f435ddbe
+      uid: 4f30e5d7-579c-4498-849f-0a87d7fe1a1b
+    resourceVersion: "310"
+    uid: 33a2cd0b-7b7f-4f37-a670-637718aed5db
   spec:
     containers:
     - command:
       - etcd
-      - --advertise-client-urls=https://192.168.64.18:2379
+      - --advertise-client-urls=https://192.168.64.21:2379
       - --cert-file=/var/lib/minikube/certs/etcd/server.crt
       - --client-cert-auth=true
       - --data-dir=/var/lib/minikube/etcd
       - --experimental-initial-corrupt-check=true
       - --experimental-watch-progress-notify-interval=5s
-      - --initial-advertise-peer-urls=https://192.168.64.18:2380
-      - --initial-cluster=minikube=https://192.168.64.18:2380
+      - --initial-advertise-peer-urls=https://192.168.64.21:2380
+      - --initial-cluster=minikube=https://192.168.64.21:2380
       - --key-file=/var/lib/minikube/certs/etcd/server.key
-      - --listen-client-urls=https://127.0.0.1:2379,https://192.168.64.18:2379
+      - --listen-client-urls=https://127.0.0.1:2379,https://192.168.64.21:2379
       - --listen-metrics-urls=http://127.0.0.1:2381
-      - --listen-peer-urls=https://192.168.64.18:2380
+      - --listen-peer-urls=https://192.168.64.21:2380
       - --name=minikube
       - --peer-cert-file=/var/lib/minikube/certs/etcd/peer.crt
       - --peer-client-cert-auth=true
@@ -4616,23 +4342,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:41Z"
+      lastTransitionTime: "2024-12-29T05:30:58Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:46Z"
+      lastTransitionTime: "2024-12-29T05:31:07Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:46Z"
+      lastTransitionTime: "2024-12-29T05:31:07Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:41Z"
+      lastTransitionTime: "2024-12-29T05:30:58Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://722f6eaaa051bd30435c30e2bcebc2c9ddf332a0084217a73192bb4961d9ae0f
+    - containerID: docker://b99397ea36467ed1383a4ee194e1ee31de7d3e102155530ac0e0d6e1b16e1611
       image: registry.k8s.io/etcd:3.5.6-0
       imageID: docker-pullable://registry.k8s.io/etcd@sha256:dd75ec974b0a2a6f6bb47001ba09207976e625db898d1b16735528c009cb171c
       lastState: {}
@@ -4642,355 +4368,24 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T14:57:34Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:30:49Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 192.168.64.18
+    podIP: 192.168.64.21
     podIPs:
-    - ip: 192.168.64.18
+    - ip: 192.168.64.21
     qosClass: Burstable
-    startTime: "2024-12-28T14:57:41Z"
-- apiVersion: v1
-  kind: Pod
-  metadata:
-    creationTimestamp: "2024-12-28T14:57:53Z"
-    generateName: kindnet-
-    labels:
-      app: kindnet
-      controller-revision-hash: 79b4dbc8cc
-      k8s-app: kindnet
-      pod-template-generation: "1"
-      tier: node
-    managedFields:
-    - apiVersion: v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:generateName: {}
-          f:labels:
-            .: {}
-            f:app: {}
-            f:controller-revision-hash: {}
-            f:k8s-app: {}
-            f:pod-template-generation: {}
-            f:tier: {}
-          f:ownerReferences:
-            .: {}
-            k:{"uid":"1d27de96-caab-4cb2-ae2c-59a98f583793"}: {}
-        f:spec:
-          f:affinity:
-            .: {}
-            f:nodeAffinity:
-              .: {}
-              f:requiredDuringSchedulingIgnoredDuringExecution: {}
-          f:containers:
-            k:{"name":"kindnet-cni"}:
-              .: {}
-              f:env:
-                .: {}
-                k:{"name":"HOST_IP"}:
-                  .: {}
-                  f:name: {}
-                  f:valueFrom:
-                    .: {}
-                    f:fieldRef: {}
-                k:{"name":"POD_IP"}:
-                  .: {}
-                  f:name: {}
-                  f:valueFrom:
-                    .: {}
-                    f:fieldRef: {}
-                k:{"name":"POD_SUBNET"}:
-                  .: {}
-                  f:name: {}
-                  f:value: {}
-              f:image: {}
-              f:imagePullPolicy: {}
-              f:name: {}
-              f:resources:
-                .: {}
-                f:limits:
-                  .: {}
-                  f:cpu: {}
-                  f:memory: {}
-                f:requests:
-                  .: {}
-                  f:cpu: {}
-                  f:memory: {}
-              f:securityContext:
-                .: {}
-                f:capabilities:
-                  .: {}
-                  f:add: {}
-                f:privileged: {}
-              f:terminationMessagePath: {}
-              f:terminationMessagePolicy: {}
-              f:volumeMounts:
-                .: {}
-                k:{"mountPath":"/etc/cni/net.d"}:
-                  .: {}
-                  f:mountPath: {}
-                  f:name: {}
-                k:{"mountPath":"/lib/modules"}:
-                  .: {}
-                  f:mountPath: {}
-                  f:name: {}
-                  f:readOnly: {}
-                k:{"mountPath":"/run/xtables.lock"}:
-                  .: {}
-                  f:mountPath: {}
-                  f:name: {}
-          f:dnsPolicy: {}
-          f:enableServiceLinks: {}
-          f:hostNetwork: {}
-          f:restartPolicy: {}
-          f:schedulerName: {}
-          f:securityContext: {}
-          f:serviceAccount: {}
-          f:serviceAccountName: {}
-          f:terminationGracePeriodSeconds: {}
-          f:tolerations: {}
-          f:volumes:
-            .: {}
-            k:{"name":"cni-cfg"}:
-              .: {}
-              f:hostPath:
-                .: {}
-                f:path: {}
-                f:type: {}
-              f:name: {}
-            k:{"name":"lib-modules"}:
-              .: {}
-              f:hostPath:
-                .: {}
-                f:path: {}
-                f:type: {}
-              f:name: {}
-            k:{"name":"xtables-lock"}:
-              .: {}
-              f:hostPath:
-                .: {}
-                f:path: {}
-                f:type: {}
-              f:name: {}
-      manager: kube-controller-manager
-      operation: Update
-      time: "2024-12-28T14:57:53Z"
-    - apiVersion: v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:status:
-          f:conditions:
-            k:{"type":"ContainersReady"}:
-              .: {}
-              f:lastProbeTime: {}
-              f:lastTransitionTime: {}
-              f:status: {}
-              f:type: {}
-            k:{"type":"Initialized"}:
-              .: {}
-              f:lastProbeTime: {}
-              f:lastTransitionTime: {}
-              f:status: {}
-              f:type: {}
-            k:{"type":"Ready"}:
-              .: {}
-              f:lastProbeTime: {}
-              f:lastTransitionTime: {}
-              f:status: {}
-              f:type: {}
-          f:containerStatuses: {}
-          f:hostIP: {}
-          f:phase: {}
-          f:podIP: {}
-          f:podIPs:
-            .: {}
-            k:{"ip":"192.168.64.18"}:
-              .: {}
-              f:ip: {}
-          f:startTime: {}
-      manager: kubelet
-      operation: Update
-      subresource: status
-      time: "2024-12-28T14:58:06Z"
-    name: kindnet-qqvd5
-    namespace: kube-system
-    ownerReferences:
-    - apiVersion: apps/v1
-      blockOwnerDeletion: true
-      controller: true
-      kind: DaemonSet
-      name: kindnet
-      uid: 1d27de96-caab-4cb2-ae2c-59a98f583793
-    resourceVersion: "397"
-    uid: 239274f6-83da-4eb2-9105-88dada345b76
-  spec:
-    affinity:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-          - matchFields:
-            - key: metadata.name
-              operator: In
-              values:
-              - minikube
-    containers:
-    - env:
-      - name: HOST_IP
-        valueFrom:
-          fieldRef:
-            apiVersion: v1
-            fieldPath: status.hostIP
-      - name: POD_IP
-        valueFrom:
-          fieldRef:
-            apiVersion: v1
-            fieldPath: status.podIP
-      - name: POD_SUBNET
-        value: 10.244.0.0/16
-      image: kindest/kindnetd:v20221004-44d545d1
-      imagePullPolicy: IfNotPresent
-      name: kindnet-cni
-      resources:
-        limits:
-          cpu: 100m
-          memory: 50Mi
-        requests:
-          cpu: 100m
-          memory: 50Mi
-      securityContext:
-        capabilities:
-          add:
-          - NET_RAW
-          - NET_ADMIN
-        privileged: false
-      terminationMessagePath: /dev/termination-log
-      terminationMessagePolicy: File
-      volumeMounts:
-      - mountPath: /etc/cni/net.d
-        name: cni-cfg
-      - mountPath: /run/xtables.lock
-        name: xtables-lock
-      - mountPath: /lib/modules
-        name: lib-modules
-        readOnly: true
-      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-m4bnx
-        readOnly: true
-    dnsPolicy: ClusterFirst
-    enableServiceLinks: true
-    hostNetwork: true
-    nodeName: minikube
-    preemptionPolicy: PreemptLowerPriority
-    priority: 0
-    restartPolicy: Always
-    schedulerName: default-scheduler
-    securityContext: {}
-    serviceAccount: kindnet
-    serviceAccountName: kindnet
-    terminationGracePeriodSeconds: 30
-    tolerations:
-    - effect: NoSchedule
-      operator: Exists
-    - effect: NoExecute
-      key: node.kubernetes.io/not-ready
-      operator: Exists
-    - effect: NoExecute
-      key: node.kubernetes.io/unreachable
-      operator: Exists
-    - effect: NoSchedule
-      key: node.kubernetes.io/disk-pressure
-      operator: Exists
-    - effect: NoSchedule
-      key: node.kubernetes.io/memory-pressure
-      operator: Exists
-    - effect: NoSchedule
-      key: node.kubernetes.io/pid-pressure
-      operator: Exists
-    - effect: NoSchedule
-      key: node.kubernetes.io/unschedulable
-      operator: Exists
-    - effect: NoSchedule
-      key: node.kubernetes.io/network-unavailable
-      operator: Exists
-    volumes:
-    - hostPath:
-        path: /etc/cni/net.d
-        type: DirectoryOrCreate
-      name: cni-cfg
-    - hostPath:
-        path: /run/xtables.lock
-        type: FileOrCreate
-      name: xtables-lock
-    - hostPath:
-        path: /lib/modules
-        type: ""
-      name: lib-modules
-    - name: kube-api-access-m4bnx
-      projected:
-        defaultMode: 420
-        sources:
-        - serviceAccountToken:
-            expirationSeconds: 3607
-            path: token
-        - configMap:
-            items:
-            - key: ca.crt
-              path: ca.crt
-            name: kube-root-ca.crt
-        - downwardAPI:
-            items:
-            - fieldRef:
-                apiVersion: v1
-                fieldPath: metadata.namespace
-              path: namespace
-  status:
-    conditions:
-    - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:53Z"
-      status: "True"
-      type: Initialized
-    - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:06Z"
-      status: "True"
-      type: Ready
-    - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:06Z"
-      status: "True"
-      type: ContainersReady
-    - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:53Z"
-      status: "True"
-      type: PodScheduled
-    containerStatuses:
-    - containerID: docker://14200357a8ff8b9ba113212071cc8f82f3c92ddb86bd7f2a1dc117ca6ef0d6be
-      image: kindest/kindnetd:v20221004-44d545d1
-      imageID: docker-pullable://kindest/kindnetd@sha256:273469d84ede51824194a31f6a405e3d3686b8b87cd161ea40f6bc3ff8e04ffe
-      lastState: {}
-      name: kindnet-cni
-      ready: true
-      restartCount: 0
-      started: true
-      state:
-        running:
-          startedAt: "2024-12-28T14:58:05Z"
-    hostIP: 192.168.64.18
-    phase: Running
-    podIP: 192.168.64.18
-    podIPs:
-    - ip: 192.168.64.18
-    qosClass: Guaranteed
-    startTime: "2024-12-28T14:57:53Z"
+    startTime: "2024-12-29T05:30:58Z"
 - apiVersion: v1
   kind: Pod
   metadata:
     annotations:
-      kubeadm.kubernetes.io/kube-apiserver.advertise-address.endpoint: 192.168.64.18:8443
-      kubernetes.io/config.hash: a6a84b802412cb609ade04f12d4912ee
-      kubernetes.io/config.mirror: a6a84b802412cb609ade04f12d4912ee
-      kubernetes.io/config.seen: "2024-12-28T14:57:41.179654075Z"
+      kubeadm.kubernetes.io/kube-apiserver.advertise-address.endpoint: 192.168.64.21:8443
+      kubernetes.io/config.hash: 243c40681f852193d9a146db75e4e064
+      kubernetes.io/config.mirror: 243c40681f852193d9a146db75e4e064
+      kubernetes.io/config.seen: "2024-12-29T05:30:43.073713175Z"
       kubernetes.io/config.source: file
-    creationTimestamp: "2024-12-28T14:57:41Z"
+    creationTimestamp: "2024-12-29T05:30:55Z"
     labels:
       component: kube-apiserver
       tier: control-plane
@@ -5012,7 +4407,7 @@ items:
             f:tier: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"aa54b6c8-6298-4a2a-a08a-ebc445c04636"}: {}
+            k:{"uid":"4f30e5d7-579c-4498-849f-0a87d7fe1a1b"}: {}
         f:spec:
           f:containers:
             k:{"name":"kube-apiserver"}:
@@ -5122,7 +4517,7 @@ items:
               f:name: {}
       manager: kubelet
       operation: Update
-      time: "2024-12-28T14:57:41Z"
+      time: "2024-12-29T05:30:55Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -5159,14 +4554,14 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"192.168.64.18"}:
+            k:{"ip":"192.168.64.21"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T14:57:52Z"
+      time: "2024-12-29T05:31:06Z"
     name: kube-apiserver-minikube
     namespace: kube-system
     ownerReferences:
@@ -5174,14 +4569,14 @@ items:
       controller: true
       kind: Node
       name: minikube
-      uid: aa54b6c8-6298-4a2a-a08a-ebc445c04636
-    resourceVersion: "328"
-    uid: 32913ac9-024c-455c-b7be-52fefe729f8c
+      uid: 4f30e5d7-579c-4498-849f-0a87d7fe1a1b
+    resourceVersion: "302"
+    uid: 17ff0889-30d9-4313-93b4-a6e895bae87b
   spec:
     containers:
     - command:
       - kube-apiserver
-      - --advertise-address=192.168.64.18
+      - --advertise-address=192.168.64.21
       - --allow-privileged=true
       - --authorization-mode=Node,RBAC
       - --client-ca-file=/var/lib/minikube/certs/ca.crt
@@ -5213,7 +4608,7 @@ items:
       livenessProbe:
         failureThreshold: 8
         httpGet:
-          host: 192.168.64.18
+          host: 192.168.64.21
           path: /livez
           port: 8443
           scheme: HTTPS
@@ -5225,7 +4620,7 @@ items:
       readinessProbe:
         failureThreshold: 3
         httpGet:
-          host: 192.168.64.18
+          host: 192.168.64.21
           path: /readyz
           port: 8443
           scheme: HTTPS
@@ -5238,7 +4633,7 @@ items:
       startupProbe:
         failureThreshold: 24
         httpGet:
-          host: 192.168.64.18
+          host: 192.168.64.21
           path: /livez
           port: 8443
           scheme: HTTPS
@@ -5290,23 +4685,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:41Z"
+      lastTransitionTime: "2024-12-29T05:30:58Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:52Z"
+      lastTransitionTime: "2024-12-29T05:31:06Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:52Z"
+      lastTransitionTime: "2024-12-29T05:31:06Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:41Z"
+      lastTransitionTime: "2024-12-29T05:30:58Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://5109989687b77dd3403223f7ace42c4ea0f64c73f28784fcf64f18d16c9ca39d
+    - containerID: docker://b596e0476063854d62c788ed0ec0ebaaffcb639f2c8c2c3c1b05a3e097511e04
       image: registry.k8s.io/kube-apiserver:v1.26.1
       imageID: docker-pullable://registry.k8s.io/kube-apiserver@sha256:99e1ed9fbc8a8d36a70f148f25130c02e0e366875249906be0bcb2c2d9df0c26
       lastState: {}
@@ -5316,23 +4711,23 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T14:57:33Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:30:48Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 192.168.64.18
+    podIP: 192.168.64.21
     podIPs:
-    - ip: 192.168.64.18
+    - ip: 192.168.64.21
     qosClass: Burstable
-    startTime: "2024-12-28T14:57:41Z"
+    startTime: "2024-12-29T05:30:58Z"
 - apiVersion: v1
   kind: Pod
   metadata:
     annotations:
       kubernetes.io/config.hash: 96939d3d2117efe8f605629d47b5f330
       kubernetes.io/config.mirror: 96939d3d2117efe8f605629d47b5f330
-      kubernetes.io/config.seen: "2024-12-28T14:57:41.179655237Z"
+      kubernetes.io/config.seen: "2024-12-29T05:30:43.073726804Z"
       kubernetes.io/config.source: file
-    creationTimestamp: "2024-12-28T14:57:41Z"
+    creationTimestamp: "2024-12-29T05:30:56Z"
     labels:
       component: kube-controller-manager
       tier: control-plane
@@ -5353,7 +4748,7 @@ items:
             f:tier: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"aa54b6c8-6298-4a2a-a08a-ebc445c04636"}: {}
+            k:{"uid":"4f30e5d7-579c-4498-849f-0a87d7fe1a1b"}: {}
         f:spec:
           f:containers:
             k:{"name":"kube-controller-manager"}:
@@ -5474,7 +4869,7 @@ items:
               f:name: {}
       manager: kubelet
       operation: Update
-      time: "2024-12-28T14:57:41Z"
+      time: "2024-12-29T05:30:56Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -5511,14 +4906,14 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"192.168.64.18"}:
+            k:{"ip":"192.168.64.21"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T14:58:01Z"
+      time: "2024-12-29T05:31:06Z"
     name: kube-controller-manager-minikube
     namespace: kube-system
     ownerReferences:
@@ -5526,9 +4921,9 @@ items:
       controller: true
       kind: Node
       name: minikube
-      uid: aa54b6c8-6298-4a2a-a08a-ebc445c04636
-    resourceVersion: "392"
-    uid: eccc3f83-dc88-4a15-bc4d-cce48015918d
+      uid: 4f30e5d7-579c-4498-849f-0a87d7fe1a1b
+    resourceVersion: "300"
+    uid: 348be193-94a0-4d26-9a21-df3f468b1b80
   spec:
     containers:
     - command:
@@ -5635,23 +5030,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:42Z"
+      lastTransitionTime: "2024-12-29T05:30:58Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:49Z"
+      lastTransitionTime: "2024-12-29T05:31:06Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:49Z"
+      lastTransitionTime: "2024-12-29T05:31:06Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:42Z"
+      lastTransitionTime: "2024-12-29T05:30:58Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://6a05bf7fcefadc201bb4ed98ec79ce0a3f0134a9a53b56b39fa43168342a7c70
+    - containerID: docker://153fa4de43316278ee47d3fe0b3512436d6c298f329daf25d509ed5bdefb0c0a
       image: registry.k8s.io/kube-controller-manager:v1.26.1
       imageID: docker-pullable://registry.k8s.io/kube-controller-manager@sha256:40adecbe3a40aa147c7d6e9a1f5fbd99b3f6d42d5222483ed3a47337d4f9a10b
       lastState: {}
@@ -5661,18 +5056,18 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T14:57:33Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:30:49Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 192.168.64.18
+    podIP: 192.168.64.21
     podIPs:
-    - ip: 192.168.64.18
+    - ip: 192.168.64.21
     qosClass: Burstable
-    startTime: "2024-12-28T14:57:42Z"
+    startTime: "2024-12-29T05:30:58Z"
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:09Z"
     generateName: kube-proxy-
     labels:
       controller-revision-hash: 6bc4695d8c
@@ -5691,7 +5086,7 @@ items:
             f:pod-template-generation: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"78f1343e-1392-4860-8502-9efeb3aab700"}: {}
+            k:{"uid":"e5a5ffd9-c42f-47dc-8094-e420b48fbc3c"}: {}
         f:spec:
           f:affinity:
             .: {}
@@ -5771,7 +5166,7 @@ items:
               f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:57:53Z"
+      time: "2024-12-29T05:31:09Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -5801,15 +5196,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"192.168.64.18"}:
+            k:{"ip":"192.168.64.21"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T14:57:57Z"
-    name: kube-proxy-dldj4
+      time: "2024-12-29T05:31:10Z"
+    name: kube-proxy-hh9g6
     namespace: kube-system
     ownerReferences:
     - apiVersion: apps/v1
@@ -5817,9 +5212,9 @@ items:
       controller: true
       kind: DaemonSet
       name: kube-proxy
-      uid: 78f1343e-1392-4860-8502-9efeb3aab700
-    resourceVersion: "386"
-    uid: 41038904-cb3c-4b18-84ab-2a684d231b0f
+      uid: e5a5ffd9-c42f-47dc-8094-e420b48fbc3c
+    resourceVersion: "367"
+    uid: 287be5d5-dd1b-4221-9bde-e9c75d92e45d
   spec:
     affinity:
       nodeAffinity:
@@ -5858,7 +5253,7 @@ items:
         name: lib-modules
         readOnly: true
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-nzqtz
+        name: kube-api-access-rrrs9
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -5911,7 +5306,7 @@ items:
         path: /lib/modules
         type: ""
       name: lib-modules
-    - name: kube-api-access-nzqtz
+    - name: kube-api-access-rrrs9
       projected:
         defaultMode: 420
         sources:
@@ -5932,23 +5327,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:53Z"
+      lastTransitionTime: "2024-12-29T05:31:09Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:57Z"
+      lastTransitionTime: "2024-12-29T05:31:10Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:57Z"
+      lastTransitionTime: "2024-12-29T05:31:10Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:53Z"
+      lastTransitionTime: "2024-12-29T05:31:09Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://a681aad2b01393996ab53918c262123b12d8f71814c11c471aee04b296cd3fc4
+    - containerID: docker://cdfa345c00f558c551c6fc113bab82774a98c9e8d89dd7c10568a8824c5d2ea5
       image: registry.k8s.io/kube-proxy:v1.26.1
       imageID: docker-pullable://registry.k8s.io/kube-proxy@sha256:85f705e7d98158a67432c53885b0d470c673b0fad3693440b45d07efebcda1c3
       lastState: {}
@@ -5958,23 +5353,23 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T14:57:54Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:31:10Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 192.168.64.18
+    podIP: 192.168.64.21
     podIPs:
-    - ip: 192.168.64.18
+    - ip: 192.168.64.21
     qosClass: BestEffort
-    startTime: "2024-12-28T14:57:53Z"
+    startTime: "2024-12-29T05:31:09Z"
 - apiVersion: v1
   kind: Pod
   metadata:
     annotations:
       kubernetes.io/config.hash: 197cd0de602d7cb722d0bd2daf878121
       kubernetes.io/config.mirror: 197cd0de602d7cb722d0bd2daf878121
-      kubernetes.io/config.seen: "2024-12-28T14:57:41.179656082Z"
+      kubernetes.io/config.seen: "2024-12-29T05:30:57.518162361Z"
       kubernetes.io/config.source: file
-    creationTimestamp: "2024-12-28T14:57:41Z"
+    creationTimestamp: "2024-12-29T05:30:57Z"
     labels:
       component: kube-scheduler
       tier: control-plane
@@ -5995,7 +5390,7 @@ items:
             f:tier: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"aa54b6c8-6298-4a2a-a08a-ebc445c04636"}: {}
+            k:{"uid":"4f30e5d7-579c-4498-849f-0a87d7fe1a1b"}: {}
         f:spec:
           f:containers:
             k:{"name":"kube-scheduler"}:
@@ -6069,7 +5464,7 @@ items:
               f:name: {}
       manager: kubelet
       operation: Update
-      time: "2024-12-28T14:57:41Z"
+      time: "2024-12-29T05:30:57Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -6106,14 +5501,14 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"192.168.64.18"}:
+            k:{"ip":"192.168.64.21"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T14:58:01Z"
+      time: "2024-12-29T05:31:05Z"
     name: kube-scheduler-minikube
     namespace: kube-system
     ownerReferences:
@@ -6121,9 +5516,9 @@ items:
       controller: true
       kind: Node
       name: minikube
-      uid: aa54b6c8-6298-4a2a-a08a-ebc445c04636
-    resourceVersion: "391"
-    uid: 19e6d6be-ab04-4912-a909-b0ea8daf06ad
+      uid: 4f30e5d7-579c-4498-849f-0a87d7fe1a1b
+    resourceVersion: "293"
+    uid: a53b84f1-1d0f-42cc-85f1-7d8a0516bb1e
   spec:
     containers:
     - command:
@@ -6191,23 +5586,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:42Z"
+      lastTransitionTime: "2024-12-29T05:30:58Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:48Z"
+      lastTransitionTime: "2024-12-29T05:31:05Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:48Z"
+      lastTransitionTime: "2024-12-29T05:31:05Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:57:42Z"
+      lastTransitionTime: "2024-12-29T05:30:58Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://a9a24cb4c99c02be213d39bbae9a25b91d099f95293b9576fd6a516fdccc9ad8
+    - containerID: docker://a5957bed1fd77333f88edc226c6d9e5706db3ea9d7e5a527037507732b3ee409
       image: registry.k8s.io/kube-scheduler:v1.26.1
       imageID: docker-pullable://registry.k8s.io/kube-scheduler@sha256:af0292c2c4fa6d09ee8544445eef373c1c280113cb6c968398a37da3744c41e4
       lastState: {}
@@ -6217,18 +5612,18 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T14:57:34Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:30:49Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 192.168.64.18
+    podIP: 192.168.64.21
     podIPs:
-    - ip: 192.168.64.18
+    - ip: 192.168.64.21
     qosClass: Burstable
-    startTime: "2024-12-28T14:57:42Z"
+    startTime: "2024-12-29T05:30:58Z"
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T17:38:57Z"
+    creationTimestamp: "2024-12-29T05:34:41Z"
     generateName: metrics-server-5f8fcc9bb7-
     labels:
       k8s-app: metrics-server
@@ -6245,7 +5640,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"eb31bf74-8582-4f6b-a2ca-dc1932572a75"}: {}
+            k:{"uid":"3196fcfc-cb99-4ef3-9980-09776060dba8"}: {}
         f:spec:
           f:containers:
             k:{"name":"metrics-server"}:
@@ -6319,7 +5714,7 @@ items:
               f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:38:57Z"
+      time: "2024-12-29T05:34:41Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -6349,15 +5744,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.13"}:
+            k:{"ip":"10.244.0.8"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:40:17Z"
-    name: metrics-server-5f8fcc9bb7-6tf2w
+      time: "2024-12-29T05:34:54Z"
+    name: metrics-server-5f8fcc9bb7-bxw5l
     namespace: kube-system
     ownerReferences:
     - apiVersion: apps/v1
@@ -6365,9 +5760,9 @@ items:
       controller: true
       kind: ReplicaSet
       name: metrics-server-5f8fcc9bb7
-      uid: eb31bf74-8582-4f6b-a2ca-dc1932572a75
-    resourceVersion: "12441"
-    uid: 0ece2505-d260-43bb-beb7-ae4f0f2fef19
+      uid: 3196fcfc-cb99-4ef3-9980-09776060dba8
+    resourceVersion: "785"
+    uid: 3f6f4675-3634-4f78-b21f-acc237e47c33
   spec:
     containers:
     - args:
@@ -6416,7 +5811,7 @@ items:
       - mountPath: /tmp
         name: tmp-dir
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-wgqfj
+        name: kube-api-access-hmjkk
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -6442,7 +5837,7 @@ items:
     volumes:
     - emptyDir: {}
       name: tmp-dir
-    - name: kube-api-access-wgqfj
+    - name: kube-api-access-hmjkk
       projected:
         defaultMode: 420
         sources:
@@ -6463,23 +5858,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:57Z"
+      lastTransitionTime: "2024-12-29T05:34:41Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:40:17Z"
+      lastTransitionTime: "2024-12-29T05:34:54Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:40:17Z"
+      lastTransitionTime: "2024-12-29T05:34:54Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:57Z"
+      lastTransitionTime: "2024-12-29T05:34:41Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://1e9db327ee88014cda6f1cacc49b19b7135a8f58f6cc2549d232dbe48542599d
+    - containerID: docker://345623df20112091ba550dd69acc2c462e28938918391e4ebdcc51aab9f8c6bc
       image: registry.k8s.io/metrics-server/metrics-server@sha256:f977ad859fb500c1302d9c3428c6271db031bb7431e7076213b676b345a88dc2
       imageID: docker-pullable://registry.k8s.io/metrics-server/metrics-server@sha256:f977ad859fb500c1302d9c3428c6271db031bb7431e7076213b676b345a88dc2
       lastState: {}
@@ -6489,21 +5884,21 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T17:39:08Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:34:52Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 10.244.0.13
+    podIP: 10.244.0.8
     podIPs:
-    - ip: 10.244.0.13
+    - ip: 10.244.0.8
     qosClass: Burstable
-    startTime: "2024-12-28T17:38:57Z"
+    startTime: "2024-12-29T05:34:41Z"
 - apiVersion: v1
   kind: Pod
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","integration-test":"storage-provisioner"},"name":"storage-provisioner","namespace":"kube-system"},"spec":{"containers":[{"command":["/storage-provisioner"],"image":"gcr.io/k8s-minikube/storage-provisioner:v5","imagePullPolicy":"IfNotPresent","name":"storage-provisioner","volumeMounts":[{"mountPath":"/tmp","name":"tmp"}]}],"hostNetwork":true,"serviceAccountName":"storage-provisioner","volumes":[{"hostPath":{"path":"/tmp","type":"Directory"},"name":"tmp"}]}}
-    creationTimestamp: "2024-12-28T14:57:43Z"
+    creationTimestamp: "2024-12-29T05:30:59Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       integration-test: storage-provisioner
@@ -6525,7 +5920,7 @@ items:
       manager: kube-scheduler
       operation: Update
       subresource: status
-      time: "2024-12-28T14:57:43Z"
+      time: "2024-12-29T05:30:59Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -6574,7 +5969,7 @@ items:
               f:name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T14:57:43Z"
+      time: "2024-12-29T05:30:59Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -6604,18 +5999,18 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"192.168.64.18"}:
+            k:{"ip":"192.168.64.21"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T14:58:08Z"
+      time: "2024-12-29T05:31:41Z"
     name: storage-provisioner
     namespace: kube-system
-    resourceVersion: "415"
-    uid: e98d09d8-8315-4bd3-9255-9b52adfb583b
+    resourceVersion: "397"
+    uid: 94862cd9-5e04-4eed-9ee1-118da090d93a
   spec:
     containers:
     - command:
@@ -6630,7 +6025,7 @@ items:
       - mountPath: /tmp
         name: tmp
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-xlxmz
+        name: kube-api-access-q4hz9
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -6658,7 +6053,7 @@ items:
         path: /tmp
         type: Directory
       name: tmp
-    - name: kube-api-access-xlxmz
+    - name: kube-api-access-q4hz9
       projected:
         defaultMode: 420
         sources:
@@ -6679,46 +6074,52 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:07Z"
+      lastTransitionTime: "2024-12-29T05:31:08Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:08Z"
+      lastTransitionTime: "2024-12-29T05:31:41Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:08Z"
+      lastTransitionTime: "2024-12-29T05:31:41Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T14:58:07Z"
+      lastTransitionTime: "2024-12-29T05:31:08Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://d3117273a0733ba1540c47e2fee1f233ea0f51f925acb367a8cfa57015e29bb3
+    - containerID: docker://00a902d468574c61b6329b105af2c829455d22f4107231952baa1eabfff2972f
       image: gcr.io/k8s-minikube/storage-provisioner:v5
       imageID: docker-pullable://gcr.io/k8s-minikube/storage-provisioner@sha256:18eb69d1418e854ad5a19e399310e52808a8321e4c441c1dddad8977a0d7a944
-      lastState: {}
+      lastState:
+        terminated:
+          containerID: docker://e298f7640b6aec4c4bd2e14c3ba112f3c1fa374dccd46753ed10e9e1a8a90775
+          exitCode: 1
+          finishedAt: "2024-12-29T05:31:40Z"
+          reason: Error
+          startedAt: "2024-12-29T05:31:10Z"
       name: storage-provisioner
       ready: true
-      restartCount: 0
+      restartCount: 1
       started: true
       state:
         running:
-          startedAt: "2024-12-28T14:58:08Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:31:41Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 192.168.64.18
+    podIP: 192.168.64.21
     podIPs:
-    - ip: 192.168.64.18
+    - ip: 192.168.64.21
     qosClass: BestEffort
-    startTime: "2024-12-28T14:58:07Z"
+    startTime: "2024-12-29T05:31:08Z"
 - apiVersion: v1
   kind: Pod
   metadata:
     annotations:
       seccomp.security.alpha.kubernetes.io/pod: runtime/default
-    creationTimestamp: "2024-12-28T17:38:57Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     generateName: dashboard-metrics-scraper-5c6664855-
     labels:
       k8s-app: dashboard-metrics-scraper
@@ -6738,7 +6139,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"e789999a-d708-47e9-96af-b6345c6b674f"}: {}
+            k:{"uid":"98f5095e-3e53-4ce0-9f73-a813f1e213e9"}: {}
         f:spec:
           f:containers:
             k:{"name":"dashboard-metrics-scraper"}:
@@ -6797,7 +6198,7 @@ items:
               f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:38:57Z"
+      time: "2024-12-29T05:32:55Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -6827,15 +6228,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.15"}:
+            k:{"ip":"10.244.0.4"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:39:38Z"
-    name: dashboard-metrics-scraper-5c6664855-947xk
+      time: "2024-12-29T05:33:36Z"
+    name: dashboard-metrics-scraper-5c6664855-dlflw
     namespace: kubernetes-dashboard
     ownerReferences:
     - apiVersion: apps/v1
@@ -6843,9 +6244,9 @@ items:
       controller: true
       kind: ReplicaSet
       name: dashboard-metrics-scraper-5c6664855
-      uid: e789999a-d708-47e9-96af-b6345c6b674f
-    resourceVersion: "12388"
-    uid: 10567950-21df-4ae8-8d4a-44e61586c7f6
+      uid: 98f5095e-3e53-4ce0-9f73-a813f1e213e9
+    resourceVersion: "627"
+    uid: 50d94d07-0d4b-4cdf-983d-c88e5b6a15b7
   spec:
     containers:
     - image: docker.io/kubernetesui/metrics-scraper:v1.0.8@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
@@ -6876,7 +6277,7 @@ items:
       - mountPath: /tmp
         name: tmp-volume
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-vngf9
+        name: kube-api-access-d5rn5
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -6907,7 +6308,7 @@ items:
     volumes:
     - emptyDir: {}
       name: tmp-volume
-    - name: kube-api-access-vngf9
+    - name: kube-api-access-d5rn5
       projected:
         defaultMode: 420
         sources:
@@ -6928,23 +6329,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:57Z"
+      lastTransitionTime: "2024-12-29T05:32:55Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:39:38Z"
+      lastTransitionTime: "2024-12-29T05:33:36Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:39:38Z"
+      lastTransitionTime: "2024-12-29T05:33:36Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:57Z"
+      lastTransitionTime: "2024-12-29T05:32:55Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://3e26b2bc54097c663c4dcbab6f476b59d41c79360c858ef62006954d4aa4d2a1
+    - containerID: docker://d35625ca3b65d30c285d843707778e1438ed726964457a16fb10d47315013bbd
       image: kubernetesui/metrics-scraper@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
       imageID: docker-pullable://kubernetesui/metrics-scraper@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
       lastState: {}
@@ -6954,18 +6355,18 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T17:39:37Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:33:35Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 10.244.0.15
+    podIP: 10.244.0.4
     podIPs:
-    - ip: 10.244.0.15
+    - ip: 10.244.0.4
     qosClass: BestEffort
-    startTime: "2024-12-28T17:38:57Z"
+    startTime: "2024-12-29T05:32:55Z"
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T17:38:57Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     generateName: kubernetes-dashboard-55c4cbbc7c-
     labels:
       gcp-auth-skip-secret: "true"
@@ -6984,7 +6385,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"fb308688-b724-4c6b-83fe-472b12d0c855"}: {}
+            k:{"uid":"6443a82f-c134-401f-b5ab-cb838b080ce7"}: {}
         f:spec:
           f:containers:
             k:{"name":"kubernetes-dashboard"}:
@@ -7044,7 +6445,7 @@ items:
               f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:38:57Z"
+      time: "2024-12-29T05:32:55Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -7074,15 +6475,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.14"}:
+            k:{"ip":"10.244.0.3"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:39:30Z"
-    name: kubernetes-dashboard-55c4cbbc7c-44j5z
+      time: "2024-12-29T05:33:26Z"
+    name: kubernetes-dashboard-55c4cbbc7c-shqnz
     namespace: kubernetes-dashboard
     ownerReferences:
     - apiVersion: apps/v1
@@ -7090,9 +6491,9 @@ items:
       controller: true
       kind: ReplicaSet
       name: kubernetes-dashboard-55c4cbbc7c
-      uid: fb308688-b724-4c6b-83fe-472b12d0c855
-    resourceVersion: "12367"
-    uid: cd5e03f5-fc8e-4d69-bc7b-79886699c452
+      uid: 6443a82f-c134-401f-b5ab-cb838b080ce7
+    resourceVersion: "609"
+    uid: 0c2bbefa-392a-42b7-8055-2a459aba671a
   spec:
     containers:
     - args:
@@ -7127,7 +6528,7 @@ items:
       - mountPath: /tmp
         name: tmp-volume
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-fjsx5
+        name: kube-api-access-7jjnz
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -7156,7 +6557,7 @@ items:
     volumes:
     - emptyDir: {}
       name: tmp-volume
-    - name: kube-api-access-fjsx5
+    - name: kube-api-access-7jjnz
       projected:
         defaultMode: 420
         sources:
@@ -7177,23 +6578,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:57Z"
+      lastTransitionTime: "2024-12-29T05:32:55Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:39:30Z"
+      lastTransitionTime: "2024-12-29T05:33:26Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:39:30Z"
+      lastTransitionTime: "2024-12-29T05:33:26Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:57Z"
+      lastTransitionTime: "2024-12-29T05:32:55Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://77b71f4a619c9fce34c49986d0451af6efc5a5cecbc47d7926796c93475be1ed
+    - containerID: docker://bd68e09fc63335f64f6e9af399a9b89c88e35e2c7a4860e68a5bd9b8aea653d6
       image: kubernetesui/dashboard@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
       imageID: docker-pullable://kubernetesui/dashboard@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
       lastState: {}
@@ -7203,14 +6604,14 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T17:39:30Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:33:25Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 10.244.0.14
+    podIP: 10.244.0.3
     podIPs:
-    - ip: 10.244.0.14
+    - ip: 10.244.0.3
     qosClass: BestEffort
-    startTime: "2024-12-28T17:38:57Z"
+    startTime: "2024-12-29T05:32:55Z"
 - apiVersion: apps/v1
   kind: ReplicaSet
   metadata:
@@ -7218,7 +6619,7 @@ items:
       deployment.kubernetes.io/desired-replicas: "1"
       deployment.kubernetes.io/max-replicas: "2"
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: controller
@@ -7245,7 +6646,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"7d5b52fd-09e0-42b1-8622-bbb806b7e374"}: {}
+            k:{"uid":"f9faf5ce-1df5-4824-acdf-0df9cfc81939"}: {}
         f:spec:
           f:replicas: {}
           f:selector: {}
@@ -7377,7 +6778,7 @@ items:
                     f:secretName: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -7390,7 +6791,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:38:10Z"
+      time: "2024-12-29T05:34:53Z"
     name: ingress-nginx-controller-77669ff58
     namespace: ingress-nginx
     ownerReferences:
@@ -7399,9 +6800,9 @@ items:
       controller: true
       kind: Deployment
       name: ingress-nginx-controller
-      uid: 7d5b52fd-09e0-42b1-8622-bbb806b7e374
-    resourceVersion: "12155"
-    uid: 97f0cafa-8e3d-4e1c-bb3c-58d47e3af0ac
+      uid: f9faf5ce-1df5-4824-acdf-0df9cfc81939
+    resourceVersion: "779"
+    uid: 3db1be9c-0a39-48c1-80c6-43eef21bb4ba
   spec:
     replicas: 1
     selector:
@@ -7535,7 +6936,7 @@ items:
       deployment.kubernetes.io/desired-replicas: "1"
       deployment.kubernetes.io/max-replicas: "2"
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2024-12-28T14:57:52Z"
+    creationTimestamp: "2024-12-29T05:31:09Z"
     generation: 1
     labels:
       k8s-app: kube-dns
@@ -7556,7 +6957,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"a4976868-2b73-4ced-938c-cfeccaaf175d"}: {}
+            k:{"uid":"8c8d4f34-e46a-4253-834a-d6426be1dd71"}: {}
         f:spec:
           f:replicas: {}
           f:selector: {}
@@ -7667,7 +7068,7 @@ items:
                   f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T14:57:52Z"
+      time: "2024-12-29T05:31:09Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -7680,7 +7081,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T14:58:09Z"
+      time: "2024-12-29T05:31:11Z"
     name: coredns-787d4945fb
     namespace: kube-system
     ownerReferences:
@@ -7689,9 +7090,9 @@ items:
       controller: true
       kind: Deployment
       name: coredns
-      uid: a4976868-2b73-4ced-938c-cfeccaaf175d
-    resourceVersion: "425"
-    uid: 3eea038e-c87e-4e43-a068-58117593b14d
+      uid: 8c8d4f34-e46a-4253-834a-d6426be1dd71
+    resourceVersion: "378"
+    uid: 4609ef20-e72f-4a2e-9f11-e2462d0dcdd0
   spec:
     replicas: 1
     selector:
@@ -7809,7 +7210,7 @@ items:
       deployment.kubernetes.io/desired-replicas: "1"
       deployment.kubernetes.io/max-replicas: "2"
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2024-12-28T17:37:59Z"
+    creationTimestamp: "2024-12-29T05:34:41Z"
     generation: 1
     labels:
       k8s-app: metrics-server
@@ -7830,7 +7231,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"762e0387-a327-4091-b822-57017b871cbe"}: {}
+            k:{"uid":"8a6bc2a6-59d1-4ce4-98cb-eb4f6a94e172"}: {}
         f:spec:
           f:replicas: {}
           f:selector: {}
@@ -7913,7 +7314,7 @@ items:
                   f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:59Z"
+      time: "2024-12-29T05:34:41Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -7926,7 +7327,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:40:17Z"
+      time: "2024-12-29T05:34:54Z"
     name: metrics-server-5f8fcc9bb7
     namespace: kube-system
     ownerReferences:
@@ -7935,9 +7336,9 @@ items:
       controller: true
       kind: Deployment
       name: metrics-server
-      uid: 762e0387-a327-4091-b822-57017b871cbe
-    resourceVersion: "12444"
-    uid: eb31bf74-8582-4f6b-a2ca-dc1932572a75
+      uid: 8a6bc2a6-59d1-4ce4-98cb-eb4f6a94e172
+    resourceVersion: "788"
+    uid: 3196fcfc-cb99-4ef3-9980-09776060dba8
   spec:
     replicas: 1
     selector:
@@ -8022,7 +7423,7 @@ items:
       deployment.kubernetes.io/desired-replicas: "1"
       deployment.kubernetes.io/max-replicas: "2"
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     generation: 1
     labels:
       k8s-app: dashboard-metrics-scraper
@@ -8043,7 +7444,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"4036e035-2c69-4d4b-8ac0-3ba766ffcb00"}: {}
+            k:{"uid":"74268ed8-9bcb-4dca-a7e3-171604660d9e"}: {}
         f:spec:
           f:replicas: {}
           f:selector: {}
@@ -8113,7 +7514,7 @@ items:
                   f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -8126,7 +7527,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:39:38Z"
+      time: "2024-12-29T05:33:36Z"
     name: dashboard-metrics-scraper-5c6664855
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -8135,9 +7536,9 @@ items:
       controller: true
       kind: Deployment
       name: dashboard-metrics-scraper
-      uid: 4036e035-2c69-4d4b-8ac0-3ba766ffcb00
-    resourceVersion: "12389"
-    uid: e789999a-d708-47e9-96af-b6345c6b674f
+      uid: 74268ed8-9bcb-4dca-a7e3-171604660d9e
+    resourceVersion: "629"
+    uid: 98f5095e-3e53-4ce0-9f73-a813f1e213e9
   spec:
     replicas: 1
     selector:
@@ -8209,7 +7610,7 @@ items:
       deployment.kubernetes.io/desired-replicas: "1"
       deployment.kubernetes.io/max-replicas: "2"
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     generation: 1
     labels:
       gcp-auth-skip-secret: "true"
@@ -8232,7 +7633,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"39702987-5d68-4844-b2a5-b0eac8f36b18"}: {}
+            k:{"uid":"5f677412-d153-4371-b5da-a58966099e93"}: {}
         f:spec:
           f:replicas: {}
           f:selector: {}
@@ -8301,7 +7702,7 @@ items:
                   f:name: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -8314,7 +7715,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:39:30Z"
+      time: "2024-12-29T05:33:26Z"
     name: kubernetes-dashboard-55c4cbbc7c
     namespace: kubernetes-dashboard
     ownerReferences:
@@ -8323,9 +7724,9 @@ items:
       controller: true
       kind: Deployment
       name: kubernetes-dashboard
-      uid: 39702987-5d68-4844-b2a5-b0eac8f36b18
-    resourceVersion: "12370"
-    uid: fb308688-b724-4c6b-83fe-472b12d0c855
+      uid: 5f677412-d153-4371-b5da-a58966099e93
+    resourceVersion: "612"
+    uid: 6443a82f-c134-401f-b5ab-cb838b080ce7
   spec:
     replicas: 1
     selector:
@@ -8395,12 +7796,12 @@ items:
     replicas: 1
 - apiVersion: v1
   data:
-    ca: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJkVENDQVJ1Z0F3SUJBZ0lRUFk3YzUxMjFJaWExTTdQZ2djd0F5VEFLQmdncWhrak9QUVFEQWpBUE1RMHcKQ3dZRFZRUUtFd1J1YVd3eE1DQVhEVEkwTVRJeU9ERTNNekl4TlZvWUR6SXhNalF4TWpBME1UY3pNakUxV2pBUApNUTB3Q3dZRFZRUUtFd1J1YVd3eE1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVlzM1JwKzVaCmpUOTNDNVNCUGU0MWh1NjhReVZTcTJ5NTRFVytRSjFCSURmdFBCbFg0VGNtNE0wS0Zhdi9vbm5aOWIvZVl3SXcKaXpwSVA1YWpYWFVlSnFOWE1GVXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1CTUdBMVVkSlFRTU1Bb0dDQ3NHQVFVRgpCd01CTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRk5EdVlFMmpQZzk4VXl3aFcxOUxOYlVMClBqTU9NQW9HQ0NxR1NNNDlCQU1DQTBnQU1FVUNJSHY0aXdwYS8yODJNUGExV0RrQnU0dmdyNHFiTlNHQ3pRdm8KdlA3MjkxY1ZBaUVBM3FXcjRNeFM0SzYxdTh1a1hiNjZMaXIzWW9vZzFjUGRzbGp3UHpZWDFyRT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
-    cert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ1akNDQVdHZ0F3SUJBZ0lSQU85WVFUM1JEa3FjSXhTK3hvWDFoR0V3Q2dZSUtvWkl6ajBFQXdJd0R6RU4KTUFzR0ExVUVDaE1FYm1sc01UQWdGdzB5TkRFeU1qZ3hOek15TVRWYUdBOHlNVEkwTVRJd05ERTNNekl4TlZvdwpEekVOTUFzR0ExVUVDaE1FYm1sc01qQlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJNUHpJaWd2CjVxR3poQU82dUlveTVCekZEQkhFdVRmTVkrb0d3NlNGd1V2U0c4bGJLaTlPZDNLOVppL3lRZFZrdS9KbmFac3cKM3pxaUxBTGxYbDVBZU9pamdac3dnWmd3RGdZRFZSMFBBUUgvQkFRREFnV2dNQk1HQTFVZEpRUU1NQW9HQ0NzRwpBUVVGQndNQk1Bd0dBMVVkRXdFQi93UUNNQUF3WXdZRFZSMFJCRnd3V29JaWFXNW5jbVZ6Y3kxdVoybHVlQzFqCmIyNTBjbTlzYkdWeUxXRmtiV2x6YzJsdmJvSTBhVzVuY21WemN5MXVaMmx1ZUMxamIyNTBjbTlzYkdWeUxXRmsKYldsemMybHZiaTVwYm1keVpYTnpMVzVuYVc1NExuTjJZekFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUI2MGhJVQpIYWRURUhFcHdvVzQ1NFlJZkpOcnlPUUNNaStIckpqbkdGWHpJUUlnUHREOUlzeEJhcE9uanBKV0VjdlZMTnMrCjFReGVjQ2xCWlg0SytVUEJSeU09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
-    key: LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1IY0NBUUVFSUQvSGFtOEtzZVhmRGZYUmRkNzRGSGt3Y3RzeEtnbXlndGN0TERJdzFOcm9vQW9HQ0NxR1NNNDkKQXdFSG9VUURRZ0FFdy9NaUtDL21vYk9FQTdxNGlqTGtITVVNRWNTNU44eGo2Z2JEcElYQlM5SWJ5VnNxTDA1MwpjcjFtTC9KQjFXUzc4bWRwbXpEZk9xSXNBdVZlWGtCNDZBPT0KLS0tLS1FTkQgRUMgUFJJVkFURSBLRVktLS0tLQo=
+    ca: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJkakNDQVJ5Z0F3SUJBZ0lSQUtUZXUwa1l5MUJ6VUI2Z042RnRtM293Q2dZSUtvWkl6ajBFQXdJd0R6RU4KTUFzR0ExVUVDaE1FYm1sc01UQWdGdzB5TkRFeU1qa3dOVEk0TkRSYUdBOHlNVEkwTVRJd05UQTFNamcwTkZvdwpEekVOTUFzR0ExVUVDaE1FYm1sc01UQlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJHRnBVN1pFCmxlWVBGZ3g1NnZiSjNXbytibDZMUHcyNWsrdGhHKzlPaTdrdEhuMHg4emRmaHpORmVFQzg4U0lZaUhIbmtkNG0KTXQvL3QvZ1A2NDFzNmtLalZ6QlZNQTRHQTFVZER3RUIvd1FFQXdJQ0JEQVRCZ05WSFNVRUREQUtCZ2dyQmdFRgpCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJSMzNjN1hrRzdpNTNsZytjMjJuQ0xDClhtVndaVEFLQmdncWhrak9QUVFEQWdOSUFEQkZBaUFpSzBDWnhDUXZOMTFjUVRzejNpNnBRNXlYZXRqZmpoZEUKVHE1elhacjZzZ0loQU1wd1RxcjY1aXgrK3JLOW0vN2xHN0pMQzRiaktNeDRGRjFJZDhoMGdjNWIKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    cert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ1ekNDQVdDZ0F3SUJBZ0lRQnV1cVBhV25OYXFJSUdKQjhQTzJCakFLQmdncWhrak9QUVFEQWpBUE1RMHcKQ3dZRFZRUUtFd1J1YVd3eE1DQVhEVEkwTVRJeU9UQTFNamcwTkZvWUR6SXhNalF4TWpBMU1EVXlPRFEwV2pBUApNUTB3Q3dZRFZRUUtFd1J1YVd3eU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRW11d0tPdjNjCkNOVjlUMGxvbzJmY1ZhTDNGN3BWNW1UaWhjUElnajBPdWtpUmduVFhUQy9TVFAyMm10YzdaejhYeE9hMGtRR2gKYzBENHhsSWN6ZWFHeWFPQm16Q0JtREFPQmdOVkhROEJBZjhFQkFNQ0JhQXdFd1lEVlIwbEJBd3dDZ1lJS3dZQgpCUVVIQXdFd0RBWURWUjBUQVFIL0JBSXdBREJqQmdOVkhSRUVYREJhZ2lKcGJtZHlaWE56TFc1bmFXNTRMV052CmJuUnliMnhzWlhJdFlXUnRhWE56YVc5dWdqUnBibWR5WlhOekxXNW5hVzU0TFdOdmJuUnliMnhzWlhJdFlXUnQKYVhOemFXOXVMbWx1WjNKbGMzTXRibWRwYm5ndWMzWmpNQW9HQ0NxR1NNNDlCQU1DQTBrQU1FWUNJUUNpU1FleApXRWx3NnQ1amJNeW1iVVI2V0lrUk9pTjhZVlVNQUlHSG1KOTl5Z0loQU0rZTB1bjZyMXhBS2lqUWE4RVBDaVRpCkJlNHc0aXdkYzBhOThjd0lMaUZuCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    key: LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1IY0NBUUVFSU5SOWNZTjR4Y01OM0E4YmFjZHAxT1ZOWmVGNmpta3F4TTlVdndFYUZ4bXZvQW9HQ0NxR1NNNDkKQXdFSG9VUURRZ0FFbXV3S092M2NDTlY5VDBsb28yZmNWYUwzRjdwVjVtVGloY1BJZ2owT3VraVJnblRYVEMvUwpUUDIybXRjN1p6OFh4T2Ewa1FHaGMwRDR4bEljemVhR3lRPT0KLS0tLS1FTkQgRUMgUFJJVkFURSBLRVktLS0tLQo=
   kind: Secret
   metadata:
-    creationTimestamp: "2024-12-28T17:37:15Z"
+    creationTimestamp: "2024-12-29T05:33:44Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -8413,23 +7814,23 @@ items:
         f:type: {}
       manager: kube-webhook-certgen
       operation: Update
-      time: "2024-12-28T17:37:15Z"
+      time: "2024-12-29T05:33:44Z"
     name: ingress-nginx-admission
     namespace: ingress-nginx
-    resourceVersion: "12012"
-    uid: 9458efb9-3b8f-40d9-a73a-47250813427a
+    resourceVersion: "648"
+    uid: 62d9d017-8158-43c8-8260-4aca82a204a7
   type: Opaque
 - apiVersion: v1
   data:
     auth-extra-groups: c3lzdGVtOmJvb3RzdHJhcHBlcnM6a3ViZWFkbTpkZWZhdWx0LW5vZGUtdG9rZW4=
-    expiration: MjAyNC0xMi0yOVQxNDo1Nzo0MFo=
-    token-id: YmNqbzl3
-    token-secret: eWF5ZHY2OWE4NGh1cDQ2Yg==
+    expiration: MjAyNC0xMi0zMFQwNTozMDo1NVo=
+    token-id: ZjNtcmRx
+    token-secret: M3ZxN2RhOWpmeGppbHEycw==
     usage-bootstrap-authentication: dHJ1ZQ==
     usage-bootstrap-signing: dHJ1ZQ==
   kind: Secret
   metadata:
-    creationTimestamp: "2024-12-28T14:57:40Z"
+    creationTimestamp: "2024-12-29T05:30:55Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -8445,71 +7846,11 @@ items:
         f:type: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:40Z"
-    name: bootstrap-token-bcjo9w
+      time: "2024-12-29T05:30:55Z"
+    name: bootstrap-token-f3mrdq
     namespace: kube-system
-    resourceVersion: "232"
-    uid: fb6b15cd-7d0d-4944-afd0-668614383088
-  type: bootstrap.kubernetes.io/token
-- apiVersion: v1
-  data:
-    auth-extra-groups: c3lzdGVtOmJvb3RzdHJhcHBlcnM6a3ViZWFkbTpkZWZhdWx0LW5vZGUtdG9rZW4=
-    token-id: ZjFuZmM5
-    token-secret: bW5temxyZXVzbXFteHJuYw==
-    usage-bootstrap-authentication: dHJ1ZQ==
-    usage-bootstrap-signing: dHJ1ZQ==
-  kind: Secret
-  metadata:
-    creationTimestamp: "2024-12-28T14:58:13Z"
-    managedFields:
-    - apiVersion: v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:data:
-          .: {}
-          f:auth-extra-groups: {}
-          f:token-id: {}
-          f:token-secret: {}
-          f:usage-bootstrap-authentication: {}
-          f:usage-bootstrap-signing: {}
-        f:type: {}
-      manager: kubeadm
-      operation: Update
-      time: "2024-12-28T14:58:13Z"
-    name: bootstrap-token-f1nfc9
-    namespace: kube-system
-    resourceVersion: "431"
-    uid: b37c38aa-77e5-45cc-adff-a09863cc7327
-  type: bootstrap.kubernetes.io/token
-- apiVersion: v1
-  data:
-    auth-extra-groups: c3lzdGVtOmJvb3RzdHJhcHBlcnM6a3ViZWFkbTpkZWZhdWx0LW5vZGUtdG9rZW4=
-    token-id: d2RsYmZs
-    token-secret: ZjY1ZXJhMTU3ejdveWI0eA==
-    usage-bootstrap-authentication: dHJ1ZQ==
-    usage-bootstrap-signing: dHJ1ZQ==
-  kind: Secret
-  metadata:
-    creationTimestamp: "2024-12-28T14:58:48Z"
-    managedFields:
-    - apiVersion: v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:data:
-          .: {}
-          f:auth-extra-groups: {}
-          f:token-id: {}
-          f:token-secret: {}
-          f:usage-bootstrap-authentication: {}
-          f:usage-bootstrap-signing: {}
-        f:type: {}
-      manager: kubeadm
-      operation: Update
-      time: "2024-12-28T14:58:48Z"
-    name: bootstrap-token-wdlbfl
-    namespace: kube-system
-    resourceVersion: "511"
-    uid: 93c33069-e7be-4ad3-9758-0b43e5b33198
+    resourceVersion: "216"
+    uid: 49eb3bb7-a414-4296-a876-365b24ad6525
   type: bootstrap.kubernetes.io/token
 - apiVersion: v1
   kind: Secret
@@ -8517,7 +7858,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Secret","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard-certs","namespace":"kubernetes-dashboard"},"type":"Opaque"}
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -8538,21 +7879,21 @@ items:
         f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     name: kubernetes-dashboard-certs
     namespace: kubernetes-dashboard
-    resourceVersion: "824"
-    uid: 3798e837-4adc-4943-b258-26eef1683080
+    resourceVersion: "486"
+    uid: b7ded8f4-d139-4645-ab44-94ff8153bf82
   type: Opaque
 - apiVersion: v1
   data:
-    csrf: 3rlQH5I5lgjcn/Qnm+oliEMG3vvF3Y9EFzx6mcBwK5htqQAskhq4p8eK1H9trZ0beWqFGm4w7I1B0kJzHHSc6yqHfaQYMO/UMLK/Kr5XRANkcojsne+X07hBQGXEJFWSNR2tVg024ifAfkcySMW3Xbri7h8H6MtU2gR1DKa+qLAOKUUPpm4fCzHXOAAPqH/42oRA/mZgVpxC1aJnQS8qALaQCfd1vDaHmVgMGpP+y6Z1uPMUXNUG+oQAz7yCljIV2iX4wBzFeJ91QDqvuu0JTru1x0MfWc4kSILbA5a3xpYpTtCeTJeh7jYGxpaSlDfdMTXrmAcGQx67k4LEpVSymg==
+    csrf: bTwhjVnDFm2GTaNPl4a+0+lYO8XWC8XFAhIfqBJQopVSncB1GLxBeMD3jP5Bff/5/G+mGtHr5wzW3Egy/d0t8TkiH/IvNr4JRxEV9yH754Mo8iqDcdHTbeAK/egCpumKi5bgFwEOhxjRq3Wc1+uBxQcB9x6ckxmB1rbnF/ICqh5kQ2yof2ivtaZmLUrcMOmp5TSKfE0q5fEJqGqwvxjNKDM/9ipJoupGiNR/QtWoRXrPWDaRZj2Hf0MSWljQHolI7bd9RL0GomEeWgxDWyhvyPVo6Zvom20Zocv8OobheMiaJ2IXcPMdxugO4vGFpZ3gI+yfMcSV3y8pvcTEJYHMSA==
   kind: Secret
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","data":{"csrf":""},"kind":"Secret","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard-csrf","namespace":"kubernetes-dashboard"},"type":"Opaque"}
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -8574,7 +7915,7 @@ items:
         f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -8582,19 +7923,19 @@ items:
           f:csrf: {}
       manager: dashboard
       operation: Update
-      time: "2024-12-28T15:02:13Z"
+      time: "2024-12-29T05:33:25Z"
     name: kubernetes-dashboard-csrf
     namespace: kubernetes-dashboard
-    resourceVersion: "890"
-    uid: 7b179a3f-a3f5-498d-ae3d-5349ba50528f
+    resourceVersion: "606"
+    uid: 8dc995bf-e8e8-4397-bf46-5a0caa5fb4e3
   type: Opaque
 - apiVersion: v1
   data:
-    priv: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBM0RqYnozMzIxZ2ZXdHBXUXUwZnpxNjlNZzNISG9NR25CTjEvWllWVXBkYzIrYk9FCkhXcE9yZDhJVlh0aksvSXNrbHhqWmowcTlVV2tJdFE3U3BEeVdJUVZ5cTIwcHo4ZXVMa3NBWjRGR09PcmNTbUgKbkJxUHZkWkwxa3NiL01OVXZEbk53UnFPR3ppU2JINnFGRnBUY0ZGbDlCQXgxTTZMVkRpZ3c0YzRXN2syekJSZApWaXB6NEg1TUJZUEN3N2ljd2svakE0UzJvQlp5d2JjWld5VVV4a0FKM0xrY0FxSmQxQmJiMnlmNVdQQ3FkRmFDCmF5SytCUmltQ0xSK1NOcUtFekJlL0xJMWtzR1ByejEvYksyU1oyTW1Kb3VzMmQ5Szc1Z1BDdS8vSmJoWnFYK3cKODk0azh1SndodEtibCsxVTNaVXFzOHprem5WN3FMWHFTYVdTY3dJREFRQUJBb0lCQUFJcElLYjVnbWw1TERjZwpZb29qMjVVc3BDQ0tCajVpaUFQNU5GM0hvQnY4YjVLbG16ODZvc2o3N2pZQWZ1bVlkNjE3OEpHNU9lbXNKRDhmCk8vR3dXR0JiODJiSXE0UVVqM1dhZzM4RWtPSThvWnI3b0ZQOHdycEhGdmxrUlVNR201YzVMZmFlRHhUZlNqaDgKU2FqbmRmZ2RKRlh2cnIxNnhVMHZQUXlPRUJSK1NReWRMY3RhOEZFQmpZclNSV1RZK0hPWmpsNWowb0ZlcGxuSwoxdXR3emNPZ3JtbGlRdTJtejNsRkpUYmhwZFhOb3BoWGd0Y29OeTBSc2lzSS9yNjJ4eEd2M05DU1VrVFBXV0hYCmg5WHdrYlNjVE5tZCszZXZYekIvMVk1YUw3VEZrZTArOTNUUTVFWEtLaW1uN1RJZmM5blgvMHR4WnAyWWg3Q3YKWHlkK0pjRUNnWUVBOTBMMExidXU3eDY0aXBGNUNwQmp4OFNzVzV6SUZoci9JTmVCdUMyOHlHM1l4cjJKWXlXNwpqMDZSZ1M0SnYzRnNKQmszQVlLc1diRlNoamNJVTl3WkV1YTBFWnh0VlloZXRHOHBpa29SUzdzeDNRc08wR0tDCkJ5OWRvcHVFQUt0T3ljMHNMdnFqclk3ZUtNYWNlUTJhRVhHbWUwVEIyb1hKWXF5WStHR2lUcUVDZ1lFQTVBRkYKY3F6bkpUb1BseG9qVVc5TjhkUFU2UGN1N3VBenN1SXJpbmpEeVpYdnpuRlZCYnpCdXZzZlBUUWo2Yk1zeHR6ZgpWTmpwdDlKdWNMOUxHODlJNnRpQnJTZElIN0NQWHZUZGlxVnZiWjVCYlBqcXRtQzhFZ2tUeUZSemlRdWZDQ3VZCjVzbTJRQzFNWElaeVQraHN3UjBwamRDMUJSd0Y5a0wwekNNMjdKTUNnWUFHVEFFMTdQS3Vpa1MrMnFlUGVrL2cKTllVQ0xFTDROU1hNSzFEVlpPeksyZWxNWG1WU1RoS3h1cG1BQmJFZjIvNmFDTDVhM240UEpySG9VeHgyTGtQQgpOSGpmZmZGVzNVczBJeVNXcmY0MHhJYW5qM0dJSXdvV3JzRWV0QUV2bHkxQmZHVWtxU05qOXlCM1AxK2F3WnJyCjJNNFprNDJ3Ui9ueDlsMUs3Z21aSVFLQmdRQ3ZpM01HMmF5VmN1QngvQVBaUFJNTDc0WnJYM1RaSWZGcjlzcUQKTUh1OWh4MDlHdkRWSEFFa2p4ZjhMVnJCSWR5RnQ2U1RWUGFOT3cwZzdZZE1nQW1xRnN1d254L2VsamVzYW1idgp5blBDT0NneldHcU54R2pJa2dpVElzSlpiNE1mN1VFcDMzL2NaWVAzY09RdU5jc1YyL2dVWWU0ZFl2Z01KSDBKCmRzdGcxUUtCZ0RrSkFYZ2oraFc4SXdhVThDbG5VdkZIak1lUE1tWHRXZXptVURscnVnRlo4bHh0ZE5lZVBxa1IKbHowL0xrNkN2cWhnOERNYW45ZG1aTFF2YW9tanA2cGdWeTFGc0NJSnM3NEtSQS9iNjRRNWdyMW9TeXVxa242SQpGS3ZBeTllME4vaHRVWlh5dmZMQlJ0b0JHeDNVZXpkUXdUbEM1cXFYV1lTMEVVdmdGS1JJCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
-    pub: LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBM0RqYnozMzIxZ2ZXdHBXUXUwZnoKcTY5TWczSEhvTUduQk4xL1pZVlVwZGMyK2JPRUhXcE9yZDhJVlh0aksvSXNrbHhqWmowcTlVV2tJdFE3U3BEeQpXSVFWeXEyMHB6OGV1TGtzQVo0RkdPT3JjU21IbkJxUHZkWkwxa3NiL01OVXZEbk53UnFPR3ppU2JINnFGRnBUCmNGRmw5QkF4MU02TFZEaWd3NGM0VzdrMnpCUmRWaXB6NEg1TUJZUEN3N2ljd2svakE0UzJvQlp5d2JjWld5VVUKeGtBSjNMa2NBcUpkMUJiYjJ5ZjVXUENxZEZhQ2F5SytCUmltQ0xSK1NOcUtFekJlL0xJMWtzR1ByejEvYksyUwpaMk1tSm91czJkOUs3NWdQQ3UvL0piaFpxWCt3ODk0azh1SndodEtibCsxVTNaVXFzOHprem5WN3FMWHFTYVdTCmN3SURBUUFCCi0tLS0tRU5EIFJTQSBQVUJMSUMgS0VZLS0tLS0K
+    priv: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBeCtHVVkyMEsyVXZkOUtTeVVSc0RKMkYrcjh6MTQweVdzMVNNYjZVd05RTnNxRHRMCjRlR1RkeDRHeEhXRHFFRUZaOGNMZmtPUTFYR3hLcVE5OG12b0l3dHhBVUl3UDVlcTVVZ1VJcDdCTklVTWlBMFcKVEVhcUNoQ0x1MHR5MlNDVWFtbDhXaW84M0lTT0c2U3k4b0RLa1FzK1F1dDhTdmhMb2ZwOWdDeEFBN2Rya1ptZQpOOHAzME0yMHhtWCtvZjcyeTJVQVZ3U1hsOGhQWWF6SEY0MTJHRVVydjZkUGNWblRwN2tUbWJqT0c0L3VGUHRDCmtHSC84ZWhwSkxaZjhXT0ZPM1BpT0pmbzFYZnM0a1ZsVVVKWFF5d3lacmppNnhyRWtMU3ZhY1hZNzNhUFluMFYKQ1U4bE5TeWRYSDJJaFZ6dDBNUWVBNXlzSlpTZU42Y2dRSEhZMlFJREFRQUJBb0lCQUVxZk1mbm9sTHRKTXFVSgo4N1NKNUNTSXBuWlZpNXIvVmVlL2NlcWdmaDNjbUcwNkxmczNid2x5Z1U1SkhRenNzV3JzQ2FOcThDQnZvSmZ0CjExNnc0R3BzOUJSbk5JSVpTbWpzL3U5cDIzR1RGbm1ZZ1RHYTFCS0wyTTdrdlF6SXQvLytQN21kdVRrT2w4dEUKTXJhTVZKUFA0YiswRUtRZ2pJUDljMnN0bWZ5SWpVeGZxUlBRbVlRL3pReVVlaXhSbHcrN3dKOHgxNjk5Wlc5VAppYTAwR0NXTGRyQUdzOXRrMHQwazZJVnZGR1d5OHlVVUdVYVBmNmdYamEvaFFmajlDYlp2b2NSUHFPNmQzeU1ZCmJBeGtOZElXUDA2SWRGNE1DSnBJSDB0OTZYWXBna3lrTDAyWnZSY0R3VmJYQnoyRFg4bVRKeUxXWk9DeTYwK0gKcUpEMEI0RUNnWUVBOUd5cmtkR1FPR2RiaFl1Q3EzY1dCN252ZmhHZjJHZFZZbkZtY0R0ZG04WUJmNnJkYWxsVgpMQkg0ZVR4dXN2c1pOdVhleUdYdy9XbXo3bllSQncvWU1GclFZaGttZnBMNzlORGVDeFZURGdwUnBvbXkyempmCmhZNTg0ZUlYWGNoTWh5QVp0d3NSTS9Kd0R5cUFGSHZGdFRQR0pvU3B0K0lESDFhK04vK1lTd2tDZ1lFQTBWamgKSklzS1BWb3RWWmdaRmpPUXVlYmxyZ1NKM3Y1WEpabFpEQmY4WEVGc1FZcUQyemMyUWVKZGlCcFBIcHBWZnpkOQpWek9tdkVtS0dkSXQxdXFvVVVDWGgxSnZnaHpVWjgydytzZ05zSUtyZ3IzcldhdE0rV2V1Wi8xcm5LKzFKUHFZCmo5OXkzaTI2Y3R3SU5WNVRIOU9tMnJEdm9UKzdBMU50cnNDWkExRUNnWUVBNFBxQnRaZUNPeGlQdWsxZWVqc0QKMFJySklXNVJoaHdmRUp5Mm9JbFVNVVRCTG1UMHBxWVJhcDRqNmx2QXZRZTQvcm41Sk5ZSVN3a1hjRi9HYm95YgovbTRvcnBMZHh0VytDbXFTWnZzNjFvcVMrMHAxa2FrNHZMTVpxY1MwbzBMeGhkTDdPR3Q4YXljMUZCQ1hrY01YCmlTRmR1eWlURzBseWZFOFlpV3kvSGhrQ2dZQmo4MlY3Qnc5YWY0V0ppbGJmN0xxNnAyMGRpbmt4Q0lvZkgzb08KZGgwOUJ0ZGk2M2xNM3ExL0EwN1l2b2JyKzQrNmI0bmVhb0MvQVBWNG9vclVRN0VkS2hPdXZrTVRBaVMvY3N0KwowS2tJanpySDcxbEF0TExKbVNFQjhWTEJ1bnBvTDJWTHU4bWlIbjhZZThsSGdjTjZQSms3YktMY2dBc1A2WE5DCnJoM2dJUUtCZ1FEYW4zZENrSWdzZjZxTzFhY3dUQklvUEE3MmNlMm9GdU1PV0dKWnc3SElVVW5hUXUvR3lnSzEKVDY0UkRvNEFOOUJSUTNhaVVvd3lrUW1TMkVNT0ZRTUFCdlVqWTFuWFd1ZVY0aS9PV2djYXBObmYxV3YrT3RDUwpnQUdqeVFZajZNTWV1eDljMitNUExWR1ZFUFh0ajhHdVV0d2RwRmlpdm5RMFgrM205cmxXRFE9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=
+    pub: LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBeCtHVVkyMEsyVXZkOUtTeVVSc0QKSjJGK3I4ejE0MHlXczFTTWI2VXdOUU5zcUR0TDRlR1RkeDRHeEhXRHFFRUZaOGNMZmtPUTFYR3hLcVE5OG12bwpJd3R4QVVJd1A1ZXE1VWdVSXA3Qk5JVU1pQTBXVEVhcUNoQ0x1MHR5MlNDVWFtbDhXaW84M0lTT0c2U3k4b0RLCmtRcytRdXQ4U3ZoTG9mcDlnQ3hBQTdkcmtabWVOOHAzME0yMHhtWCtvZjcyeTJVQVZ3U1hsOGhQWWF6SEY0MTIKR0VVcnY2ZFBjVm5UcDdrVG1iak9HNC91RlB0Q2tHSC84ZWhwSkxaZjhXT0ZPM1BpT0pmbzFYZnM0a1ZsVVVKWApReXd5WnJqaTZ4ckVrTFN2YWNYWTczYVBZbjBWQ1U4bE5TeWRYSDJJaFZ6dDBNUWVBNXlzSlpTZU42Y2dRSEhZCjJRSURBUUFCCi0tLS0tRU5EIFJTQSBQVUJMSUMgS0VZLS0tLS0K
   kind: Secret
   metadata:
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -8602,7 +7943,7 @@ items:
         f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -8612,16 +7953,16 @@ items:
           f:pub: {}
       manager: dashboard
       operation: Update
-      time: "2024-12-28T15:02:13Z"
+      time: "2024-12-29T05:33:25Z"
     name: kubernetes-dashboard-key-holder
     namespace: kubernetes-dashboard
-    resourceVersion: "891"
-    uid: 99765d78-0554-4dba-bf43-9ddda68daf02
+    resourceVersion: "607"
+    uid: 89955fff-c9cb-447e-8dd1-9f6a6a3377a1
   type: Opaque
 - apiVersion: v1
   kind: Service
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:30:54Z"
     labels:
       component: apiserver
       provider: kubernetes
@@ -8650,11 +7991,11 @@ items:
           f:type: {}
       manager: kube-apiserver
       operation: Update
-      time: "2024-12-28T14:57:39Z"
+      time: "2024-12-29T05:30:54Z"
     name: kubernetes
     namespace: default
-    resourceVersion: "195"
-    uid: 6b11071b-3a08-403d-beb4-62b5b12af1c6
+    resourceVersion: "193"
+    uid: 99513b31-88ba-4b46-8634-4cb9502c06b1
   spec:
     clusterIP: 10.96.0.1
     clusterIPs:
@@ -8678,7 +8019,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-controller","namespace":"ingress-nginx"},"spec":{"ipFamilies":["IPv4"],"ipFamilyPolicy":"SingleStack","ports":[{"appProtocol":"http","name":"http","port":80,"protocol":"TCP","targetPort":"http"},{"appProtocol":"https","name":"https","port":443,"protocol":"TCP","targetPort":"https"}],"selector":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"type":"NodePort"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -8722,15 +8063,15 @@ items:
           f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-controller
     namespace: ingress-nginx
-    resourceVersion: "11951"
-    uid: dcf3b7f5-a275-4593-bc3f-1eae17219585
+    resourceVersion: "558"
+    uid: 37725387-afe4-475d-92e4-6fd899fa5cbb
   spec:
-    clusterIP: 10.101.144.230
+    clusterIP: 10.102.107.131
     clusterIPs:
-    - 10.101.144.230
+    - 10.102.107.131
     externalTrafficPolicy: Cluster
     internalTrafficPolicy: Cluster
     ipFamilies:
@@ -8739,13 +8080,13 @@ items:
     ports:
     - appProtocol: http
       name: http
-      nodePort: 30394
+      nodePort: 30303
       port: 80
       protocol: TCP
       targetPort: http
     - appProtocol: https
       name: https
-      nodePort: 31385
+      nodePort: 32421
       port: 443
       protocol: TCP
       targetPort: https
@@ -8763,7 +8104,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-controller-admission","namespace":"ingress-nginx"},"spec":{"ports":[{"appProtocol":"https","name":"https-webhook","port":443,"targetPort":"webhook"}],"selector":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"type":"ClusterIP"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -8797,15 +8138,15 @@ items:
           f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-controller-admission
     namespace: ingress-nginx
-    resourceVersion: "11955"
-    uid: ec12fdbf-0196-49da-831d-31bcfad7019d
+    resourceVersion: "562"
+    uid: c7cda897-a77d-4140-8b87-2209cd3cf18b
   spec:
-    clusterIP: 10.108.79.196
+    clusterIP: 10.103.109.11
     clusterIPs:
-    - 10.108.79.196
+    - 10.103.109.11
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -8830,7 +8171,7 @@ items:
     annotations:
       prometheus.io/port: "9153"
       prometheus.io/scrape: "true"
-    creationTimestamp: "2024-12-28T14:57:41Z"
+    creationTimestamp: "2024-12-29T05:30:57Z"
     labels:
       k8s-app: kube-dns
       kubernetes.io/cluster-service: "true"
@@ -8877,11 +8218,11 @@ items:
           f:type: {}
       manager: kubeadm
       operation: Update
-      time: "2024-12-28T14:57:41Z"
+      time: "2024-12-29T05:30:57Z"
     name: kube-dns
     namespace: kube-system
-    resourceVersion: "248"
-    uid: 646dee01-97a4-417c-b0ea-f51c03acead7
+    resourceVersion: "239"
+    uid: 86c9c54e-1ecd-4b88-aa38-ea34b585637a
   spec:
     clusterIP: 10.96.0.10
     clusterIPs:
@@ -8915,7 +8256,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"metrics-server","kubernetes.io/minikube-addons":"metrics-server","kubernetes.io/minikube-addons-endpoint":"metrics-server","kubernetes.io/name":"Metrics-server"},"name":"metrics-server","namespace":"kube-system"},"spec":{"ports":[{"name":"https","port":443,"protocol":"TCP","targetPort":"https"}],"selector":{"k8s-app":"metrics-server"}}}
-    creationTimestamp: "2024-12-28T17:37:59Z"
+    creationTimestamp: "2024-12-29T05:34:41Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: metrics-server
@@ -8952,15 +8293,15 @@ items:
           f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:59Z"
+      time: "2024-12-29T05:34:41Z"
     name: metrics-server
     namespace: kube-system
-    resourceVersion: "12122"
-    uid: 06930335-f7d2-4a28-a209-00f894884160
+    resourceVersion: "751"
+    uid: 8360075e-5e3e-467b-9f55-a381cb264921
   spec:
-    clusterIP: 10.101.254.0
+    clusterIP: 10.104.124.48
     clusterIPs:
-    - 10.101.254.0
+    - 10.104.124.48
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -8982,7 +8323,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"dashboard-metrics-scraper","kubernetes.io/minikube-addons":"dashboard"},"name":"dashboard-metrics-scraper","namespace":"kubernetes-dashboard"},"spec":{"ports":[{"port":8000,"targetPort":8000}],"selector":{"k8s-app":"dashboard-metrics-scraper"}}}
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: dashboard-metrics-scraper
@@ -9014,15 +8355,15 @@ items:
           f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     name: dashboard-metrics-scraper
     namespace: kubernetes-dashboard
-    resourceVersion: "854"
-    uid: 97189893-a1ec-4703-bc99-cac3771a333a
+    resourceVersion: "509"
+    uid: e72f0f6f-a027-41ca-8699-ad0382f950a6
   spec:
-    clusterIP: 10.108.248.247
+    clusterIP: 10.106.46.251
     clusterIPs:
-    - 10.108.248.247
+    - 10.106.46.251
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -9043,7 +8384,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"spec":{"ports":[{"port":80,"targetPort":9090}],"selector":{"k8s-app":"kubernetes-dashboard"}}}
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -9075,15 +8416,15 @@ items:
           f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "850"
-    uid: 2abb98c5-59b2-406a-ac62-7085f7404914
+    resourceVersion: "501"
+    uid: ade81abd-a8b0-4c93-9ace-a3e0cbdfed5a
   spec:
-    clusterIP: 10.96.49.84
+    clusterIP: 10.103.116.183
     clusterIPs:
-    - 10.96.49.84
+    - 10.103.116.183
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -9101,19 +8442,19 @@ items:
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:09Z"
     name: default
     namespace: default
-    resourceVersion: "364"
-    uid: 7c6c4f94-aef0-4311-962d-a08bd687510c
+    resourceVersion: "336"
+    uid: 904e6180-bd60-4f23-9268-c0b67812feab
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     name: default
     namespace: ingress-nginx
-    resourceVersion: "11934"
-    uid: b20d870b-d7fc-4dcc-9d3f-73cdddb2d8d1
+    resourceVersion: "540"
+    uid: 6eae6990-bc70-448c-bf84-19f26a0048db
 - apiVersion: v1
   automountServiceAccountToken: true
   kind: ServiceAccount
@@ -9121,7 +8462,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","automountServiceAccountToken":true,"kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -9142,18 +8483,18 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx
     namespace: ingress-nginx
-    resourceVersion: "11935"
-    uid: 4523fb7b-9b51-4d9b-acb6-78b29d08139d
+    resourceVersion: "542"
+    uid: 8715bd6c-db1d-4951-8a9a-96fd8cde9adc
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: admission-webhook
       app.kubernetes.io/instance: ingress-nginx
@@ -9173,208 +8514,186 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-admission
     namespace: ingress-nginx
-    resourceVersion: "11936"
-    uid: 0ea29200-c4c1-4317-b2ec-1bd0bc8dc28d
+    resourceVersion: "543"
+    uid: 24e4ccb9-f42a-4997-a18e-8aecd63b6d21
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:09Z"
     name: default
     namespace: kube-node-lease
-    resourceVersion: "363"
-    uid: fe3ce464-6a44-4fe1-9863-94cba9c39da9
+    resourceVersion: "335"
+    uid: 055192d8-f42f-4a66-8ea1-71d9501a6439
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:08Z"
     name: default
     namespace: kube-public
-    resourceVersion: "361"
-    uid: be04bd44-bda0-4698-a96a-f3908adab60a
+    resourceVersion: "334"
+    uid: 0e871805-0aeb-4123-99b7-8fd772ef14b6
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:49Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: attachdetach-controller
     namespace: kube-system
-    resourceVersion: "302"
-    uid: 68cea851-945d-409e-872f-36e1eb6b580c
+    resourceVersion: "276"
+    uid: d2513511-bea5-47e7-96c4-ccccd214ea45
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:31:08Z"
     name: bootstrap-signer
     namespace: kube-system
-    resourceVersion: "205"
-    uid: e7420223-804b-4803-8278-c874aca19258
+    resourceVersion: "311"
+    uid: 5cab49e7-5ac4-4735-a5c2-c97f35a2e32a
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:31:06Z"
     name: certificate-controller
     namespace: kube-system
-    resourceVersion: "204"
-    uid: 8104c552-76d0-471d-937f-10d8cab42491
+    resourceVersion: "296"
+    uid: a16147ca-eb60-4141-8a71-8da992be89ad
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: clusterrole-aggregation-controller
     namespace: kube-system
-    resourceVersion: "207"
-    uid: 7f6c966b-4c51-4c50-bbdb-3eebf1f94e01
+    resourceVersion: "285"
+    uid: 44e23cc6-035c-4b39-9e60-b4a2026b5e94
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:40Z"
+    creationTimestamp: "2024-12-29T05:30:57Z"
     name: coredns
     namespace: kube-system
-    resourceVersion: "245"
-    uid: 06165da9-a878-419b-acbc-cb6e18f0b102
+    resourceVersion: "236"
+    uid: 1d541e52-e68a-4733-98ad-e23c2fa92a15
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:51Z"
+    creationTimestamp: "2024-12-29T05:31:07Z"
     name: cronjob-controller
     namespace: kube-system
-    resourceVersion: "317"
-    uid: b39eeedd-ad24-442e-9328-3167a1627f0d
+    resourceVersion: "309"
+    uid: 1d74f11f-a791-45d7-b90b-a4ccb2246dd2
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:51Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: daemon-set-controller
     namespace: kube-system
-    resourceVersion: "320"
-    uid: f52dfe42-c41d-4733-a4b6-89a9ea729187
+    resourceVersion: "282"
+    uid: 7c5e4f64-3985-46a3-b674-f736bcb7c0e5
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:53Z"
+    creationTimestamp: "2024-12-29T05:31:09Z"
     name: default
     namespace: kube-system
-    resourceVersion: "360"
-    uid: ad204949-f979-43ea-9412-836f63ce2d81
+    resourceVersion: "337"
+    uid: 36939e5d-57ba-4670-ab39-8411dd0031b8
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:49Z"
+    creationTimestamp: "2024-12-29T05:31:05Z"
     name: deployment-controller
     namespace: kube-system
-    resourceVersion: "304"
-    uid: d96a0a6f-4520-4c6f-bc41-6db50d5a8315
+    resourceVersion: "288"
+    uid: 6b6ddc81-5985-44f4-bfc6-662a59a34fed
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:31:05Z"
     name: disruption-controller
     namespace: kube-system
-    resourceVersion: "201"
-    uid: e02c8de7-ce1a-40c3-b110-cdfaa4c42684
+    resourceVersion: "289"
+    uid: 608673b9-ab65-412f-8c07-5d93baa7517e
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:31:07Z"
     name: endpoint-controller
     namespace: kube-system
-    resourceVersion: "203"
-    uid: 89d573f9-f0fb-4ea3-b9c7-ac6c0a407862
+    resourceVersion: "304"
+    uid: 274defbd-b239-411a-a871-95a9ba2d4c68
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:50Z"
+    creationTimestamp: "2024-12-29T05:31:07Z"
     name: endpointslice-controller
     namespace: kube-system
-    resourceVersion: "312"
-    uid: 2d3def4d-7761-400f-aa0f-7afb247df4c2
+    resourceVersion: "305"
+    uid: bb928523-9638-4c4f-9dd2-65d60aad6065
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:49Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: endpointslicemirroring-controller
     namespace: kube-system
-    resourceVersion: "303"
-    uid: 2953f0fe-4f4d-452f-a2d4-c6d0ef34aa33
+    resourceVersion: "286"
+    uid: 1c1c14a7-05b7-4bc9-b074-81a1ebb981dd
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:50Z"
+    creationTimestamp: "2024-12-29T05:31:07Z"
     name: ephemeral-volume-controller
     namespace: kube-system
-    resourceVersion: "311"
-    uid: c3d3f9a6-a805-41fd-9f63-1830626f5aac
+    resourceVersion: "303"
+    uid: d8caa590-5936-477f-bfb2-9d69797360c3
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:50Z"
+    creationTimestamp: "2024-12-29T05:31:06Z"
     name: expand-controller
     namespace: kube-system
-    resourceVersion: "308"
-    uid: c02be85d-3d7c-4e64-b15b-8fd9bed94ab0
+    resourceVersion: "301"
+    uid: 19a78e85-cf60-4c52-b6ac-890235e80da8
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:51Z"
+    creationTimestamp: "2024-12-29T05:31:07Z"
     name: generic-garbage-collector
     namespace: kube-system
-    resourceVersion: "315"
-    uid: 5ab7cad9-03b3-4da2-a498-694822365651
+    resourceVersion: "306"
+    uid: a707daa2-54c3-4d6a-8fd1-67cfdeb79b67
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:49Z"
+    creationTimestamp: "2024-12-29T05:31:06Z"
     name: horizontal-pod-autoscaler
     namespace: kube-system
-    resourceVersion: "305"
-    uid: 3996e0b7-ec12-4572-ac25-cebea4bb8ee3
+    resourceVersion: "295"
+    uid: 5b434fdd-4899-42b7-8c4c-38515a883c77
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:30:54Z"
     name: job-controller
     namespace: kube-system
-    resourceVersion: "214"
-    uid: d2b2ec80-8fc0-4b5f-bcfb-20692127935f
+    resourceVersion: "198"
+    uid: 8014de44-49e0-4b52-a826-f6c180844eb5
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    annotations:
-      kubectl.kubernetes.io/last-applied-configuration: |
-        {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"name":"kindnet","namespace":"kube-system"}}
-    creationTimestamp: "2024-12-28T14:57:42Z"
-    managedFields:
-    - apiVersion: v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:annotations:
-            .: {}
-            f:kubectl.kubernetes.io/last-applied-configuration: {}
-      manager: kubectl-client-side-apply
-      operation: Update
-      time: "2024-12-28T14:57:42Z"
-    name: kindnet
-    namespace: kube-system
-    resourceVersion: "268"
-    uid: 25520cab-f91a-435f-a47d-00fbf68429f2
-- apiVersion: v1
-  kind: ServiceAccount
-  metadata:
-    creationTimestamp: "2024-12-28T14:57:41Z"
+    creationTimestamp: "2024-12-29T05:30:57Z"
     name: kube-proxy
     namespace: kube-system
-    resourceVersion: "251"
-    uid: d15e4096-4889-47ba-b7b9-4c1e28f1ec7f
+    resourceVersion: "242"
+    uid: 70696228-5e09-4994-8973-34ca46882652
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"metrics-server"},"name":"metrics-server","namespace":"kube-system"}}
-    creationTimestamp: "2024-12-28T17:37:59Z"
+    creationTimestamp: "2024-12-29T05:34:41Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: metrics-server
@@ -9392,122 +8711,122 @@ items:
             f:k8s-app: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:59Z"
+      time: "2024-12-29T05:34:41Z"
     name: metrics-server
     namespace: kube-system
-    resourceVersion: "12100"
-    uid: bc4cce25-a8d4-4093-a4b3-b2cf73896ec5
+    resourceVersion: "729"
+    uid: fed0fce6-ce5b-4908-b77d-011d19e3eaca
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:50Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: namespace-controller
     namespace: kube-system
-    resourceVersion: "313"
-    uid: 4487ff20-1545-4996-83ba-6f2f595650e8
+    resourceVersion: "281"
+    uid: 92457598-4eb5-4a77-b814-d31c43c17c49
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:30:54Z"
     name: node-controller
     namespace: kube-system
-    resourceVersion: "225"
-    uid: d7db7533-0995-4cfb-a220-53bc6db19fd9
+    resourceVersion: "201"
+    uid: 3425acf2-b5d7-46ae-ac0b-380d1d69c7ad
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:31:06Z"
     name: persistent-volume-binder
     namespace: kube-system
-    resourceVersion: "206"
-    uid: 39c7f4cc-3bae-43f9-9f71-11d01bfd4597
+    resourceVersion: "297"
+    uid: f7921f8a-166d-423c-967c-2aed13fd89f3
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:31:05Z"
     name: pod-garbage-collector
     namespace: kube-system
-    resourceVersion: "199"
-    uid: 3883671f-ba14-4892-a1ef-200a3e2353dc
+    resourceVersion: "287"
+    uid: c0ebc984-d32c-4c1a-995e-9ec77daea660
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:49Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: pv-protection-controller
     namespace: kube-system
-    resourceVersion: "299"
-    uid: 7aedddcc-6b5d-4fda-9aed-363544328773
+    resourceVersion: "284"
+    uid: 052cab97-9f13-4849-be15-f18982630616
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:50Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: pvc-protection-controller
     namespace: kube-system
-    resourceVersion: "309"
-    uid: 8f7a7964-391f-42d9-a6cc-04433841777b
+    resourceVersion: "280"
+    uid: b0f12789-024f-4aa6-9e8e-31782317ff1e
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:49Z"
+    creationTimestamp: "2024-12-29T05:30:54Z"
     name: replicaset-controller
     namespace: kube-system
-    resourceVersion: "300"
-    uid: 303342f5-407a-487a-9e60-83be2cb927fd
+    resourceVersion: "199"
+    uid: 2f731df6-9614-47de-897c-9421ca3b8a78
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:51Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: replication-controller
     namespace: kube-system
-    resourceVersion: "319"
-    uid: 81254d03-9769-4b6e-b265-06136bdbcb52
+    resourceVersion: "277"
+    uid: 98fbb92e-2def-4642-90cf-6dc60dbb0e14
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:31:05Z"
     name: resourcequota-controller
     namespace: kube-system
-    resourceVersion: "200"
-    uid: 00218043-2326-4d82-9a02-1a275ed0cd0f
+    resourceVersion: "291"
+    uid: edd380bc-9e23-4d25-a478-4c5f4c493d19
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:50Z"
+    creationTimestamp: "2024-12-29T05:31:08Z"
     name: root-ca-cert-publisher
     namespace: kube-system
-    resourceVersion: "310"
-    uid: 73e67bad-cc3c-4170-8f32-1dcf9ae3cfb5
+    resourceVersion: "312"
+    uid: a5fbb22c-7783-4de6-8509-f63d5703a64e
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:51Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: service-account-controller
     namespace: kube-system
-    resourceVersion: "314"
-    uid: c4314e1e-3ad7-4fcc-aa7f-acadf2d9cd6b
+    resourceVersion: "278"
+    uid: 4d94d275-4889-4372-b482-38d0952fd1c9
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:52Z"
+    creationTimestamp: "2024-12-29T05:31:05Z"
     name: service-controller
     namespace: kube-system
-    resourceVersion: "321"
-    uid: b9211ce9-9586-4e9d-9a82-dad6c78f8eb8
+    resourceVersion: "290"
+    uid: 8cb0d9e3-baa4-4d66-9a3c-040abb38161d
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:49Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: statefulset-controller
     namespace: kube-system
-    resourceVersion: "306"
-    uid: aaba178f-380e-4c1c-a862-aeedf9637946
+    resourceVersion: "279"
+    uid: b11d9576-cadb-4a99-adfc-0f3d2fe1f8f5
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile"},"name":"storage-provisioner","namespace":"kube-system"}}
-    creationTimestamp: "2024-12-28T14:57:43Z"
+    creationTimestamp: "2024-12-29T05:30:59Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
     managedFields:
@@ -9523,50 +8842,50 @@ items:
             f:addonmanager.kubernetes.io/mode: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T14:57:43Z"
+      time: "2024-12-29T05:30:59Z"
     name: storage-provisioner
     namespace: kube-system
-    resourceVersion: "273"
-    uid: 619c5a07-a2aa-4a14-9e4e-ac4dc96205f4
+    resourceVersion: "261"
+    uid: 5d161da8-d8a3-4ca8-a440-bf99855e2784
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:49Z"
+    creationTimestamp: "2024-12-29T05:30:54Z"
     name: token-cleaner
     namespace: kube-system
-    resourceVersion: "301"
-    uid: 4383b2df-12b8-4b98-ae2e-214b49c3bd98
+    resourceVersion: "200"
+    uid: 8f984d36-e2bc-4394-9003-40a972f1c079
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:31:06Z"
     name: ttl-after-finished-controller
     namespace: kube-system
-    resourceVersion: "202"
-    uid: 210a91de-e4ac-4791-b55e-4e518d8fdb1f
+    resourceVersion: "298"
+    uid: 3cc699dd-3949-4543-84a6-a49cd91a58f7
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T14:57:49Z"
+    creationTimestamp: "2024-12-29T05:31:04Z"
     name: ttl-controller
     namespace: kube-system
-    resourceVersion: "307"
-    uid: b4312793-8105-4ee8-847d-dd60f72da781
+    resourceVersion: "283"
+    uid: 0fdec00c-fc46-44e6-a329-0bb0a514323f
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     name: default
     namespace: kubernetes-dashboard
-    resourceVersion: "799"
-    uid: 960e61a4-0ad2-4b74-802f-c80b4b9d3149
+    resourceVersion: "458"
+    uid: 6986fd7f-ae71-4ea8-9c38-4f6302d01db2
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"}}
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       k8s-app: kubernetes-dashboard
@@ -9586,11 +8905,11 @@ items:
             f:kubernetes.io/minikube-addons: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     name: kubernetes-dashboard
     namespace: kubernetes-dashboard
-    resourceVersion: "822"
-    uid: 147a6c0c-6099-4f83-993a-c06ae160d42b
+    resourceVersion: "483"
+    uid: 4973466f-8416-43b8-8b5a-5dbd2a0626b2
 - apiVersion: storage.k8s.io/v1
   kind: StorageClass
   metadata:
@@ -9598,7 +8917,7 @@ items:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"},"labels":{"addonmanager.kubernetes.io/mode":"EnsureExists"},"name":"standard"},"provisioner":"k8s.io/minikube-hostpath"}
       storageclass.kubernetes.io/is-default-class: "true"
-    creationTimestamp: "2024-12-28T14:57:43Z"
+    creationTimestamp: "2024-12-29T05:30:59Z"
     labels:
       addonmanager.kubernetes.io/mode: EnsureExists
     managedFields:
@@ -9618,17 +8937,17 @@ items:
         f:volumeBindingMode: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T14:57:43Z"
+      time: "2024-12-29T05:30:59Z"
     name: standard
-    resourceVersion: "283"
-    uid: 14c92914-f324-473c-ab93-4df5d1b9df6b
+    resourceVersion: "266"
+    uid: dc3131dc-2a6e-48e3-bdc7-291a2316e154
   provisioner: k8s.io/minikube-hostpath
   reclaimPolicy: Delete
   volumeBindingMode: Immediate
 - apiVersion: v1
   kind: Namespace
   metadata:
-    creationTimestamp: "2024-12-28T14:57:39Z"
+    creationTimestamp: "2024-12-29T05:30:54Z"
     labels:
       kubernetes.io/metadata.name: default
     managedFields:
@@ -9641,10 +8960,10 @@ items:
             f:kubernetes.io/metadata.name: {}
       manager: kube-apiserver
       operation: Update
-      time: "2024-12-28T14:57:39Z"
+      time: "2024-12-29T05:30:54Z"
     name: default
-    resourceVersion: "193"
-    uid: 7f18553b-140d-4e49-89d9-75efbf216ee6
+    resourceVersion: "191"
+    uid: b0953f2e-f229-4745-a2fd-7d708767e39f
   spec:
     finalizers:
     - kubernetes
@@ -9656,7 +8975,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Namespace","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/instance: ingress-nginx
       app.kubernetes.io/name: ingress-nginx
@@ -9676,10 +8995,10 @@ items:
             f:kubernetes.io/metadata.name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx
-    resourceVersion: "11932"
-    uid: 41ada009-8f81-41cb-ae87-eb95e6fc5d90
+    resourceVersion: "539"
+    uid: a232f790-8ca1-4815-8177-e964e8adc73b
   spec:
     finalizers:
     - kubernetes
@@ -9688,7 +9007,7 @@ items:
 - apiVersion: v1
   kind: Namespace
   metadata:
-    creationTimestamp: "2024-12-28T14:57:37Z"
+    creationTimestamp: "2024-12-29T05:30:52Z"
     labels:
       kubernetes.io/metadata.name: kube-node-lease
     managedFields:
@@ -9701,10 +9020,10 @@ items:
             f:kubernetes.io/metadata.name: {}
       manager: kube-apiserver
       operation: Update
-      time: "2024-12-28T14:57:37Z"
+      time: "2024-12-29T05:30:52Z"
     name: kube-node-lease
-    resourceVersion: "38"
-    uid: c5bdbf6e-90cd-4905-8b61-c15a57506549
+    resourceVersion: "40"
+    uid: 359b0ea5-56f4-4b15-96ae-0f08c9457ae9
   spec:
     finalizers:
     - kubernetes
@@ -9713,7 +9032,7 @@ items:
 - apiVersion: v1
   kind: Namespace
   metadata:
-    creationTimestamp: "2024-12-28T14:57:37Z"
+    creationTimestamp: "2024-12-29T05:30:52Z"
     labels:
       kubernetes.io/metadata.name: kube-public
     managedFields:
@@ -9726,10 +9045,10 @@ items:
             f:kubernetes.io/metadata.name: {}
       manager: kube-apiserver
       operation: Update
-      time: "2024-12-28T14:57:37Z"
+      time: "2024-12-29T05:30:52Z"
     name: kube-public
     resourceVersion: "36"
-    uid: 5e3bff1c-700f-4cea-9835-c1416adfed0d
+    uid: a65f3953-931a-4e4e-82db-9839bc862a58
   spec:
     finalizers:
     - kubernetes
@@ -9738,7 +9057,7 @@ items:
 - apiVersion: v1
   kind: Namespace
   metadata:
-    creationTimestamp: "2024-12-28T14:57:37Z"
+    creationTimestamp: "2024-12-29T05:30:52Z"
     labels:
       kubernetes.io/metadata.name: kube-system
     managedFields:
@@ -9751,10 +9070,10 @@ items:
             f:kubernetes.io/metadata.name: {}
       manager: kube-apiserver
       operation: Update
-      time: "2024-12-28T14:57:37Z"
+      time: "2024-12-29T05:30:52Z"
     name: kube-system
-    resourceVersion: "15"
-    uid: 08d35f01-cf8e-485f-bc32-85b71780ed6e
+    resourceVersion: "13"
+    uid: 0e04b8d8-c9c3-415c-9607-a91ecccf76b5
   spec:
     finalizers:
     - kubernetes
@@ -9766,7 +9085,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Namespace","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard"}}
-    creationTimestamp: "2024-12-28T15:01:53Z"
+    creationTimestamp: "2024-12-29T05:32:55Z"
     labels:
       addonmanager.kubernetes.io/mode: Reconcile
       kubernetes.io/metadata.name: kubernetes-dashboard
@@ -9786,10 +9105,10 @@ items:
             f:kubernetes.io/minikube-addons: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T15:01:53Z"
+      time: "2024-12-29T05:32:55Z"
     name: kubernetes-dashboard
-    resourceVersion: "797"
-    uid: 4aa03c2a-a7ec-46dd-83f8-c9eedbec4695
+    resourceVersion: "457"
+    uid: 47c719ee-8cca-4afc-8f88-6168f3979965
   spec:
     finalizers:
     - kubernetes

@@ -8,7 +8,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","data":{"hsts":"false"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-controller","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -31,11 +31,11 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-controller
     namespace: ingress-nginx
-    resourceVersion: "11945"
-    uid: e8dd21b0-0797-471d-9334-cc685959370a
+    resourceVersion: "552"
+    uid: 5a4161fe-e980-4f88-a13b-ab2f0a959731
 - apiVersion: v1
   data:
     ca.crt: |
@@ -65,7 +65,7 @@ items:
         kube-apiserver when using internal endpoints such as the internal service
         IP or kubernetes.default.svc. No other usage is guaranteed across distributions
         of Kubernetes clusters.
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -79,18 +79,18 @@ items:
             f:kubernetes.io/description: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: kube-root-ca.crt
     namespace: ingress-nginx
-    resourceVersion: "11933"
-    uid: e4dfe0e4-ff3b-47f0-a8cd-d0dd9e8829d3
+    resourceVersion: "541"
+    uid: 3ebf0553-97ab-4b96-a92c-d383c6e1745a
 - apiVersion: v1
   kind: ConfigMap
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"tcp-services","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -110,18 +110,18 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: tcp-services
     namespace: ingress-nginx
-    resourceVersion: "11946"
-    uid: 6b9fd985-e460-4241-8317-c141c5de5ae5
+    resourceVersion: "553"
+    uid: 1ea28da3-2343-4001-863e-13583fba1c4b
 - apiVersion: v1
   kind: ConfigMap
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"udp-services","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -141,11 +141,11 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: udp-services
     namespace: ingress-nginx
-    resourceVersion: "11947"
-    uid: 25349563-a007-407c-9184-249b3ae20537
+    resourceVersion: "554"
+    uid: 46d2bb00-f9f9-4a54-a9ad-8a3dad6fc69b
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
@@ -153,7 +153,7 @@ items:
       deployment.kubernetes.io/revision: "1"
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-controller","namespace":"ingress-nginx"},"spec":{"minReadySeconds":0,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"}},"strategy":{"rollingUpdate":{"maxUnavailable":1},"type":"RollingUpdate"},"template":{"metadata":{"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx","gcp-auth-skip-secret":"true"}},"spec":{"containers":[{"args":["/nginx-ingress-controller","--election-id=ingress-nginx-leader","--controller-class=k8s.io/ingress-nginx","--watch-ingress-without-class=true","--configmap=$(POD_NAMESPACE)/ingress-nginx-controller","--tcp-services-configmap=$(POD_NAMESPACE)/tcp-services","--udp-services-configmap=$(POD_NAMESPACE)/udp-services","--validating-webhook=:8443","--validating-webhook-certificate=/usr/local/certificates/cert","--validating-webhook-key=/usr/local/certificates/key"],"env":[{"name":"POD_NAME","valueFrom":{"fieldRef":{"fieldPath":"metadata.name"}}},{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}},{"name":"LD_PRELOAD","value":"/usr/local/lib/libmimalloc.so"}],"image":"registry.k8s.io/ingress-nginx/controller:v1.5.1@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629","imagePullPolicy":"IfNotPresent","lifecycle":{"preStop":{"exec":{"command":["/wait-shutdown"]}}},"livenessProbe":{"failureThreshold":5,"httpGet":{"path":"/healthz","port":10254,"scheme":"HTTP"},"initialDelaySeconds":10,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"name":"controller","ports":[{"containerPort":80,"hostPort":80,"name":"http","protocol":"TCP"},{"containerPort":443,"hostPort":443,"name":"https","protocol":"TCP"},{"containerPort":8443,"name":"webhook","protocol":"TCP"}],"readinessProbe":{"failureThreshold":3,"httpGet":{"path":"/healthz","port":10254,"scheme":"HTTP"},"initialDelaySeconds":10,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"resources":{"requests":{"cpu":"100m","memory":"90Mi"}},"securityContext":{"allowPrivilegeEscalation":true,"capabilities":{"add":["NET_BIND_SERVICE"],"drop":["ALL"]},"runAsUser":101},"volumeMounts":[{"mountPath":"/usr/local/certificates/","name":"webhook-cert","readOnly":true}]}],"dnsPolicy":"ClusterFirst","nodeSelector":{"kubernetes.io/os":"linux","minikube.k8s.io/primary":"true"},"serviceAccountName":"ingress-nginx","terminationGracePeriodSeconds":0,"tolerations":[{"effect":"NoSchedule","key":"node-role.kubernetes.io/master","operator":"Equal"}],"volumes":[{"name":"webhook-cert","secret":{"secretName":"ingress-nginx-admission"}}]}}}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: controller
@@ -310,7 +310,7 @@ items:
                     f:secretName: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -344,11 +344,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:38:10Z"
+      time: "2024-12-29T05:34:53Z"
     name: ingress-nginx-controller
     namespace: ingress-nginx
-    resourceVersion: "12156"
-    uid: 7d5b52fd-09e0-42b1-8622-bbb806b7e374
+    resourceVersion: "780"
+    uid: f9faf5ce-1df5-4824-acdf-0df9cfc81939
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -477,14 +477,14 @@ items:
   status:
     availableReplicas: 1
     conditions:
-    - lastTransitionTime: "2024-12-28T17:37:04Z"
-      lastUpdateTime: "2024-12-28T17:37:04Z"
+    - lastTransitionTime: "2024-12-29T05:33:21Z"
+      lastUpdateTime: "2024-12-29T05:33:21Z"
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: "True"
       type: Available
-    - lastTransitionTime: "2024-12-28T17:37:04Z"
-      lastUpdateTime: "2024-12-28T17:38:10Z"
+    - lastTransitionTime: "2024-12-29T05:33:21Z"
+      lastUpdateTime: "2024-12-29T05:34:53Z"
       message: ReplicaSet "ingress-nginx-controller-77669ff58" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: "True"
@@ -500,7 +500,7 @@ items:
       ingressclass.kubernetes.io/is-default-class: "true"
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"networking.k8s.io/v1","kind":"IngressClass","metadata":{"annotations":{"ingressclass.kubernetes.io/is-default-class":"true"},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"nginx"},"spec":{"controller":"k8s.io/ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: controller
@@ -524,10 +524,10 @@ items:
           f:controller: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: nginx
-    resourceVersion: "11971"
-    uid: 53ecd2dc-dd34-46f2-812d-5eb843f27da3
+    resourceVersion: "587"
+    uid: 2bea61d5-05d2-4a7b-b63d-f343a47180f1
   spec:
     controller: k8s.io/ingress-nginx
 - apiVersion: batch/v1
@@ -537,7 +537,7 @@ items:
       batch.kubernetes.io/job-tracking: ""
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"batch/v1","kind":"Job","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission-create","namespace":"ingress-nginx"},"spec":{"template":{"metadata":{"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission-create"},"spec":{"containers":[{"args":["create","--host=ingress-nginx-controller-admission,ingress-nginx-controller-admission.$(POD_NAMESPACE).svc","--namespace=$(POD_NAMESPACE)","--secret-name=ingress-nginx-admission"],"env":[{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}}],"image":"registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20220916-gd32f8c343@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f","imagePullPolicy":"IfNotPresent","name":"create","securityContext":{"allowPrivilegeEscalation":false}}],"nodeSelector":{"kubernetes.io/os":"linux","minikube.k8s.io/primary":"true"},"restartPolicy":"OnFailure","securityContext":{"runAsNonRoot":true,"runAsUser":2000},"serviceAccountName":"ingress-nginx-admission"}}}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: admission-webhook
@@ -605,7 +605,7 @@ items:
               f:terminationGracePeriodSeconds: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: batch/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -619,11 +619,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:37:19Z"
+      time: "2024-12-29T05:33:48Z"
     name: ingress-nginx-admission-create
     namespace: ingress-nginx
-    resourceVersion: "12028"
-    uid: f41ccc53-96b0-4812-8b59-91c390628c7e
+    resourceVersion: "663"
+    uid: f3920a1a-1e91-4960-8a04-a533332108af
   spec:
     backoffLimit: 6
     completionMode: NonIndexed
@@ -631,7 +631,7 @@ items:
     parallelism: 1
     selector:
       matchLabels:
-        controller-uid: f41ccc53-96b0-4812-8b59-91c390628c7e
+        controller-uid: f3920a1a-1e91-4960-8a04-a533332108af
     suspend: false
     template:
       metadata:
@@ -640,7 +640,7 @@ items:
           app.kubernetes.io/component: admission-webhook
           app.kubernetes.io/instance: ingress-nginx
           app.kubernetes.io/name: ingress-nginx
-          controller-uid: f41ccc53-96b0-4812-8b59-91c390628c7e
+          controller-uid: f3920a1a-1e91-4960-8a04-a533332108af
           job-name: ingress-nginx-admission-create
         name: ingress-nginx-admission-create
       spec:
@@ -677,14 +677,14 @@ items:
         serviceAccountName: ingress-nginx-admission
         terminationGracePeriodSeconds: 30
   status:
-    completionTime: "2024-12-28T17:37:19Z"
+    completionTime: "2024-12-29T05:33:48Z"
     conditions:
-    - lastProbeTime: "2024-12-28T17:37:19Z"
-      lastTransitionTime: "2024-12-28T17:37:19Z"
+    - lastProbeTime: "2024-12-29T05:33:48Z"
+      lastTransitionTime: "2024-12-29T05:33:48Z"
       status: "True"
       type: Complete
     ready: 0
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
     succeeded: 1
     uncountedTerminatedPods: {}
 - apiVersion: batch/v1
@@ -694,7 +694,7 @@ items:
       batch.kubernetes.io/job-tracking: ""
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"batch/v1","kind":"Job","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission-patch","namespace":"ingress-nginx"},"spec":{"template":{"metadata":{"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission-patch"},"spec":{"containers":[{"args":["patch","--webhook-name=ingress-nginx-admission","--namespace=$(POD_NAMESPACE)","--patch-mutating=false","--secret-name=ingress-nginx-admission","--patch-failure-policy=Fail"],"env":[{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"fieldPath":"metadata.namespace"}}}],"image":"registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20220916-gd32f8c343@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f","imagePullPolicy":"IfNotPresent","name":"patch","securityContext":{"allowPrivilegeEscalation":false}}],"nodeSelector":{"kubernetes.io/os":"linux","minikube.k8s.io/primary":"true"},"restartPolicy":"OnFailure","securityContext":{"runAsNonRoot":true,"runAsUser":2000},"serviceAccountName":"ingress-nginx-admission"}}}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: admission-webhook
@@ -762,7 +762,7 @@ items:
               f:terminationGracePeriodSeconds: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: batch/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -776,11 +776,11 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:37:20Z"
+      time: "2024-12-29T05:33:48Z"
     name: ingress-nginx-admission-patch
     namespace: ingress-nginx
-    resourceVersion: "12035"
-    uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
+    resourceVersion: "666"
+    uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
   spec:
     backoffLimit: 6
     completionMode: NonIndexed
@@ -788,7 +788,7 @@ items:
     parallelism: 1
     selector:
       matchLabels:
-        controller-uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
+        controller-uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
     suspend: false
     template:
       metadata:
@@ -797,7 +797,7 @@ items:
           app.kubernetes.io/component: admission-webhook
           app.kubernetes.io/instance: ingress-nginx
           app.kubernetes.io/name: ingress-nginx
-          controller-uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
+          controller-uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
           job-name: ingress-nginx-admission-patch
         name: ingress-nginx-admission-patch
       spec:
@@ -836,26 +836,26 @@ items:
         serviceAccountName: ingress-nginx-admission
         terminationGracePeriodSeconds: 30
   status:
-    completionTime: "2024-12-28T17:37:20Z"
+    completionTime: "2024-12-29T05:33:48Z"
     conditions:
-    - lastProbeTime: "2024-12-28T17:37:20Z"
-      lastTransitionTime: "2024-12-28T17:37:20Z"
+    - lastProbeTime: "2024-12-29T05:33:48Z"
+      lastTransitionTime: "2024-12-29T05:33:48Z"
       status: "True"
       type: Complete
     ready: 0
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
     succeeded: 1
     uncountedTerminatedPods: {}
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generateName: ingress-nginx-admission-create-
     labels:
       app.kubernetes.io/component: admission-webhook
       app.kubernetes.io/instance: ingress-nginx
       app.kubernetes.io/name: ingress-nginx
-      controller-uid: f41ccc53-96b0-4812-8b59-91c390628c7e
+      controller-uid: f3920a1a-1e91-4960-8a04-a533332108af
       job-name: ingress-nginx-admission-create
     managedFields:
     - apiVersion: v1
@@ -872,7 +872,7 @@ items:
             f:job-name: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"f41ccc53-96b0-4812-8b59-91c390628c7e"}: {}
+            k:{"uid":"f3920a1a-1e91-4960-8a04-a533332108af"}: {}
         f:spec:
           f:containers:
             k:{"name":"create"}:
@@ -909,7 +909,7 @@ items:
           f:terminationGracePeriodSeconds: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -942,15 +942,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.11"}:
+            k:{"ip":"10.244.0.6"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:37:18Z"
-    name: ingress-nginx-admission-create-rjzph
+      time: "2024-12-29T05:33:47Z"
+    name: ingress-nginx-admission-create-9fs98
     namespace: ingress-nginx
     ownerReferences:
     - apiVersion: batch/v1
@@ -958,9 +958,9 @@ items:
       controller: true
       kind: Job
       name: ingress-nginx-admission-create
-      uid: f41ccc53-96b0-4812-8b59-91c390628c7e
-    resourceVersion: "12027"
-    uid: e1db96fc-1734-4d87-8c6a-505762624db9
+      uid: f3920a1a-1e91-4960-8a04-a533332108af
+    resourceVersion: "661"
+    uid: 474fc74b-099a-4109-b23f-a3de709083b1
   spec:
     containers:
     - args:
@@ -984,7 +984,7 @@ items:
       terminationMessagePolicy: File
       volumeMounts:
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-6gqv8
+        name: kube-api-access-5srr2
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -1012,7 +1012,7 @@ items:
       operator: Exists
       tolerationSeconds: 300
     volumes:
-    - name: kube-api-access-6gqv8
+    - name: kube-api-access-5srr2
       projected:
         defaultMode: 420
         sources:
@@ -1033,26 +1033,26 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "False"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "False"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://1d062ae7baed8d3c9527d19f6cc29865393a9f25551dffea020e2d46764ad513
+    - containerID: docker://90db5dfb7dd5ac5fa65e28f25ff8199d81305611e57655095897f1fa053797bf
       image: registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
       imageID: docker-pullable://registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
       lastState: {}
@@ -1062,28 +1062,28 @@ items:
       started: false
       state:
         terminated:
-          containerID: docker://1d062ae7baed8d3c9527d19f6cc29865393a9f25551dffea020e2d46764ad513
+          containerID: docker://90db5dfb7dd5ac5fa65e28f25ff8199d81305611e57655095897f1fa053797bf
           exitCode: 0
-          finishedAt: "2024-12-28T17:37:15Z"
+          finishedAt: "2024-12-29T05:33:44Z"
           reason: Completed
-          startedAt: "2024-12-28T17:37:15Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:33:44Z"
+    hostIP: 192.168.64.21
     phase: Succeeded
-    podIP: 10.244.0.11
+    podIP: 10.244.0.6
     podIPs:
-    - ip: 10.244.0.11
+    - ip: 10.244.0.6
     qosClass: BestEffort
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generateName: ingress-nginx-admission-patch-
     labels:
       app.kubernetes.io/component: admission-webhook
       app.kubernetes.io/instance: ingress-nginx
       app.kubernetes.io/name: ingress-nginx
-      controller-uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
+      controller-uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
       job-name: ingress-nginx-admission-patch
     managedFields:
     - apiVersion: v1
@@ -1100,7 +1100,7 @@ items:
             f:job-name: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"aff3dfb3-4d71-4ece-bf0b-403f2958214a"}: {}
+            k:{"uid":"861512ff-34d8-42ff-ae85-88c8a1b10459"}: {}
         f:spec:
           f:containers:
             k:{"name":"patch"}:
@@ -1137,7 +1137,7 @@ items:
           f:terminationGracePeriodSeconds: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -1170,15 +1170,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.10"}:
+            k:{"ip":"10.244.0.5"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:37:19Z"
-    name: ingress-nginx-admission-patch-2dns9
+      time: "2024-12-29T05:33:47Z"
+    name: ingress-nginx-admission-patch-thx7w
     namespace: ingress-nginx
     ownerReferences:
     - apiVersion: batch/v1
@@ -1186,9 +1186,9 @@ items:
       controller: true
       kind: Job
       name: ingress-nginx-admission-patch
-      uid: aff3dfb3-4d71-4ece-bf0b-403f2958214a
-    resourceVersion: "12034"
-    uid: eb273bc8-5203-4c15-8603-edf89a57a44c
+      uid: 861512ff-34d8-42ff-ae85-88c8a1b10459
+    resourceVersion: "664"
+    uid: a587f124-2768-47e3-b2e8-9deb08d7aa2e
   spec:
     containers:
     - args:
@@ -1214,7 +1214,7 @@ items:
       terminationMessagePolicy: File
       volumeMounts:
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-tlc52
+        name: kube-api-access-kvwjv
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -1242,7 +1242,7 @@ items:
       operator: Exists
       tolerationSeconds: 300
     volumes:
-    - name: kube-api-access-tlc52
+    - name: kube-api-access-kvwjv
       projected:
         defaultMode: 420
         sources:
@@ -1263,26 +1263,26 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "False"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       reason: PodCompleted
       status: "False"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://d2158c595670ee7e568f3bc5f552bc3a2926cab37c28af4f3cbd90cd074007b3
+    - containerID: docker://a6d96a2d8797349a5e1b561761af9406e7bf4991cb8b13bd3cdaf292258ca800
       image: sha256:520347519a8caefcdff1c480be13cea37a66bccf517302949b569a654b0656b5
       imageID: docker-pullable://registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
       lastState: {}
@@ -1292,22 +1292,22 @@ items:
       started: false
       state:
         terminated:
-          containerID: docker://d2158c595670ee7e568f3bc5f552bc3a2926cab37c28af4f3cbd90cd074007b3
+          containerID: docker://a6d96a2d8797349a5e1b561761af9406e7bf4991cb8b13bd3cdaf292258ca800
           exitCode: 0
-          finishedAt: "2024-12-28T17:37:16Z"
+          finishedAt: "2024-12-29T05:33:44Z"
           reason: Completed
-          startedAt: "2024-12-28T17:37:16Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:33:44Z"
+    hostIP: 192.168.64.21
     phase: Succeeded
-    podIP: 10.244.0.10
+    podIP: 10.244.0.5
     podIPs:
-    - ip: 10.244.0.10
+    - ip: 10.244.0.5
     qosClass: BestEffort
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
 - apiVersion: v1
   kind: Pod
   metadata:
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generateName: ingress-nginx-controller-77669ff58-
     labels:
       app.kubernetes.io/component: controller
@@ -1330,7 +1330,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"97f0cafa-8e3d-4e1c-bb3c-58d47e3af0ac"}: {}
+            k:{"uid":"3db1be9c-0a39-48c1-80c6-43eef21bb4ba"}: {}
         f:spec:
           f:containers:
             k:{"name":"controller"}:
@@ -1451,7 +1451,7 @@ items:
                 f:secretName: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -1481,15 +1481,15 @@ items:
           f:podIP: {}
           f:podIPs:
             .: {}
-            k:{"ip":"10.244.0.12"}:
+            k:{"ip":"10.244.0.7"}:
               .: {}
               f:ip: {}
           f:startTime: {}
       manager: kubelet
       operation: Update
       subresource: status
-      time: "2024-12-28T17:38:10Z"
-    name: ingress-nginx-controller-77669ff58-j8kgd
+      time: "2024-12-29T05:34:53Z"
+    name: ingress-nginx-controller-77669ff58-ffkzd
     namespace: ingress-nginx
     ownerReferences:
     - apiVersion: apps/v1
@@ -1497,9 +1497,9 @@ items:
       controller: true
       kind: ReplicaSet
       name: ingress-nginx-controller-77669ff58
-      uid: 97f0cafa-8e3d-4e1c-bb3c-58d47e3af0ac
-    resourceVersion: "12150"
-    uid: 529fcc1e-a935-446f-96fe-33bb783333a9
+      uid: 3db1be9c-0a39-48c1-80c6-43eef21bb4ba
+    resourceVersion: "774"
+    uid: 2bf1b272-7937-4b82-9e2d-3b691243eb2e
   spec:
     containers:
     - args:
@@ -1585,7 +1585,7 @@ items:
         name: webhook-cert
         readOnly: true
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-j7pj6
+        name: kube-api-access-dbhx7
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -1618,7 +1618,7 @@ items:
       secret:
         defaultMode: 420
         secretName: ingress-nginx-admission
-    - name: kube-api-access-j7pj6
+    - name: kube-api-access-dbhx7
       projected:
         defaultMode: 420
         sources:
@@ -1639,23 +1639,23 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:10Z"
+      lastTransitionTime: "2024-12-29T05:34:53Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:38:10Z"
+      lastTransitionTime: "2024-12-29T05:34:53Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T17:37:04Z"
+      lastTransitionTime: "2024-12-29T05:33:21Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: docker://d1bf993f9160a181ea455322ff40fd8ba3a4846dfd0d592af69258e57cf0b461
+    - containerID: docker://c87f6141ebd9b14f265bc09a819ceecee60b4523053686a13962b912d1fa299e
       image: registry.k8s.io/ingress-nginx/controller@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
       imageID: docker-pullable://registry.k8s.io/ingress-nginx/controller@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
       lastState: {}
@@ -1665,14 +1665,14 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T17:37:51Z"
-    hostIP: 192.168.64.18
+          startedAt: "2024-12-29T05:34:39Z"
+    hostIP: 192.168.64.21
     phase: Running
-    podIP: 10.244.0.12
+    podIP: 10.244.0.7
     podIPs:
-    - ip: 10.244.0.12
+    - ip: 10.244.0.7
     qosClass: Burstable
-    startTime: "2024-12-28T17:37:04Z"
+    startTime: "2024-12-29T05:33:21Z"
 - apiVersion: apps/v1
   kind: ReplicaSet
   metadata:
@@ -1680,7 +1680,7 @@ items:
       deployment.kubernetes.io/desired-replicas: "1"
       deployment.kubernetes.io/max-replicas: "2"
       deployment.kubernetes.io/revision: "1"
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     generation: 1
     labels:
       app.kubernetes.io/component: controller
@@ -1707,7 +1707,7 @@ items:
             f:pod-template-hash: {}
           f:ownerReferences:
             .: {}
-            k:{"uid":"7d5b52fd-09e0-42b1-8622-bbb806b7e374"}: {}
+            k:{"uid":"f9faf5ce-1df5-4824-acdf-0df9cfc81939"}: {}
         f:spec:
           f:replicas: {}
           f:selector: {}
@@ -1839,7 +1839,7 @@ items:
                     f:secretName: {}
       manager: kube-controller-manager
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -1852,7 +1852,7 @@ items:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: "2024-12-28T17:38:10Z"
+      time: "2024-12-29T05:34:53Z"
     name: ingress-nginx-controller-77669ff58
     namespace: ingress-nginx
     ownerReferences:
@@ -1861,9 +1861,9 @@ items:
       controller: true
       kind: Deployment
       name: ingress-nginx-controller
-      uid: 7d5b52fd-09e0-42b1-8622-bbb806b7e374
-    resourceVersion: "12155"
-    uid: 97f0cafa-8e3d-4e1c-bb3c-58d47e3af0ac
+      uid: f9faf5ce-1df5-4824-acdf-0df9cfc81939
+    resourceVersion: "779"
+    uid: 3db1be9c-0a39-48c1-80c6-43eef21bb4ba
   spec:
     replicas: 1
     selector:
@@ -1996,7 +1996,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"Role","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx","namespace":"ingress-nginx"},"rules":[{"apiGroups":[""],"resources":["namespaces"],"verbs":["get"]},{"apiGroups":[""],"resources":["configmaps","pods","secrets","endpoints"],"verbs":["get","list","watch"]},{"apiGroups":[""],"resources":["services"],"verbs":["get","list","watch"]},{"apiGroups":["networking.k8s.io"],"resources":["ingresses"],"verbs":["get","list","watch"]},{"apiGroups":["networking.k8s.io"],"resources":["ingresses/status"],"verbs":["update"]},{"apiGroups":["networking.k8s.io"],"resources":["ingressclasses"],"verbs":["get","list","watch"]},{"apiGroups":[""],"resourceNames":["ingress-nginx-leader"],"resources":["configmaps"],"verbs":["get","update"]},{"apiGroups":[""],"resources":["configmaps"],"verbs":["create"]},{"apiGroups":["coordination.k8s.io"],"resourceNames":["ingress-nginx-leader"],"resources":["leases"],"verbs":["get","update"]},{"apiGroups":["coordination.k8s.io"],"resources":["leases"],"verbs":["create"]},{"apiGroups":[""],"resources":["events"],"verbs":["create","patch"]},{"apiGroups":["discovery.k8s.io"],"resources":["endpointslices"],"verbs":["list","watch","get"]}]}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -2017,11 +2017,11 @@ items:
         f:rules: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx
     namespace: ingress-nginx
-    resourceVersion: "11937"
-    uid: 13946d6e-ed9e-467c-b280-49bee139ffe1
+    resourceVersion: "544"
+    uid: f39523c7-c415-48d0-b396-ed96ab7cd199
   rules:
   - apiGroups:
     - ""
@@ -2121,7 +2121,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"Role","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission","namespace":"ingress-nginx"},"rules":[{"apiGroups":[""],"resources":["secrets"],"verbs":["get","create"]}]}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: admission-webhook
       app.kubernetes.io/instance: ingress-nginx
@@ -2142,11 +2142,11 @@ items:
         f:rules: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-admission
     namespace: ingress-nginx
-    resourceVersion: "11938"
-    uid: ef1ba877-bad2-4eff-a903-83574df9f34b
+    resourceVersion: "545"
+    uid: 0c18d7af-5cbb-4f6f-b2ed-ddc2192f9a9b
   rules:
   - apiGroups:
     - ""
@@ -2161,7 +2161,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx","namespace":"ingress-nginx"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"ingress-nginx"},"subjects":[{"kind":"ServiceAccount","name":"ingress-nginx","namespace":"ingress-nginx"}]}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -2183,11 +2183,11 @@ items:
         f:subjects: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx
     namespace: ingress-nginx
-    resourceVersion: "11941"
-    uid: 0d32276e-84fa-4de3-bbc8-dac6fe3aabd8
+    resourceVersion: "548"
+    uid: a7b100e6-0612-449b-91fb-646834a646e8
   roleRef:
     apiGroup: rbac.authorization.k8s.io
     kind: Role
@@ -2202,7 +2202,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission","namespace":"ingress-nginx"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"ingress-nginx-admission"},"subjects":[{"kind":"ServiceAccount","name":"ingress-nginx-admission","namespace":"ingress-nginx"}]}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: admission-webhook
       app.kubernetes.io/instance: ingress-nginx
@@ -2224,11 +2224,11 @@ items:
         f:subjects: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-admission
     namespace: ingress-nginx
-    resourceVersion: "11942"
-    uid: 303458d3-71e6-40e0-bb0c-3e3cb12b024e
+    resourceVersion: "549"
+    uid: 3ab023a4-fda5-4a85-a090-9b34f29707d3
   roleRef:
     apiGroup: rbac.authorization.k8s.io
     kind: Role
@@ -2239,12 +2239,12 @@ items:
     namespace: ingress-nginx
 - apiVersion: v1
   data:
-    ca: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJkVENDQVJ1Z0F3SUJBZ0lRUFk3YzUxMjFJaWExTTdQZ2djd0F5VEFLQmdncWhrak9QUVFEQWpBUE1RMHcKQ3dZRFZRUUtFd1J1YVd3eE1DQVhEVEkwTVRJeU9ERTNNekl4TlZvWUR6SXhNalF4TWpBME1UY3pNakUxV2pBUApNUTB3Q3dZRFZRUUtFd1J1YVd3eE1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVlzM1JwKzVaCmpUOTNDNVNCUGU0MWh1NjhReVZTcTJ5NTRFVytRSjFCSURmdFBCbFg0VGNtNE0wS0Zhdi9vbm5aOWIvZVl3SXcKaXpwSVA1YWpYWFVlSnFOWE1GVXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1CTUdBMVVkSlFRTU1Bb0dDQ3NHQVFVRgpCd01CTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME9CQllFRk5EdVlFMmpQZzk4VXl3aFcxOUxOYlVMClBqTU9NQW9HQ0NxR1NNNDlCQU1DQTBnQU1FVUNJSHY0aXdwYS8yODJNUGExV0RrQnU0dmdyNHFiTlNHQ3pRdm8KdlA3MjkxY1ZBaUVBM3FXcjRNeFM0SzYxdTh1a1hiNjZMaXIzWW9vZzFjUGRzbGp3UHpZWDFyRT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
-    cert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ1akNDQVdHZ0F3SUJBZ0lSQU85WVFUM1JEa3FjSXhTK3hvWDFoR0V3Q2dZSUtvWkl6ajBFQXdJd0R6RU4KTUFzR0ExVUVDaE1FYm1sc01UQWdGdzB5TkRFeU1qZ3hOek15TVRWYUdBOHlNVEkwTVRJd05ERTNNekl4TlZvdwpEekVOTUFzR0ExVUVDaE1FYm1sc01qQlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJNUHpJaWd2CjVxR3poQU82dUlveTVCekZEQkhFdVRmTVkrb0d3NlNGd1V2U0c4bGJLaTlPZDNLOVppL3lRZFZrdS9KbmFac3cKM3pxaUxBTGxYbDVBZU9pamdac3dnWmd3RGdZRFZSMFBBUUgvQkFRREFnV2dNQk1HQTFVZEpRUU1NQW9HQ0NzRwpBUVVGQndNQk1Bd0dBMVVkRXdFQi93UUNNQUF3WXdZRFZSMFJCRnd3V29JaWFXNW5jbVZ6Y3kxdVoybHVlQzFqCmIyNTBjbTlzYkdWeUxXRmtiV2x6YzJsdmJvSTBhVzVuY21WemN5MXVaMmx1ZUMxamIyNTBjbTlzYkdWeUxXRmsKYldsemMybHZiaTVwYm1keVpYTnpMVzVuYVc1NExuTjJZekFLQmdncWhrak9QUVFEQWdOSEFEQkVBaUI2MGhJVQpIYWRURUhFcHdvVzQ1NFlJZkpOcnlPUUNNaStIckpqbkdGWHpJUUlnUHREOUlzeEJhcE9uanBKV0VjdlZMTnMrCjFReGVjQ2xCWlg0SytVUEJSeU09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
-    key: LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1IY0NBUUVFSUQvSGFtOEtzZVhmRGZYUmRkNzRGSGt3Y3RzeEtnbXlndGN0TERJdzFOcm9vQW9HQ0NxR1NNNDkKQXdFSG9VUURRZ0FFdy9NaUtDL21vYk9FQTdxNGlqTGtITVVNRWNTNU44eGo2Z2JEcElYQlM5SWJ5VnNxTDA1MwpjcjFtTC9KQjFXUzc4bWRwbXpEZk9xSXNBdVZlWGtCNDZBPT0KLS0tLS1FTkQgRUMgUFJJVkFURSBLRVktLS0tLQo=
+    ca: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJkakNDQVJ5Z0F3SUJBZ0lSQUtUZXUwa1l5MUJ6VUI2Z042RnRtM293Q2dZSUtvWkl6ajBFQXdJd0R6RU4KTUFzR0ExVUVDaE1FYm1sc01UQWdGdzB5TkRFeU1qa3dOVEk0TkRSYUdBOHlNVEkwTVRJd05UQTFNamcwTkZvdwpEekVOTUFzR0ExVUVDaE1FYm1sc01UQlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJHRnBVN1pFCmxlWVBGZ3g1NnZiSjNXbytibDZMUHcyNWsrdGhHKzlPaTdrdEhuMHg4emRmaHpORmVFQzg4U0lZaUhIbmtkNG0KTXQvL3QvZ1A2NDFzNmtLalZ6QlZNQTRHQTFVZER3RUIvd1FFQXdJQ0JEQVRCZ05WSFNVRUREQUtCZ2dyQmdFRgpCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJSMzNjN1hrRzdpNTNsZytjMjJuQ0xDClhtVndaVEFLQmdncWhrak9QUVFEQWdOSUFEQkZBaUFpSzBDWnhDUXZOMTFjUVRzejNpNnBRNXlYZXRqZmpoZEUKVHE1elhacjZzZ0loQU1wd1RxcjY1aXgrK3JLOW0vN2xHN0pMQzRiaktNeDRGRjFJZDhoMGdjNWIKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    cert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ1ekNDQVdDZ0F3SUJBZ0lRQnV1cVBhV25OYXFJSUdKQjhQTzJCakFLQmdncWhrak9QUVFEQWpBUE1RMHcKQ3dZRFZRUUtFd1J1YVd3eE1DQVhEVEkwTVRJeU9UQTFNamcwTkZvWUR6SXhNalF4TWpBMU1EVXlPRFEwV2pBUApNUTB3Q3dZRFZRUUtFd1J1YVd3eU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRW11d0tPdjNjCkNOVjlUMGxvbzJmY1ZhTDNGN3BWNW1UaWhjUElnajBPdWtpUmduVFhUQy9TVFAyMm10YzdaejhYeE9hMGtRR2gKYzBENHhsSWN6ZWFHeWFPQm16Q0JtREFPQmdOVkhROEJBZjhFQkFNQ0JhQXdFd1lEVlIwbEJBd3dDZ1lJS3dZQgpCUVVIQXdFd0RBWURWUjBUQVFIL0JBSXdBREJqQmdOVkhSRUVYREJhZ2lKcGJtZHlaWE56TFc1bmFXNTRMV052CmJuUnliMnhzWlhJdFlXUnRhWE56YVc5dWdqUnBibWR5WlhOekxXNW5hVzU0TFdOdmJuUnliMnhzWlhJdFlXUnQKYVhOemFXOXVMbWx1WjNKbGMzTXRibWRwYm5ndWMzWmpNQW9HQ0NxR1NNNDlCQU1DQTBrQU1FWUNJUUNpU1FleApXRWx3NnQ1amJNeW1iVVI2V0lrUk9pTjhZVlVNQUlHSG1KOTl5Z0loQU0rZTB1bjZyMXhBS2lqUWE4RVBDaVRpCkJlNHc0aXdkYzBhOThjd0lMaUZuCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    key: LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1IY0NBUUVFSU5SOWNZTjR4Y01OM0E4YmFjZHAxT1ZOWmVGNmpta3F4TTlVdndFYUZ4bXZvQW9HQ0NxR1NNNDkKQXdFSG9VUURRZ0FFbXV3S092M2NDTlY5VDBsb28yZmNWYUwzRjdwVjVtVGloY1BJZ2owT3VraVJnblRYVEMvUwpUUDIybXRjN1p6OFh4T2Ewa1FHaGMwRDR4bEljemVhR3lRPT0KLS0tLS1FTkQgRUMgUFJJVkFURSBLRVktLS0tLQo=
   kind: Secret
   metadata:
-    creationTimestamp: "2024-12-28T17:37:15Z"
+    creationTimestamp: "2024-12-29T05:33:44Z"
     managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -2257,11 +2257,11 @@ items:
         f:type: {}
       manager: kube-webhook-certgen
       operation: Update
-      time: "2024-12-28T17:37:15Z"
+      time: "2024-12-29T05:33:44Z"
     name: ingress-nginx-admission
     namespace: ingress-nginx
-    resourceVersion: "12012"
-    uid: 9458efb9-3b8f-40d9-a73a-47250813427a
+    resourceVersion: "648"
+    uid: 62d9d017-8158-43c8-8260-4aca82a204a7
   type: Opaque
 - apiVersion: v1
   kind: Service
@@ -2269,7 +2269,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-controller","namespace":"ingress-nginx"},"spec":{"ipFamilies":["IPv4"],"ipFamilyPolicy":"SingleStack","ports":[{"appProtocol":"http","name":"http","port":80,"protocol":"TCP","targetPort":"http"},{"appProtocol":"https","name":"https","port":443,"protocol":"TCP","targetPort":"https"}],"selector":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"type":"NodePort"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -2313,15 +2313,15 @@ items:
           f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-controller
     namespace: ingress-nginx
-    resourceVersion: "11951"
-    uid: dcf3b7f5-a275-4593-bc3f-1eae17219585
+    resourceVersion: "558"
+    uid: 37725387-afe4-475d-92e4-6fd899fa5cbb
   spec:
-    clusterIP: 10.101.144.230
+    clusterIP: 10.102.107.131
     clusterIPs:
-    - 10.101.144.230
+    - 10.102.107.131
     externalTrafficPolicy: Cluster
     internalTrafficPolicy: Cluster
     ipFamilies:
@@ -2330,13 +2330,13 @@ items:
     ports:
     - appProtocol: http
       name: http
-      nodePort: 30394
+      nodePort: 30303
       port: 80
       protocol: TCP
       targetPort: http
     - appProtocol: https
       name: https
-      nodePort: 31385
+      nodePort: 32421
       port: 443
       protocol: TCP
       targetPort: https
@@ -2354,7 +2354,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-controller-admission","namespace":"ingress-nginx"},"spec":{"ports":[{"appProtocol":"https","name":"https-webhook","port":443,"targetPort":"webhook"}],"selector":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"type":"ClusterIP"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -2388,15 +2388,15 @@ items:
           f:type: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-controller-admission
     namespace: ingress-nginx
-    resourceVersion: "11955"
-    uid: ec12fdbf-0196-49da-831d-31bcfad7019d
+    resourceVersion: "562"
+    uid: c7cda897-a77d-4140-8b87-2209cd3cf18b
   spec:
-    clusterIP: 10.108.79.196
+    clusterIP: 10.103.109.11
     clusterIPs:
-    - 10.108.79.196
+    - 10.103.109.11
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
@@ -2418,11 +2418,11 @@ items:
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     name: default
     namespace: ingress-nginx
-    resourceVersion: "11934"
-    uid: b20d870b-d7fc-4dcc-9d3f-73cdddb2d8d1
+    resourceVersion: "540"
+    uid: 6eae6990-bc70-448c-bf84-19f26a0048db
 - apiVersion: v1
   automountServiceAccountToken: true
   kind: ServiceAccount
@@ -2430,7 +2430,7 @@ items:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","automountServiceAccountToken":true,"kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
@@ -2451,18 +2451,18 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx
     namespace: ingress-nginx
-    resourceVersion: "11935"
-    uid: 4523fb7b-9b51-4d9b-acb6-78b29d08139d
+    resourceVersion: "542"
+    uid: 8715bd6c-db1d-4951-8a9a-96fd8cde9adc
 - apiVersion: v1
   kind: ServiceAccount
   metadata:
     annotations:
       kubectl.kubernetes.io/last-applied-configuration: |
         {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"admission-webhook","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"ingress-nginx-admission","namespace":"ingress-nginx"}}
-    creationTimestamp: "2024-12-28T17:37:04Z"
+    creationTimestamp: "2024-12-29T05:33:21Z"
     labels:
       app.kubernetes.io/component: admission-webhook
       app.kubernetes.io/instance: ingress-nginx
@@ -2482,11 +2482,11 @@ items:
             f:app.kubernetes.io/name: {}
       manager: kubectl-client-side-apply
       operation: Update
-      time: "2024-12-28T17:37:04Z"
+      time: "2024-12-29T05:33:21Z"
     name: ingress-nginx-admission
     namespace: ingress-nginx
-    resourceVersion: "11936"
-    uid: 0ea29200-c4c1-4317-b2ec-1bd0bc8dc28d
+    resourceVersion: "543"
+    uid: 24e4ccb9-f42a-4997-a18e-8aecd63b6d21
 kind: List
 metadata:
   resourceVersion: ""
