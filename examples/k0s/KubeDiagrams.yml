@@ -2,3 +2,29 @@
 edges:
   UNDEFINED:
     color: black # this is red by default
+clusters:
+  - label: k0s.k0sproject.io/stack
+    title: K0s Stack
+  - label: kubernetes.io/bootstrapping
+    title: K0s Bootstrapping
+nodes:
+  Chart/helm.k0sproject.io/v1beta1:
+    scope: Namespaced
+    custom_icon: icons/k0s-Chart.png
+    # no edges
+  ControlNode/autopilot.k0sproject.io/v1beta2:
+    scope: Cluster
+    custom_icon: icons/k0s-ControlNode.png
+    # no edges
+  EtcdMember/etcd.k0sproject.io/v1beta1:
+    scope: Cluster
+    custom_icon: icons/k0s-EtcdMember.png
+    # no edges
+  Plan/autopilot.k0sproject.io/v1beta2:
+    scope: Cluster
+    custom_icon: icons/k0s-Plan.png
+    # no edges
+  UpdateConfig/autopilot.k0sproject.io/v1beta2:
+    scope: Cluster
+    custom_icon: icons/k0s-UpdateConfig.png
+    # no edges

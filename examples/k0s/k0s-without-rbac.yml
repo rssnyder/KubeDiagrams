@@ -1546,18 +1546,18 @@ items:
   kind: DaemonSet
   metadata:
     annotations:
-      deprecated.daemonset.template.generation: "4"
+      deprecated.daemonset.template.generation: "6"
       k0s.k0sproject.io/last-applied-configuration: |
         {"apiVersion":"apps/v1","kind":"DaemonSet","metadata":{"labels":{"k8s-app":"konnectivity-agent"},"name":"konnectivity-agent","namespace":"kube-system"},"spec":{"selector":{"matchLabels":{"k8s-app":"konnectivity-agent"}},"template":{"metadata":{"annotations":{"prometheus.io/port":"8093","prometheus.io/scrape":"true"},"labels":{"k8s-app":"konnectivity-agent"}},"spec":{"containers":[{"args":["--logtostderr=true","--ca-cert=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt","--proxy-server-host=172.17.0.2","--proxy-server-port=8132","--service-account-token-path=/var/run/secrets/tokens/konnectivity-agent-token","--agent-identifiers=host=$(NODE_IP)","--agent-id=$(NODE_IP)"],"command":["/proxy-agent"],"env":[{"name":"K0S_CONTROLLER_COUNT","value":"1"},{"name":"NODE_IP","valueFrom":{"fieldRef":{"fieldPath":"status.hostIP"}}}],"image":"quay.io/k0sproject/apiserver-network-proxy-agent:v0.30.3","imagePullPolicy":"IfNotPresent","livenessProbe":{"httpGet":{"path":"/healthz","port":8093},"initialDelaySeconds":15,"timeoutSeconds":15},"name":"konnectivity-agent","volumeMounts":[{"mountPath":"/var/run/secrets/tokens","name":"konnectivity-agent-token"}]}],"nodeSelector":{"kubernetes.io/os":"linux"},"priorityClassName":"system-cluster-critical","serviceAccountName":"konnectivity-agent","tolerations":[{"operator":"Exists"}],"volumes":[{"name":"konnectivity-agent-token","projected":{"sources":[{"serviceAccountToken":{"audience":"system:konnectivity-server","path":"konnectivity-agent-token"}}]}}]}}}}
       k0s.k0sproject.io/stack-checksum: bf190c54ead91505dd891365a8d94253
     creationTimestamp: "2024-12-28T20:27:00Z"
-    generation: 4
+    generation: 6
     labels:
       k0s.k0sproject.io/stack: konnectivity
       k8s-app: konnectivity-agent
     name: konnectivity-agent
     namespace: kube-system
-    resourceVersion: "4016"
+    resourceVersion: "5795"
     uid: b4584f26-1e7a-42f4-9919-f5ad8f2827bc
   spec:
     revisionHistoryLimit: 10
@@ -1643,7 +1643,7 @@ items:
     numberAvailable: 1
     numberMisscheduled: 0
     numberReady: 1
-    observedGeneration: 4
+    observedGeneration: 6
     updatedNumberScheduled: 1
 - apiVersion: apps/v1
   kind: DaemonSet
@@ -2203,7 +2203,7 @@ items:
       node-role.kubernetes.io/control-plane: "true"
       node.k0sproject.io/role: control-plane
     name: k0s
-    resourceVersion: "3994"
+    resourceVersion: "13501"
     uid: d82c14ef-9e65-4644-a84d-392c41e4ba71
   spec:
     podCIDR: 10.244.0.0/24
@@ -2233,26 +2233,26 @@ items:
       memory: 32886152Ki
       pods: "110"
     conditions:
-    - lastHeartbeatTime: "2024-12-28T21:03:18Z"
+    - lastHeartbeatTime: "2024-12-28T22:49:42Z"
       lastTransitionTime: "2024-12-28T20:27:05Z"
       message: kubelet has sufficient memory available
       reason: KubeletHasSufficientMemory
       status: "False"
       type: MemoryPressure
-    - lastHeartbeatTime: "2024-12-28T21:03:18Z"
+    - lastHeartbeatTime: "2024-12-28T22:49:42Z"
       lastTransitionTime: "2024-12-28T20:27:05Z"
       message: kubelet has no disk pressure
       reason: KubeletHasNoDiskPressure
       status: "False"
       type: DiskPressure
-    - lastHeartbeatTime: "2024-12-28T21:03:18Z"
+    - lastHeartbeatTime: "2024-12-28T22:49:42Z"
       lastTransitionTime: "2024-12-28T20:27:05Z"
       message: kubelet has sufficient PID available
       reason: KubeletHasSufficientPID
       status: "False"
       type: PIDPressure
-    - lastHeartbeatTime: "2024-12-28T21:03:18Z"
-      lastTransitionTime: "2024-12-28T21:03:18Z"
+    - lastHeartbeatTime: "2024-12-28T22:49:42Z"
+      lastTransitionTime: "2024-12-28T21:48:31Z"
       message: kubelet is posting ready status
       reason: KubeletReady
       status: "True"
@@ -2494,13 +2494,13 @@ items:
     annotations:
       prometheus.io/port: "8093"
       prometheus.io/scrape: "true"
-    creationTimestamp: "2024-12-28T21:03:19Z"
+    creationTimestamp: "2024-12-28T21:48:33Z"
     generateName: konnectivity-agent-
     labels:
       controller-revision-hash: 66b785ddc9
       k8s-app: konnectivity-agent
-      pod-template-generation: "4"
-    name: konnectivity-agent-brn4h
+      pod-template-generation: "6"
+    name: konnectivity-agent-9xfdm
     namespace: kube-system
     ownerReferences:
     - apiVersion: apps/v1
@@ -2509,8 +2509,8 @@ items:
       kind: DaemonSet
       name: konnectivity-agent
       uid: b4584f26-1e7a-42f4-9919-f5ad8f2827bc
-    resourceVersion: "4015"
-    uid: 037abf03-65c3-4930-8bf7-98c3cd8291a1
+    resourceVersion: "5794"
+    uid: 910aa192-5564-4773-be62-e646fbafbbf9
   spec:
     affinity:
       nodeAffinity:
@@ -2560,7 +2560,7 @@ items:
       - mountPath: /var/run/secrets/tokens
         name: konnectivity-agent-token
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-jbvx6
+        name: kube-api-access-bqwj6
         readOnly: true
     dnsPolicy: ClusterFirst
     enableServiceLinks: true
@@ -2605,7 +2605,7 @@ items:
             audience: system:konnectivity-server
             expirationSeconds: 3600
             path: konnectivity-agent-token
-    - name: kube-api-access-jbvx6
+    - name: kube-api-access-bqwj6
       projected:
         defaultMode: 420
         sources:
@@ -2626,27 +2626,27 @@ items:
   status:
     conditions:
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T21:03:20Z"
+      lastTransitionTime: "2024-12-28T21:48:35Z"
       status: "True"
       type: PodReadyToStartContainers
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T21:03:19Z"
+      lastTransitionTime: "2024-12-28T21:48:33Z"
       status: "True"
       type: Initialized
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T21:03:20Z"
+      lastTransitionTime: "2024-12-28T21:48:35Z"
       status: "True"
       type: Ready
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T21:03:20Z"
+      lastTransitionTime: "2024-12-28T21:48:35Z"
       status: "True"
       type: ContainersReady
     - lastProbeTime: null
-      lastTransitionTime: "2024-12-28T21:03:19Z"
+      lastTransitionTime: "2024-12-28T21:48:33Z"
       status: "True"
       type: PodScheduled
     containerStatuses:
-    - containerID: containerd://44e322444a84ae5a6ad82085f0a03ee17de58c68908008f76e647b955b34dbb3
+    - containerID: containerd://5f19a65df63bab316e060687accc5a0a07d40664b27fa6289a18dc66a1c01e3f
       image: quay.io/k0sproject/apiserver-network-proxy-agent:v0.30.3
       imageID: quay.io/k0sproject/apiserver-network-proxy-agent@sha256:6723baf0bf62f76e85bc9120a056d0efb67b4f9dc041acbf5e74ead4b4f5f775
       lastState: {}
@@ -2656,23 +2656,23 @@ items:
       started: true
       state:
         running:
-          startedAt: "2024-12-28T21:03:20Z"
+          startedAt: "2024-12-28T21:48:34Z"
       volumeMounts:
       - mountPath: /var/run/secrets/tokens
         name: konnectivity-agent-token
       - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-        name: kube-api-access-jbvx6
+        name: kube-api-access-bqwj6
         readOnly: true
         recursiveReadOnly: Disabled
     hostIP: 172.17.0.2
     hostIPs:
     - ip: 172.17.0.2
     phase: Running
-    podIP: 10.244.0.6
+    podIP: 10.244.0.8
     podIPs:
-    - ip: 10.244.0.6
+    - ip: 10.244.0.8
     qosClass: BestEffort
-    startTime: "2024-12-28T21:03:19Z"
+    startTime: "2024-12-28T21:48:33Z"
 - apiVersion: v1
   kind: Pod
   metadata:
@@ -4150,6 +4150,43 @@ items:
     - kubernetes
   status:
     phase: Active
+- apiVersion: autopilot.k0sproject.io/v1beta2
+  kind: ControlNode
+  metadata:
+    annotations:
+      autopilot.k0sproject.io/mode: controller+worker
+    creationTimestamp: "2024-12-28T20:27:02Z"
+    generation: 1
+    labels:
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: k0s
+      kubernetes.io/os: linux
+    name: k0s
+    resourceVersion: "323"
+    uid: ecbf47a2-0faf-435a-a276-5f3574cc3172
+  status:
+    addresses:
+    - address: 172.17.0.2
+      type: InternalIP
+    - address: k0s
+      type: Hostname
+- apiVersion: etcd.k0sproject.io/v1beta1
+  kind: EtcdMember
+  metadata:
+    creationTimestamp: "2024-12-28T20:27:00Z"
+    generation: 1
+    name: k0s
+    resourceVersion: "240"
+    uid: b2e009df-bb65-4b1f-a7b6-2384b3ba60f1
+  spec: {}
+  status:
+    conditions:
+    - lastTransitionTime: "2024-12-28T20:27:00Z"
+      message: Member joined
+      status: "True"
+      type: Joined
+    memberID: b8e14bda2255bc24
+    peerAddress: 172.17.0.2
 kind: List
 metadata:
   resourceVersion: ""
