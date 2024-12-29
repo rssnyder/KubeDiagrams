@@ -10,4 +10,4 @@ generate_kar()
 # Generate the k0s architecture diagrams.
 generate_kar k0s.yml
 generate_kar k0s-without-rbac.yml
-
+generate_kar k0s-without-rbac-corrected.yml
