@@ -135,11 +135,9 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 | `service` | Microservice |
 | `app.kubernetes.io/instance` | K8s Application |
 | `app.kubernetes.io/component` | K8s Component |
-| `k8s-app` | K8s Application |
-| `kubernetes.io/bootstrapping` | K8s Bootstrapping |
-| `tier` | K8s Tier |
+| `tier` | Tier |
 
-New mappings can be easily defined in custom configuration files and provided to **KubeDiagrams** via the `--config` command-line option.
+New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2) and [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5) and provided to **KubeDiagrams** via the `--config` command-line option.
 
 ## License
 
