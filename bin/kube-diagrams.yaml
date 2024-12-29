@@ -24,7 +24,7 @@ clusters:
   - label: kubernetes.io/bootstrapping
     title: K8s Bootstrapping
   - label: tier
-    title: K8s Tier
+    title: Tier
 nodes:
   ClusterRole/rbac.authorization.k8s.io/v1:
     scope: Cluster
