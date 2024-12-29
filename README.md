@@ -90,6 +90,8 @@ Supported `kind`/`apiVersion` resource types are 26 ones:
 * StorageClass/storage.k8s.io/v1
 * User/rbac.authorization.k8s.io/v1
 
+**Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L24).
+
 Currently, unsupported `kind`/`apiGroup` resource types are 33 ones:
 * Binding/
 * ComponentStatus/
@@ -137,7 +139,7 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 | `app.kubernetes.io/component` | K8s Component |
 | `tier` | Tier |
 
-New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2) and [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5) and provided to **KubeDiagrams** via the `--config` command-line option.
+New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2) and [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5)) and provided to **KubeDiagrams** via the `--config` command-line option.
 
 ## License
 
