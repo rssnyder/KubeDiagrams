@@ -112,7 +112,7 @@ class EdgesContext(list):
                 "REFERENCE"
             ])
 
-    def add_all_resources_matching_labels(self, kind, path, data=None, resource_labels_path="metadata.labels"):
+    def add_all_resources_matching_labels(self, kind, path, data=None, resource_labels_path="metadata.labels", edge_kind="SELECTOR"):
         if data is None:
             data = self.resource
         matchLabels = query_path(data, path)
@@ -129,7 +129,7 @@ class EdgesContext(list):
                     found = False
                     break
             if found:
-                self.append([rid, "SELECTOR"])
+                self.append([rid, edge_kind])
                 resourceFound = True
         return resourceFound
 

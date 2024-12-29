@@ -6,6 +6,10 @@ edges:
   SELECTOR:
     color: black
     style: dashed
+  CONTROLLED_BY:
+    xlabel: controller
+    color: black
+    style: dotted
   DEPENDENCE:
     color: darkgrey
   UNDEFINED:
@@ -78,7 +82,11 @@ nodes:
   IngressClass/networking.k8s.io/v1:
     scope: Cluster
     custom_icon: $KD/icons/ic.png
-    # no edges
+    edges: |
+      # TODO: Following works well with ingress-nginx but was not
+      # been tested with any other ingress implementations.
+      edges.add_all_resources_matching_labels("Pod", "metadata.labels",
+       edge_kind="CONTROLLED_BY")
   Job/batch/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Job
