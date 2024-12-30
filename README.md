@@ -29,11 +29,15 @@ All the examples are
 
 ## Prerequisites
 
-* [Python 3.x](https://www.python.org/)
-* [Diagrams](https://diagrams.mingrammer.com/)
-  ```sh
-  $ pip install diagrams
-  ```
+* [Python 3.x](https://www.python.org/) with
+  * [PyYAML](https://pyyaml.org)
+    ```sh
+    $ pip install pyyaml
+    ```
+  * [Diagrams](https://diagrams.mingrammer.com/)
+    ```sh
+    $ pip install diagrams
+    ```
 * `dot` command ([Graphviz](https://www.graphviz.org/))
 
 ## Usage
