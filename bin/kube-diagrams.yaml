@@ -152,6 +152,10 @@ nodes:
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_all_volume_resources("spec.template.spec.volumes")
       edges.add_containers_env_valueFrom_secretKeyRef("spec.template.spec.containers")
+  ResourceQuota/v1:
+    scope: Namespaced
+    diagram_node_classname: diagrams.k8s.clusterconfig.Quota
+    # no edges
   Role/rbac.authorization.k8s.io/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.rbac.Role

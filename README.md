@@ -62,7 +62,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 28 ones:
+Supported `kind`/`apiVersion` resource types are 29 ones:
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
 * ConfigMap/v1
@@ -83,6 +83,7 @@ Supported `kind`/`apiVersion` resource types are 28 ones:
 * Pod/v1
 * PodDisruptionBudget/policy/v1
 * ReplicaSet/apps/v1
+* ResourceQuota/v1
 * Role/rbac.authorization.k8s.io/v1
 * RoleBinding/rbac.authorization.k8s.io/v1
 * Secret/v1
@@ -96,14 +97,13 @@ Supported `kind`/`apiVersion` resource types are 28 ones:
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 31 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 30 ones:
 * Binding/
 * ComponentStatus/
 * Endpoints/
 * Event/
 * PodTemplate/
 * ReplicationController/
-* ResourceQuota/
 * MutatingWebhookConfiguration/
 * ValidatingWebhookConfiguration/admissionregistration.k8s.io
 * APIService/apiregistration.k8s.io
@@ -150,5 +150,5 @@ This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) 
 ## Todo List
 
 * Add more examples
-* Add missed Kubernetes resource types as at least Endpoint, NetworkPolicy, and ResourceQuota
+* Add missed Kubernetes resource types as at least Endpoint, NetworkPolicy
 * Make `nodes/*/edges` more declarative
