@@ -120,6 +120,11 @@ nodes:
       for rule in query_path(resource, "spec.rules", []):
         for path in query_path(rule, "http.paths", []):
           edges.add_service("backend.service.name", path)
+      ic = "%s/IngressClass/networking.k8s.io/v1" % (
+        query_path(resource, "spec.ingressClassName"),
+      )
+      if ic in resources:
+        edges.append([ic, "REFERENCE"])
   IngressClass/networking.k8s.io/v1:
     scope: Cluster
     custom_icon: $KD/icons/ic.png
@@ -177,6 +182,11 @@ nodes:
       edges.add_wait_for_services("spec.initContainers")
       edges.add_all_volume_resources("spec.volumes")
       edges.add_containers_env_valueFrom_secretKeyRef("spec.containers")
+      nid = "%s/Node/v1" % (
+        query_path(resource, "spec.nodeName"),
+      )
+      if nid in resources:
+        edges.append([nid, "REFERENCE"])
   PodDisruptionBudget/policy/v1:
     scope: Namespaced
     custom_icon: $KD/icons/pdb.png
