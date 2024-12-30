@@ -7,17 +7,20 @@ The main originality of **KubeDiagrams** is its **[configurability](bin/kube-dia
 
 ## Examples
 
-Architecture diagram for WordPress manifests:
+Architecture diagram for **[official Kubernetes WordPress tutorial](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)** manifests:
 ![WordPress Manifests](examples/wordpress/wordpress.png)
 
-Architecture diagram for a ZooKeeper manifest:
+Architecture diagram for **[official Kubernetes ZooKeeper tutorial](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/)** manifests:
 ![ZooKeeper Manifest](examples/zookeeper/zookeeper.png)
 
-Architecture diagram of a deployed Cassandra instance:
+Architecture diagram of a deployed **[Cassandra](https://kubernetes.io/docs/tutorials/stateful-application/cassandra/)** instance:
 ![Deployed Cassandra Instance](examples/cassandra/default.png)
 
 Architecture diagram of the Minikube Ingress Addon:
 ![Minikube Ingress Addon](examples/minikube/minikube-ingress-nginx.png)
+
+Architecture diagram for **[free5gc-k8s](https://github.com/niloysh/free5gc-k8s)** manifests:
+![free5gc-k8s-diagram.png](examples/free5gc-k8s/free5gc-k8s-diagram.png)
 
 All the examples are
 * [official Kubernetes WordPress tutorial](examples/wordpress/)
@@ -26,6 +29,7 @@ All the examples are
 * [minikube architecture diagrams](examples/minikube/)
 * [k0s architecture diagrams](examples/k0s/)
 * [Train Ticket](examples/train-ticket/)
+* [free5gc-k8s](examples/free5gc-k8s/)
 
 ## Prerequisites
 

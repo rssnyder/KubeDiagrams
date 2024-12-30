@@ -1,0 +1,28 @@
+# Following statically defines some free5gc-k8s config maps
+# which are generated at deployment time by kustomize.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ue1-configmap
+  labels:
+    app: ueransim
+data:
+  # empty as this is for diagram generation.
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ue2-configmap
+  labels:
+    app: ueransim
+data:
+  # empty as this is for diagram generation.
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gnb-configmap
+  labels:
+    app: ueransim
+data:
+  # empty as this is for diagram generation.
