@@ -285,6 +285,17 @@ class EdgesContext(list):
                 "REFERENCE"
             ])
 
+    def add_owned_resources(self):
+        uid = query_path(self.resource, "metadata.uid")
+        for _, resource in resource_cluster.clusters["Namespace: %s" % self.namespace].resources.items():
+            for ownerReference in query_path(resource, "metadata.ownerReferences", []):
+                if ownerReference.get("uid") == uid:
+                    print(f"{resource['metadata']['name']}/{resource['metadata']['namespace']}/{resource['kind']}/{resource['apiVersion']}")
+                    self.append([
+                        f"{resource['metadata']['name']}/{resource['metadata']['namespace']}/{resource['kind']}/{resource['apiVersion']}",
+                        "OWNER"
+                    ])
+
 # Parse arguments
 parser = argparse.ArgumentParser(
     prog="kube-diagrams",
@@ -408,6 +419,7 @@ with Diagram("", filename=args.output, show=False, direction="TB", outformat=arg
                 print("Edges script:\n", code_to_exec)
                 print("Resource:")
                 pprint(resource)
+                raise
         # generate diagram edges
         for edge in edges:
             edge_rid = edge[0]

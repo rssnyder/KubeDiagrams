@@ -62,11 +62,12 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 26 ones:
+Supported `kind`/`apiVersion` resource types are 27 ones:
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
-* CustomResourceDefinition/apiextensions.k8s.io/v1
 * ConfigMap/v1
+* CronJob/batch/v1
+* CustomResourceDefinition/apiextensions.k8s.io/v1
 * DaemonSet/apps/v1
 * Deployment/apps/v1
 * Group/rbac.authorization.k8s.io/v1
@@ -94,7 +95,7 @@ Supported `kind`/`apiVersion` resource types are 26 ones:
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 33 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 32 ones:
 * Binding/
 * ComponentStatus/
 * Endpoints/
@@ -112,7 +113,6 @@ Currently, unsupported `kind`/`apiGroup` resource types are 33 ones:
 * SelfSubjectAccessReview/authorization.k8s.io
 * SelfSubjectRulesReview/authorization.k8s.io
 * SubjectAccessReview/authorization.k8s.io
-* CronJob/batch
 * CertificateSigningRequest/certificates.k8s.io
 * Lease/coordination.k8s.io
 * EndpointSlice/discovery.k8s.io
@@ -150,5 +150,5 @@ This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) 
 ## Todo List
 
 * Add more examples
-* Add missed Kubernetes resource types as at least CronJob, Endpoint, LimitRange, NetworkPolicy, and ResourceQuota
+* Add missed Kubernetes resource types as at least Endpoint, LimitRange, NetworkPolicy, and ResourceQuota
 * Make `nodes/*/edges` more declarative
