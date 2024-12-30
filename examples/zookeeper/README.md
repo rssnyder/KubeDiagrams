@@ -1,6 +1,6 @@
 # ZooKeeper Example
 
-This example is based on the [official Kubernetes ZooKeeper tutorial](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/).
+This example is based on the **[official Kubernetes ZooKeeper tutorial](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/)**.
 
 ## Instructions
 

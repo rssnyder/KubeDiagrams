@@ -1,6 +1,6 @@
 # Cassandra Example
 
-This example is based on the [official Kubernetes Cassandra tutorial](https://kubernetes.io/docs/tutorials/stateful-application/cassandra/).
+This example is based on the **[official Kubernetes Cassandra tutorial](https://kubernetes.io/docs/tutorials/stateful-application/cassandra/)**.
 
 ## Instructions
 

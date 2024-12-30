@@ -1,7 +1,7 @@
 # Train Ticket Example
 
-This example is based on [Train Ticket：A Benchmark Microservice System](https://github.com/FudanSELab/train-ticket/).
-Used Train Ticket manifests come from [here](https://github.com/FudanSELab/train-ticket/tree/master/deployment/kubernetes-manifests/k8s-with-jaeger).
+This example is based on **[Train Ticket：A Benchmark Microservice System](https://github.com/FudanSELab/train-ticket/)**.
+Used Train Ticket manifests come from **[here](https://github.com/FudanSELab/train-ticket/tree/master/deployment/kubernetes-manifests/k8s-with-jaeger)**.
 
 ## Instructions
 
