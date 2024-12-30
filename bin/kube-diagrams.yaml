@@ -107,6 +107,10 @@ nodes:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.group.NS
     # no edges
+  LimitRange/v1:
+    scope: Namespaced
+    diagram_node_classname: diagrams.k8s.clusterconfig.LimitRange
+    # no edges
   Node/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.infra.Node
