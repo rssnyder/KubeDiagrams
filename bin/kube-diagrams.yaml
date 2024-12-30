@@ -140,6 +140,16 @@ nodes:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.group.NS
     # no edges
+  NetworkPolicy/networking.k8s.io/v1:
+    scope: Namespaced
+    diagram_node_classname: diagrams.k8s.network.NetworkPolicy
+    edges: |
+      if not edges.add_all_resources_matching_labels("Pod", "spec.podSelector.matchLabels"):
+        if not edges.add_all_resources_matching_labels("Deployment", "spec.podSelector.matchLabels",
+            resource_labels_path="spec.template.metadata.labels"):
+          edges.add_all_resources_matching_labels("StatefulSet", "spec.podSelector.matchLabels",
+              resource_labels_path="spec.template.metadata.labels")
+      #TODO: add edges to pods selected in spec.ingress.* and spec.egress.*
   LimitRange/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.clusterconfig.LimitRange
@@ -247,6 +257,5 @@ nodes:
     # no edges
 
 #TODO: add other Kubernetes resource types.
-# Netpol diagrams.k8s.network.Netpol, NetworkPolicy (alias)
 # PSP diagrams.k8s.others.PSP
 # Vol diagrams.k8s.storage.Vol, Volume (alias)

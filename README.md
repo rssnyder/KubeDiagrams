@@ -66,7 +66,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 31 ones:
+Supported `kind`/`apiVersion` resource types are 32 ones:
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
 * ConfigMap/v1
@@ -83,6 +83,7 @@ Supported `kind`/`apiVersion` resource types are 31 ones:
 * Job/batch/v1
 * LimitRange/v1
 * Namespace/v1
+* NetworkPolicy/networking.k8s.io/v1
 * Node/v1
 * PersistentVolume/v1
 * PersistentVolumeClaim/v1
@@ -103,7 +104,7 @@ Supported `kind`/`apiVersion` resource types are 31 ones:
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 28 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 27 ones:
 * Binding/
 * ComponentStatus/
 * Event/
@@ -125,7 +126,6 @@ Currently, unsupported `kind`/`apiGroup` resource types are 28 ones:
 * PriorityLevelConfiguration/flowcontrol.apiserver.k8s.io
 * NodeMetrics/metrics.k8s.io
 * PodMetrics/metrics.k8s.io
-* NetworkPolicy/networking.k8s.io
 * RuntimeClass/node.k8s.io
 * PriorityClass/scheduling.k8s.io
 * CSIDriver/storage.k8s.io
@@ -154,5 +154,5 @@ This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) 
 ## Todo List
 
 * Add more examples
-* Add missed Kubernetes resource types as at least NetworkPolicy
+* Add missed Kubernetes resource types
 * Make `nodes/*/edges` more declarative
