@@ -290,7 +290,6 @@ class EdgesContext(list):
         for _, resource in resource_cluster.clusters["Namespace: %s" % self.namespace].resources.items():
             for ownerReference in query_path(resource, "metadata.ownerReferences", []):
                 if ownerReference.get("uid") == uid:
-                    print(f"{resource['metadata']['name']}/{resource['metadata']['namespace']}/{resource['kind']}/{resource['apiVersion']}")
                     self.append([
                         f"{resource['metadata']['name']}/{resource['metadata']['namespace']}/{resource['kind']}/{resource['apiVersion']}",
                         "OWNER"
