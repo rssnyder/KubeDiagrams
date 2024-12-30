@@ -115,7 +115,10 @@ class EdgesContext(list):
     def add_all_resources_matching_labels(self, kind, path, data=None, resource_labels_path="metadata.labels", edge_kind="SELECTOR"):
         if data is None:
             data = self.resource
-        matchLabels = query_path(data, path)
+        if isinstance(path, str):
+            matchLabels = query_path(data, path)
+        elif isinstance(path, dict):
+            matchLabels = path
         if matchLabels is None:
             return False
         resourceFound = False

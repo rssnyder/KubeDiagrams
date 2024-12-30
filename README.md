@@ -66,7 +66,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 29 ones:
+Supported `kind`/`apiVersion` resource types are 31 ones:
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
 * ConfigMap/v1
@@ -74,6 +74,8 @@ Supported `kind`/`apiVersion` resource types are 29 ones:
 * CustomResourceDefinition/apiextensions.k8s.io/v1
 * DaemonSet/apps/v1
 * Deployment/apps/v1
+* Endpoints/v1
+* EndpointSlice/discovery.k8s.io/v1
 * Group/rbac.authorization.k8s.io/v1
 * HorizontalPodAutoscaler/autoscaling/v2
 * Ingress/networking.k8s.io/v1
@@ -101,10 +103,9 @@ Supported `kind`/`apiVersion` resource types are 29 ones:
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 30 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 28 ones:
 * Binding/
 * ComponentStatus/
-* Endpoints/
 * Event/
 * PodTemplate/
 * ReplicationController/
@@ -119,7 +120,6 @@ Currently, unsupported `kind`/`apiGroup` resource types are 30 ones:
 * SubjectAccessReview/authorization.k8s.io
 * CertificateSigningRequest/certificates.k8s.io
 * Lease/coordination.k8s.io
-* EndpointSlice/discovery.k8s.io
 * Event/events.k8s.io
 * FlowSchema/flowcontrol.apiserver.k8s.io
 * PriorityLevelConfiguration/flowcontrol.apiserver.k8s.io
@@ -154,5 +154,5 @@ This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) 
 ## Todo List
 
 * Add more examples
-* Add missed Kubernetes resource types as at least Endpoint, NetworkPolicy
+* Add missed Kubernetes resource types as at least NetworkPolicy
 * Make `nodes/*/edges` more declarative
