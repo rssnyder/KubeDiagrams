@@ -6,6 +6,10 @@ edges:
   SELECTOR:
     color: black
     style: dashed
+  SELECTOR-UP:
+    color: black
+    style: dashed
+    direction: up
   CONTROLLED_BY:
     xlabel: controller
     color: black
@@ -149,11 +153,11 @@ nodes:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.network.NetworkPolicy
     edges: |
-      if not edges.add_all_resources_matching_labels("Pod", "spec.podSelector.matchLabels"):
+      if not edges.add_all_resources_matching_labels("Pod", "spec.podSelector.matchLabels", edge_kind="SELECTOR-UP"):
         if not edges.add_all_resources_matching_labels("Deployment", "spec.podSelector.matchLabels",
-            resource_labels_path="spec.template.metadata.labels"):
+            resource_labels_path="spec.template.metadata.labels", edge_kind="SELECTOR-UP"):
           edges.add_all_resources_matching_labels("StatefulSet", "spec.podSelector.matchLabels",
-              resource_labels_path="spec.template.metadata.labels")
+              resource_labels_path="spec.template.metadata.labels", edge_kind="SELECTOR-UP")
       #TODO: add edges to pods selected in spec.ingress.* and spec.egress.*
   LimitRange/v1:
     scope: Namespaced

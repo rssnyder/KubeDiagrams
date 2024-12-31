@@ -427,7 +427,10 @@ with Diagram("", filename=args.output, show=False, direction="TB", outformat=arg
             edge_rid = edge[0]
             edge_name = edge[1]
             try:
-                diagram_nodes[resource_id] >> Edge(**get_edge_config(edge_name)) >> diagram_nodes[edge_rid]
+                edge_config = get_edge_config(edge_name)
+                if edge_config.get("direction") == "up":
+                    diagram_nodes[edge_rid] >> Edge(color="white", style="invisible") >> diagram_nodes[resource_id]
+                diagram_nodes[resource_id] >> Edge(**edge_config) >> diagram_nodes[edge_rid]
             except KeyError as ke:
                 print("Error: %s not found!" % ke)
                 tmp = str(edge_rid).split("/")
