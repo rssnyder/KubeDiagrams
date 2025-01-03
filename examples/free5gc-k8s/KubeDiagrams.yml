@@ -1,5 +1,11 @@
 # Configuration of kube-diagrams
-default_namespace: free5gc
+clusters:
+  - label: nf
+    title: Network Function
+  - label: app.kubernetes.io/name
+    title: Application
+  - label: name
+    title: Name
 nodes:
   NetworkAttachmentDefinition/k8s.cni.cncf.io/v1:
     scope: Namespaced
