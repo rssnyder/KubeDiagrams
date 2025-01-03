@@ -1,4 +1,9 @@
 # Configuration of kube-diagrams
+clusters:
+  - label: nf
+    title: Network Function
+  - label: app.kubernetes.io/name
+    title: Application
 nodes:
   NetworkAttachmentDefinition/k8s.cni.cncf.io/v1:
     scope: Namespaced

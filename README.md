@@ -110,7 +110,7 @@ Supported `kind`/`apiVersion` resource types are 32 ones:
 
 **Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L35).
 
-**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L3), and [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L2).
+**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L3), and [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L7).
 
 Currently, unsupported `kind`/`apiGroup` resource types are 27 ones:
 * Binding/
@@ -153,7 +153,7 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 | `app.kubernetes.io/component` | K8s Component |
 | `tier` | Tier |
 
-New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2) and [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5)) and provided to **KubeDiagrams** via the `--config` command-line option.
+New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2), [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5), and [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L2)) and provided to **KubeDiagrams** via the `--config` command-line option.
 
 ## License
 
