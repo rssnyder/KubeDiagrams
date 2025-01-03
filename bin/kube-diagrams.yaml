@@ -26,7 +26,7 @@ clusters:
     title: Application
   - label: service
     title: Microservice
-  - label: app.kubernetes.io/instance
+  - label: app.kubernetes.io/name
     title: K8s Application
   - label: app.kubernetes.io/component
     title: K8s Component

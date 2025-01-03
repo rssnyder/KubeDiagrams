@@ -153,7 +153,7 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 | :--------: | :-------: |
 | `app` | Application |
 | `service` | Microservice |
-| `app.kubernetes.io/instance` | K8s Application |
+| `app.kubernetes.io/name` | K8s Application |
 | `app.kubernetes.io/component` | K8s Component |
 | `tier` | Tier |
 
