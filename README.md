@@ -1,6 +1,6 @@
 # KubeDiagrams
 
-Generate Kubernetes architecture diagrams from Kubernetes manifest files, kustomization files, and Helm charts.
+Generate Kubernetes architecture diagrams from Kubernetes manifest files, kustomization files, Helm charts, and actual cluster state.
 
 There are several tools to generate Kubernetes architecture diagrams (see **[here](https://github.com/philippemerle/Awesome-Kubernetes-Architecture-Diagrams)**).
 The main originality of **KubeDiagrams** is its **[configurability](bin/kube-diagrams.yaml)** allowing for instance to deal with custom Kubernetes resources.
