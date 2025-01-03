@@ -352,11 +352,11 @@ if args.config != None:
         custom_config = yaml.safe_load(f) # load custom config file
         if "default_namespace" in custom_config:
             config["default_namespace"] = custom_config["default_namespace"]
-        if "edges" in custom_config:
+        if custom_config.get("edges"):
             config["edges"].update(custom_config["edges"])
-        if "clusters" in custom_config:
+        if custom_config.get("clusters"):
             config["clusters"].extend(custom_config["clusters"])
-        if "nodes" in custom_config:
+        if custom_config.get("nodes"):
             config["nodes"].update(custom_config["nodes"])
 
 # Load the Kubernetes manifest file.
