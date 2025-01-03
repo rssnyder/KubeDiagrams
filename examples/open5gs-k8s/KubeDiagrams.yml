@@ -1,0 +1,6 @@
+# Configuration of kube-diagrams
+nodes:
+  NetworkAttachmentDefinition/k8s.cni.cncf.io/v1:
+    scope: Namespaced
+    diagram_node_classname: diagrams.azure.network.NetworkInterfaces
+    # no edges

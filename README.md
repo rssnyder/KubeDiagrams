@@ -22,6 +22,9 @@ Architecture diagram of the Minikube Ingress Addon:
 Architecture diagram for **[free5gc-k8s](https://github.com/niloysh/free5gc-k8s)** manifests:
 ![free5gc-k8s-diagram.png](examples/free5gc-k8s/free5gc-k8s-diagram.png)
 
+Architecture diagram for **[open5gs-k8s](https://github.com/niloysh/open5gs-k8s)** manifests:
+![open5gs-k8s-diagram.png](examples/open5gs-k8s-diagram.png)
+
 All the examples are
 * [official Kubernetes WordPress tutorial](examples/wordpress/)
 * [official Kubernetes ZooKeeper tutorial](examples/zookeeper/)
@@ -30,6 +33,7 @@ All the examples are
 * [k0s architecture diagrams](examples/k0s/)
 * [Train Ticket](examples/train-ticket/)
 * [free5gc-k8s](examples/free5gc-k8s/)
+* [open5gs-k8s](examples/open5gs-k8s/)
 
 ## Prerequisites
 
@@ -106,7 +110,7 @@ Supported `kind`/`apiVersion` resource types are 32 ones:
 
 **Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L35).
 
-**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10) and [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L3).
+**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L3), and [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L2).
 
 Currently, unsupported `kind`/`apiGroup` resource types are 27 ones:
 * Binding/
