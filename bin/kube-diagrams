@@ -64,8 +64,27 @@ def create_diagram_node(resource, fontcolor="black"):
                 exec("import " + diagram_node_classname[:idx])
             # Get diagram node class
             diagram_node_class = eval(diagram_node_classname)
+    # Format node label
+    node_label = resource["metadata"]["name"]
+    MAX_NODE_LABEL_LENGTH = 16
+    if len(node_label) > MAX_NODE_LABEL_LENGTH:
+        def split_node_label(node_label, separator):
+            parts = node_label.split(separator)
+            node_label = parts[0]
+            current_length = len(node_label)
+            for part in parts[1:]:
+                if current_length + len(part) >= MAX_NODE_LABEL_LENGTH:
+                    node_label += "\n"
+                    current_length = 0
+                node_label = node_label + separator + part
+                current_length = current_length + 1 + len(part)
+            return node_label
+        for separator in ["-", "."]:
+            if separator in node_label:
+                node_label = split_node_label(node_label, separator)
+                break
     # Create a diagram node
-    return diagram_node_class(resource["metadata"]["name"], fontcolor=fontcolor)
+    return diagram_node_class(node_label, fontcolor=fontcolor)
 
 class ResourceCluster(object):
     def __init__(self):
