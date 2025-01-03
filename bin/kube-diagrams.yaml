@@ -65,7 +65,7 @@ nodes:
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
       edges.add_service_account("spec.template.spec.serviceAccountName")
       edges.add_all_volume_resources("spec.template.spec.volumes")
-      edges.add_containers_env_valueFrom_secretKeyRef("spec.template.spec.containers")
+      edges.add_containers_env_valueFrom("spec.template.spec.containers")
   Deployment/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Deploy
@@ -74,7 +74,7 @@ nodes:
       edges.add_service_account("spec.template.spec.serviceAccountName")
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_all_volume_resources("spec.template.spec.volumes")
-      edges.add_containers_env_valueFrom_secretKeyRef("spec.template.spec.containers")
+      edges.add_containers_env_valueFrom("spec.template.spec.containers")
   Endpoints/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.network.Endpoint
@@ -144,7 +144,7 @@ nodes:
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
       edges.add_service_account("spec.template.spec.serviceAccountName")
       edges.add_all_volume_resources("spec.template.spec.volumes")
-      edges.add_containers_env_valueFrom_secretKeyRef("spec.template.spec.containers")
+      edges.add_containers_env_valueFrom("spec.template.spec.containers")
   Namespace/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.group.NS
@@ -185,7 +185,7 @@ nodes:
       edges.add_service_account("spec.serviceAccountName")
       edges.add_wait_for_services("spec.initContainers")
       edges.add_all_volume_resources("spec.volumes")
-      edges.add_containers_env_valueFrom_secretKeyRef("spec.containers")
+      edges.add_containers_env_valueFrom("spec.containers")
       nid = "%s/Node/v1" % (
         query_path(resource, "spec.nodeName"),
       )
@@ -208,7 +208,7 @@ nodes:
       edges.add_service_account("spec.template.spec.serviceAccountName")
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_all_volume_resources("spec.template.spec.volumes")
-      edges.add_containers_env_valueFrom_secretKeyRef("spec.template.spec.containers")
+      edges.add_containers_env_valueFrom("spec.template.spec.containers")
   ResourceQuota/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.clusterconfig.Quota
