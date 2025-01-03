@@ -1,6 +1,6 @@
 # KubeDiagrams
 
-Generate Kubernetes architecture diagrams from Kubernetes manifest files and kustomization files.
+Generate Kubernetes architecture diagrams from Kubernetes manifest files, kustomization files, and Helm charts.
 
 There are several tools to generate Kubernetes architecture diagrams (see **[here](https://github.com/philippemerle/Awesome-Kubernetes-Architecture-Diagrams)**).
 The main originality of **KubeDiagrams** is its **[configurability](bin/kube-diagrams.yaml)** allowing for instance to deal with custom Kubernetes resources.
@@ -25,6 +25,9 @@ Architecture diagram for **[free5gc-k8s](https://github.com/niloysh/free5gc-k8s)
 Architecture diagram for **[open5gs-k8s](https://github.com/niloysh/open5gs-k8s)** manifests:
 ![open5gs-k8s-diagram.png](examples/open5gs-k8s/open5gs-k8s-diagram.png)
 
+Architecture diagram for the **[towards5gs/free5gc](https://github.com/Orange-OpenSource/towards5gs-helm)** chart:
+![towards5gs_free5gc.png](examples/towards5gs-helm/towards5gs_free5gc.png)
+
 All the examples are
 * [official Kubernetes WordPress tutorial](examples/wordpress/)
 * [official Kubernetes ZooKeeper tutorial](examples/zookeeper/)
@@ -34,6 +37,7 @@ All the examples are
 * [Train Ticket](examples/train-ticket/)
 * [free5gc-k8s](examples/free5gc-k8s/)
 * [open5gs-k8s](examples/open5gs-k8s/)
+* [towards5gs-helm](examples/towards5gs-helm/)
 
 ## Prerequisites
 
@@ -110,7 +114,7 @@ Supported `kind`/`apiVersion` resource types are 32 ones:
 
 **Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L35).
 
-**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L9), and [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L9).
+**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L9),  [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L9), and [examples/towards5gs-helm/KubeDiagrams.yml](examples/towards5gs-helm/KubeDiagrams.yml#L7).
 
 Currently, unsupported `kind`/`apiGroup` resource types are 27 ones:
 * Binding/
@@ -153,7 +157,7 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 | `app.kubernetes.io/component` | K8s Component |
 | `tier` | Tier |
 
-New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2), [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L2), and [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L2)) and provided to **KubeDiagrams** via the `--config` command-line option.
+New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2), [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L2),  [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L2), and [examples/towards5gs-helm/KubeDiagrams.yml](examples/towards5gs-helm/KubeDiagrams.yml#L2)) and provided to **KubeDiagrams** via the `--config` command-line option.
 
 ## License
 
