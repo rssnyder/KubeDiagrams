@@ -23,7 +23,7 @@ Architecture diagram for **[free5gc-k8s](https://github.com/niloysh/free5gc-k8s)
 ![free5gc-k8s-diagram.png](examples/free5gc-k8s/free5gc-k8s-diagram.png)
 
 Architecture diagram for **[open5gs-k8s](https://github.com/niloysh/open5gs-k8s)** manifests:
-![open5gs-k8s-diagram.png](examples/open5gs-k8s-diagram.png)
+![open5gs-k8s-diagram.png](examples/open5gs-k8s/open5gs-k8s-diagram.png)
 
 All the examples are
 * [official Kubernetes WordPress tutorial](examples/wordpress/)
