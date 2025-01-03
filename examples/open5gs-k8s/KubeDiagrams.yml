@@ -4,6 +4,8 @@ clusters:
     title: Network Function
   - label: app.kubernetes.io/name
     title: Application
+  - label: name
+    title: Name
 nodes:
   NetworkAttachmentDefinition/k8s.cni.cncf.io/v1:
     scope: Namespaced
