@@ -1,0 +1,1490 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-01-03T14:59:54Z"
+    generateName: nginx-deployment-85996f8dbd-
+    labels:
+      app: nginx
+      pod-template-hash: 85996f8dbd
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"008ef4db-b493-4714-a81e-6acd9039a362"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"nginx"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:59:54Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.19"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-01-03T15:00:11Z"
+    name: nginx-deployment-85996f8dbd-5s29k
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: nginx-deployment-85996f8dbd
+      uid: 008ef4db-b493-4714-a81e-6acd9039a362
+    resourceVersion: "26036"
+    uid: 85f93021-111e-49e5-930e-edba30939ebc
+  spec:
+    containers:
+    - image: nginx:1.14.2
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-lgscl
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-lgscl
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:59:54Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T15:00:11Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T15:00:11Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:59:54Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://f44d320286533b27b61a746616d1acfaca428db811349e955a6a94b3bc52500e
+      image: nginx:1.14.2
+      imageID: docker-pullable://nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-01-03T15:00:10Z"
+    hostIP: 192.168.64.23
+    phase: Running
+    podIP: 10.244.0.19
+    podIPs:
+    - ip: 10.244.0.19
+    qosClass: BestEffort
+    startTime: "2025-01-03T14:59:54Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-01-03T14:59:54Z"
+    generateName: nginx-deployment-85996f8dbd-
+    labels:
+      app: nginx
+      pod-template-hash: 85996f8dbd
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"008ef4db-b493-4714-a81e-6acd9039a362"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"nginx"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:59:54Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.20"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-01-03T15:00:12Z"
+    name: nginx-deployment-85996f8dbd-8rdd6
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: nginx-deployment-85996f8dbd
+      uid: 008ef4db-b493-4714-a81e-6acd9039a362
+    resourceVersion: "26049"
+    uid: af8e2ff8-0cf2-4b37-b73f-a305e21bf737
+  spec:
+    containers:
+    - image: nginx:1.14.2
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-b7nkg
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-b7nkg
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:59:54Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T15:00:12Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T15:00:12Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:59:54Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://f3e8a67b6eb9c84427404db54aabde247ec2719670451adfd6f44547620f6718
+      image: nginx:1.14.2
+      imageID: docker-pullable://nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-01-03T15:00:11Z"
+    hostIP: 192.168.64.23
+    phase: Running
+    podIP: 10.244.0.20
+    podIPs:
+    - ip: 10.244.0.20
+    qosClass: BestEffort
+    startTime: "2025-01-03T14:59:54Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-01-03T14:59:54Z"
+    generateName: nginx-deployment-85996f8dbd-
+    labels:
+      app: nginx
+      pod-template-hash: 85996f8dbd
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"008ef4db-b493-4714-a81e-6acd9039a362"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"nginx"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:59:54Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.18"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-01-03T15:00:11Z"
+    name: nginx-deployment-85996f8dbd-nwbpr
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: nginx-deployment-85996f8dbd
+      uid: 008ef4db-b493-4714-a81e-6acd9039a362
+    resourceVersion: "26041"
+    uid: 296a19f3-398b-4659-ad17-3a3e4fd12626
+  spec:
+    containers:
+    - image: nginx:1.14.2
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-bdhq8
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-bdhq8
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:59:54Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T15:00:11Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T15:00:11Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:59:54Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://ed895200686426e2d16603bb153e8a33eb7f8c79d2d0fc9ffd89d1c2350e4f96
+      image: nginx:1.14.2
+      imageID: docker-pullable://nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-01-03T15:00:10Z"
+    hostIP: 192.168.64.23
+    phase: Running
+    podIP: 10.244.0.18
+    podIPs:
+    - ip: 10.244.0.18
+    qosClass: BestEffort
+    startTime: "2025-01-03T14:59:54Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2025-01-03T07:24:58Z"
+    labels:
+      component: apiserver
+      provider: kubernetes
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:component: {}
+            f:provider: {}
+        f:spec:
+          f:clusterIP: {}
+          f:internalTrafficPolicy: {}
+          f:ipFamilyPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-01-03T07:24:58Z"
+    name: kubernetes
+    namespace: default
+    resourceVersion: "195"
+    uid: fe659e3f-8be6-4725-af50-d3db73fbe9bb
+  spec:
+    clusterIP: 10.96.0.1
+    clusterIPs:
+    - 10.96.0.1
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"nginx"},"name":"nginx-service","namespace":"default"},"spec":{"ports":[{"port":80,"protocol":"TCP","targetPort":80}],"selector":{"app":"nginx"}}}
+    creationTimestamp: "2025-01-03T14:59:54Z"
+    labels:
+      app: nginx
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":80,"protocol":"TCP"}:
+              .: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: kubectl
+      operation: Update
+      time: "2025-01-03T14:59:54Z"
+    name: nginx-service
+    namespace: default
+    resourceVersion: "25981"
+    uid: 883c84af-ddaf-4bc4-aa5b-c498d381a4e4
+  spec:
+    clusterIP: 10.106.63.194
+    clusterIPs:
+    - 10.106.63.194
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: nginx
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"nginx"},"name":"nginx-deployment","namespace":"default"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"nginx"}},"template":{"metadata":{"labels":{"app":"nginx"}},"spec":{"containers":[{"image":"nginx:1.14.2","name":"nginx","ports":[{"containerPort":80}]}]}}}}
+    creationTimestamp: "2025-01-03T14:59:54Z"
+    generation: 1
+    labels:
+      app: nginx
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+            f:spec:
+              f:containers:
+                k:{"name":"nginx"}:
+                  .: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":80,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:protocol: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+      manager: kubectl
+      operation: Update
+      time: "2025-01-03T14:59:54Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2025-01-03T15:00:12Z"
+    name: nginx-deployment
+    namespace: default
+    resourceVersion: "26053"
+    uid: ff1323cc-6d58-4702-80f6-a8c8ceee2443
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 3
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: nginx
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: nginx
+      spec:
+        containers:
+        - image: nginx:1.14.2
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 3
+    conditions:
+    - lastTransitionTime: "2025-01-03T15:00:12Z"
+      lastUpdateTime: "2025-01-03T15:00:12Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2025-01-03T14:59:54Z"
+      lastUpdateTime: "2025-01-03T15:00:12Z"
+      message: ReplicaSet "nginx-deployment-85996f8dbd" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    readyReplicas: 3
+    replicas: 3
+    updatedReplicas: 3
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "3"
+      deployment.kubernetes.io/max-replicas: "4"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2025-01-03T14:59:54Z"
+    generation: 1
+    labels:
+      app: nginx
+      pod-template-hash: 85996f8dbd
+    managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/desired-replicas: {}
+            f:deployment.kubernetes.io/max-replicas: {}
+            f:deployment.kubernetes.io/revision: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ff1323cc-6d58-4702-80f6-a8c8ceee2443"}: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+                f:pod-template-hash: {}
+            f:spec:
+              f:containers:
+                k:{"name":"nginx"}:
+                  .: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":80,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:protocol: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:59:54Z"
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:fullyLabeledReplicas: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2025-01-03T15:00:12Z"
+    name: nginx-deployment-85996f8dbd
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: nginx-deployment
+      uid: ff1323cc-6d58-4702-80f6-a8c8ceee2443
+    resourceVersion: "26052"
+    uid: 008ef4db-b493-4714-a81e-6acd9039a362
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: nginx
+        pod-template-hash: 85996f8dbd
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: nginx
+          pod-template-hash: 85996f8dbd
+      spec:
+        containers:
+        - image: nginx:1.14.2
+          imagePullPolicy: IfNotPresent
+          name: nginx
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 3
+    fullyLabeledReplicas: 3
+    observedGeneration: 1
+    readyReplicas: 3
+    replicas: 3
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"nginx.ingress.kubernetes.io/rewrite-target":"/"},"labels":{"app":"nginx"},"name":"nginx-ingress","namespace":"default"},"spec":{"rules":[{"http":{"paths":[{"backend":{"service":{"name":"nginx-service","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}]}}
+      nginx.ingress.kubernetes.io/rewrite-target: /
+    creationTimestamp: "2025-01-03T14:59:54Z"
+    generation: 1
+    labels:
+      app: nginx
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+            f:nginx.ingress.kubernetes.io/rewrite-target: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:rules: {}
+      manager: kubectl
+      operation: Update
+      time: "2025-01-03T14:59:54Z"
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:loadBalancer:
+            f:ingress: {}
+      manager: nginx-ingress-controller
+      operation: Update
+      subresource: status
+      time: "2025-01-03T15:00:14Z"
+    name: nginx-ingress
+    namespace: default
+    resourceVersion: "26056"
+    uid: 2b35bed2-2698-4feb-80c5-4b8a6d29faad
+  spec:
+    ingressClassName: nginx
+    rules:
+    - http:
+        paths:
+        - backend:
+            service:
+              name: nginx-service
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 192.168.64.23
+- apiVersion: networking.k8s.io/v1
+  kind: IngressClass
+  metadata:
+    annotations:
+      ingressclass.kubernetes.io/is-default-class: "true"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"IngressClass","metadata":{"annotations":{"ingressclass.kubernetes.io/is-default-class":"true"},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx"},"name":"nginx"},"spec":{"controller":"k8s.io/ingress-nginx"}}
+    creationTimestamp: "2025-01-03T07:25:32Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/instance: ingress-nginx
+      app.kubernetes.io/name: ingress-nginx
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:ingressclass.kubernetes.io/is-default-class: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+        f:spec:
+          f:controller: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-01-03T07:25:32Z"
+    name: nginx
+    resourceVersion: "421"
+    uid: f0971926-cc21-469e-a5cf-73d01cb30648
+  spec:
+    controller: k8s.io/ingress-nginx
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"labels":{"app":"nginx"},"name":"nginx-network-policy","namespace":"default"},"spec":{"egress":[{}],"ingress":[{}],"podSelector":{"matchLabels":{"app":"nginx"}},"policyTypes":["Ingress","Egress"]}}
+    creationTimestamp: "2025-01-03T14:59:54Z"
+    generation: 1
+    labels:
+      app: nginx
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+        f:spec:
+          f:egress: {}
+          f:ingress: {}
+          f:podSelector: {}
+          f:policyTypes: {}
+      manager: kubectl
+      operation: Update
+      time: "2025-01-03T14:59:54Z"
+    name: nginx-network-policy
+    namespace: default
+    resourceVersion: "26006"
+    uid: 80df8b44-c035-4059-80b7-aa07a03badc7
+  spec:
+    egress:
+    - {}
+    ingress:
+    - {}
+    podSelector:
+      matchLabels:
+        app: nginx
+    policyTypes:
+    - Ingress
+    - Egress
+  status: {}
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 192.168.64.23
+    conditions:
+      ready: true
+  kind: EndpointSlice
+  metadata:
+    creationTimestamp: "2025-01-03T07:24:58Z"
+    generation: 1
+    labels:
+      kubernetes.io/service-name: kubernetes
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:labels:
+            .: {}
+            f:kubernetes.io/service-name: {}
+        f:ports: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-01-03T07:24:58Z"
+    name: kubernetes
+    namespace: default
+    resourceVersion: "198"
+    uid: 6e9989bb-7f91-40df-b6ea-ad38b6f99eb0
+  ports:
+  - name: https
+    port: 8443
+    protocol: TCP
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.244.0.19
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: minikube
+    targetRef:
+      kind: Pod
+      name: nginx-deployment-85996f8dbd-5s29k
+      namespace: default
+      uid: 85f93021-111e-49e5-930e-edba30939ebc
+  - addresses:
+    - 10.244.0.18
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: minikube
+    targetRef:
+      kind: Pod
+      name: nginx-deployment-85996f8dbd-nwbpr
+      namespace: default
+      uid: 296a19f3-398b-4659-ad17-3a3e4fd12626
+  - addresses:
+    - 10.244.0.20
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: minikube
+    targetRef:
+      kind: Pod
+      name: nginx-deployment-85996f8dbd-8rdd6
+      namespace: default
+      uid: af8e2ff8-0cf2-4b37-b73f-a305e21bf737
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-01-03T15:00:12Z"
+    creationTimestamp: "2025-01-03T14:59:54Z"
+    generateName: nginx-service-
+    generation: 4
+    labels:
+      app: nginx
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      kubernetes.io/service-name: nginx-service
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"883c84af-ddaf-4bc4-aa5b-c498d381a4e4"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T15:00:12Z"
+    name: nginx-service-zdxgr
+    namespace: default
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: nginx-service
+      uid: 883c84af-ddaf-4bc4-aa5b-c498d381a4e4
+    resourceVersion: "26051"
+    uid: aece4864-8282-413a-9792-740a28fb45dc
+  ports:
+  - name: ""
+    port: 80
+    protocol: TCP
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p
+      a3ViZUNBMB4XDTIzMDIwNDA3NTMzNloXDTMzMDIwMjA3NTMzNlowFTETMBEGA1UE
+      AxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM3l
+      n8dtEkPntkBRSF7NBlwCbwI3BRxHL5LUSROCfr/tFyuJ8XiZa8yv/DbiCKDFWeBr
+      lJwWOJ3HjrjQc+nBIjbG3spMaOr9Kgut7UKyYEeIZxBSz5GBd7rlRuBwOkRqEXtS
+      /H/TxVzgrugfKbI+ALtzbtHTzKKLDGaYjAC5t2jQ/PtzQ3s4cB8Z/fk03n9woBC8
+      6makLFQXXPj65y09hb/slxIbi4hyRe4hdQYnxeY+PKmuEZIaed5gFrN/EDDtrtwn
+      bcPY3Pwc0/b1+S44TcB+eWMq28zPLeO/Kjziw8q+1wldKWIXJJSUAUU5dBOtlRol
+      yfr7t0ibsft1OTVCisECAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW
+      MBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW
+      BBS1Nak8XxDdSOq3r1qdAXNmQRttCzANBgkqhkiG9w0BAQsFAAOCAQEAxrabqVKs
+      u9hJTiUNhLEQTOVR7gMuonymonQ73488pQHKKIyAM8It+ClgP+YdZtRi+uxGgQ3m
+      kwbJbf1ybysY++tIKbUXfsal/wcrt2hbqk6HJxca/YaYL7qja6N/BElct07RQhLf
+      DpMtfqokyBh/yOlobBkrrA+RylGVi1ebWgFM7xtzmuPpeIYurNIcXGpp0d21RuRz
+      0Oxd9g/HHAzZihXbHfPeJJdiQBtPvQ83TZ+T2E0MCkLDUC1okRztR8R5YPG6nZli
+      zVRBh41095iSNFKJhFQyu5Qzme98wdBBQGoxcMOoXk6ioeDQUywHaJMjdCANqubf
+      I700WTtGVr503w==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2025-01-03T07:25:12Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:ca.crt: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubernetes.io/description: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T07:25:12Z"
+    name: kube-root-ca.crt
+    namespace: default
+    resourceVersion: "322"
+    uid: baa53ee4-b452-4dde-8881-c148f2d2cb37
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    creationTimestamp: "2025-01-03T07:25:11Z"
+    name: default
+    namespace: default
+    resourceVersion: "309"
+    uid: e4760ff0-5beb-467e-9596-96e164df7259
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/cri-dockerd.sock
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2025-01-03T07:24:56Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: minikube
+      kubernetes.io/os: linux
+      minikube.k8s.io/commit: ddac20b4b34a9c8c857fc602203b6ba2679794d3
+      minikube.k8s.io/name: minikube
+      minikube.k8s.io/primary: "true"
+      minikube.k8s.io/updated_at: 2025_01_03T08_25_00_0700
+      minikube.k8s.io/version: v1.29.0
+      node-role.kubernetes.io/control-plane: ""
+      node.kubernetes.io/exclude-from-external-load-balancers: ""
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/os: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-01-03T07:24:56Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubeadm.alpha.kubernetes.io/cri-socket: {}
+          f:labels:
+            f:node-role.kubernetes.io/control-plane: {}
+            f:node.kubernetes.io/exclude-from-external-load-balancers: {}
+      manager: kubeadm
+      operation: Update
+      time: "2025-01-03T07:25:00Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:minikube.k8s.io/commit: {}
+            f:minikube.k8s.io/name: {}
+            f:minikube.k8s.io/primary: {}
+            f:minikube.k8s.io/updated_at: {}
+            f:minikube.k8s.io/version: {}
+      manager: kubectl-label
+      operation: Update
+      time: "2025-01-03T07:25:01Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:node.alpha.kubernetes.io/ttl: {}
+        f:spec:
+          f:podCIDR: {}
+          f:podCIDRs:
+            .: {}
+            v:"10.244.0.0/24": {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T07:25:12Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"DiskPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"MemoryPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"PIDPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"Ready"}:
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+          f:images: {}
+          f:nodeInfo:
+            f:bootID: {}
+            f:machineID: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-01-03T15:00:21Z"
+    name: minikube
+    resourceVersion: "26066"
+    uid: a7d0bcf1-a18b-442d-a201-924f9e8623dd
+  spec:
+    podCIDR: 10.244.0.0/24
+    podCIDRs:
+    - 10.244.0.0/24
+  status:
+    addresses:
+    - address: 192.168.64.23
+      type: InternalIP
+    - address: minikube
+      type: Hostname
+    allocatable:
+      cpu: "2"
+      ephemeral-storage: 17784752Ki
+      hugepages-2Mi: "0"
+      memory: 3914660Ki
+      pods: "110"
+    capacity:
+      cpu: "2"
+      ephemeral-storage: 17784752Ki
+      hugepages-2Mi: "0"
+      memory: 3914660Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2025-01-03T15:00:21Z"
+      lastTransitionTime: "2025-01-03T07:24:54Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2025-01-03T15:00:21Z"
+      lastTransitionTime: "2025-01-03T07:24:54Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2025-01-03T15:00:21Z"
+      lastTransitionTime: "2025-01-03T07:24:54Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2025-01-03T15:00:21Z"
+      lastTransitionTime: "2025-01-03T10:59:04Z"
+      message: kubelet is posting ready status
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - registry.k8s.io/etcd@sha256:dd75ec974b0a2a6f6bb47001ba09207976e625db898d1b16735528c009cb171c
+      - registry.k8s.io/etcd:3.5.6-0
+      sizeBytes: 299475478
+    - names:
+      - registry.k8s.io/ingress-nginx/controller@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
+      sizeBytes: 269046403
+    - names:
+      - kubernetesui/dashboard@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
+      sizeBytes: 245710051
+    - names:
+      - registry.k8s.io/kube-apiserver@sha256:99e1ed9fbc8a8d36a70f148f25130c02e0e366875249906be0bcb2c2d9df0c26
+      - registry.k8s.io/kube-apiserver:v1.26.1
+      sizeBytes: 133837801
+    - names:
+      - registry.k8s.io/kube-controller-manager@sha256:40adecbe3a40aa147c7d6e9a1f5fbd99b3f6d42d5222483ed3a47337d4f9a10b
+      - registry.k8s.io/kube-controller-manager:v1.26.1
+      sizeBytes: 123655426
+    - names:
+      - nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d
+      - nginx:1.14.2
+      sizeBytes: 109129446
+    - names:
+      - registry.k8s.io/metrics-server/metrics-server@sha256:f977ad859fb500c1302d9c3428c6271db031bb7431e7076213b676b345a88dc2
+      sizeBytes: 68892890
+    - names:
+      - registry.k8s.io/kube-proxy@sha256:85f705e7d98158a67432c53885b0d470c673b0fad3693440b45d07efebcda1c3
+      - registry.k8s.io/kube-proxy:v1.26.1
+      sizeBytes: 65623686
+    - names:
+      - registry.k8s.io/kube-scheduler@sha256:af0292c2c4fa6d09ee8544445eef373c1c280113cb6c968398a37da3744c41e4
+      - registry.k8s.io/kube-scheduler:v1.26.1
+      sizeBytes: 56321282
+    - names:
+      - registry.k8s.io/coredns/coredns@sha256:8e352a029d304ca7431c6507b56800636c321cb52289686a581ab70aaa8a2e2a
+      - registry.k8s.io/coredns/coredns:v1.9.3
+      sizeBytes: 48803555
+    - names:
+      - registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
+      sizeBytes: 46183530
+    - names:
+      - kubernetesui/metrics-scraper@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
+      sizeBytes: 43815949
+    - names:
+      - gcr.io/k8s-minikube/storage-provisioner@sha256:18eb69d1418e854ad5a19e399310e52808a8321e4c441c1dddad8977a0d7a944
+      - gcr.io/k8s-minikube/storage-provisioner:v5
+      sizeBytes: 31465472
+    - names:
+      - busybox@sha256:141c253bc4c3fd0a201d32dc1f493bcf3fff003b6df416dea4f41046e0f37d47
+      - busybox:1.28
+      sizeBytes: 1146369
+    - names:
+      - registry.k8s.io/pause@sha256:7031c1b283388d2c2e09b57badb803c05ebed362dc88d84b480cc47f72a21097
+      - registry.k8s.io/pause:3.9
+      sizeBytes: 743952
+    - names:
+      - registry.k8s.io/pause@sha256:3d380ca8864549e74af4b29c10f9cb0956236dfb01c40ca076fb6c37253234db
+      - registry.k8s.io/pause:3.6
+      sizeBytes: 682696
+    nodeInfo:
+      architecture: amd64
+      bootID: cb7f3f19-93ae-4c23-8018-8719ae050ce8
+      containerRuntimeVersion: docker://20.10.23
+      kernelVersion: 5.10.57
+      kubeProxyVersion: v1.26.1
+      kubeletVersion: v1.26.1
+      machineID: 9802dfd8a5ce4751b2191e088c3d2235
+      operatingSystem: linux
+      osImage: Buildroot 2021.02.12
+      systemUUID: b9c211ef-0000-0000-a36f-60f81dcd9370
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

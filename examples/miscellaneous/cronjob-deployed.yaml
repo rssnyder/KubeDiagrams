@@ -1,0 +1,1285 @@
+apiVersion: v1
+items:
+- apiVersion: batch/v1
+  kind: CronJob
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"batch/v1","kind":"CronJob","metadata":{"annotations":{},"name":"hello","namespace":"default"},"spec":{"jobTemplate":{"spec":{"template":{"spec":{"containers":[{"command":["/bin/sh","-c","date; echo Hello from the Kubernetes cluster"],"image":"busybox:1.28","imagePullPolicy":"IfNotPresent","name":"hello"}],"restartPolicy":"OnFailure"}}}},"schedule":"* * * * *"}}
+    creationTimestamp: "2025-01-03T14:54:04Z"
+    generation: 1
+    managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:concurrencyPolicy: {}
+          f:failedJobsHistoryLimit: {}
+          f:jobTemplate:
+            f:spec:
+              f:template:
+                f:spec:
+                  f:containers:
+                    k:{"name":"hello"}:
+                      .: {}
+                      f:command: {}
+                      f:image: {}
+                      f:imagePullPolicy: {}
+                      f:name: {}
+                      f:resources: {}
+                      f:terminationMessagePath: {}
+                      f:terminationMessagePolicy: {}
+                  f:dnsPolicy: {}
+                  f:restartPolicy: {}
+                  f:schedulerName: {}
+                  f:securityContext: {}
+                  f:terminationGracePeriodSeconds: {}
+          f:schedule: {}
+          f:successfulJobsHistoryLimit: {}
+          f:suspend: {}
+      manager: kubectl
+      operation: Update
+      time: "2025-01-03T14:54:04Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:lastScheduleTime: {}
+          f:lastSuccessfulTime: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2025-01-03T14:57:05Z"
+    name: hello
+    namespace: default
+    resourceVersion: "25786"
+    uid: 20d612b7-7f5e-4acc-9c14-a0bf283f7cc2
+  spec:
+    concurrencyPolicy: Allow
+    failedJobsHistoryLimit: 1
+    jobTemplate:
+      metadata:
+        creationTimestamp: null
+      spec:
+        template:
+          metadata:
+            creationTimestamp: null
+          spec:
+            containers:
+            - command:
+              - /bin/sh
+              - -c
+              - date; echo Hello from the Kubernetes cluster
+              image: busybox:1.28
+              imagePullPolicy: IfNotPresent
+              name: hello
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+            dnsPolicy: ClusterFirst
+            restartPolicy: OnFailure
+            schedulerName: default-scheduler
+            securityContext: {}
+            terminationGracePeriodSeconds: 30
+    schedule: '* * * * *'
+    successfulJobsHistoryLimit: 3
+    suspend: false
+  status:
+    lastScheduleTime: "2025-01-03T14:57:00Z"
+    lastSuccessfulTime: "2025-01-03T14:57:05Z"
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    annotations:
+      batch.kubernetes.io/job-tracking: ""
+    creationTimestamp: "2025-01-03T14:55:00Z"
+    generation: 1
+    labels:
+      controller-uid: efc8bd20-a733-44de-b1df-28a78160e726
+      job-name: hello-28931935
+    managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"20d612b7-7f5e-4acc-9c14-a0bf283f7cc2"}: {}
+        f:spec:
+          f:backoffLimit: {}
+          f:completionMode: {}
+          f:completions: {}
+          f:parallelism: {}
+          f:suspend: {}
+          f:template:
+            f:spec:
+              f:containers:
+                k:{"name":"hello"}:
+                  .: {}
+                  f:command: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:55:00Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:completionTime: {}
+          f:conditions: {}
+          f:ready: {}
+          f:startTime: {}
+          f:succeeded: {}
+          f:uncountedTerminatedPods: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2025-01-03T14:55:07Z"
+    name: hello-28931935
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CronJob
+      name: hello
+      uid: 20d612b7-7f5e-4acc-9c14-a0bf283f7cc2
+    resourceVersion: "25631"
+    uid: efc8bd20-a733-44de-b1df-28a78160e726
+  spec:
+    backoffLimit: 6
+    completionMode: NonIndexed
+    completions: 1
+    parallelism: 1
+    selector:
+      matchLabels:
+        controller-uid: efc8bd20-a733-44de-b1df-28a78160e726
+    suspend: false
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          controller-uid: efc8bd20-a733-44de-b1df-28a78160e726
+          job-name: hello-28931935
+      spec:
+        containers:
+        - command:
+          - /bin/sh
+          - -c
+          - date; echo Hello from the Kubernetes cluster
+          image: busybox:1.28
+          imagePullPolicy: IfNotPresent
+          name: hello
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: OnFailure
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    completionTime: "2025-01-03T14:55:07Z"
+    conditions:
+    - lastProbeTime: "2025-01-03T14:55:07Z"
+      lastTransitionTime: "2025-01-03T14:55:07Z"
+      status: "True"
+      type: Complete
+    ready: 0
+    startTime: "2025-01-03T14:55:00Z"
+    succeeded: 1
+    uncountedTerminatedPods: {}
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    annotations:
+      batch.kubernetes.io/job-tracking: ""
+    creationTimestamp: "2025-01-03T14:56:00Z"
+    generation: 1
+    labels:
+      controller-uid: 29cd05a0-d3b9-4812-b90c-776b155af11f
+      job-name: hello-28931936
+    managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"20d612b7-7f5e-4acc-9c14-a0bf283f7cc2"}: {}
+        f:spec:
+          f:backoffLimit: {}
+          f:completionMode: {}
+          f:completions: {}
+          f:parallelism: {}
+          f:suspend: {}
+          f:template:
+            f:spec:
+              f:containers:
+                k:{"name":"hello"}:
+                  .: {}
+                  f:command: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:56:00Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:completionTime: {}
+          f:conditions: {}
+          f:ready: {}
+          f:startTime: {}
+          f:succeeded: {}
+          f:uncountedTerminatedPods: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2025-01-03T14:56:05Z"
+    name: hello-28931936
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CronJob
+      name: hello
+      uid: 20d612b7-7f5e-4acc-9c14-a0bf283f7cc2
+    resourceVersion: "25705"
+    uid: 29cd05a0-d3b9-4812-b90c-776b155af11f
+  spec:
+    backoffLimit: 6
+    completionMode: NonIndexed
+    completions: 1
+    parallelism: 1
+    selector:
+      matchLabels:
+        controller-uid: 29cd05a0-d3b9-4812-b90c-776b155af11f
+    suspend: false
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          controller-uid: 29cd05a0-d3b9-4812-b90c-776b155af11f
+          job-name: hello-28931936
+      spec:
+        containers:
+        - command:
+          - /bin/sh
+          - -c
+          - date; echo Hello from the Kubernetes cluster
+          image: busybox:1.28
+          imagePullPolicy: IfNotPresent
+          name: hello
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: OnFailure
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    completionTime: "2025-01-03T14:56:05Z"
+    conditions:
+    - lastProbeTime: "2025-01-03T14:56:05Z"
+      lastTransitionTime: "2025-01-03T14:56:05Z"
+      status: "True"
+      type: Complete
+    ready: 0
+    startTime: "2025-01-03T14:56:00Z"
+    succeeded: 1
+    uncountedTerminatedPods: {}
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    annotations:
+      batch.kubernetes.io/job-tracking: ""
+    creationTimestamp: "2025-01-03T14:57:00Z"
+    generation: 1
+    labels:
+      controller-uid: 25875f3c-7634-4de6-982b-697cad760f7b
+      job-name: hello-28931937
+    managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"20d612b7-7f5e-4acc-9c14-a0bf283f7cc2"}: {}
+        f:spec:
+          f:backoffLimit: {}
+          f:completionMode: {}
+          f:completions: {}
+          f:parallelism: {}
+          f:suspend: {}
+          f:template:
+            f:spec:
+              f:containers:
+                k:{"name":"hello"}:
+                  .: {}
+                  f:command: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:dnsPolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:57:00Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:completionTime: {}
+          f:conditions: {}
+          f:ready: {}
+          f:startTime: {}
+          f:succeeded: {}
+          f:uncountedTerminatedPods: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2025-01-03T14:57:05Z"
+    name: hello-28931937
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CronJob
+      name: hello
+      uid: 20d612b7-7f5e-4acc-9c14-a0bf283f7cc2
+    resourceVersion: "25782"
+    uid: 25875f3c-7634-4de6-982b-697cad760f7b
+  spec:
+    backoffLimit: 6
+    completionMode: NonIndexed
+    completions: 1
+    parallelism: 1
+    selector:
+      matchLabels:
+        controller-uid: 25875f3c-7634-4de6-982b-697cad760f7b
+    suspend: false
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          controller-uid: 25875f3c-7634-4de6-982b-697cad760f7b
+          job-name: hello-28931937
+      spec:
+        containers:
+        - command:
+          - /bin/sh
+          - -c
+          - date; echo Hello from the Kubernetes cluster
+          image: busybox:1.28
+          imagePullPolicy: IfNotPresent
+          name: hello
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: OnFailure
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    completionTime: "2025-01-03T14:57:05Z"
+    conditions:
+    - lastProbeTime: "2025-01-03T14:57:05Z"
+      lastTransitionTime: "2025-01-03T14:57:05Z"
+      status: "True"
+      type: Complete
+    ready: 0
+    startTime: "2025-01-03T14:57:00Z"
+    succeeded: 1
+    uncountedTerminatedPods: {}
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-01-03T14:55:00Z"
+    generateName: hello-28931935-
+    labels:
+      controller-uid: efc8bd20-a733-44de-b1df-28a78160e726
+      job-name: hello-28931935
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:controller-uid: {}
+            f:job-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"efc8bd20-a733-44de-b1df-28a78160e726"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"hello"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:55:00Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.14"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-01-03T14:55:06Z"
+    name: hello-28931935-lvpk8
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: hello-28931935
+      uid: efc8bd20-a733-44de-b1df-28a78160e726
+    resourceVersion: "25630"
+    uid: fdde4f05-e322-4015-b71c-7f310b99b72d
+  spec:
+    containers:
+    - command:
+      - /bin/sh
+      - -c
+      - date; echo Hello from the Kubernetes cluster
+      image: busybox:1.28
+      imagePullPolicy: IfNotPresent
+      name: hello
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-xx8rn
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-xx8rn
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:55:00Z"
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:55:00Z"
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:55:00Z"
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:55:00Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://b508b191f5ec1684958fa334edd9d346fb23590edfb277b4a1749e0230c34073
+      image: busybox:1.28
+      imageID: docker-pullable://busybox@sha256:141c253bc4c3fd0a201d32dc1f493bcf3fff003b6df416dea4f41046e0f37d47
+      lastState: {}
+      name: hello
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: docker://b508b191f5ec1684958fa334edd9d346fb23590edfb277b4a1749e0230c34073
+          exitCode: 0
+          finishedAt: "2025-01-03T14:55:03Z"
+          reason: Completed
+          startedAt: "2025-01-03T14:55:03Z"
+    hostIP: 192.168.64.23
+    phase: Succeeded
+    podIP: 10.244.0.14
+    podIPs:
+    - ip: 10.244.0.14
+    qosClass: BestEffort
+    startTime: "2025-01-03T14:55:00Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-01-03T14:56:00Z"
+    generateName: hello-28931936-
+    labels:
+      controller-uid: 29cd05a0-d3b9-4812-b90c-776b155af11f
+      job-name: hello-28931936
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:controller-uid: {}
+            f:job-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"29cd05a0-d3b9-4812-b90c-776b155af11f"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"hello"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:56:00Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.15"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-01-03T14:56:04Z"
+    name: hello-28931936-q9r7c
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: hello-28931936
+      uid: 29cd05a0-d3b9-4812-b90c-776b155af11f
+    resourceVersion: "25704"
+    uid: 65e960b5-cd0f-44cc-97be-4e4f58044d23
+  spec:
+    containers:
+    - command:
+      - /bin/sh
+      - -c
+      - date; echo Hello from the Kubernetes cluster
+      image: busybox:1.28
+      imagePullPolicy: IfNotPresent
+      name: hello
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-lbphd
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-lbphd
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:56:00Z"
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:56:00Z"
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:56:00Z"
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:56:00Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://33ebea1a4e35d30ccaf25139ef91a668d18b6041286d42d51a08f70fc5e5057d
+      image: busybox:1.28
+      imageID: docker-pullable://busybox@sha256:141c253bc4c3fd0a201d32dc1f493bcf3fff003b6df416dea4f41046e0f37d47
+      lastState: {}
+      name: hello
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: docker://33ebea1a4e35d30ccaf25139ef91a668d18b6041286d42d51a08f70fc5e5057d
+          exitCode: 0
+          finishedAt: "2025-01-03T14:56:01Z"
+          reason: Completed
+          startedAt: "2025-01-03T14:56:01Z"
+    hostIP: 192.168.64.23
+    phase: Succeeded
+    podIP: 10.244.0.15
+    podIPs:
+    - ip: 10.244.0.15
+    qosClass: BestEffort
+    startTime: "2025-01-03T14:56:00Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-01-03T14:57:00Z"
+    generateName: hello-28931937-
+    labels:
+      controller-uid: 25875f3c-7634-4de6-982b-697cad760f7b
+      job-name: hello-28931937
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:controller-uid: {}
+            f:job-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"25875f3c-7634-4de6-982b-697cad760f7b"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"hello"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T14:57:00Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.244.0.16"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-01-03T14:57:04Z"
+    name: hello-28931937-fd5rs
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: hello-28931937
+      uid: 25875f3c-7634-4de6-982b-697cad760f7b
+    resourceVersion: "25781"
+    uid: 678a6023-8f69-4399-9bd9-3419c62d0a29
+  spec:
+    containers:
+    - command:
+      - /bin/sh
+      - -c
+      - date; echo Hello from the Kubernetes cluster
+      image: busybox:1.28
+      imagePullPolicy: IfNotPresent
+      name: hello
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-sdwkx
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: minikube
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-sdwkx
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:57:00Z"
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:57:00Z"
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:57:00Z"
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2025-01-03T14:57:00Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://8cfc190e055f069129f9253d09d49ffec873208476641d4bcf2b6c24b3c76f9d
+      image: busybox:1.28
+      imageID: docker-pullable://busybox@sha256:141c253bc4c3fd0a201d32dc1f493bcf3fff003b6df416dea4f41046e0f37d47
+      lastState: {}
+      name: hello
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: docker://8cfc190e055f069129f9253d09d49ffec873208476641d4bcf2b6c24b3c76f9d
+          exitCode: 0
+          finishedAt: "2025-01-03T14:57:01Z"
+          reason: Completed
+          startedAt: "2025-01-03T14:57:01Z"
+    hostIP: 192.168.64.23
+    phase: Succeeded
+    podIP: 10.244.0.16
+    podIPs:
+    - ip: 10.244.0.16
+    qosClass: BestEffort
+    startTime: "2025-01-03T14:57:00Z"
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p
+      a3ViZUNBMB4XDTIzMDIwNDA3NTMzNloXDTMzMDIwMjA3NTMzNlowFTETMBEGA1UE
+      AxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM3l
+      n8dtEkPntkBRSF7NBlwCbwI3BRxHL5LUSROCfr/tFyuJ8XiZa8yv/DbiCKDFWeBr
+      lJwWOJ3HjrjQc+nBIjbG3spMaOr9Kgut7UKyYEeIZxBSz5GBd7rlRuBwOkRqEXtS
+      /H/TxVzgrugfKbI+ALtzbtHTzKKLDGaYjAC5t2jQ/PtzQ3s4cB8Z/fk03n9woBC8
+      6makLFQXXPj65y09hb/slxIbi4hyRe4hdQYnxeY+PKmuEZIaed5gFrN/EDDtrtwn
+      bcPY3Pwc0/b1+S44TcB+eWMq28zPLeO/Kjziw8q+1wldKWIXJJSUAUU5dBOtlRol
+      yfr7t0ibsft1OTVCisECAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW
+      MBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW
+      BBS1Nak8XxDdSOq3r1qdAXNmQRttCzANBgkqhkiG9w0BAQsFAAOCAQEAxrabqVKs
+      u9hJTiUNhLEQTOVR7gMuonymonQ73488pQHKKIyAM8It+ClgP+YdZtRi+uxGgQ3m
+      kwbJbf1ybysY++tIKbUXfsal/wcrt2hbqk6HJxca/YaYL7qja6N/BElct07RQhLf
+      DpMtfqokyBh/yOlobBkrrA+RylGVi1ebWgFM7xtzmuPpeIYurNIcXGpp0d21RuRz
+      0Oxd9g/HHAzZihXbHfPeJJdiQBtPvQ83TZ+T2E0MCkLDUC1okRztR8R5YPG6nZli
+      zVRBh41095iSNFKJhFQyu5Qzme98wdBBQGoxcMOoXk6ioeDQUywHaJMjdCANqubf
+      I700WTtGVr503w==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2025-01-03T07:25:12Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:ca.crt: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubernetes.io/description: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T07:25:12Z"
+    name: kube-root-ca.crt
+    namespace: default
+    resourceVersion: "322"
+    uid: baa53ee4-b452-4dde-8881-c148f2d2cb37
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    creationTimestamp: "2025-01-03T07:25:11Z"
+    name: default
+    namespace: default
+    resourceVersion: "309"
+    uid: e4760ff0-5beb-467e-9596-96e164df7259
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/cri-dockerd.sock
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2025-01-03T07:24:56Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: minikube
+      kubernetes.io/os: linux
+      minikube.k8s.io/commit: ddac20b4b34a9c8c857fc602203b6ba2679794d3
+      minikube.k8s.io/name: minikube
+      minikube.k8s.io/primary: "true"
+      minikube.k8s.io/updated_at: 2025_01_03T08_25_00_0700
+      minikube.k8s.io/version: v1.29.0
+      node-role.kubernetes.io/control-plane: ""
+      node.kubernetes.io/exclude-from-external-load-balancers: ""
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/os: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-01-03T07:24:56Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubeadm.alpha.kubernetes.io/cri-socket: {}
+          f:labels:
+            f:node-role.kubernetes.io/control-plane: {}
+            f:node.kubernetes.io/exclude-from-external-load-balancers: {}
+      manager: kubeadm
+      operation: Update
+      time: "2025-01-03T07:25:00Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:minikube.k8s.io/commit: {}
+            f:minikube.k8s.io/name: {}
+            f:minikube.k8s.io/primary: {}
+            f:minikube.k8s.io/updated_at: {}
+            f:minikube.k8s.io/version: {}
+      manager: kubectl-label
+      operation: Update
+      time: "2025-01-03T07:25:01Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:node.alpha.kubernetes.io/ttl: {}
+        f:spec:
+          f:podCIDR: {}
+          f:podCIDRs:
+            .: {}
+            v:"10.244.0.0/24": {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-01-03T07:25:12Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"DiskPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"MemoryPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"PIDPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"Ready"}:
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+          f:images: {}
+          f:nodeInfo:
+            f:bootID: {}
+            f:machineID: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-01-03T14:55:24Z"
+    name: minikube
+    resourceVersion: "25650"
+    uid: a7d0bcf1-a18b-442d-a201-924f9e8623dd
+  spec:
+    podCIDR: 10.244.0.0/24
+    podCIDRs:
+    - 10.244.0.0/24
+  status:
+    addresses:
+    - address: 192.168.64.23
+      type: InternalIP
+    - address: minikube
+      type: Hostname
+    allocatable:
+      cpu: "2"
+      ephemeral-storage: 17784752Ki
+      hugepages-2Mi: "0"
+      memory: 3914660Ki
+      pods: "110"
+    capacity:
+      cpu: "2"
+      ephemeral-storage: 17784752Ki
+      hugepages-2Mi: "0"
+      memory: 3914660Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2025-01-03T14:55:24Z"
+      lastTransitionTime: "2025-01-03T07:24:54Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2025-01-03T14:55:24Z"
+      lastTransitionTime: "2025-01-03T07:24:54Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2025-01-03T14:55:24Z"
+      lastTransitionTime: "2025-01-03T07:24:54Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2025-01-03T14:55:24Z"
+      lastTransitionTime: "2025-01-03T10:59:04Z"
+      message: kubelet is posting ready status
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - registry.k8s.io/etcd@sha256:dd75ec974b0a2a6f6bb47001ba09207976e625db898d1b16735528c009cb171c
+      - registry.k8s.io/etcd:3.5.6-0
+      sizeBytes: 299475478
+    - names:
+      - registry.k8s.io/ingress-nginx/controller@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
+      sizeBytes: 269046403
+    - names:
+      - kubernetesui/dashboard@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
+      sizeBytes: 245710051
+    - names:
+      - registry.k8s.io/kube-apiserver@sha256:99e1ed9fbc8a8d36a70f148f25130c02e0e366875249906be0bcb2c2d9df0c26
+      - registry.k8s.io/kube-apiserver:v1.26.1
+      sizeBytes: 133837801
+    - names:
+      - registry.k8s.io/kube-controller-manager@sha256:40adecbe3a40aa147c7d6e9a1f5fbd99b3f6d42d5222483ed3a47337d4f9a10b
+      - registry.k8s.io/kube-controller-manager:v1.26.1
+      sizeBytes: 123655426
+    - names:
+      - registry.k8s.io/metrics-server/metrics-server@sha256:f977ad859fb500c1302d9c3428c6271db031bb7431e7076213b676b345a88dc2
+      sizeBytes: 68892890
+    - names:
+      - registry.k8s.io/kube-proxy@sha256:85f705e7d98158a67432c53885b0d470c673b0fad3693440b45d07efebcda1c3
+      - registry.k8s.io/kube-proxy:v1.26.1
+      sizeBytes: 65623686
+    - names:
+      - registry.k8s.io/kube-scheduler@sha256:af0292c2c4fa6d09ee8544445eef373c1c280113cb6c968398a37da3744c41e4
+      - registry.k8s.io/kube-scheduler:v1.26.1
+      sizeBytes: 56321282
+    - names:
+      - registry.k8s.io/coredns/coredns@sha256:8e352a029d304ca7431c6507b56800636c321cb52289686a581ab70aaa8a2e2a
+      - registry.k8s.io/coredns/coredns:v1.9.3
+      sizeBytes: 48803555
+    - names:
+      - registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
+      sizeBytes: 46183530
+    - names:
+      - kubernetesui/metrics-scraper@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
+      sizeBytes: 43815949
+    - names:
+      - gcr.io/k8s-minikube/storage-provisioner@sha256:18eb69d1418e854ad5a19e399310e52808a8321e4c441c1dddad8977a0d7a944
+      - gcr.io/k8s-minikube/storage-provisioner:v5
+      sizeBytes: 31465472
+    - names:
+      - busybox@sha256:141c253bc4c3fd0a201d32dc1f493bcf3fff003b6df416dea4f41046e0f37d47
+      - busybox:1.28
+      sizeBytes: 1146369
+    - names:
+      - registry.k8s.io/pause@sha256:7031c1b283388d2c2e09b57badb803c05ebed362dc88d84b480cc47f72a21097
+      - registry.k8s.io/pause:3.9
+      sizeBytes: 743952
+    - names:
+      - registry.k8s.io/pause@sha256:3d380ca8864549e74af4b29c10f9cb0956236dfb01c40ca076fb6c37253234db
+      - registry.k8s.io/pause:3.6
+      sizeBytes: 682696
+    nodeInfo:
+      architecture: amd64
+      bootID: cb7f3f19-93ae-4c23-8018-8719ae050ce8
+      containerRuntimeVersion: docker://20.10.23
+      kernelVersion: 5.10.57
+      kubeProxyVersion: v1.26.1
+      kubeletVersion: v1.26.1
+      machineID: 9802dfd8a5ce4751b2191e088c3d2235
+      operatingSystem: linux
+      osImage: Buildroot 2021.02.12
+      systemUUID: b9c211ef-0000-0000-a36f-60f81dcd9370
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

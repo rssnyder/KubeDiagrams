@@ -1,0 +1,75 @@
+# Inspired from https://k8s.io/examples/application/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 3 # tells deployment to run 3 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+    app: nginx
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 80
+---
+# Inspired from https://kubernetes.io/docs/concepts/services-networking/network-policies/
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: nginx-network-policy
+  labels:
+    app: nginx
+spec:
+  podSelector:
+    matchLabels:
+      app: nginx
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - {}
+  egress:
+  - {}

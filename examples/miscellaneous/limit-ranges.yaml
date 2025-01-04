@@ -1,0 +1,42 @@
+# Source: https://kubernetes.io/docs/concepts/policy/limit-range/
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: cpu-resource-constraint
+spec:
+  limits:
+  - default: # this section defines default limits
+      cpu: 500m
+    defaultRequest: # this section defines default requests
+      cpu: 500m
+    max: # max and min define the limit range
+      cpu: "1"
+    min:
+      cpu: 100m
+    type: Container
+---
+# Source: https://k8s.io/examples/admin/resource/memory-constraints.yaml
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: mem-min-max-demo-lr
+spec:
+  limits:
+  - max:
+      memory: 1Gi
+    min:
+      memory: 500Mi
+    type: Container
+---
+# Source: https://kubernetes.io/docs/tasks/administer-cluster/limit-storage-consumption/
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: storagelimits
+spec:
+  limits:
+  - type: PersistentVolumeClaim
+    max:
+      storage: 2Gi
+    min:
+      storage: 1Gi
