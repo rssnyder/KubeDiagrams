@@ -3,10 +3,23 @@ default_namespace: default
 edges:
   REFERENCE:
     color: black
+  REFERENCE-UP:
+    color: black
+    direction: up
   SELECTOR:
     color: black
     style: dashed
   SELECTOR-UP:
+    color: black
+    style: dashed
+    direction: up
+  SELECTOR-INGRESS:
+    xlabel: ingress
+    color: black
+    style: dashed
+    direction: up
+  SELECTOR-EGRESS:
+    xlabel: egress
     color: black
     style: dashed
     direction: up
@@ -22,14 +35,20 @@ edges:
   UNDEFINED:
     color: red
 clusters:
-  - label: app
-    title: Application
-  - label: service
-    title: Microservice
+  - label: release
+    title: Release
+  - label: helm.sh/chart
+    title: Helm Chart
+  - label: chart
+    title: Chart
   - label: app.kubernetes.io/name
     title: K8s Application
+  - label: app
+    title: Application
   - label: app.kubernetes.io/component
     title: K8s Component
+  - label: service
+    title: Microservice
   - label: tier
     title: Tier
 nodes:
@@ -152,6 +171,14 @@ nodes:
       edges.add_all_volume_resources("spec.template.spec.volumes")
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
+  LimitRange/v1:
+    scope: Namespaced
+    diagram_node_classname: diagrams.k8s.clusterconfig.LimitRange
+    # no edges
+  MutatingWebhookConfiguration/admissionregistration.k8s.io/v1:
+    scope: Cluster
+    custom_icon: $KD/icons/mwc.png
+    # TODO: edges
   Namespace/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.group.NS
@@ -166,10 +193,6 @@ nodes:
           edges.add_all_resources_matching_labels("StatefulSet", "spec.podSelector.matchLabels",
               resource_labels_path="spec.template.metadata.labels", edge_kind="SELECTOR-UP")
       edges.add_ingress_and_egress_rules()
-  LimitRange/v1:
-    scope: Namespaced
-    diagram_node_classname: diagrams.k8s.clusterconfig.LimitRange
-    # no edges
   Node/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.infra.Node
@@ -277,6 +300,10 @@ nodes:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.rbac.User
     # no edges
+  ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1:
+    scope: Cluster
+    custom_icon: $KD/icons/vwc.png
+    # TODO: edges
 
 #TODO: add other Kubernetes resource types.
 # PSP diagrams.k8s.others.PSP
