@@ -313,7 +313,7 @@ class EdgesContext(list):
                     subject["kind"],
                     subject.get("apiGroup", "rbac.authorization.k8s.io")
                 )
-            self.append([rid,"REFERENCE"])
+            self.append([rid,"REFERENCE"]) #TODO: REFERENCE-UP ?
 
     def add_service(self, path, data=None):
         if data is None:
@@ -345,6 +345,18 @@ class EdgesContext(list):
                 podSelector = query_path(ingress_from, "podSelector")
                 self.add_all_resources_matching_labels("Pod", "matchLabels", podSelector, edge_kind="SELECTOR-INGRESS")
         #TODO: support for other forms of rules
+
+    def add_webhooks(self):
+        for webhook in self.resource.get("webhooks", []):
+            service = query_path(webhook, "clientConfig.service")
+            if service != None:
+                self.append([
+                    "%s/%s/Service/v1" % (
+                        service["name"],
+                        service["namespace"]
+                    ),
+                    "REFERENCE"
+                ])
 
 # Parse arguments
 parser = argparse.ArgumentParser(

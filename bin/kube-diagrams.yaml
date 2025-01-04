@@ -178,7 +178,8 @@ nodes:
   MutatingWebhookConfiguration/admissionregistration.k8s.io/v1:
     scope: Cluster
     custom_icon: $KD/icons/mwc.png
-    # TODO: edges
+    edges: |
+      edges.add_webhooks()
   Namespace/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.group.NS
@@ -303,7 +304,8 @@ nodes:
   ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1:
     scope: Cluster
     custom_icon: $KD/icons/vwc.png
-    # TODO: edges
+    edges: |
+      edges.add_webhooks()
 
 #TODO: add other Kubernetes resource types.
 # PSP diagrams.k8s.others.PSP
