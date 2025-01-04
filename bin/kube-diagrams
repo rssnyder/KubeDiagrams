@@ -27,12 +27,19 @@ with open(DIRNAME + "/kube-diagrams.yaml") as f:
     config = yaml.safe_load(f) # load YAML config file
 
 # Get edge config.
-def get_edge_config(edge_name):
-    return config.get("edges", {}).get(edge_name, {})
+def get_edge_config(edge_kind):
+    edge_config = config.get("edges", {}).get(edge_kind)
+    if edge_config is None:
+        print("Warning: %s edge configuration not found!" % edge_kind)
+    return edge_config if edge_config else {}
 
 # Get config associated to a resource.
 def get_node_config(resource):
-    return config.get("nodes", {}).get(get_type(resource), {})
+    resource_type = get_type(resource)
+    node_config = config.get("nodes", {}).get(resource_type)
+    if node_config is None:
+        print("Warning: %s node configuration not found!" % resource_type)
+    return node_config if node_config else {}
 
 # Get resource type, i.e., "kind/apiVersion".
 def get_type(resource):
@@ -45,25 +52,6 @@ def get_namespace(resource):
 
 # Create diagrams node.
 def create_diagram_node(resource, fontcolor="black"):
-    diagram_node_class = ManagedServices # default diagram node class
-    node_config = get_node_config(resource)
-    if node_config != None: # config found
-        custom_icon = node_config.get("custom_icon")
-        if custom_icon != None: # custom_icon defined
-            return Custom(
-                resource["metadata"]["name"],
-                os.path.abspath(custom_icon.replace("$KD", DIRNAME)),
-                fontcolor=fontcolor
-            )
-        # Get diagram node class name
-        diagram_node_classname = node_config.get("diagram_node_classname")
-        if diagram_node_classname != None: # classname defined
-            # Import Diagrams node class module
-            idx = diagram_node_classname.rfind('.')
-            if idx != -1:
-                exec("import " + diagram_node_classname[:idx])
-            # Get diagram node class
-            diagram_node_class = eval(diagram_node_classname)
     # Format node label
     node_label = resource["metadata"]["name"]
     MAX_NODE_LABEL_LENGTH = 16
@@ -83,6 +71,26 @@ def create_diagram_node(resource, fontcolor="black"):
             if separator in node_label:
                 node_label = split_node_label(node_label, separator)
                 break
+    # Search diagram node class
+    diagram_node_class = ManagedServices # default diagram node class
+    node_config = get_node_config(resource)
+    if node_config != None: # node config found
+        custom_icon = node_config.get("custom_icon")
+        if custom_icon != None: # custom_icon defined
+            return Custom(
+                node_label,
+                os.path.abspath(custom_icon.replace("$KD", DIRNAME)),
+                fontcolor=fontcolor
+            )
+        # Get diagram node class name
+        diagram_node_classname = node_config.get("diagram_node_classname")
+        if diagram_node_classname != None: # classname defined
+            # Import Diagrams node class module
+            idx = diagram_node_classname.rfind('.')
+            if idx != -1:
+                exec("import " + diagram_node_classname[:idx])
+            # Get diagram node class
+            diagram_node_class = eval(diagram_node_classname)
     # Create a diagram node
     return diagram_node_class(node_label, fontcolor=fontcolor)
 
@@ -167,9 +175,14 @@ class EdgesContext(list):
                         "REFERENCE"
                     ])
                 elif "secret" in volume:
+                    secret = volume["secret"]
+                    secretName = secret.get("secretName")
+                    if secretName is None:
+                        # Warning: jenkins chart uses 'name' instead of 'secretName'!
+                        secretName = secret.get("name")
                     self.append([
                         "%s/%s/Secret/v1" % (
-                            volume["secret"]["secretName"],
+                            secretName,
                             self.namespace
                         ),
                         "REFERENCE"
@@ -325,6 +338,14 @@ class EdgesContext(list):
                         "OWNER"
                     ])
 
+    def add_ingress_and_egress_rules(self):
+        ingress_rules = query_path(self.resource, "spec.ingress", [])
+        for ingress_rule in ingress_rules:
+            for ingress_from in query_path(ingress_rule, "from", []):
+                podSelector = query_path(ingress_from, "podSelector")
+                self.add_all_resources_matching_labels("Pod", "matchLabels", podSelector, edge_kind="SELECTOR-INGRESS")
+        #TODO: support for other forms of rules
+
 # Parse arguments
 parser = argparse.ArgumentParser(
     prog="kube-diagrams",
@@ -459,9 +480,9 @@ with Diagram("", filename=args.output, show=False, direction="TB", outformat=arg
                     diagram_nodes[edge_rid] >> Edge(color="white", style="invisible") >> diagram_nodes[resource_id]
                 diagram_nodes[resource_id] >> Edge(**edge_config) >> diagram_nodes[edge_rid]
             except KeyError as ke:
-                print("Error: %s not found!" % ke)
+                print("Error: %s resource not found!" % ke)
                 tmp = str(edge_rid).split("/")
-                if tmp[2] in ["ServiceAccount", "Service", "ConfigMap"]: #TODO: avoid specific cases
+                if tmp[2] in ["ServiceAccount", "Service", "ConfigMap", "Secret"]: #TODO: avoid specific cases
                     rsrc = {
                         "apiVersion": tmp[3],
                         "kind": tmp[2],
