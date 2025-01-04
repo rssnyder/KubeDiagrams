@@ -19,6 +19,9 @@ Architecture diagram of a deployed **[Cassandra](https://kubernetes.io/docs/tuto
 Architecture diagram of the Minikube Ingress Addon:
 ![Minikube Ingress Addon](examples/minikube/minikube-ingress-nginx.png)
 
+Architecture diagram for **[Train Ticket：A Benchmark Microservice System](https://github.com/FudanSELab/train-ticket/)**:
+![train-ticket.png](examples/train-ticket/train-ticket.png)
+
 Architecture diagram for **[free5gc-k8s](https://github.com/niloysh/free5gc-k8s)** manifests:
 ![free5gc-k8s-diagram.png](examples/free5gc-k8s/free5gc-k8s-diagram.png)
 
@@ -28,16 +31,24 @@ Architecture diagram for **[open5gs-k8s](https://github.com/niloysh/open5gs-k8s)
 Architecture diagram for the **[towards5gs/free5gc](https://github.com/Orange-OpenSource/towards5gs-helm)** chart:
 ![towards5gs_free5gc.png](examples/towards5gs-helm/towards5gs_free5gc.png)
 
+Architecture diagram for a deployed **CronJob** instance:
+![cronjob-deployed.png](examples/miscellaneous/cronjob-deployed.png)
+
+Architecture diagram for **NetworkPolicy** resources: ![network_policies.png](examples/miscellaneous/network_policies.png)
+
+Many other architecture diagrams are available into [examples/](examples/).
+
 All the examples are
-* [official Kubernetes WordPress tutorial](examples/wordpress/)
-* [official Kubernetes ZooKeeper tutorial](examples/zookeeper/)
-* [official Kubernetes Cassandra tutorial](examples/cassandra/)
-* [minikube architecture diagrams](examples/minikube/)
-* [k0s architecture diagrams](examples/k0s/)
-* [Train Ticket](examples/train-ticket/)
-* [free5gc-k8s](examples/free5gc-k8s/)
-* [open5gs-k8s](examples/open5gs-k8s/)
-* [towards5gs-helm](examples/towards5gs-helm/)
+1. [official Kubernetes WordPress tutorial](examples/wordpress/)
+1. [official Kubernetes ZooKeeper tutorial](examples/zookeeper/)
+1. [official Kubernetes Cassandra tutorial](examples/cassandra/)
+1. [minikube architecture diagrams](examples/minikube/)
+1. [k0s architecture diagrams](examples/k0s/)
+1. [Train Ticket](examples/train-ticket/)
+1. [free5gc-k8s](examples/free5gc-k8s/)
+1. [open5gs-k8s](examples/open5gs-k8s/)
+1. [towards5gs-helm](examples/towards5gs-helm/)
+1. [miscellaneous](examples/miscellaneous/)
 
 ## Prerequisites
 
@@ -78,7 +89,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 32 ones:
+Supported `kind`/`apiVersion` resource types are 34 ones:
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
 * ConfigMap/v1
@@ -94,6 +105,7 @@ Supported `kind`/`apiVersion` resource types are 32 ones:
 * IngressClass/networking.k8s.io/v1
 * Job/batch/v1
 * LimitRange/v1
+* MutatingWebhookConfiguration/admissionregistration.k8s.io/v1
 * Namespace/v1
 * NetworkPolicy/networking.k8s.io/v1
 * Node/v1
@@ -111,19 +123,18 @@ Supported `kind`/`apiVersion` resource types are 32 ones:
 * StatefulSet/apps/v1
 * StorageClass/storage.k8s.io/v1
 * User/rbac.authorization.k8s.io/v1
+* ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1
 
-**Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L35).
+**Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L54).
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L9),  [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L9), and [examples/towards5gs-helm/KubeDiagrams.yml](examples/towards5gs-helm/KubeDiagrams.yml#L7).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 27 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 25 ones:
 * Binding/
 * ComponentStatus/
 * Event/
 * PodTemplate/
 * ReplicationController/
-* MutatingWebhookConfiguration/
-* ValidatingWebhookConfiguration/admissionregistration.k8s.io
 * APIService/apiregistration.k8s.io
 * ControllerRevision/apps
 * TokenReview/authentication.k8s.io
@@ -147,14 +158,17 @@ Currently, unsupported `kind`/`apiGroup` resource types are 27 ones:
 
 ## Kubernetes resources clustering
 
-With **KubeDiagrams**, Kubernetes resources can be clustered within the architecture diagrams automatically. **KubeDiagrams** uses the `metadata.namespace` resource field as first clustering criteria. Then, the `metadata.labels` keys can be used to define subclusters. Following table lists the predefined mappings between label keys and cluster titles as defined in the [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L24) file (see the `clusters` list).
+With **KubeDiagrams**, Kubernetes resources can be clustered within the architecture diagrams automatically. **KubeDiagrams** uses the `metadata.namespace` resource field as first clustering criteria. Then, the `metadata.labels` keys can be used to define subclusters. Following table lists the predefined mappings between label keys and cluster titles as defined in the [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L37) file (see the `clusters` list).
 
 | Label | Cluster Title |
 | :--------: | :-------: |
-| `app` | Application |
-| `service` | Microservice |
+| `release` | Release |
+| `helm.sh/chart` | Helm Chart |
+| `chart` | Chart |
 | `app.kubernetes.io/name` | K8s Application |
+| `app` | Application |
 | `app.kubernetes.io/component` | K8s Component |
+| `service` | Microservice |
 | `tier` | Tier |
 
 New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2), [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L2),  [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L2), and [examples/towards5gs-helm/KubeDiagrams.yml](examples/towards5gs-helm/KubeDiagrams.yml#L2)) and provided to **KubeDiagrams** via the `--config` command-line option.
@@ -165,6 +179,5 @@ This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) 
 
 ## Todo List
 
-* Add more examples
-* Add missed Kubernetes resource types
 * Make `nodes/*/edges` more declarative
+* Add other renderers such as PlantUML, D2, React Flow, etc.
