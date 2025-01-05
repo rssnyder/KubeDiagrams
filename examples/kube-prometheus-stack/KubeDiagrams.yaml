@@ -1,0 +1,65 @@
+# Configuration of kube-diagrams
+# no specific clusters
+nodes:
+  # Prometheus resources
+  Alertmanager/monitoring.coreos.com/v1:
+    scope: Namespaced
+    custom_icon: icons/Alertmanager.png
+    edges: |
+      edges.add_service_account("spec.serviceAccountName")
+      #TODO: spec.alertmanagerConfigSelector
+      #TODO: spec.alertmanagerConfigNamespaceSelector
+  Prometheus/monitoring.coreos.com/v1:
+    scope: Namespaced
+    custom_icon: icons/Prometheus.png
+    edges: |
+      edges.add_service_account("spec.serviceAccountName")
+      for alertManager in query_path(resource, "spec.alerting.alertmanagers", []):
+          edges.append([
+              "%s/%s/Alertmanager/monitoring.coreos.com/v1" % (
+                  alertManager["name"],
+                  alertManager["namespace"]
+              ),
+              "REFERENCE"
+          ])
+      edges.add_all_resources_matching_labels("ServiceMonitor", "spec.serviceMonitorSelector.matchLabels")
+      #TODO: spec.serviceMonitorNamespaceSelector
+      #TODO: spec.podMonitorSelector
+      #TODO: spec.podMonitorNamespaceSelector
+      #TODO: spec.probeSelector
+      #TODO: spec.probeNamespaceSelector
+      #TODO: spec.ruleNamespaceSelector
+      edges.add_all_resources_matching_labels("PrometheusRule", "spec.ruleSelector.matchLabels")
+      #TODO: spec.scrapeConfigSelector
+      #TODO: spec.scrapeConfigNamespaceSelector
+  PrometheusRule/monitoring.coreos.com/v1:
+    scope: Namespaced
+    custom_icon: icons/PrometheusRule.png
+    # no edges
+  ServiceMonitor/monitoring.coreos.com/v1:
+    scope: Namespaced
+    custom_icon: icons/ServiceMonitor.png
+    edges: |
+      edges.add_all_resources_matching_labels("Service", "spec.selector.matchLabels")
+      #TODO: spec.namespaceSelector
+  # Refine build-in configuration
+  Service/v1:
+    scope: Namespaced #TODO: remove later
+    diagram_node_classname: diagrams.k8s.network.SVC #TODO: remove later
+    edges: |
+      edges.add_edges_for_service({
+        "Prometheus": "metadata.labels",
+        "Alertmanager": "metadata.labels",
+      })
+  PodDisruptionBudget/policy/v1:
+    scope: Namespaced #TODO: remove later
+    custom_icon: $KD/icons/pdb.png #TODO: remove later
+    edges: |
+      edges.add_all_workload_resources(
+        "spec.selector.matchLabels",
+        {
+          "Prometheus": "metadata.labels",
+          "Alertmanager": "metadata.labels",
+        }
+      )
+  #TODO: NetworkPolicy/networking.k8s.io/v1
