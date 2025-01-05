@@ -16,11 +16,14 @@ Architecture diagram for **[official Kubernetes ZooKeeper tutorial](https://kube
 Architecture diagram of a deployed **[Cassandra](https://kubernetes.io/docs/tutorials/stateful-application/cassandra/)** instance:
 ![Deployed Cassandra Instance](examples/cassandra/default.png)
 
+Architecture diagram for **[Train Ticket：A Benchmark Microservice System](https://github.com/FudanSELab/train-ticket/)**:
+![train-ticket.png](examples/train-ticket/train-ticket.png)
+
 Architecture diagram of the Minikube Ingress Addon:
 ![Minikube Ingress Addon](examples/minikube/minikube-ingress-nginx.png)
 
-Architecture diagram for **[Train Ticket：A Benchmark Microservice System](https://github.com/FudanSELab/train-ticket/)**:
-![train-ticket.png](examples/train-ticket/train-ticket.png)
+Architecture diagram for the **[Kube Prometheus Stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)** chart:
+![kube-prometheus-stack.png](examples/kube-prometheus-stack/kube-prometheus-stack.png)
 
 Architecture diagram for **[free5gc-k8s](https://github.com/niloysh/free5gc-k8s)** manifests:
 ![free5gc-k8s-diagram.png](examples/free5gc-k8s/free5gc-k8s-diagram.png)
@@ -28,7 +31,7 @@ Architecture diagram for **[free5gc-k8s](https://github.com/niloysh/free5gc-k8s)
 Architecture diagram for **[open5gs-k8s](https://github.com/niloysh/open5gs-k8s)** manifests:
 ![open5gs-k8s-diagram.png](examples/open5gs-k8s/open5gs-k8s-diagram.png)
 
-Architecture diagram for the **[towards5gs/free5gc](https://github.com/Orange-OpenSource/towards5gs-helm)** chart:
+Architecture diagram for the **[Towards5GS-helm](https://github.com/Orange-OpenSource/towards5gs-helm)** chart:
 ![towards5gs_free5gc.png](examples/towards5gs-helm/towards5gs_free5gc.png)
 
 Architecture diagram for a deployed **CronJob** instance:
@@ -42,13 +45,14 @@ All the examples are
 1. [official Kubernetes WordPress tutorial](examples/wordpress/)
 1. [official Kubernetes ZooKeeper tutorial](examples/zookeeper/)
 1. [official Kubernetes Cassandra tutorial](examples/cassandra/)
+1. [Train Ticket](examples/train-ticket/)
 1. [minikube architecture diagrams](examples/minikube/)
 1. [k0s architecture diagrams](examples/k0s/)
-1. [Train Ticket](examples/train-ticket/)
+1. [Kube Prometheus Stack](examples/kube-prometheus-stack/)
 1. [free5gc-k8s](examples/free5gc-k8s/)
 1. [open5gs-k8s](examples/open5gs-k8s/)
-1. [towards5gs-helm](examples/towards5gs-helm/)
-1. [miscellaneous](examples/miscellaneous/)
+1. [Towards5GS-helm](examples/towards5gs-helm/)
+1. [Miscellaneous examples](examples/miscellaneous/)
 
 ## Prerequisites
 
@@ -67,7 +71,7 @@ All the examples are
 
 ```sh
 $ kube-diagrams -h
-usage: kube-diagrams [-h] [-o OUTPUT] [-f FORMAT] [-c CONFIG] [-v] filename [filename ...]
+usage: kube-diagrams [-h] [-o OUTPUT] [-f FORMAT] [-c CONFIG] [-v] [--without-namespace] filename [filename ...]
 
 Generate Kubernetes architecture diagrams from Kubernetes manifest files
 
@@ -83,6 +87,7 @@ options:
   -c CONFIG, --config CONFIG
                         custom kube-diagrams configuration file
   -v, --verbose         verbosity, set to false by default
+  --without-namespace   disable namespace cluster generation
 ```
 
 ## Features
@@ -127,7 +132,7 @@ Supported `kind`/`apiVersion` resource types are 34 ones:
 
 **Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L54).
 
-**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L9),  [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L9), and [examples/towards5gs-helm/KubeDiagrams.yml](examples/towards5gs-helm/KubeDiagrams.yml#L7).
+**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L7),  [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L7), and [examples/towards5gs-helm/KubeDiagrams.yml](examples/towards5gs-helm/KubeDiagrams.yml#L7).
 
 Currently, unsupported `kind`/`apiGroup` resource types are 25 ones:
 * Binding/
