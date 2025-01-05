@@ -374,6 +374,9 @@ parser.add_argument("-c", "--config", type=str,
 parser.add_argument("-v", "--verbose",
     help="verbosity, set to false by default",
     action="store_true", default=False)
+parser.add_argument("--without-namespace",
+    help="disable namespace cluster generation",
+    action="store_true", default=False)
 args = parser.parse_args()
 
 # Process arguments.
@@ -400,18 +403,18 @@ for filename in args.filename:
     print("Load %s..." % filename)
     with open(filename) as f:
         def process_resource(resource):
+            cluster = resource_cluster
             name = resource["metadata"]["name"]
             if get_node_config(resource).get("scope") == "Cluster":
                 rid = name + "/" + get_type(resource)
                 resources[rid] = resource
-                if resource["kind"] == "Namespace":
+                if not(args.without_namespace) and resource["kind"] == "Namespace":
                     cluster = resource_cluster.get_or_create_cluster("Namespace: %s" % name)
-                else:
-                    cluster = resource_cluster
             else: # scope = Namespaced
                 rid = name + "/" + get_namespace(resource) + "/" + get_type(resource)
                 resources[rid] = resource
-                cluster = resource_cluster.get_or_create_cluster("Namespace: %s" % get_namespace(resource))
+                if not args.without_namespace:
+                    cluster = resource_cluster.get_or_create_cluster("Namespace: %s" % get_namespace(resource))
 
             def process_clusters(cluster, resource, clusters):
                 for cluster_config in clusters:
