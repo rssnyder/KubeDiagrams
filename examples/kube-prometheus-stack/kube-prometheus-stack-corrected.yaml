@@ -6,8 +6,9 @@
 # as this latter is officially recommanded by the Helm communauty.
 # There are 105 occurrences of label "chart".
 # See following '#UPDATED' comments.
-# Resources of grafana-8.8.2 chart have not the label release: "kube-prometheus-stack".
-# There are 15 occurrences of missing release label.
+# The metadata label 'release' is useless as Helm recommends to use "kubernetes.io/instance".
+# There are 132 occurrences of label "release".
+# See following '#TBR:' and '#ADDED' comments.
 ---
 # Source: kube-prometheus-stack/charts/grafana/templates/serviceaccount.yaml
 apiVersion: v1
@@ -15,7 +16,6 @@ kind: ServiceAccount
 automountServiceAccountToken: true
 metadata:
   labels:
-    release: "kube-prometheus-stack" #ADDED
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -36,7 +36,7 @@ metadata:
     app.kubernetes.io/name: kube-state-metrics
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "2.14.0"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
   name: kube-prometheus-stack-kube-state-metrics
   namespace: default
 ---
@@ -54,7 +54,7 @@ metadata:
     app.kubernetes.io/name: prometheus-node-exporter
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "1.8.2"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
 automountServiceAccountToken: false
 ---
 # Source: kube-prometheus-stack/templates/alertmanager/serviceaccount.yaml
@@ -73,7 +73,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 automountServiceAccountToken: true
 ---
@@ -84,13 +84,12 @@ metadata:
   name: kube-prometheus-stack-operator
   namespace: default
   labels:
-    
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 #TBR:    app: kube-prometheus-stack-operator
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -113,7 +112,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 automountServiceAccountToken: true
 ---
@@ -124,7 +123,6 @@ metadata:
   name: kube-prometheus-stack-grafana
   namespace: default
   labels:
-    release: "kube-prometheus-stack" #ADDED
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -151,7 +149,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   alertmanager.yaml: "Z2xvYmFsOgogIHJlc29sdmVfdGltZW91dDogNW0KaW5oaWJpdF9ydWxlczoKLSBlcXVhbDoKICAtIG5hbWVzcGFjZQogIC0gYWxlcnRuYW1lCiAgc291cmNlX21hdGNoZXJzOgogIC0gc2V2ZXJpdHkgPSBjcml0aWNhbAogIHRhcmdldF9tYXRjaGVyczoKICAtIHNldmVyaXR5ID1+IHdhcm5pbmd8aW5mbwotIGVxdWFsOgogIC0gbmFtZXNwYWNlCiAgLSBhbGVydG5hbWUKICBzb3VyY2VfbWF0Y2hlcnM6CiAgLSBzZXZlcml0eSA9IHdhcm5pbmcKICB0YXJnZXRfbWF0Y2hlcnM6CiAgLSBzZXZlcml0eSA9IGluZm8KLSBlcXVhbDoKICAtIG5hbWVzcGFjZQogIHNvdXJjZV9tYXRjaGVyczoKICAtIGFsZXJ0bmFtZSA9IEluZm9JbmhpYml0b3IKICB0YXJnZXRfbWF0Y2hlcnM6CiAgLSBzZXZlcml0eSA9IGluZm8KLSB0YXJnZXRfbWF0Y2hlcnM6CiAgLSBhbGVydG5hbWUgPSBJbmZvSW5oaWJpdG9yCnJlY2VpdmVyczoKLSBuYW1lOiAibnVsbCIKcm91dGU6CiAgZ3JvdXBfYnk6CiAgLSBuYW1lc3BhY2UKICBncm91cF9pbnRlcnZhbDogNW0KICBncm91cF93YWl0OiAzMHMKICByZWNlaXZlcjogIm51bGwiCiAgcmVwZWF0X2ludGVydmFsOiAxMmgKICByb3V0ZXM6CiAgLSBtYXRjaGVyczoKICAgIC0gYWxlcnRuYW1lID0gIldhdGNoZG9nIgogICAgcmVjZWl2ZXI6ICJudWxsIgp0ZW1wbGF0ZXM6Ci0gL2V0Yy9hbGVydG1hbmFnZXIvY29uZmlnLyoudG1wbA=="
@@ -161,7 +159,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   labels:
-    release: "kube-prometheus-stack" #ADDED
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -191,7 +188,6 @@ metadata:
   name: kube-prometheus-stack-grafana
   namespace: default
   labels:
-    release: "kube-prometheus-stack" #ADDED
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -229,7 +225,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   datasource.yaml: |-
@@ -271,7 +267,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   alertmanager-overview.json: |-
@@ -295,7 +291,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   apiserver.json: |-
@@ -319,7 +315,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   cluster-total.json: |-
@@ -343,7 +339,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   controller-manager.json: |-
@@ -367,7 +363,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   etcd.json: |-
@@ -391,7 +387,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   grafana-overview.json: |-
@@ -415,7 +411,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   k8s-coredns.json: |-
@@ -439,7 +435,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   k8s-resources-cluster.json: |-
@@ -463,7 +459,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   k8s-resources-multicluster.json: |-
@@ -487,7 +483,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   k8s-resources-namespace.json: |-
@@ -511,7 +507,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   k8s-resources-node.json: |-
@@ -535,7 +531,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   k8s-resources-pod.json: |-
@@ -559,7 +555,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   k8s-resources-workload.json: |-
@@ -583,7 +579,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   k8s-resources-workloads-namespace.json: |-
@@ -607,7 +603,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   kubelet.json: |-
@@ -631,7 +627,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   namespace-by-pod.json: |-
@@ -655,7 +651,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   namespace-by-workload.json: |-
@@ -679,7 +675,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   node-cluster-rsrc-use.json: |-
@@ -1291,7 +1287,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   node-rsrc-use.json: |-
@@ -1315,7 +1311,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   nodes-aix.json: |-
@@ -1339,7 +1335,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   nodes-darwin.json: |-
@@ -1363,7 +1359,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   nodes.json: |-
@@ -1387,7 +1383,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   persistentvolumesusage.json: |-
@@ -1411,7 +1407,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   pod-total.json: |-
@@ -1435,7 +1431,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   prometheus.json: |-
@@ -1459,7 +1455,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   proxy.json: |-
@@ -1483,7 +1479,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   scheduler.json: |-
@@ -1507,7 +1503,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   workload-total.json: |-
@@ -1518,7 +1514,7 @@ kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -1541,7 +1537,7 @@ metadata:
     app.kubernetes.io/name: kube-state-metrics
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "2.14.0"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
   name: kube-prometheus-stack-kube-state-metrics
 rules:
 
@@ -1697,7 +1693,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 #TBR:    app: kube-prometheus-stack-operator
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -1808,7 +1804,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 rules:
 # This permission are not in the kube-prometheus repo
@@ -1839,7 +1835,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: kube-prometheus-stack-grafana-clusterrolebinding
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -1865,7 +1861,7 @@ metadata:
     app.kubernetes.io/name: kube-state-metrics
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "2.14.0"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
   name: kube-prometheus-stack-kube-state-metrics
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -1888,7 +1884,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 #TBR:    app: kube-prometheus-stack-operator
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -1916,7 +1912,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -1934,7 +1930,7 @@ metadata:
   name: kube-prometheus-stack-grafana
   namespace: default
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -1948,7 +1944,7 @@ metadata:
   name: kube-prometheus-stack-grafana
   namespace: default
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -1969,7 +1965,7 @@ metadata:
   name: kube-prometheus-stack-grafana
   namespace: default
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -1999,7 +1995,7 @@ metadata:
     app.kubernetes.io/name: kube-state-metrics
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "2.14.0"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
   annotations:
     prometheus.io/scrape: 'true'
 spec:
@@ -2028,7 +2024,7 @@ metadata:
     app.kubernetes.io/name: prometheus-node-exporter
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "1.8.2"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
     jobLabel: node-exporter
   annotations:
     prometheus.io/scrape: "true"
@@ -2059,7 +2055,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   ports:
@@ -2092,7 +2088,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
 spec:
@@ -2120,7 +2116,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
 spec:
@@ -2149,7 +2145,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
 spec:
@@ -2178,7 +2174,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
 spec:
@@ -2207,7 +2203,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
 spec:
@@ -2234,7 +2230,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 #TBR:    app: kube-prometheus-stack-operator
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -2247,7 +2243,7 @@ spec:
   selector:
 #TBR:    app: kube-prometheus-stack-operator
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator #ADDED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
   type: "ClusterIP"
 ---
 # Source: kube-prometheus-stack/templates/prometheus/service.yaml
@@ -2266,7 +2262,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   ports:
@@ -2298,7 +2294,7 @@ metadata:
     app.kubernetes.io/name: prometheus-node-exporter
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "1.8.2"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
 spec:
   selector:
     matchLabels:
@@ -2321,7 +2317,7 @@ spec:
         app.kubernetes.io/name: prometheus-node-exporter
         app.kubernetes.io/instance: kube-prometheus-stack
         app.kubernetes.io/version: "1.8.2"
-        release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
         jobLabel: node-exporter
     spec:
       automountServiceAccountToken: false
@@ -2424,7 +2420,7 @@ metadata:
   name: kube-prometheus-stack-grafana
   namespace: default
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -2441,7 +2437,7 @@ spec:
   template:
     metadata:
       labels:
-        release: "kube-prometheus-stack" #ADDED
+
         helm.sh/chart: grafana-8.8.2
         app.kubernetes.io/name: grafana
         app.kubernetes.io/instance: kube-prometheus-stack
@@ -2640,7 +2636,7 @@ metadata:
     app.kubernetes.io/name: kube-state-metrics
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "2.14.0"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
 spec:
   selector:
     matchLabels:      
@@ -2660,7 +2656,7 @@ spec:
         app.kubernetes.io/name: kube-state-metrics
         app.kubernetes.io/instance: kube-prometheus-stack
         app.kubernetes.io/version: "2.14.0"
-        release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
     spec:
       automountServiceAccountToken: true
       hostNetwork: false
@@ -2726,7 +2722,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 #TBR:    app: kube-prometheus-stack-operator
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -2738,7 +2734,7 @@ spec:
     matchLabels:
 #TBR:      app: kube-prometheus-stack-operator
       app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator #ADDED
-      release: "kube-prometheus-stack"
+  #TBR:    release: "kube-prometheus-stack"
   template:
     metadata:
       labels:
@@ -2748,7 +2744,7 @@ spec:
         app.kubernetes.io/version: "67.7.0"
         app.kubernetes.io/part-of: kube-prometheus-stack
         helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-        release: "kube-prometheus-stack"
+    #TBR:    release: "kube-prometheus-stack"
         heritage: "Helm"
 #TBR:        app: kube-prometheus-stack-operator
         app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -2843,7 +2839,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   image: "quay.io/prometheus/alertmanager:v0.27.0"
@@ -2894,7 +2890,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
     app.kubernetes.io/component: prometheus-operator-webhook
@@ -2935,7 +2931,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   automountServiceAccountToken: true
@@ -2964,17 +2960,20 @@ spec:
   serviceAccountName: kube-prometheus-stack-prometheus
   serviceMonitorSelector:
     matchLabels:
-      release: "kube-prometheus-stack"
+#TBR:     release: "kube-prometheus-stack"
+      app.kubernetes.io/instance: kube-prometheus-stack #ADDED
 
   serviceMonitorNamespaceSelector: {}
   podMonitorSelector:
     matchLabels:
-      release: "kube-prometheus-stack"
+#TBR:     release: "kube-prometheus-stack"
+      app.kubernetes.io/instance: kube-prometheus-stack #ADDED
 
   podMonitorNamespaceSelector: {}
   probeSelector:
     matchLabels:
-      release: "kube-prometheus-stack"
+#TBR:     release: "kube-prometheus-stack"
+      app.kubernetes.io/instance: kube-prometheus-stack #ADDED
 
   probeNamespaceSelector: {}
   securityContext:
@@ -2987,11 +2986,13 @@ spec:
   ruleNamespaceSelector: {}
   ruleSelector:
     matchLabels:
-      release: "kube-prometheus-stack"
+#TBR:   release: "kube-prometheus-stack"
+      app.kubernetes.io/instance: kube-prometheus-stack #ADDED
 
   scrapeConfigSelector:
     matchLabels:
-      release: "kube-prometheus-stack"
+#TBR:     release: "kube-prometheus-stack"
+      app.kubernetes.io/instance: kube-prometheus-stack #ADDED
 
   scrapeConfigNamespaceSelector: {}
   affinity:
@@ -3022,7 +3023,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3166,7 +3167,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3199,7 +3200,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3368,7 +3369,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3437,7 +3438,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3466,7 +3467,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3494,7 +3495,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3522,7 +3523,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3550,7 +3551,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3578,7 +3579,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3668,7 +3669,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3737,7 +3738,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -3868,7 +3869,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4191,7 +4192,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4223,7 +4224,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4301,7 +4302,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4327,7 +4328,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4361,7 +4362,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4419,7 +4420,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4489,7 +4490,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4523,7 +4524,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4783,7 +4784,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -4907,7 +4908,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5022,7 +5023,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5104,7 +5105,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5135,7 +5136,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5166,7 +5167,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5308,7 +5309,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5339,7 +5340,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5383,7 +5384,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5467,7 +5468,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5797,7 +5798,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5828,7 +5829,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5886,7 +5887,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -5980,7 +5981,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   groups:
@@ -6263,7 +6264,7 @@ metadata:
   name: kube-prometheus-stack-grafana
   namespace: default
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -6298,7 +6299,7 @@ metadata:
     app.kubernetes.io/name: kube-state-metrics
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "2.14.0"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
 spec:
   jobLabel: app.kubernetes.io/name  
   selector:
@@ -6323,7 +6324,7 @@ metadata:
     app.kubernetes.io/name: prometheus-node-exporter
     app.kubernetes.io/instance: kube-prometheus-stack
     app.kubernetes.io/version: "1.8.2"
-    release: kube-prometheus-stack
+#TBR:    release: kube-prometheus-stack
 spec:
   jobLabel: jobLabel
   
@@ -6352,7 +6353,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   
@@ -6360,7 +6361,7 @@ spec:
     matchLabels:
 #TBR:      app: kube-prometheus-stack-alertmanager
       app.kubernetes.io/name: kube-prometheus-stack-alertmanager #ADDED
-      release: "kube-prometheus-stack"
+  #TBR:    release: "kube-prometheus-stack"
       self-monitor: "true"
   namespaceSelector:
     matchNames:
@@ -6387,7 +6388,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   jobLabel: jobLabel
@@ -6396,7 +6397,7 @@ spec:
     matchLabels:
 #TBR:    app: kube-prometheus-stack-coredns
       app.kubernetes.io/name: kube-prometheus-stack-coredns #ADDED
-      release: "kube-prometheus-stack"
+  #TBR:    release: "kube-prometheus-stack"
   namespaceSelector:
     matchNames:
       - "kube-system"
@@ -6419,7 +6420,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   
@@ -6461,7 +6462,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   jobLabel: jobLabel
@@ -6470,7 +6471,7 @@ spec:
     matchLabels:
 #TBR:     app: kube-prometheus-stack-kube-controller-manager
       app.kubernetes.io/name: kube-prometheus-stack-kube-controller-manager #ADDED
-      release: "kube-prometheus-stack"
+  #TBR:    release: "kube-prometheus-stack"
   namespaceSelector:
     matchNames:
       - "kube-system"
@@ -6497,7 +6498,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   jobLabel: jobLabel
@@ -6506,7 +6507,7 @@ spec:
     matchLabels:
 #TBR:      app: kube-prometheus-stack-kube-etcd
       app.kubernetes.io/name: kube-prometheus-stack-kube-etcd #ADDED
-      release: "kube-prometheus-stack"
+  #TBR:    release: "kube-prometheus-stack"
   namespaceSelector:
     matchNames:
       - "kube-system"
@@ -6529,7 +6530,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   jobLabel: jobLabel
@@ -6538,7 +6539,7 @@ spec:
     matchLabels:
 #TBR:      app: kube-prometheus-stack-kube-proxy
       app.kubernetes.io/name: kube-prometheus-stack-kube-proxy #ADDED
-      release: "kube-prometheus-stack"
+  #TBR:    release: "kube-prometheus-stack"
   namespaceSelector:
     matchNames:
       - "kube-system"
@@ -6561,7 +6562,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   jobLabel: jobLabel
@@ -6570,7 +6571,7 @@ spec:
     matchLabels:
 #TBR:      app: kube-prometheus-stack-kube-scheduler
       app.kubernetes.io/name: kube-prometheus-stack-kube-scheduler #ADDED
-      release: "kube-prometheus-stack"
+  #TBR:    release: "kube-prometheus-stack"
   namespaceSelector:
     matchNames:
       - "kube-system"
@@ -6596,7 +6597,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   
@@ -6694,7 +6695,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 #TBR:    app: kube-prometheus-stack-operator
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -6716,7 +6717,7 @@ spec:
     matchLabels:
 #TBR:      app: kube-prometheus-stack-operator
       app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
-      release: "kube-prometheus-stack"
+  #TBR:    release: "kube-prometheus-stack"
   namespaceSelector:
     matchNames:
       - "default"
@@ -6736,7 +6737,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
   
@@ -6744,7 +6745,7 @@ spec:
     matchLabels:
 #TBR:      app: kube-prometheus-stack-prometheus
       app.kubernetes.io/name: kube-prometheus-stack-prometheus-prometheus
-      release: "kube-prometheus-stack"
+  #TBR:    release: "kube-prometheus-stack"
       self-monitor: "true"
   namespaceSelector:
     matchNames:
@@ -6770,7 +6771,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
     app.kubernetes.io/component: prometheus-operator-webhook
@@ -6801,7 +6802,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -6829,7 +6830,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
     app.kubernetes.io/component: prometheus-operator-webhook
@@ -6845,7 +6846,7 @@ metadata:
     "helm.sh/hook": test
     "helm.sh/hook-delete-policy": "before-hook-creation,hook-succeeded"
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -6875,7 +6876,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
     app.kubernetes.io/component: prometheus-operator-webhook
@@ -6905,7 +6906,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
     app.kubernetes.io/component: prometheus-operator-webhook
@@ -6935,7 +6936,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
     app.kubernetes.io/component: prometheus-operator-webhook
@@ -6965,7 +6966,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
     app.kubernetes.io/component: prometheus-operator-webhook
@@ -6984,7 +6985,7 @@ kind: Pod
 metadata:
   name: kube-prometheus-stack-grafana-test
   labels:
-    release: "kube-prometheus-stack" #ADDED
+
     helm.sh/chart: grafana-8.8.2
     app.kubernetes.io/name: grafana
     app.kubernetes.io/instance: kube-prometheus-stack
@@ -7027,7 +7028,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
     app.kubernetes.io/component: prometheus-operator-webhook
@@ -7044,7 +7045,7 @@ spec:
         app.kubernetes.io/version: "67.7.0"
         app.kubernetes.io/part-of: kube-prometheus-stack
         helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-        release: "kube-prometheus-stack"
+    #TBR:    release: "kube-prometheus-stack"
         heritage: "Helm"
         app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
         app.kubernetes.io/component: prometheus-operator-webhook
@@ -7093,7 +7094,7 @@ metadata:
     app.kubernetes.io/version: "67.7.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
     helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-    release: "kube-prometheus-stack"
+#TBR:    release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
     app.kubernetes.io/component: prometheus-operator-webhook
@@ -7110,7 +7111,7 @@ spec:
         app.kubernetes.io/version: "67.7.0"
         app.kubernetes.io/part-of: kube-prometheus-stack
         helm.sh/chart: kube-prometheus-stack-67.7.0 #UPDATED
-        release: "kube-prometheus-stack"
+    #TBR:    release: "kube-prometheus-stack"
         heritage: "Helm"
         app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
         app.kubernetes.io/component: prometheus-operator-webhook
