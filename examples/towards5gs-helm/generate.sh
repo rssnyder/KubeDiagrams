@@ -8,6 +8,9 @@ helm repo update
 helm template towards5gs towards5gs/free5gc > towards5gs_free5gc.yaml
 helm template towards5gs towards5gs/ueransim > towards5gs_ueransim.yaml
 
+# Remove the Helm local repository
+helm repo remove towards5gs
+
 # Generate the towards5gs-helm architecture diagrams.
 kube-diagrams -c KubeDiagrams.yml towards5gs_free5gc.yaml
 kube-diagrams -c KubeDiagrams.yml towards5gs_ueransim.yaml
