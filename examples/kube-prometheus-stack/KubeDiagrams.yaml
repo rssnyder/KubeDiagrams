@@ -42,24 +42,3 @@ nodes:
     edges: |
       edges.add_all_resources_matching_labels("Service", "spec.selector.matchLabels")
       #TODO: spec.namespaceSelector
-  # Refine build-in configuration
-  Service/v1:
-    scope: Namespaced #TODO: remove later
-    diagram_node_classname: diagrams.k8s.network.SVC #TODO: remove later
-    edges: |
-      edges.add_edges_for_service({
-        "Prometheus": "metadata.labels",
-        "Alertmanager": "metadata.labels",
-      })
-  PodDisruptionBudget/policy/v1:
-    scope: Namespaced #TODO: remove later
-    custom_icon: $KD/icons/pdb.png #TODO: remove later
-    edges: |
-      edges.add_all_workload_resources(
-        "spec.selector.matchLabels",
-        {
-          "Prometheus": "metadata.labels",
-          "Alertmanager": "metadata.labels",
-        }
-      )
-  #TODO: NetworkPolicy/networking.k8s.io/v1
