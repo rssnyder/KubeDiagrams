@@ -35,22 +35,33 @@ edges:
   UNDEFINED:
     color: red
 clusters:
+  - label: app.kubernetes.io/instance
+    title: K8s Instance
+    recommended: true
   - label: release
     title: Release
+    recommended: false
   - label: helm.sh/chart
     title: Helm Chart
+    recommended: true
   - label: chart
     title: Chart
+    recommended: false
   - label: app.kubernetes.io/name
     title: K8s Application
+    recommended: true
   - label: app
     title: Application
+    recommended: false
   - label: app.kubernetes.io/component
     title: K8s Component
+    recommended: true
   - label: service
     title: Microservice
+    recommended: false
   - label: tier
     title: Tier
+    recommended: false
 nodes:
   ClusterRole/rbac.authorization.k8s.io/v1:
     scope: Cluster
