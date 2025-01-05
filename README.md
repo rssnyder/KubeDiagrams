@@ -53,6 +53,7 @@ All the examples are
 1. [open5gs-k8s](examples/open5gs-k8s/)
 1. [Towards5GS-helm](examples/towards5gs-helm/)
 1. [Miscellaneous examples](examples/miscellaneous/)
+1. [Some Helm charts](examples/helm-charts/)
 
 ## Prerequisites
 
