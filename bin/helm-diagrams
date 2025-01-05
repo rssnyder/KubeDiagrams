@@ -1,0 +1,19 @@
+#! /bin/sh
+
+# $1: Helm Chart URL
+repository=$(dirname $1)
+chart=$(basename $1)
+
+rid=helm-diagrams-repo
+
+# Add a repository.
+helm repo add $rid $repository --force-update
+
+# Process the chart.
+helm template $chart $rid/$chart > $chart.yaml
+
+# Generate the chart architecture diagram.
+kube-diagrams -c KubeDiagrams.yaml --without-namespace $chart.yaml
+
+# Remove the repository.
+helm repo remove $rid
