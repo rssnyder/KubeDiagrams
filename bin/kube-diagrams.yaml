@@ -188,11 +188,10 @@ nodes:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.network.NetworkPolicy
     edges: |
-      if not edges.add_all_resources_matching_labels("Pod", "spec.podSelector.matchLabels", edge_kind="SELECTOR-UP"):
-        if not edges.add_all_resources_matching_labels("Deployment", "spec.podSelector.matchLabels",
-            resource_labels_path="spec.template.metadata.labels", edge_kind="SELECTOR-UP"):
-          edges.add_all_resources_matching_labels("StatefulSet", "spec.podSelector.matchLabels",
-              resource_labels_path="spec.template.metadata.labels", edge_kind="SELECTOR-UP")
+      edges.add_all_workload_resources(
+        "spec.podSelector.matchLabels",
+        edge_kind="SELECTOR-UP"
+      )
       edges.add_ingress_and_egress_rules()
   Node/v1:
     scope: Cluster
@@ -226,11 +225,7 @@ nodes:
     scope: Namespaced
     custom_icon: $KD/icons/pdb.png
     edges: |
-      if not edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels"):
-        if not edges.add_all_resources_matching_labels("Deployment", "spec.selector.matchLabels",
-          resource_labels_path="spec.template.metadata.labels"):
-            edges.add_all_resources_matching_labels("StatefulSet", "spec.selector.matchLabels",
-              resource_labels_path="spec.template.metadata.labels")
+      edges.add_all_workload_resources("spec.selector.matchLabels")
   ReplicaSet/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.RS
@@ -262,22 +257,7 @@ nodes:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.network.SVC
     edges: |
-      if not edges.add_all_resources_matching_labels("Pod", "spec.selector"):
-        if not edges.add_all_resources_matching_labels("Deployment", "spec.selector",
-            resource_labels_path="spec.template.metadata.labels"):
-          edges.add_all_resources_matching_labels("StatefulSet", "spec.selector",
-              resource_labels_path="spec.template.metadata.labels")
-      edges.add_all_resources_matching_labels("EndpointSlice",
-        { "kubernetes.io/service-name": query_path(resource, "metadata.name") }
-      )
-      rid = "%s/%s/%s/%s" % (
-        query_path(resource, "metadata.name"),
-        get_namespace(resource),
-        "Endpoints",
-        "v1"
-      )
-      if rid in resources:
-        edges.append([rid, "SELECTOR"])
+      edges.add_edges_for_service()
   ServiceAccount/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.rbac.SA

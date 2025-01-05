@@ -358,6 +358,44 @@ class EdgesContext(list):
                     "REFERENCE"
                 ])
 
+    def add_all_workload_resources(self, path, custom_workload_resources={}, edge_kind="SELECTOR"):
+        build_in_workload_resources = {
+            "Pod": "metadata.labels",
+            "Deployment": "spec.template.metadata.labels",
+            "ReplicaSet": "spec.template.metadata.labels",
+            "StatefulSet": "spec.template.metadata.labels",
+            "DaemonSet": "spec.template.metadata.labels",
+            "Job": "spec.template.metadata.labels",
+        }
+        for kind, label in {**build_in_workload_resources, **custom_workload_resources}.items():
+            resourceNotFound = True
+            if self.add_all_resources_matching_labels(
+                    kind,
+                    path,
+                    resource_labels_path=label,
+                    edge_kind=edge_kind):
+                resourceNotFound = False
+                break
+        if resourceNotFound:
+            resource_name = self.resource["metadata"]["name"]
+            selector = query_path(self.resource, path)
+            print(f"Warning: No workload resource matches labels({selector}) for Service({resource_name})!")
+
+    def add_edges_for_service(self, custom_workload_resources={}):
+        self.add_all_workload_resources("spec.selector", custom_workload_resources)
+        self.add_all_resources_matching_labels(
+                "EndpointSlice",
+                { "kubernetes.io/service-name": query_path(self.resource, "metadata.name") }
+        )
+        rid = "%s/%s/%s/%s" % (
+            query_path(self.resource, "metadata.name"),
+            get_namespace(self.resource),
+            "Endpoints",
+            "v1"
+        )
+        if rid in resources:
+            self.append([rid, "SELECTOR"])
+
 # Parse arguments
 parser = argparse.ArgumentParser(
     prog="kube-diagrams",
