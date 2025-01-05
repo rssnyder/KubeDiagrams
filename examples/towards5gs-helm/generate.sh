@@ -15,6 +15,7 @@ helm repo remove towards5gs
 kube-diagrams -c KubeDiagrams.yml towards5gs_free5gc.yaml
 kube-diagrams -c KubeDiagrams.yml towards5gs_ueransim.yaml
 kube-diagrams -c KubeDiagrams.yml towards5gs_ueransim-corrected.yaml
+kube-diagrams -c KubeDiagrams.yml --without-namespace -o towards5gs_ueransim-corrected-without-namespace towards5gs_ueransim-corrected.yaml
 
 # Remove generated files.
 rm towards5gs_free5gc.yaml towards5gs_ueransim.yaml

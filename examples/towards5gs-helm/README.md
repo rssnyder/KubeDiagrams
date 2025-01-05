@@ -20,3 +20,6 @@ Architecture diagram for the **towards5gs/ueransim** chart:
 **Note**: The previous diagram shows that metadata labels seem to be incorrectly used in the **towards5gs/ueransim** chart. File [towards5gs_ueransim-corrected.yaml](towards5gs_ueransim-corrected.yaml) proposes some possible corrections illustrated in the following diagram.
 
 ![towards5gs_ueransim-corrected.png](towards5gs_ueransim-corrected.png)
+
+Same diagram but without namespace:
+![towards5gs_ueransim-corrected-without-namespace.png](towards5gs_ueransim-corrected-without-namespace.png)
