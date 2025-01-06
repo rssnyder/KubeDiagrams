@@ -95,7 +95,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 35 ones:
+Supported `kind`/`apiVersion` resource types are 37 ones:
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
 * ConfigMap/v1
@@ -110,6 +110,7 @@ Supported `kind`/`apiVersion` resource types are 35 ones:
 * Ingress/networking.k8s.io/v1
 * IngressClass/networking.k8s.io/v1
 * Job/batch/v1
+* Lease/coordination.k8s.io/v1
 * LimitRange/v1
 * MutatingWebhookConfiguration/admissionregistration.k8s.io/v1
 * Namespace/v1
@@ -131,12 +132,13 @@ Supported `kind`/`apiVersion` resource types are 35 ones:
 * StorageClass/storage.k8s.io/v1
 * User/rbac.authorization.k8s.io/v1
 * ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1
+* VolumeAttachment/storage.k8s.io/v1
 
 **Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L65).
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](examples/kube-prometheus-stack/KubeDiagrams.yaml#L3).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 25 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 23 ones:
 * Binding/
 * ComponentStatus/
 * Event/
@@ -150,7 +152,6 @@ Currently, unsupported `kind`/`apiGroup` resource types are 25 ones:
 * SelfSubjectRulesReview/authorization.k8s.io
 * SubjectAccessReview/authorization.k8s.io
 * CertificateSigningRequest/certificates.k8s.io
-* Lease/coordination.k8s.io
 * Event/events.k8s.io
 * FlowSchema/flowcontrol.apiserver.k8s.io
 * PriorityLevelConfiguration/flowcontrol.apiserver.k8s.io
@@ -161,7 +162,6 @@ Currently, unsupported `kind`/`apiGroup` resource types are 25 ones:
 * CSIDriver/storage.k8s.io
 * CSINode/storage.k8s.io
 * CSIStorageCapacity/storage.k8s.io
-* VolumeAttachment/storage.k8s.io
 
 ## Kubernetes resources clustering
 
@@ -169,6 +169,7 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 
 | Label | Cluster Title |
 | :--------: | :-------: |
+| `app.kubernetes.io/instance` | K8s Instance |
 | `release` | Release |
 | `helm.sh/chart` | Helm Chart |
 | `chart` | Chart |
