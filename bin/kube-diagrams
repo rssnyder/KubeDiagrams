@@ -318,7 +318,7 @@ class EdgesContext(list):
                     subject["kind"],
                     query_path(subject, "apiGroup", "rbac.authorization.k8s.io")
                 )
-            self.append([rid,"REFERENCE"]) #TODO: REFERENCE-UP ?
+            self.append([rid,"REFERENCE-UP"])
 
     def add_service(self, path, data=None):
         if data is None:

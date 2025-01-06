@@ -245,7 +245,10 @@ nodes:
     scope: Namespaced
     custom_icon: $KD/icons/pdb.png
     edges: |
-      edges.add_all_workload_resources("spec.selector.matchLabels")
+      edges.add_all_workload_resources(
+        "spec.selector.matchLabels",
+        edge_kind="SELECTOR-UP"
+      )
   ReplicaSet/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.RS
