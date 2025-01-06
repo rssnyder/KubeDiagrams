@@ -315,3 +315,7 @@ nodes:
 #TODO: add other Kubernetes resource types.
 # PSP diagrams.k8s.others.PSP
 # Vol diagrams.k8s.storage.Vol, Volume (alias)
+
+cluster-resources:
+  - default/default/ServiceAccount/v1
+  - system:auth-delegator/ClusterRole/rbac.authorization.k8s.io/v1
