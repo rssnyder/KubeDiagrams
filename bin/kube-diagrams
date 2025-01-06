@@ -18,7 +18,10 @@ def query_path(data, path, default=None):
         tmp = tmp.get(p)
         if tmp is None:
             return default
-    return tmp.get(paths[-1], default)
+    tmp = tmp.get(paths[-1])
+    if tmp is None:
+        return default
+    return tmp
 
 # Directory where this script is.
 DIRNAME = os.path.dirname(__file__)
@@ -211,7 +214,7 @@ class EdgesContext(list):
             return
         target_resources = set()
         for container in containers:
-            for env in container.get("env", []):
+            for env in query_path(container, "env", []):
                 configMapKeyRefName = query_path(env, "valueFrom.configMapKeyRef.name")
                 if configMapKeyRefName != None:
                     target_resources.add(
@@ -262,7 +265,7 @@ class EdgesContext(list):
             return
         for ic in initContainers:
             if ic.get("name") == "wait-for-services":
-                for arg in ic.get("args", []):
+                for arg in query_path(ic, "args", []):
                     if arg.startswith("-service="):
                         sn = arg[len("-service="):]
                         self.append([
@@ -295,25 +298,25 @@ class EdgesContext(list):
                 roleRef["name"],
                 namespace,
                 roleRef["kind"],
-                roleRef.get("apiGroup", "rbac.authorization.k8s.io")
+                query_path(roleRef, "apiGroup", "rbac.authorization.k8s.io")
             ),
             "REFERENCE"
       ])
 
     def add_subjects(self):
-        for subject in self.resource.get("subjects", []):
+        for subject in query_path(self.resource, "subjects", []):
             if subject.get("namespace"):
                 rid = "%s/%s/%s/%s" % (
                     subject["name"],
                     subject["namespace"],
                     subject["kind"],
-                    subject.get("apiGroup", "v1")
+                    query_path(subject, "apiGroup", "v1")
                 )
             else:
                 rid = "%s/%s/%s/v1" % (
                     subject["name"],
                     subject["kind"],
-                    subject.get("apiGroup", "rbac.authorization.k8s.io")
+                    query_path(subject, "apiGroup", "rbac.authorization.k8s.io")
                 )
             self.append([rid,"REFERENCE"]) #TODO: REFERENCE-UP ?
 
@@ -349,7 +352,7 @@ class EdgesContext(list):
         #TODO: support for other forms of rules
 
     def add_webhooks(self):
-        for webhook in self.resource.get("webhooks", []):
+        for webhook in query_path(self.resource, "webhooks", []):
             service = query_path(webhook, "clientConfig.service")
             if service != None:
                 self.append([
