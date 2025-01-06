@@ -4,7 +4,9 @@ import copy
 from diagrams import Diagram, Edge, Cluster
 from diagrams.aws.enablement import ManagedServices
 from diagrams.custom import Custom
+import json
 import os
+import traceback
 import yaml
 from pprint import pprint
 
@@ -396,6 +398,21 @@ class EdgesContext(list):
         if rid in resources:
             self.append([rid, "SELECTOR"])
 
+    def add_networks(self, path):
+      annotations = query_path(resource, "spec.template.metadata.annotations")
+      if annotations != None:
+        networks = annotations.get("k8s.v1.cni.cncf.io/networks")
+        if networks != None:
+          for network in json.loads(networks):
+            resource_name = query_path(resource, "metadata.name")
+            edges.append([
+              "%s/%s/NetworkAttachmentDefinition/k8s.cni.cncf.io/v1" % (
+                network["name"],
+                get_namespace(resource)
+              ),
+              "REFERENCE"
+            ])
+
 # Parse arguments
 parser = argparse.ArgumentParser(
     prog="kube-diagrams",
@@ -520,6 +537,7 @@ with Diagram("", filename=args.output, show=False, direction="TB", outformat=arg
                 exec(code_to_exec)
             except Exception as exc:
                 print("Error:", type(exc), ":", exc.args)
+                traceback.print_exception(exc)
                 print("Edges script:\n", code_to_exec)
                 print("Resource:")
                 pprint(resource)

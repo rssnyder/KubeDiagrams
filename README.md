@@ -95,7 +95,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 34 ones:
+Supported `kind`/`apiVersion` resource types are 35 ones:
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
 * ConfigMap/v1
@@ -113,6 +113,7 @@ Supported `kind`/`apiVersion` resource types are 34 ones:
 * LimitRange/v1
 * MutatingWebhookConfiguration/admissionregistration.k8s.io/v1
 * Namespace/v1
+* NetworkAttachmentDefinition/k8s.cni.cncf.io/v1
 * NetworkPolicy/networking.k8s.io/v1
 * Node/v1
 * PersistentVolume/v1
@@ -133,7 +134,7 @@ Supported `kind`/`apiVersion` resource types are 34 ones:
 
 **Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L65).
 
-**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L7),  [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L7), and [examples/towards5gs-helm/KubeDiagrams.yml](examples/towards5gs-helm/KubeDiagrams.yml#L7).
+**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](examples/kube-prometheus-stack/KubeDiagrams.yml#L3).
 
 Currently, unsupported `kind`/`apiGroup` resource types are 25 ones:
 * Binding/
