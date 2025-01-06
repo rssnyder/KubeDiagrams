@@ -134,7 +134,7 @@ Supported `kind`/`apiVersion` resource types are 35 ones:
 
 **Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L65).
 
-**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](examples/kube-prometheus-stack/KubeDiagrams.yml#L3).
+**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](examples/kube-prometheus-stack/KubeDiagrams.yaml#L3).
 
 Currently, unsupported `kind`/`apiGroup` resource types are 25 ones:
 * Binding/
