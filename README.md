@@ -95,17 +95,20 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 37 ones:
+Supported `kind`/`apiVersion` resource types are 42 ones:
+* APIService/apiregistration.k8s.io/v1
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
 * ConfigMap/v1
 * CronJob/batch/v1
 * CustomResourceDefinition/apiextensions.k8s.io/v1
+* CSIDriver/storage.k8s.io/v1
 * DaemonSet/apps/v1
 * Deployment/apps/v1
 * Endpoints/v1
 * EndpointSlice/discovery.k8s.io/v1
 * Group/rbac.authorization.k8s.io/v1
+* HorizontalPodAutoscaler/autoscaling/v1
 * HorizontalPodAutoscaler/autoscaling/v2
 * Ingress/networking.k8s.io/v1
 * IngressClass/networking.k8s.io/v1
@@ -119,8 +122,10 @@ Supported `kind`/`apiVersion` resource types are 37 ones:
 * Node/v1
 * PersistentVolume/v1
 * PersistentVolumeClaim/v1
+* PriorityClass/scheduling.k8s.io/v1
 * Pod/v1
 * PodDisruptionBudget/policy/v1
+* PodSecurityPolicy/policy/v1beta1
 * ReplicaSet/apps/v1
 * ResourceQuota/v1
 * Role/rbac.authorization.k8s.io/v1
@@ -138,13 +143,12 @@ Supported `kind`/`apiVersion` resource types are 37 ones:
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](examples/kube-prometheus-stack/KubeDiagrams.yaml#L3).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 23 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 20 ones:
 * Binding/
 * ComponentStatus/
 * Event/
 * PodTemplate/
 * ReplicationController/
-* APIService/apiregistration.k8s.io
 * ControllerRevision/apps
 * TokenReview/authentication.k8s.io
 * LocalSubjectAccessReview/authorization.k8s.io
@@ -158,8 +162,6 @@ Currently, unsupported `kind`/`apiGroup` resource types are 23 ones:
 * NodeMetrics/metrics.k8s.io
 * PodMetrics/metrics.k8s.io
 * RuntimeClass/node.k8s.io
-* PriorityClass/scheduling.k8s.io
-* CSIDriver/storage.k8s.io
 * CSINode/storage.k8s.io
 * CSIStorageCapacity/storage.k8s.io
 

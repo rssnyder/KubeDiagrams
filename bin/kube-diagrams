@@ -39,11 +39,19 @@ def get_edge_config(edge_kind):
     return edge_config if edge_config else {}
 
 # Get config associated to a resource.
+already_warned_node_configs = set()
 def get_node_config(resource):
     resource_type = get_type(resource)
     node_config = config.get("nodes", {}).get(resource_type)
+    while isinstance(node_config, str):
+        if node_config not in already_warned_node_configs:
+            print(f"Warning: {resource_type} used instead of {node_config}!")
+            already_warned_node_configs.add(node_config)
+        node_config = config.get("nodes", {}).get(node_config)
     if node_config is None:
-        print("Warning: %s node configuration not found!" % resource_type)
+        if resource_type not in already_warned_node_configs:
+            print(f"Warning: {resource_type} node configuration undefined!")
+            already_warned_node_configs.add(resource_type)
     return node_config if node_config else {}
 
 # Get resource type, i.e., "kind/apiVersion".
@@ -252,6 +260,9 @@ class EdgesContext(list):
         if data is None:
             data = self.resource
         storageClassName = query_path(data, path)
+        if storageClassName == "":
+            print(f"Warning: {self.resource['kind']} {self.resource['metadata']['name']} {path} equals to \"\"!")
+            storageClassName = None
         if storageClassName != None:
             self.append([
                 "%s/StorageClass/storage.k8s.io/v1" % storageClassName,
@@ -285,6 +296,9 @@ class EdgesContext(list):
 
     def add_service_account(self, path):
         serviceAccountName = query_path(self.resource, path)
+        if serviceAccountName == "":
+            print(f"Warning: {self.resource['kind']} {self.resource['metadata']['name']} {path} equals to \"\"!")
+            serviceAccountName = None
         if serviceAccountName != None:
             self.append([
                 "%s/%s/ServiceAccount/v1" % (
@@ -296,7 +310,11 @@ class EdgesContext(list):
 
     def add_role(self, path):
         roleRef = self.resource[path]
-        if self.resource["kind"] == "RoleBinding":
+        apiGroup = query_path(roleRef, "apiGroup", "rbac.authorization.k8s.io")
+        if apiGroup == "":
+            print(f"Warning: {self.resource['kind']} {self.resource['metadata']['name']} {path} equals to \"\"!")
+            apiGroup = "rbac.authorization.k8s.io"
+        if roleRef["kind"] == "Role":
             namespace = "/%s" % self.namespace
         else:
             namespace = ""
@@ -305,7 +323,7 @@ class EdgesContext(list):
                 roleRef["name"],
                 namespace,
                 roleRef["kind"],
-                query_path(roleRef, "apiGroup", "rbac.authorization.k8s.io")
+                apiGroup
             ),
             "REFERENCE"
       ])
@@ -316,11 +334,14 @@ class EdgesContext(list):
             if namespace is None and subject["kind"] == "ServiceAccount":
                 namespace = get_namespace(self.resource)
             if namespace != None:
+                apiVersion = query_path(subject, "apiGroup", "v1")
+                if apiVersion == "":
+                    apiVersion = "v1"
                 rid = "%s/%s/%s/%s" % (
                     subject["name"],
                     namespace,
                     subject["kind"],
-                    query_path(subject, "apiGroup", "v1")
+                    apiVersion
                 )
             else:
                 rid = "%s/%s/%s/v1" % (
@@ -334,6 +355,9 @@ class EdgesContext(list):
         if data is None:
             data = self.resource
         name = query_path(data, path)
+        if name == "":
+            print(f"Warning: {self.resource['kind']} {self.resource['metadata']['name']} {path} equals to \"\"!")
+            name = None
         if name != None:
             self.append([
                 "%s/%s/Service/v1" % (
@@ -345,7 +369,7 @@ class EdgesContext(list):
 
     def add_owned_resources(self):
         uid = query_path(self.resource, "metadata.uid")
-        for _, resource in resource_cluster.clusters["Namespace: %s" % self.namespace].resources.items():
+        for _, resource in resources.items():
             for ownerReference in query_path(resource, "metadata.ownerReferences", []):
                 if ownerReference.get("uid") == uid:
                     self.append([
@@ -428,6 +452,17 @@ class EdgesContext(list):
               ),
               "REFERENCE"
             ])
+
+    def add_priority_class(self, path):
+      priorityClassName = query_path(self.resource, path)
+      if priorityClassName == "":
+          print(f"Warning: {self.resource['kind']} {self.resource['metadata']['name']} {path} equals to \"\"!")
+          priorityClassName = None
+      if priorityClassName != None:
+        self.append([
+            f"{priorityClassName}/PriorityClass/scheduling.k8s.io/v1",
+            "REFERENCE"
+        ])
 
 # Parse arguments
 parser = argparse.ArgumentParser(
@@ -573,9 +608,9 @@ with Diagram("", filename=args.output, show=False, direction="TB", outformat=arg
                     continue # skip this edge as the resource is provided by K8s clusters.
                 print("Error: %s resource not found!" % ke)
                 tmp = str(edge_rid).split("/")
-                if tmp[2] in ["ServiceAccount", "Service", "ConfigMap", "Secret"]: #TODO: avoid specific cases
+                if tmp[2] in ["ServiceAccount", "Service", "ConfigMap", "Secret", "PersistentVolumeClaim", "Role"]: #TODO: avoid specific cases
                     rsrc = {
-                        "apiVersion": tmp[3],
+                        "apiVersion": "/".join(tmp[3:]),
                         "kind": tmp[2],
                         "metadata": {
                             "name": tmp[1] + "/" + tmp[0]

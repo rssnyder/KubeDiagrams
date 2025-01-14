@@ -63,18 +63,31 @@ clusters:
     title: Tier
     recommended: false
 nodes:
+  APIService/apiregistration.k8s.io/v1:
+    scope: Cluster
+    custom_icon: $KD/icons/apiservice.png
+    edges: |
+      service = query_path(resource, "spec.service")
+      if service != None:
+        edges.append([
+                f"{service['name']}/{service['namespace']}/Service/v1",
+                "REFERENCE"
+            ])
+  APIService/apiregistration.k8s.io/v1beta1: APIService/apiregistration.k8s.io/v1
   ClusterRole/rbac.authorization.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.rbac.CRole
     edges: |
       for clusterRoleSelector in query_path(resource, "aggregationRule.clusterRoleSelectors", []):
         edges.add_all_resources_matching_labels("ClusterRole", "matchLabels", clusterRoleSelector)
+  ClusterRole/rbac.authorization.k8s.io/v1beta1: ClusterRole/rbac.authorization.k8s.io/v1
   ClusterRoleBinding/rbac.authorization.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.rbac.CRB
     edges: |
       edges.add_role("roleRef")
       edges.add_subjects()
+  ClusterRoleBinding/rbac.authorization.k8s.io/v1beta1: ClusterRoleBinding/rbac.authorization.k8s.io/v1
   ConfigMap/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.podconfig.CM
@@ -90,9 +103,16 @@ nodes:
       edges.add_containers_env_valueFrom("spec.jobTemplate.spec.template.spec.containers")
       edges.add_wait_for_services("spec.jobTemplate.spec.template.spec.initContainers")
       edges.add_networks("spec.jobTemplate.spec.template.metadata.annotations")
+      edges.add_priority_class("spec.jobTemplate.spec.template.spec.priorityClassName")
+  CronJob/batch/v1beta1: CronJob/batch/v1
   CustomResourceDefinition/apiextensions.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.others.CRD
+    # no edges
+  CustomResourceDefinition/apiextensions.k8s.io/v1beta1: CustomResourceDefinition/apiextensions.k8s.io/v1
+  CSIDriver/storage.k8s.io/v1:
+    scope: Cluster
+    custom_icon: $KD/icons/csidriver.png
     # no edges
   DaemonSet/apps/v1:
     scope: Namespaced
@@ -104,6 +124,7 @@ nodes:
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
+      edges.add_priority_class("spec.template.spec.priorityClassName")
   Deployment/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Deploy
@@ -114,6 +135,8 @@ nodes:
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
+      edges.add_priority_class("spec.template.spec.priorityClassName")
+  Deployment/apps/v1beta1: Deployment/apps/v1
   Endpoints/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.network.Endpoint
@@ -151,11 +174,18 @@ nodes:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.rbac.Group
     # no edges
+  HorizontalPodAutoscaler/autoscaling/v1:
+    scope: Namespaced
+    diagram_node_classname: diagrams.k8s.clusterconfig.HPA
+    edges: |
+      edges.add_resource("spec.scaleTargetRef")
   HorizontalPodAutoscaler/autoscaling/v2:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.clusterconfig.HPA
     edges: |
       edges.add_resource("spec.scaleTargetRef")
+  HorizontalPodAutoscaler/autoscaling/v2beta1: HorizontalPodAutoscaler/autoscaling/v2
+  HorizontalPodAutoscaler/autoscaling/v2beta2: HorizontalPodAutoscaler/autoscaling/v2
   Ingress/networking.k8s.io/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.network.Ing
@@ -176,6 +206,7 @@ nodes:
       # been tested with any other ingress implementations.
       edges.add_all_resources_matching_labels("Pod", "metadata.labels",
        edge_kind="CONTROLLED_BY")
+  Ingress/networking.k8s.io/v1beta1: Ingress/networking.k8s.io/v1
   Job/batch/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Job
@@ -186,6 +217,8 @@ nodes:
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
+      edges.add_priority_class("spec.template.spec.priorityClassName")
+  Job/batch/v1beta1: Job/batch/v1
   Lease/coordination.k8s.io/v1:
     scope: Namespaced
     custom_icon: $KD/icons/lease.png
@@ -199,6 +232,7 @@ nodes:
     custom_icon: $KD/icons/mwc.png
     edges: |
       edges.add_webhooks()
+  MutatingWebhookConfiguration/admissionregistration.k8s.io/v1beta1: MutatingWebhookConfiguration/admissionregistration.k8s.io/v1
   Namespace/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.group.NS
@@ -231,6 +265,10 @@ nodes:
     edges: |
       edges.add_storage_class("spec.storageClassName")
       edges.add_volume("spec.volumeName")
+  PriorityClass/scheduling.k8s.io/v1:
+    scope: Cluster
+    custom_icon: $KD/icons/pc.png
+    # no edges
   Pod/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Pod
@@ -245,6 +283,7 @@ nodes:
       if nid in resources:
         edges.append([nid, "REFERENCE"])
       edges.add_networks("metadata.annotations")
+      edges.add_priority_class("spec.priorityClassName")
   PodDisruptionBudget/policy/v1:
     scope: Namespaced
     custom_icon: $KD/icons/pdb.png
@@ -253,6 +292,11 @@ nodes:
         "spec.selector.matchLabels",
         edge_kind="SELECTOR-UP"
       )
+  PodDisruptionBudget/policy/v1beta1:
+    scope: Namespaced
+    diagram_node_classname: diagrams.k8s.others.PSP
+    # no edges
+  PodSecurityPolicy/policy/v1beta1: PodSecurityPolicy/policy/v1
   ReplicaSet/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.RS
@@ -263,6 +307,7 @@ nodes:
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
+      edges.add_priority_class("spec.template.spec.priorityClassName")
   ResourceQuota/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.clusterconfig.Quota
@@ -271,12 +316,14 @@ nodes:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.rbac.Role
     # no edges
+  Role/rbac.authorization.k8s.io/v1beta1: Role/rbac.authorization.k8s.io/v1
   RoleBinding/rbac.authorization.k8s.io/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.rbac.RB
     edges: |
       edges.add_role("roleRef")
       edges.add_subjects()
+  RoleBinding/rbac.authorization.k8s.io/v1beta1: RoleBinding/rbac.authorization.k8s.io/v1
   Secret/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.podconfig.Secret
@@ -300,8 +347,10 @@ nodes:
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
+      edges.add_priority_class("spec.template.spec.priorityClassName")
       edges.add_volume_claim_templates("spec.volumeClaimTemplates")
       edges.add_service("spec.serviceName")
+  StatefulSet/apps/v1beta2: StatefulSet/apps/v1
   StorageClass/storage.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.storage.SC
@@ -315,6 +364,7 @@ nodes:
     custom_icon: $KD/icons/vwc.png
     edges: |
       edges.add_webhooks()
+  ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1beta1: ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1
   VolumeAttachment/storage.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.storage.Volume
@@ -324,9 +374,22 @@ nodes:
       )
       if nid in resources:
         edges.append([nid, "REFERENCE"])
-#TODO: add other Kubernetes resource types.
-# PSP diagrams.k8s.others.PSP
-
 cluster-resources:
+  # default namespace
   - default/default/ServiceAccount/v1
+  - kube-root-ca.crt/default/ConfigMap/v1
+  - kubernetes/default/Service/v1
+  # kube-system namespace
+  - extension-apiserver-authentication-reader/kube-system/Role/rbac.authorization.k8s.io/v1
+  - horizontal-pod-autoscaler/kube-system/ServiceAccount/v1
+  # cluster scope
+  - admin/ClusterRole/rbac.authorization.k8s.io/v1
+  - cluster-admin/ClusterRole/rbac.authorization.k8s.io/v1
+  - edit/ClusterRole/rbac.authorization.k8s.io/v1
+  - standard/StorageClass/storage.k8s.io/v1
   - system:auth-delegator/ClusterRole/rbac.authorization.k8s.io/v1
+  - system:authenticated/Group/rbac.authorization.k8s.io/v1
+  - system:unauthenticated/Group/rbac.authorization.k8s.io/v1
+  - system-cluster-critical/PriorityClass/scheduling.k8s.io/v1
+  - system-node-critical/PriorityClass/scheduling.k8s.io/v1
+  - view/ClusterRole/rbac.authorization.k8s.io/v1
