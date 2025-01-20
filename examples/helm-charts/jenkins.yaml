@@ -2,12 +2,13 @@
 # Source: jenkins/templates/service-account.yaml
 apiVersion: v1
 kind: ServiceAccount
+automountServiceAccountToken: true
 metadata:
   name: jenkins
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -20,13 +21,13 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
 type: Opaque
 data:
-  jenkins-admin-password: "REJONWpQWExobWw1TzNlcTZiRTNQOQ=="
+  jenkins-admin-password: "Rms3UWU1OGpnamd1OVpSUUMwOWV6Sw=="
   jenkins-admin-user: "YWRtaW4="
 ---
 # Source: jenkins/templates/config.yaml
@@ -75,7 +76,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": jenkins
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -172,7 +173,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -192,7 +193,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -214,7 +215,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -233,7 +234,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -254,7 +255,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -275,7 +276,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -297,7 +298,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -319,7 +320,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.3"
+    "helm.sh/chart": "jenkins-5.8.4"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -347,6 +348,7 @@ spec:
         fsGroup: 1000
         runAsNonRoot: true
       serviceAccountName: "jenkins"
+      automountServiceAccountToken: true
       initContainers:
         - name: config-reload-init
           image: "docker.io/kiwigrid/k8s-sidecar:1.29.0"
@@ -563,7 +565,7 @@ data:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "jenkins-ui-test-pd9f3"
+  name: "jenkins-ui-test-vnjeb"
   namespace: default
   annotations:
     "helm.sh/hook": test-success
