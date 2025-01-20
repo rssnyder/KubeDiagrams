@@ -295,9 +295,14 @@ class EdgesContext(list):
                         ])
 
     def add_service_account(self, path):
-        serviceAccountName = query_path(self.resource, path)
+        podSpec = query_path(self.resource, path)
+        serviceAccountName = podSpec.get("serviceAccountName")
+        if serviceAccountName is None:
+            serviceAccountName = podSpec.get("serviceAccount")
+            if serviceAccountName != None:
+                print(f"Warning: {self.resource['kind']} {self.resource['metadata']['name']} {path}.serviceAccount deprecated!")
         if serviceAccountName == "":
-            print(f"Warning: {self.resource['kind']} {self.resource['metadata']['name']} {path} equals to \"\"!")
+            print(f"Warning: {self.resource['kind']} {self.resource['metadata']['name']} {path}.serviceAccountName equals to \"\"!")
             serviceAccountName = None
         if serviceAccountName != None:
             self.append([

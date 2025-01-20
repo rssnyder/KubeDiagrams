@@ -98,7 +98,7 @@ nodes:
     edges: |
       edges.add_owned_resources()
       edges.add_all_resources_matching_labels("Pod", "spec.jobTemplate.spec.template.spec.selector.matchLabels")
-      edges.add_service_account("spec.jobTemplate.spec.template.spec.serviceAccountName")
+      edges.add_service_account("spec.jobTemplate.spec.template.spec")
       edges.add_all_volume_resources("spec.jobTemplate.spec.template.spec.volumes")
       edges.add_containers_env_valueFrom("spec.jobTemplate.spec.template.spec.containers")
       edges.add_wait_for_services("spec.jobTemplate.spec.template.spec.initContainers")
@@ -119,7 +119,7 @@ nodes:
     diagram_node_classname: diagrams.k8s.compute.DS
     edges: |
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
-      edges.add_service_account("spec.template.spec.serviceAccountName")
+      edges.add_service_account("spec.template.spec")
       edges.add_all_volume_resources("spec.template.spec.volumes")
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
@@ -130,7 +130,7 @@ nodes:
     diagram_node_classname: diagrams.k8s.compute.Deploy
     edges: |
       edges.add_all_resources_matching_labels("ReplicaSet", "spec.selector.matchLabels")
-      edges.add_service_account("spec.template.spec.serviceAccountName")
+      edges.add_service_account("spec.template.spec")
       edges.add_all_volume_resources("spec.template.spec.volumes")
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
@@ -212,7 +212,7 @@ nodes:
     diagram_node_classname: diagrams.k8s.compute.Job
     edges: |
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
-      edges.add_service_account("spec.template.spec.serviceAccountName")
+      edges.add_service_account("spec.template.spec")
       edges.add_all_volume_resources("spec.template.spec.volumes")
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
@@ -273,7 +273,7 @@ nodes:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Pod
     edges: |
-      edges.add_service_account("spec.serviceAccountName")
+      edges.add_service_account("spec")
       edges.add_all_volume_resources("spec.volumes")
       edges.add_containers_env_valueFrom("spec.containers")
       edges.add_wait_for_services("spec.initContainers")
@@ -302,7 +302,7 @@ nodes:
     diagram_node_classname: diagrams.k8s.compute.RS
     edges: |
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
-      edges.add_service_account("spec.template.spec.serviceAccountName")
+      edges.add_service_account("spec.template.spec")
       edges.add_all_volume_resources("spec.template.spec.volumes")
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")
@@ -342,7 +342,7 @@ nodes:
     diagram_node_classname: diagrams.k8s.compute.STS
     edges: |
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
-      edges.add_service_account("spec.template.spec.serviceAccountName")
+      edges.add_service_account("spec.template.spec")
       edges.add_all_volume_resources("spec.template.spec.volumes")
       edges.add_containers_env_valueFrom("spec.template.spec.containers")
       edges.add_wait_for_services("spec.template.spec.initContainers")

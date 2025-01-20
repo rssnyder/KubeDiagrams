@@ -6,14 +6,14 @@ nodes:
     scope: Namespaced
     custom_icon: icons/Alertmanager.png
     edges: |
-      edges.add_service_account("spec.serviceAccountName")
+      edges.add_service_account("spec")
       #TODO: spec.alertmanagerConfigSelector
       #TODO: spec.alertmanagerConfigNamespaceSelector
   Prometheus/monitoring.coreos.com/v1:
     scope: Namespaced
     custom_icon: icons/Prometheus.png
     edges: |
-      edges.add_service_account("spec.serviceAccountName")
+      edges.add_service_account("spec")
       for alertManager in query_path(resource, "spec.alerting.alertmanagers", []):
           edges.append([
               "%s/%s/Alertmanager/monitoring.coreos.com/v1" % (
