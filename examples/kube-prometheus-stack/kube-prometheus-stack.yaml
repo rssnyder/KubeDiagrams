@@ -59,9 +59,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 automountServiceAccountToken: true
@@ -76,9 +76,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app: kube-prometheus-stack-operator
@@ -99,9 +99,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 automountServiceAccountToken: true
@@ -135,9 +135,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -210,9 +210,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -251,9 +251,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -274,9 +274,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -297,9 +297,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -320,9 +320,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -343,9 +343,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -366,9 +366,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -389,9 +389,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -412,9 +412,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -435,9 +435,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -458,9 +458,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -481,9 +481,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -504,9 +504,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -527,9 +527,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -550,9 +550,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -573,9 +573,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -596,9 +596,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -619,9 +619,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -642,9 +642,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1253,9 +1253,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1276,9 +1276,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1299,9 +1299,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1322,9 +1322,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1345,9 +1345,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1368,9 +1368,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1391,14 +1391,14 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
   prometheus.json: |-
-    {"annotations":{"list":[]},"editable":true,"gnetId":null,"graphTooltip":0,"hideControls":false,"links":[],"refresh":"60s","rows":[{"collapse":false,"height":"250px","panels":[{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":1,"id":1,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":1,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":12,"stack":false,"steppedLine":false,"styles":[{"alias":"Time","dateFormat":"YYYY-MM-DD HH:mm:ss","pattern":"Time","type":"hidden"},{"alias":"Count","colorMode":null,"colors":[],"dateFormat":"YYYY-MM-DD HH:mm:ss","decimals":2,"link":false,"linkTargetBlank":false,"linkTooltip":"Drill down","linkUrl":"","pattern":"Value #A","thresholds":[],"type":"hidden","unit":"short"},{"alias":"Uptime","colorMode":null,"colors":[],"dateFormat":"YYYY-MM-DD HH:mm:ss","decimals":2,"link":false,"linkTargetBlank":false,"linkTooltip":"Drill down","linkUrl":"","pattern":"Value #B","thresholds":[],"type":"number","unit":"s"},{"alias":"Cluster","colorMode":null,"colors":[],"dateFormat":"YYYY-MM-DD HH:mm:ss","decimals":2,"link":false,"linkTargetBlank":false,"linkTooltip":"Drill down","linkUrl":"","pattern":"cluster","thresholds":[],"type":"number","unit":"short"},{"alias":"Instance","colorMode":null,"colors":[],"dateFormat":"YYYY-MM-DD HH:mm:ss","decimals":2,"link":false,"linkTargetBlank":false,"linkTooltip":"Drill down","linkUrl":"","pattern":"instance","thresholds":[],"type":"number","unit":"short"},{"alias":"Job","colorMode":null,"colors":[],"dateFormat":"YYYY-MM-DD HH:mm:ss","decimals":2,"link":false,"linkTargetBlank":false,"linkTooltip":"Drill down","linkUrl":"","pattern":"job","thresholds":[],"type":"number","unit":"short"},{"alias":"Version","colorMode":null,"colors":[],"dateFormat":"YYYY-MM-DD HH:mm:ss","decimals":2,"link":false,"linkTargetBlank":false,"linkTooltip":"Drill down","linkUrl":"","pattern":"version","thresholds":[],"type":"number","unit":"short"},{"alias":"","colorMode":null,"colors":[],"dateFormat":"YYYY-MM-DD HH:mm:ss","decimals":2,"pattern":"/.*/","thresholds":[],"type":"string","unit":"short"}],"targets":[{"expr":"count by (cluster, job, instance, version) (prometheus_build_info{cluster=~\"$cluster\", job=~\"$job\", instance=~\"$instance\"})","format":"table","instant":true,"legendFormat":"","refId":"A"},{"expr":"max by (cluster, job, instance) (time() - process_start_time_seconds{cluster=~\"$cluster\", job=~\"$job\", instance=~\"$instance\"})","format":"table","instant":true,"legendFormat":"","refId":"B"}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Prometheus Stats","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"transform":"table","type":"table","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"short","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]}],"repeat":null,"repeatIteration":null,"repeatRowId":null,"showTitle":true,"title":"Prometheus Stats","titleSize":"h6"},{"collapse":false,"height":"250px","panels":[{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":1,"id":2,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":1,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":6,"stack":false,"steppedLine":false,"targets":[{"expr":"sum(rate(prometheus_target_sync_length_seconds_sum{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[5m])) by (cluster, job, scrape_job, instance) * 1e3","format":"time_series","legendFormat":"{{cluster}}:{{job}}:{{instance}}:{{scrape_job}}","legendLink":null}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Target Sync","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"type":"graph","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"ms","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]},{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":10,"id":3,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":0,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":6,"stack":true,"steppedLine":false,"targets":[{"expr":"sum by (cluster, job, instance) (prometheus_sd_discovered_targets{cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"})","format":"time_series","legendFormat":"{{cluster}}:{{job}}:{{instance}}","legendLink":null}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Targets","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"type":"graph","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"short","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]}],"repeat":null,"repeatIteration":null,"repeatRowId":null,"showTitle":true,"title":"Discovery","titleSize":"h6"},{"collapse":false,"height":"250px","panels":[{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":1,"id":4,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":1,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":4,"stack":false,"steppedLine":false,"targets":[{"expr":"rate(prometheus_target_interval_length_seconds_sum{cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"}[5m]) / rate(prometheus_target_interval_length_seconds_count{cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"}[5m]) * 1e3","format":"time_series","legendFormat":"{{cluster}}:{{job}}:{{instance}} {{interval}} configured","legendLink":null}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Average Scrape Interval Duration","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"type":"graph","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"ms","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]},{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":10,"id":5,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":0,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":4,"stack":true,"steppedLine":false,"targets":[{"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_exceeded_body_size_limit_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"exceeded body size limit: {{cluster}} {{job}} {{instance}}","legendLink":null},{"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_exceeded_sample_limit_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"exceeded sample limit: {{cluster}} {{job}} {{instance}}","legendLink":null},{"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_sample_duplicate_timestamp_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"duplicate timestamp: {{cluster}} {{job}} {{instance}}","legendLink":null},{"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_sample_out_of_bounds_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"out of bounds: {{cluster}} {{job}} {{instance}}","legendLink":null},{"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_sample_out_of_order_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"out of order: {{cluster}} {{job}} {{instance}}","legendLink":null}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Scrape failures","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"type":"graph","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"short","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]},{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":10,"id":6,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":0,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":4,"stack":true,"steppedLine":false,"targets":[{"expr":"rate(prometheus_tsdb_head_samples_appended_total{cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"}[5m])","format":"time_series","legendFormat":"{{cluster}} {{job}} {{instance}}","legendLink":null}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Appended Samples","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"type":"graph","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"short","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]}],"repeat":null,"repeatIteration":null,"repeatRowId":null,"showTitle":true,"title":"Retrieval","titleSize":"h6"},{"collapse":false,"height":"250px","panels":[{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":10,"id":7,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":0,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":6,"stack":true,"steppedLine":false,"targets":[{"expr":"prometheus_tsdb_head_series{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}","format":"time_series","legendFormat":"{{cluster}} {{job}} {{instance}} head series","legendLink":null}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Head Series","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"type":"graph","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"short","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]},{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":10,"id":8,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":0,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":6,"stack":true,"steppedLine":false,"targets":[{"expr":"prometheus_tsdb_head_chunks{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}","format":"time_series","legendFormat":"{{cluster}} {{job}} {{instance}} head chunks","legendLink":null}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Head Chunks","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"type":"graph","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"short","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]}],"repeat":null,"repeatIteration":null,"repeatRowId":null,"showTitle":true,"title":"Storage","titleSize":"h6"},{"collapse":false,"height":"250px","panels":[{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":10,"id":9,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":0,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":6,"stack":true,"steppedLine":false,"targets":[{"expr":"rate(prometheus_engine_query_duration_seconds_count{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\",slice=\"inner_eval\"}[5m])","format":"time_series","legendFormat":"{{cluster}} {{job}} {{instance}}","legendLink":null}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Query Rate","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"type":"graph","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"short","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]},{"aliasColors":{},"bars":false,"dashLength":10,"dashes":false,"datasource":"$datasource","fill":10,"id":10,"legend":{"avg":false,"current":false,"max":false,"min":false,"show":true,"total":false,"values":false},"lines":true,"linewidth":0,"links":[],"nullPointMode":"null as zero","percentage":false,"pointradius":5,"points":false,"renderer":"flot","seriesOverrides":[],"spaceLength":10,"span":6,"stack":true,"steppedLine":false,"targets":[{"expr":"max by (slice) (prometheus_engine_query_duration_seconds{quantile=\"0.9\",cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"}) * 1e3","format":"time_series","legendFormat":"{{slice}}","legendLink":null}],"thresholds":[],"timeFrom":null,"timeShift":null,"title":"Stage Duration","tooltip":{"shared":true,"sort":2,"value_type":"individual"},"type":"graph","xaxis":{"buckets":null,"mode":"time","name":null,"show":true,"values":[]},"yaxes":[{"format":"ms","label":null,"logBase":1,"max":null,"min":0,"show":true},{"format":"short","label":null,"logBase":1,"max":null,"min":null,"show":false}]}],"repeat":null,"repeatIteration":null,"repeatRowId":null,"showTitle":true,"title":"Query","titleSize":"h6"}],"schemaVersion":14,"style":"dark","tags":["prometheus-mixin"],"templating":{"list":[{"current":{"text":"default","value":"default"},"hide":0,"label":"Data source","name":"datasource","options":[],"query":"prometheus","refresh":1,"regex":"","type":"datasource"},{"allValue":".*","current":{"selected":true,"text":"All","value":"$__all"},"datasource":"$datasource","hide":2,"includeAll":true,"label":"cluster","multi":true,"name":"cluster","options":[],"query":"label_values(prometheus_build_info{}, cluster)","refresh":1,"regex":"","sort":2,"tagValuesQuery":"","tags":[],"tagsQuery":"","type":"query","useTags":false},{"allValue":".+","current":{"selected":true,"text":"All","value":"$__all"},"datasource":"$datasource","hide":0,"includeAll":true,"label":"job","multi":true,"name":"job","options":[],"query":"label_values(prometheus_build_info{cluster=~\"$cluster\"}, job)","refresh":1,"regex":"","sort":2,"tagValuesQuery":"","tags":[],"tagsQuery":"","type":"query","useTags":false},{"allValue":".+","current":{"selected":true,"text":"All","value":"$__all"},"datasource":"$datasource","hide":0,"includeAll":true,"label":"instance","multi":true,"name":"instance","options":[],"query":"label_values(prometheus_build_info{cluster=~\"$cluster\", job=~\"$job\"}, instance)","refresh":1,"regex":"","sort":2,"tagValuesQuery":"","tags":[],"tagsQuery":"","type":"query","useTags":false}]},"time":{"from":"now-1h","to":"now"},"timepicker":{"refresh_intervals":["5s","10s","30s","1m","5m","15m","30m","1h","2h","1d"],"time_options":["5m","15m","1h","6h","12h","24h","2d","7d","30d"]},"timezone": "utc","title":"Prometheus / Overview","uid":"","version":0}
+    {"panels":[{"collapsed":false,"gridPos":{"h":1,"w":24,"x":0,"y":0},"id":1,"panels":[],"title":"Prometheus Stats","type":"row"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"decimals":2,"displayName":"","unit":"short"},"overrides":[{"matcher":{"id":"byName","options":"Time"},"properties":[{"id":"displayName","value":"Time"},{"id":"custom.align","value":null},{"id":"custom.hidden","value":"true"}]},{"matcher":{"id":"byName","options":"cluster"},"properties":[{"id":"custom.align","value":null},{"id":"unit","value":"short"},{"id":"decimals","value":2},{"id":"displayName","value":"Cluster"}]},{"matcher":{"id":"byName","options":"job"},"properties":[{"id":"custom.align","value":null},{"id":"unit","value":"short"},{"id":"decimals","value":2},{"id":"displayName","value":"Job"}]},{"matcher":{"id":"byName","options":"instance"},"properties":[{"id":"displayName","value":"Instance"},{"id":"custom.align","value":null},{"id":"unit","value":"short"},{"id":"decimals","value":2}]},{"matcher":{"id":"byName","options":"version"},"properties":[{"id":"displayName","value":"Version"},{"id":"custom.align","value":null},{"id":"unit","value":"short"},{"id":"decimals","value":2}]},{"matcher":{"id":"byName","options":"Value #A"},"properties":[{"id":"displayName","value":"Count"},{"id":"custom.align","value":null},{"id":"unit","value":"short"},{"id":"decimals","value":2},{"id":"custom.hidden","value":"true"}]},{"matcher":{"id":"byName","options":"Value #B"},"properties":[{"id":"displayName","value":"Uptime"},{"id":"custom.align","value":null},{"id":"unit","value":"s"}]}]},"gridPos":{"h":7,"w":24,"x":0,"y":1},"id":2,"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"count by (cluster, job, instance, version) (prometheus_build_info{cluster=~\"$cluster\", job=~\"$job\", instance=~\"$instance\"})","format":"table","instant":true,"legendFormat":""},{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"max by (cluster, job, instance) (time() - process_start_time_seconds{cluster=~\"$cluster\", job=~\"$job\", instance=~\"$instance\"})","format":"table","instant":true,"legendFormat":""}],"title":"Prometheus Stats","type":"table"},{"collapsed":false,"gridPos":{"h":1,"w":24,"x":0,"y":8},"id":3,"panels":[],"title":"Discovery","type":"row"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"custom":{"fillOpacity":10,"showPoints":"never"},"min":0,"unit":"ms"}},"gridPos":{"h":7,"w":12,"x":0,"y":9},"id":4,"options":{"tooltip":{"mode":"multi","sort":"desc"}},"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"sum(rate(prometheus_target_sync_length_seconds_sum{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[5m])) by (cluster, job, scrape_job, instance) * 1e3","format":"time_series","legendFormat":"{{cluster}}:{{job}}:{{instance}}:{{scrape_job}}"}],"title":"Target Sync","type":"timeseries"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"custom":{"fillOpacity":100,"lineWidth":0,"showPoints":"never","stacking":{"mode":"normal"}},"min":0,"unit":"short"}},"gridPos":{"h":7,"w":12,"x":12,"y":9},"id":5,"options":{"tooltip":{"mode":"multi","sort":"desc"}},"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"sum by (cluster, job, instance) (prometheus_sd_discovered_targets{cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"})","format":"time_series","legendFormat":"{{cluster}}:{{job}}:{{instance}}"}],"title":"Targets","type":"timeseries"},{"collapsed":false,"gridPos":{"h":1,"w":24,"x":0,"y":16},"id":6,"panels":[],"title":"Retrieval","type":"row"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"custom":{"fillOpacity":10,"showPoints":"never"},"min":0,"unit":"ms"}},"gridPos":{"h":7,"w":8,"x":0,"y":17},"id":7,"options":{"tooltip":{"mode":"multi","sort":"desc"}},"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"rate(prometheus_target_interval_length_seconds_sum{cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"}[5m]) / rate(prometheus_target_interval_length_seconds_count{cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"}[5m]) * 1e3","format":"time_series","legendFormat":"{{cluster}}:{{job}}:{{instance}} {{interval}} configured"}],"title":"Average Scrape Interval Duration","type":"timeseries"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"custom":{"fillOpacity":100,"lineWidth":0,"showPoints":"never","stacking":{"mode":"normal"}},"min":0,"unit":"ms"}},"gridPos":{"h":7,"w":8,"x":8,"y":17},"id":8,"options":{"tooltip":{"mode":"multi","sort":"desc"}},"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_exceeded_body_size_limit_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"exceeded body size limit: {{cluster}} {{job}} {{instance}}"},{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_exceeded_sample_limit_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"exceeded sample limit: {{cluster}} {{job}} {{instance}}"},{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_sample_duplicate_timestamp_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"duplicate timestamp: {{cluster}} {{job}} {{instance}}"},{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_sample_out_of_bounds_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"out of bounds: {{cluster}} {{job}} {{instance}}"},{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"sum by (cluster, job, instance) (rate(prometheus_target_scrapes_sample_out_of_order_total{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}[1m]))","format":"time_series","legendFormat":"out of order: {{cluster}} {{job}} {{instance}}"}],"title":"Scrape failures","type":"timeseries"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"custom":{"fillOpacity":100,"lineWidth":0,"showPoints":"never","stacking":{"mode":"normal"}},"min":0,"unit":"short"}},"gridPos":{"h":7,"w":8,"x":16,"y":17},"id":9,"options":{"tooltip":{"mode":"multi","sort":"desc"}},"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"rate(prometheus_tsdb_head_samples_appended_total{cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"}[5m])","format":"time_series","legendFormat":"{{cluster}} {{job}} {{instance}}"}],"title":"Appended Samples","type":"timeseries"},{"collapsed":false,"gridPos":{"h":1,"w":24,"x":0,"y":24},"id":10,"panels":[],"title":"Storage","type":"row"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"custom":{"fillOpacity":100,"lineWidth":0,"showPoints":"never","stacking":{"mode":"normal"}},"min":0,"unit":"short"}},"gridPos":{"h":7,"w":12,"x":0,"y":25},"id":11,"options":{"tooltip":{"mode":"multi","sort":"desc"}},"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"prometheus_tsdb_head_series{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}","format":"time_series","legendFormat":"{{cluster}} {{job}} {{instance}} head series"}],"title":"Head Series","type":"timeseries"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"custom":{"fillOpacity":100,"lineWidth":0,"showPoints":"never","stacking":{"mode":"normal"}},"min":0,"unit":"short"}},"gridPos":{"h":7,"w":12,"x":12,"y":25},"id":12,"options":{"tooltip":{"mode":"multi","sort":"desc"}},"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"prometheus_tsdb_head_chunks{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\"}","format":"time_series","legendFormat":"{{cluster}} {{job}} {{instance}} head chunks"}],"title":"Head Chunks","type":"timeseries"},{"collapsed":false,"gridPos":{"h":1,"w":24,"x":0,"y":32},"id":13,"panels":[],"title":"Query","type":"row"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"custom":{"fillOpacity":100,"lineWidth":0,"showPoints":"never","stacking":{"mode":"normal"}},"min":0,"unit":"short"}},"gridPos":{"h":7,"w":12,"x":0,"y":33},"id":14,"options":{"tooltip":{"mode":"multi","sort":"desc"}},"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"rate(prometheus_engine_query_duration_seconds_count{cluster=~\"$cluster\",job=~\"$job\",instance=~\"$instance\",slice=\"inner_eval\"}[5m])","format":"time_series","legendFormat":"{{cluster}} {{job}} {{instance}}"}],"title":"Query Rate","type":"timeseries"},{"datasource":{"type":"prometheus","uid":"$datasource"},"fieldConfig":{"defaults":{"custom":{"fillOpacity":100,"lineWidth":0,"showPoints":"never","stacking":{"mode":"normal"}},"min":0,"unit":"ms"}},"gridPos":{"h":7,"w":12,"x":12,"y":33},"id":15,"options":{"tooltip":{"mode":"multi","sort":"desc"}},"pluginVersion":"v11.4.0","targets":[{"datasource":{"type":"prometheus","uid":"$datasource"},"expr":"max by (slice) (prometheus_engine_query_duration_seconds{quantile=\"0.9\",cluster=~\"$cluster\", job=~\"$job\",instance=~\"$instance\"}) * 1e3","format":"time_series","legendFormat":"{{slice}}"}],"title":"Stage Duration","type":"timeseries"}],"schemaVersion":39,"tags":["prometheus-mixin"],"templating":{"list":[{"current":{"selected":false,"text":"default","value":"default"},"hide":0,"label":"Data source","name":"datasource","query":"prometheus","type":"datasource"},{"allValue":".*","current":{"selected":false,"text":["$__all"],"value":["$__all"]},"datasource":{"type":"prometheus","uid":"${datasource}"},"hide":2,"includeAll":true,"label":"cluster","multi":true,"name":"cluster","query":"label_values(prometheus_build_info{}, cluster)","refresh":2,"sort":2,"type":"query"},{"allValue":".+","datasource":{"type":"prometheus","uid":"${datasource}"},"includeAll":true,"label":"job","multi":true,"name":"job","query":"label_values(prometheus_build_info{cluster=~\"$cluster\"}, job)","refresh":2,"sort":2,"type":"query"},{"allValue":".+","datasource":{"type":"prometheus","uid":"${datasource}"},"includeAll":true,"label":"instance","multi":true,"name":"instance","query":"label_values(prometheus_build_info{cluster=~\"$cluster\", job=~\"$job\"}, instance)","refresh":2,"sort":2,"type":"query"}]},"time":{"from":"now-1h","to":"now"},"timepicker":{"refresh_intervals":["60s"]},"timezone": "utc","title":"Prometheus / Overview"}
 ---
 # Source: kube-prometheus-stack/templates/grafana/dashboards-1.14/proxy.yaml
 apiVersion: v1
@@ -1414,9 +1414,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1437,9 +1437,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1460,9 +1460,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 data:
@@ -1649,9 +1649,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app: kube-prometheus-stack-operator
@@ -1759,9 +1759,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 rules:
@@ -1838,9 +1838,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app: kube-prometheus-stack-operator
@@ -1865,9 +1865,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 roleRef:
@@ -2004,9 +2004,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -2036,9 +2036,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
@@ -2063,9 +2063,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
@@ -2091,9 +2091,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
@@ -2119,9 +2119,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
@@ -2147,9 +2147,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
   namespace: kube-system
@@ -2174,9 +2174,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app: kube-prometheus-stack-operator
@@ -2204,9 +2204,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -2662,9 +2662,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app: kube-prometheus-stack-operator
@@ -2683,9 +2683,9 @@ spec:
         
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/instance: kube-prometheus-stack
-        app.kubernetes.io/version: "68.2.1"
+        app.kubernetes.io/version: "68.3.0"
         app.kubernetes.io/part-of: kube-prometheus-stack
-        chart: kube-prometheus-stack-68.2.1
+        chart: kube-prometheus-stack-68.3.0
         release: "kube-prometheus-stack"
         heritage: "Helm"
         app: kube-prometheus-stack-operator
@@ -2778,9 +2778,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -2829,9 +2829,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -2869,9 +2869,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -2955,9 +2955,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3098,9 +3098,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3130,9 +3130,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3298,9 +3298,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3366,9 +3366,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3394,9 +3394,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3421,9 +3421,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3448,9 +3448,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3475,9 +3475,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3502,9 +3502,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3591,9 +3591,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3659,9 +3659,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -3789,9 +3789,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4111,9 +4111,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4142,9 +4142,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4153,7 +4153,7 @@ spec:
     rules:
     - alert: KubeAPIErrorBudgetBurn
       annotations:
-        description: The API server is burning too much error budget.
+        description: The API server is burning too much error budget on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeapierrorbudgetburn
         summary: The API server is burning too much error budget.
       expr: |-
@@ -4167,7 +4167,7 @@ spec:
         short: 5m
     - alert: KubeAPIErrorBudgetBurn
       annotations:
-        description: The API server is burning too much error budget.
+        description: The API server is burning too much error budget on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeapierrorbudgetburn
         summary: The API server is burning too much error budget.
       expr: |-
@@ -4181,7 +4181,7 @@ spec:
         short: 30m
     - alert: KubeAPIErrorBudgetBurn
       annotations:
-        description: The API server is burning too much error budget.
+        description: The API server is burning too much error budget on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeapierrorbudgetburn
         summary: The API server is burning too much error budget.
       expr: |-
@@ -4195,7 +4195,7 @@ spec:
         short: 2h
     - alert: KubeAPIErrorBudgetBurn
       annotations:
-        description: The API server is burning too much error budget.
+        description: The API server is burning too much error budget on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeapierrorbudgetburn
         summary: The API server is burning too much error budget.
       expr: |-
@@ -4219,9 +4219,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4244,9 +4244,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4277,9 +4277,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4334,9 +4334,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4403,9 +4403,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4436,9 +4436,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4447,7 +4447,7 @@ spec:
     rules:
     - alert: KubePodCrashLooping
       annotations:
-        description: 'Pod {{ $labels.namespace }}/{{ $labels.pod }} ({{ $labels.container }}) is in waiting state (reason: "CrashLoopBackOff").'
+        description: 'Pod {{ $labels.namespace }}/{{ $labels.pod }} ({{ $labels.container }}) is in waiting state (reason: "CrashLoopBackOff") on cluster {{ $labels.cluster }}.'
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepodcrashlooping
         summary: Pod is crash looping.
       expr: max_over_time(kube_pod_container_status_waiting_reason{reason="CrashLoopBackOff", job="kube-state-metrics", namespace=~".*"}[5m]) >= 1
@@ -4456,7 +4456,7 @@ spec:
         severity: warning
     - alert: KubePodNotReady
       annotations:
-        description: Pod {{ $labels.namespace }}/{{ $labels.pod }} has been in a non-ready state for longer than 15 minutes.
+        description: Pod {{ $labels.namespace }}/{{ $labels.pod }} has been in a non-ready state for longer than 15 minutes on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepodnotready
         summary: Pod has been in a non-ready state for more than 15 minutes.
       expr: |-
@@ -4472,7 +4472,7 @@ spec:
         severity: warning
     - alert: KubeDeploymentGenerationMismatch
       annotations:
-        description: Deployment generation for {{ $labels.namespace }}/{{ $labels.deployment }} does not match, this indicates that the Deployment has failed but has not been rolled back.
+        description: Deployment generation for {{ $labels.namespace }}/{{ $labels.deployment }} does not match, this indicates that the Deployment has failed but has not been rolled back on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubedeploymentgenerationmismatch
         summary: Deployment generation mismatch due to possible roll-back
       expr: |-
@@ -4484,7 +4484,7 @@ spec:
         severity: warning
     - alert: KubeDeploymentReplicasMismatch
       annotations:
-        description: Deployment {{ $labels.namespace }}/{{ $labels.deployment }} has not matched the expected number of replicas for longer than 15 minutes.
+        description: Deployment {{ $labels.namespace }}/{{ $labels.deployment }} has not matched the expected number of replicas for longer than 15 minutes on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubedeploymentreplicasmismatch
         summary: Deployment has not matched the expected number of replicas.
       expr: |-
@@ -4502,7 +4502,7 @@ spec:
         severity: warning
     - alert: KubeDeploymentRolloutStuck
       annotations:
-        description: Rollout of deployment {{ $labels.namespace }}/{{ $labels.deployment }} is not progressing for longer than 15 minutes.
+        description: Rollout of deployment {{ $labels.namespace }}/{{ $labels.deployment }} is not progressing for longer than 15 minutes on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubedeploymentrolloutstuck
         summary: Deployment rollout is not progressing.
       expr: |-
@@ -4513,7 +4513,7 @@ spec:
         severity: warning
     - alert: KubeStatefulSetReplicasMismatch
       annotations:
-        description: StatefulSet {{ $labels.namespace }}/{{ $labels.statefulset }} has not matched the expected number of replicas for longer than 15 minutes.
+        description: StatefulSet {{ $labels.namespace }}/{{ $labels.statefulset }} has not matched the expected number of replicas for longer than 15 minutes on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubestatefulsetreplicasmismatch
         summary: StatefulSet has not matched the expected number of replicas.
       expr: |-
@@ -4531,7 +4531,7 @@ spec:
         severity: warning
     - alert: KubeStatefulSetGenerationMismatch
       annotations:
-        description: StatefulSet generation for {{ $labels.namespace }}/{{ $labels.statefulset }} does not match, this indicates that the StatefulSet has failed but has not been rolled back.
+        description: StatefulSet generation for {{ $labels.namespace }}/{{ $labels.statefulset }} does not match, this indicates that the StatefulSet has failed but has not been rolled back on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubestatefulsetgenerationmismatch
         summary: StatefulSet generation mismatch due to possible roll-back
       expr: |-
@@ -4543,7 +4543,7 @@ spec:
         severity: warning
     - alert: KubeStatefulSetUpdateNotRolledOut
       annotations:
-        description: StatefulSet {{ $labels.namespace }}/{{ $labels.statefulset }} update has not been rolled out.
+        description: StatefulSet {{ $labels.namespace }}/{{ $labels.statefulset }} update has not been rolled out on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubestatefulsetupdatenotrolledout
         summary: StatefulSet update has not been rolled out.
       expr: |-
@@ -4569,7 +4569,7 @@ spec:
         severity: warning
     - alert: KubeDaemonSetRolloutStuck
       annotations:
-        description: DaemonSet {{ $labels.namespace }}/{{ $labels.daemonset }} has not finished or progressed for at least 15m.
+        description: DaemonSet {{ $labels.namespace }}/{{ $labels.daemonset }} has not finished or progressed for at least 15m on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubedaemonsetrolloutstuck
         summary: DaemonSet rollout is stuck.
       expr: |-
@@ -4601,7 +4601,7 @@ spec:
         severity: warning
     - alert: KubeContainerWaiting
       annotations:
-        description: 'pod/{{ $labels.pod }} in namespace {{ $labels.namespace }} on container {{ $labels.container}} has been in waiting state for longer than 1 hour. (reason: "{{ $labels.reason }}").'
+        description: 'pod/{{ $labels.pod }} in namespace {{ $labels.namespace }} on container {{ $labels.container}} has been in waiting state for longer than 1 hour. (reason: "{{ $labels.reason }}") on cluster {{ $labels.cluster }}.'
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubecontainerwaiting
         summary: Pod container waiting longer than 1 hour
       expr: kube_pod_container_status_waiting_reason{reason!="CrashLoopBackOff", job="kube-state-metrics", namespace=~".*"} > 0
@@ -4610,7 +4610,7 @@ spec:
         severity: warning
     - alert: KubeDaemonSetNotScheduled
       annotations:
-        description: '{{ $value }} Pods of DaemonSet {{ $labels.namespace }}/{{ $labels.daemonset }} are not scheduled.'
+        description: '{{ $value }} Pods of DaemonSet {{ $labels.namespace }}/{{ $labels.daemonset }} are not scheduled on cluster {{ $labels.cluster }}.'
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubedaemonsetnotscheduled
         summary: DaemonSet pods are not scheduled.
       expr: |-
@@ -4622,7 +4622,7 @@ spec:
         severity: warning
     - alert: KubeDaemonSetMisScheduled
       annotations:
-        description: '{{ $value }} Pods of DaemonSet {{ $labels.namespace }}/{{ $labels.daemonset }} are running where they are not supposed to run.'
+        description: '{{ $value }} Pods of DaemonSet {{ $labels.namespace }}/{{ $labels.daemonset }} are running where they are not supposed to run on cluster {{ $labels.cluster }}.'
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubedaemonsetmisscheduled
         summary: DaemonSet pods are misscheduled.
       expr: kube_daemonset_status_number_misscheduled{job="kube-state-metrics", namespace=~".*"} > 0
@@ -4631,7 +4631,7 @@ spec:
         severity: warning
     - alert: KubeJobNotCompleted
       annotations:
-        description: Job {{ $labels.namespace }}/{{ $labels.job_name }} is taking more than {{ "43200" | humanizeDuration }} to complete.
+        description: Job {{ $labels.namespace }}/{{ $labels.job_name }} is taking more than {{ "43200" | humanizeDuration }} to complete on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubejobnotcompleted
         summary: Job did not complete in time
       expr: |-
@@ -4642,7 +4642,7 @@ spec:
         severity: warning
     - alert: KubeJobFailed
       annotations:
-        description: Job {{ $labels.namespace }}/{{ $labels.job_name }} failed to complete. Removing failed job after investigation should clear this alert.
+        description: Job {{ $labels.namespace }}/{{ $labels.job_name }} failed to complete. Removing failed job after investigation should clear this alert on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubejobfailed
         summary: Job failed to complete.
       expr: kube_job_failed{job="kube-state-metrics", namespace=~".*"}  > 0
@@ -4651,7 +4651,7 @@ spec:
         severity: warning
     - alert: KubeHpaReplicasMismatch
       annotations:
-        description: HPA {{ $labels.namespace }}/{{ $labels.horizontalpodautoscaler  }} has not matched the desired number of replicas for longer than 15 minutes.
+        description: HPA {{ $labels.namespace }}/{{ $labels.horizontalpodautoscaler  }} has not matched the desired number of replicas for longer than 15 minutes on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubehpareplicasmismatch
         summary: HPA has not matched desired number of replicas.
       expr: |-
@@ -4673,7 +4673,7 @@ spec:
         severity: warning
     - alert: KubeHpaMaxedOut
       annotations:
-        description: HPA {{ $labels.namespace }}/{{ $labels.horizontalpodautoscaler  }} has been running at max replicas for longer than 15 minutes.
+        description: HPA {{ $labels.namespace }}/{{ $labels.horizontalpodautoscaler  }} has been running at max replicas for longer than 15 minutes on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubehpamaxedout
         summary: HPA is running at max replicas
       expr: |-
@@ -4695,9 +4695,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4756,7 +4756,7 @@ spec:
         severity: warning
     - alert: KubeQuotaAlmostFull
       annotations:
-        description: Namespace {{ $labels.namespace }} is using {{ $value | humanizePercentage }} of its {{ $labels.resource }} quota.
+        description: Namespace {{ $labels.namespace }} is using {{ $value | humanizePercentage }} of its {{ $labels.resource }} quota on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubequotaalmostfull
         summary: Namespace quota is going to be full.
       expr: |-
@@ -4769,7 +4769,7 @@ spec:
         severity: info
     - alert: KubeQuotaFullyUsed
       annotations:
-        description: Namespace {{ $labels.namespace }} is using {{ $value | humanizePercentage }} of its {{ $labels.resource }} quota.
+        description: Namespace {{ $labels.namespace }} is using {{ $value | humanizePercentage }} of its {{ $labels.resource }} quota on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubequotafullyused
         summary: Namespace quota is fully used.
       expr: |-
@@ -4782,7 +4782,7 @@ spec:
         severity: info
     - alert: KubeQuotaExceeded
       annotations:
-        description: Namespace {{ $labels.namespace }} is using {{ $value | humanizePercentage }} of its {{ $labels.resource }} quota.
+        description: Namespace {{ $labels.namespace }} is using {{ $value | humanizePercentage }} of its {{ $labels.resource }} quota on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubequotaexceeded
         summary: Namespace quota has exceeded the limits.
       expr: |-
@@ -4795,7 +4795,7 @@ spec:
         severity: warning
     - alert: CPUThrottlingHigh
       annotations:
-        description: '{{ $value | humanizePercentage }} throttling of CPU in namespace {{ $labels.namespace }} for container {{ $labels.container }} in pod {{ $labels.pod }}.'
+        description: '{{ $value | humanizePercentage }} throttling of CPU in namespace {{ $labels.namespace }} for container {{ $labels.container }} in pod {{ $labels.pod }} on cluster {{ $labels.cluster }}.'
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/cputhrottlinghigh
         summary: Processes experience elevated CPU throttling.
       expr: |-
@@ -4818,9 +4818,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4932,9 +4932,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -4976,7 +4976,7 @@ spec:
         severity: warning
     - alert: KubeAggregatedAPIDown
       annotations:
-        description: Kubernetes aggregated API {{ $labels.name }}/{{ $labels.namespace }} has been only {{ $value | humanize }}% available over the last 10m.
+        description: Kubernetes aggregated API {{ $labels.name }}/{{ $labels.namespace }} has been only {{ $value | humanize }}% available over the last 10m on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeaggregatedapidown
         summary: Kubernetes aggregated API is down.
       expr: (1 - max by (name, namespace, cluster)(avg_over_time(aggregator_unavailable_apiservice{job="apiserver"}[10m]))) * 100 < 85
@@ -4994,7 +4994,7 @@ spec:
         severity: critical
     - alert: KubeAPITerminatedRequests
       annotations:
-        description: The kubernetes apiserver has terminated {{ $value | humanizePercentage }} of its incoming requests.
+        description: The kubernetes apiserver has terminated {{ $value | humanizePercentage }} of its incoming requests on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeapiterminatedrequests
         summary: The kubernetes apiserver has terminated {{ $value | humanizePercentage }} of its incoming requests.
       expr: sum by (cluster) (rate(apiserver_request_terminations_total{job="apiserver"}[10m])) / ( sum by (cluster) (rate(apiserver_request_total{job="apiserver"}[10m])) + sum by (cluster) (rate(apiserver_request_terminations_total{job="apiserver"}[10m])) ) > 0.20
@@ -5013,9 +5013,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5043,9 +5043,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5073,9 +5073,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5084,7 +5084,7 @@ spec:
     rules:
     - alert: KubeNodeNotReady
       annotations:
-        description: '{{ $labels.node }} has been unready for more than 15 minutes.'
+        description: '{{ $labels.node }} has been unready for more than 15 minutes on cluster {{ $labels.cluster }}.'
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubenodenotready
         summary: Node is not ready.
       expr: kube_node_status_condition{job="kube-state-metrics",condition="Ready",status="true"} == 0
@@ -5093,7 +5093,7 @@ spec:
         severity: warning
     - alert: KubeNodeUnreachable
       annotations:
-        description: '{{ $labels.node }} is unreachable and some workloads may be rescheduled.'
+        description: '{{ $labels.node }} is unreachable and some workloads may be rescheduled on cluster {{ $labels.cluster }}.'
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubenodeunreachable
         summary: Node is unreachable.
       expr: (kube_node_spec_taint{job="kube-state-metrics",key="node.kubernetes.io/unreachable",effect="NoSchedule"} unless ignoring(key,value) kube_node_spec_taint{job="kube-state-metrics",key=~"ToBeDeletedByClusterAutoscaler|cloud.google.com/impending-node-termination|aws-node-termination-handler/spot-itn"}) == 1
@@ -5102,23 +5102,27 @@ spec:
         severity: warning
     - alert: KubeletTooManyPods
       annotations:
-        description: Kubelet '{{ $labels.node }}' is running at {{ $value | humanizePercentage }} of its Pod capacity.
+        description: Kubelet '{{ $labels.node }}' is running at {{ $value | humanizePercentage }} of its Pod capacity on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubelettoomanypods
         summary: Kubelet is running at capacity.
       expr: |-
         count by (cluster, node) (
-          (kube_pod_status_phase{job="kube-state-metrics",phase="Running"} == 1) * on (instance,pod,namespace,cluster) group_left(node) topk by (instance,pod,namespace,cluster) (1, kube_pod_info{job="kube-state-metrics"})
+          (kube_pod_status_phase{job="kube-state-metrics", phase="Running"} == 1)
+          * on (cluster, namespace, pod) group_left (node)
+          group by (cluster, namespace, pod, node) (
+            kube_pod_info{job="kube-state-metrics"}
+          )
         )
         /
         max by (cluster, node) (
-          kube_node_status_capacity{job="kube-state-metrics",resource="pods"} != 1
+          kube_node_status_capacity{job="kube-state-metrics", resource="pods"} != 1
         ) > 0.95
       for: 15m
       labels:
         severity: info
     - alert: KubeNodeReadinessFlapping
       annotations:
-        description: The readiness status of node {{ $labels.node }} has changed {{ $value }} times in the last 15 minutes.
+        description: The readiness status of node {{ $labels.node }} has changed {{ $value }} times in the last 15 minutes on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubenodereadinessflapping
         summary: Node readiness status is flapping.
       expr: sum(changes(kube_node_status_condition{job="kube-state-metrics",status="true",condition="Ready"}[15m])) by (cluster, node) > 2
@@ -5127,7 +5131,7 @@ spec:
         severity: warning
     - alert: KubeletPlegDurationHigh
       annotations:
-        description: The Kubelet Pod Lifecycle Event Generator has a 99th percentile duration of {{ $value }} seconds on node {{ $labels.node }}.
+        description: The Kubelet Pod Lifecycle Event Generator has a 99th percentile duration of {{ $value }} seconds on node {{ $labels.node }} on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeletplegdurationhigh
         summary: Kubelet Pod Lifecycle Event Generator is taking too long to relist.
       expr: node_quantile:kubelet_pleg_relist_duration_seconds:histogram_quantile{quantile="0.99"} >= 10
@@ -5136,7 +5140,7 @@ spec:
         severity: warning
     - alert: KubeletPodStartUpLatencyHigh
       annotations:
-        description: Kubelet Pod startup 99th percentile latency is {{ $value }} seconds on node {{ $labels.node }}.
+        description: Kubelet Pod startup 99th percentile latency is {{ $value }} seconds on node {{ $labels.node }} on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeletpodstartuplatencyhigh
         summary: Kubelet Pod startup latency is too high.
       expr: histogram_quantile(0.99, sum(rate(kubelet_pod_worker_duration_seconds_bucket{job="kubelet", metrics_path="/metrics"}[5m])) by (cluster, instance, le)) * on (cluster, instance) group_left(node) kubelet_node_name{job="kubelet", metrics_path="/metrics"} > 60
@@ -5145,7 +5149,7 @@ spec:
         severity: warning
     - alert: KubeletClientCertificateExpiration
       annotations:
-        description: Client certificate for Kubelet on node {{ $labels.node }} expires in {{ $value | humanizeDuration }}.
+        description: Client certificate for Kubelet on node {{ $labels.node }} expires in {{ $value | humanizeDuration }} on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeletclientcertificateexpiration
         summary: Kubelet client certificate is about to expire.
       expr: kubelet_certificate_manager_client_ttl_seconds < 604800
@@ -5153,7 +5157,7 @@ spec:
         severity: warning
     - alert: KubeletClientCertificateExpiration
       annotations:
-        description: Client certificate for Kubelet on node {{ $labels.node }} expires in {{ $value | humanizeDuration }}.
+        description: Client certificate for Kubelet on node {{ $labels.node }} expires in {{ $value | humanizeDuration }} on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeletclientcertificateexpiration
         summary: Kubelet client certificate is about to expire.
       expr: kubelet_certificate_manager_client_ttl_seconds < 86400
@@ -5161,7 +5165,7 @@ spec:
         severity: critical
     - alert: KubeletServerCertificateExpiration
       annotations:
-        description: Server certificate for Kubelet on node {{ $labels.node }} expires in {{ $value | humanizeDuration }}.
+        description: Server certificate for Kubelet on node {{ $labels.node }} expires in {{ $value | humanizeDuration }} on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeletservercertificateexpiration
         summary: Kubelet server certificate is about to expire.
       expr: kubelet_certificate_manager_server_ttl_seconds < 604800
@@ -5169,7 +5173,7 @@ spec:
         severity: warning
     - alert: KubeletServerCertificateExpiration
       annotations:
-        description: Server certificate for Kubelet on node {{ $labels.node }} expires in {{ $value | humanizeDuration }}.
+        description: Server certificate for Kubelet on node {{ $labels.node }} expires in {{ $value | humanizeDuration }} on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeletservercertificateexpiration
         summary: Kubelet server certificate is about to expire.
       expr: kubelet_certificate_manager_server_ttl_seconds < 86400
@@ -5177,7 +5181,7 @@ spec:
         severity: critical
     - alert: KubeletClientCertificateRenewalErrors
       annotations:
-        description: Kubelet on node {{ $labels.node }} has failed to renew its client certificate ({{ $value | humanize }} errors in the last 5 minutes).
+        description: Kubelet on node {{ $labels.node }} has failed to renew its client certificate ({{ $value | humanize }} errors in the last 5 minutes) on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeletclientcertificaterenewalerrors
         summary: Kubelet has failed to renew its client certificate.
       expr: increase(kubelet_certificate_manager_client_expiration_renew_errors[5m]) > 0
@@ -5186,7 +5190,7 @@ spec:
         severity: warning
     - alert: KubeletServerCertificateRenewalErrors
       annotations:
-        description: Kubelet on node {{ $labels.node }} has failed to renew its server certificate ({{ $value | humanize }} errors in the last 5 minutes).
+        description: Kubelet on node {{ $labels.node }} has failed to renew its server certificate ({{ $value | humanize }} errors in the last 5 minutes) on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeletservercertificaterenewalerrors
         summary: Kubelet has failed to renew its server certificate.
       expr: increase(kubelet_server_expiration_renew_errors[5m]) > 0
@@ -5214,9 +5218,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5244,9 +5248,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5255,7 +5259,7 @@ spec:
     rules:
     - alert: KubeVersionMismatch
       annotations:
-        description: There are {{ $value }} different semantic versions of Kubernetes components running.
+        description: There are {{ $value }} different semantic versions of Kubernetes components running on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeversionmismatch
         summary: Different semantic versions of Kubernetes components running.
       expr: count by (cluster) (count by (git_version, cluster) (label_replace(kubernetes_build_info{job!~"kube-dns|coredns"},"git_version","$1","git_version","(v[0-9]*.[0-9]*).*"))) > 1
@@ -5264,7 +5268,7 @@ spec:
         severity: warning
     - alert: KubeClientErrors
       annotations:
-        description: Kubernetes API server client '{{ $labels.job }}/{{ $labels.instance }}' is experiencing {{ $value | humanizePercentage }} errors.'
+        description: Kubernetes API server client '{{ $labels.job }}/{{ $labels.instance }}' is experiencing {{ $value | humanizePercentage }} errors on cluster {{ $labels.cluster }}.
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubeclienterrors
         summary: Kubernetes API server client is experiencing errors.
       expr: |-
@@ -5287,9 +5291,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5370,9 +5374,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5699,9 +5703,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5729,9 +5733,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5786,9 +5790,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -5879,9 +5883,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6249,9 +6253,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6282,9 +6286,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6312,9 +6316,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6353,9 +6357,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6387,9 +6391,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6417,9 +6421,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6447,9 +6451,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6480,9 +6484,9 @@ metadata:
     app: kube-prometheus-stack-kubelet    
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6594,9 +6598,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app: kube-prometheus-stack-operator
@@ -6634,9 +6638,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
 spec:
@@ -6667,9 +6671,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -6725,9 +6729,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -6770,9 +6774,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -6800,9 +6804,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -6830,9 +6834,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -6860,9 +6864,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -6921,9 +6925,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -6938,9 +6942,9 @@ spec:
         
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/instance: kube-prometheus-stack
-        app.kubernetes.io/version: "68.2.1"
+        app.kubernetes.io/version: "68.3.0"
         app.kubernetes.io/part-of: kube-prometheus-stack
-        chart: kube-prometheus-stack-68.2.1
+        chart: kube-prometheus-stack-68.3.0
         release: "kube-prometheus-stack"
         heritage: "Helm"
         app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -6948,7 +6952,7 @@ spec:
     spec:
       containers:
         - name: create
-          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
+          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.5.1
           imagePullPolicy: IfNotPresent
           args:
             - create
@@ -6987,9 +6991,9 @@ metadata:
     
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/instance: kube-prometheus-stack
-    app.kubernetes.io/version: "68.2.1"
+    app.kubernetes.io/version: "68.3.0"
     app.kubernetes.io/part-of: kube-prometheus-stack
-    chart: kube-prometheus-stack-68.2.1
+    chart: kube-prometheus-stack-68.3.0
     release: "kube-prometheus-stack"
     heritage: "Helm"
     app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -7004,9 +7008,9 @@ spec:
         
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/instance: kube-prometheus-stack
-        app.kubernetes.io/version: "68.2.1"
+        app.kubernetes.io/version: "68.3.0"
         app.kubernetes.io/part-of: kube-prometheus-stack
-        chart: kube-prometheus-stack-68.2.1
+        chart: kube-prometheus-stack-68.3.0
         release: "kube-prometheus-stack"
         heritage: "Helm"
         app.kubernetes.io/name: kube-prometheus-stack-prometheus-operator
@@ -7014,7 +7018,7 @@ spec:
     spec:
       containers:
         - name: patch
-          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
+          image: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.5.1
           imagePullPolicy: IfNotPresent
           args:
             - patch
