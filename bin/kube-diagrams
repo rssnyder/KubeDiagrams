@@ -630,7 +630,7 @@ with Diagram("", filename=args.output, show=False, direction="TB", outformat=arg
                     continue # skip this edge as the resource is provided by K8s clusters.
                 print("Error: %s resource not found!" % ke)
                 tmp = str(edge_rid).split("/")
-                if tmp[2] in ["ServiceAccount", "Service", "ConfigMap", "Secret", "PersistentVolumeClaim", "Role"]: #TODO: avoid specific cases
+                if tmp[2] in ["ServiceAccount", "Service", "ConfigMap", "Secret", "PersistentVolumeClaim", "Role", "Issuer", "Deployment"]: #TODO: avoid specific cases
                     rsrc = {
                         "apiVersion": "/".join(tmp[3:]),
                         "kind": tmp[2],
