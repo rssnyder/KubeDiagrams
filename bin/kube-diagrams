@@ -254,7 +254,10 @@ class EdgesContext(list):
         if volumeClaimTemplates is None:
             return
         for volumeClaimTemplate in volumeClaimTemplates:
-            self.add_storage_class("spec.storageClassName", volumeClaimTemplate)
+            self.append([
+                f"{volumeClaimTemplate['metadata']['name']}/{self.namespace}/PersistentVolumeClaim/v1",
+                "REFERENCE"
+            ])
 
     def add_storage_class(self, path, data=None):
         if data is None:
@@ -547,6 +550,20 @@ for filename in args.filename:
                 copy.deepcopy(config.get("clusters", []))
             )
             cluster.resources[rid] = resource
+            code_to_exec = get_node_config(resource).get("nodes")
+            if code_to_exec != None:
+                nodes = []
+                try:
+                    exec(code_to_exec)
+                except Exception as exc:
+                    print("Error:", type(exc), ":", exc.args)
+                    traceback.print_exception(exc)
+                    print("Edges script:\n", code_to_exec)
+                    print("Resource:")
+                    pprint(resource)
+                    raise
+                for node in nodes:
+                    process_resource(node)
 
         data = yaml.safe_load_all(f) # load YAML file
         for resource in data:

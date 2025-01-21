@@ -340,6 +340,13 @@ nodes:
   StatefulSet/apps/v1:
     scoped: Namespaced
     diagram_node_classname: diagrams.k8s.compute.STS
+    nodes: |
+      for vct in query_path(resource, "spec.volumeClaimTemplates", []):
+        nodes.append( {
+          "kind": "PersistentVolumeClaim",
+          "apiVersion": "v1",
+          **vct
+        } )
     edges: |
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
       edges.add_service_account("spec.template.spec")
