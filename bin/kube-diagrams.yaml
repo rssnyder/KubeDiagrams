@@ -344,11 +344,13 @@ nodes:
     diagram_node_classname: diagrams.k8s.compute.STS
     nodes: |
       for vct in query_path(resource, "spec.volumeClaimTemplates", []):
-        nodes.append( {
+        pvc = {
           "kind": "PersistentVolumeClaim",
           "apiVersion": "v1",
           **vct
-        } )
+        }
+        pvc["metadata"]["name"] = f'{pvc["metadata"]["name"]}-{resource["metadata"]["name"]}'
+        nodes.append(pvc)
     edges: |
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")
       edges.add_service_account("spec.template.spec")
