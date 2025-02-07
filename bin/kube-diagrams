@@ -4,6 +4,7 @@ import copy
 from diagrams import Diagram, Edge, Cluster
 from diagrams.aws.enablement import ManagedServices
 from diagrams.custom import Custom
+import importlib
 import json
 import os
 import traceback
@@ -101,9 +102,9 @@ def create_diagram_node(resource, fontcolor="black"):
             # Import Diagrams node class module
             idx = diagram_node_classname.rfind('.')
             if idx != -1:
-                exec("import " + diagram_node_classname[:idx])
+                module = importlib.import_module(diagram_node_classname[:idx])
             # Get diagram node class
-            diagram_node_class = eval(diagram_node_classname)
+            diagram_node_class = getattr(module, diagram_node_classname[idx+1:])
     # Create a diagram node
     return diagram_node_class(node_label, fontcolor=fontcolor)
 

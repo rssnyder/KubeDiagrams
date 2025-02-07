@@ -57,7 +57,7 @@ All the examples are
 
 ## Prerequisites
 
-* [Python 3.x](https://www.python.org/) with
+* [Python](https://www.python.org) 3.9 or higher with
   * [PyYAML](https://pyyaml.org)
     ```sh
     $ pip install pyyaml
