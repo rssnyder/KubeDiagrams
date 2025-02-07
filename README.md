@@ -165,7 +165,7 @@ Currently, unsupported `kind`/`apiGroup` resource types are 20 ones:
 * CSINode/storage.k8s.io
 * CSIStorageCapacity/storage.k8s.io
 
-## Kubernetes resources clustering
+### Kubernetes resources clustering
 
 With **KubeDiagrams**, Kubernetes resources can be clustered within the architecture diagrams automatically. **KubeDiagrams** uses the `metadata.namespace` resource field as first clustering criteria. Then, the `metadata.labels` keys can be used to define subclusters. Following table lists the predefined mappings between label keys and cluster titles as defined in the [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L37) file (see the `clusters` list).
 
@@ -192,8 +192,3 @@ Posts and blogs about **KubeDiagrams**:
 ## License
 
 This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) file for details.
-
-## Todo List
-
-* Make `nodes/*/edges` more declarative
-* Add other renderers such as PlantUML, D2, React Flow, etc.
