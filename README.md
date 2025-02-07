@@ -1,5 +1,9 @@
 # KubeDiagrams
 
+[![license](https://img.shields.io/github/license/philippemerle/KubeDiagrams)](/LICENSE)
+![python version](https://img.shields.io/badge/python-%3E%3D%203.9-blue?logo=python)
+![contributors](https://img.shields.io/github/contributors/philippemerle/KubeDiagrams)
+
 Generate Kubernetes architecture diagrams from Kubernetes manifest files, kustomization files, Helm charts, and actual cluster state.
 
 There are several tools to generate Kubernetes architecture diagrams (see **[here](https://github.com/philippemerle/Awesome-Kubernetes-Architecture-Diagrams)**).
