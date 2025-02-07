@@ -343,6 +343,7 @@ nodes:
     scoped: Namespaced
     diagram_node_classname: diagrams.k8s.compute.STS
     nodes: |
+      namespace = resource["metadata"].get("namespace")
       for vct in query_path(resource, "spec.volumeClaimTemplates", []):
         pvc = {
           "kind": "PersistentVolumeClaim",
@@ -350,6 +351,8 @@ nodes:
           **vct
         }
         pvc["metadata"]["name"] = f'{pvc["metadata"]["name"]}-{resource["metadata"]["name"]}'
+        if namespace != None:
+          pvc["metadata"]["namespace"] = namespace
         nodes.append(pvc)
     edges: |
       edges.add_all_resources_matching_labels("Pod", "spec.selector.matchLabels")

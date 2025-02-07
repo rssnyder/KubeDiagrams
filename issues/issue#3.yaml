@@ -1,0 +1,124 @@
+# Source: https://www.sqlservercentral.com/blogs/visualising-sql-server-in-kubernetes
+#
+# Some values were replaced in order to deploy this application on a minikube cluster.
+#
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mssql
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: mssql-sc
+provisioner: k8s.io/minikube-hostpath # docker.io/hostpath
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mssql-headless
+  namespace: mssql
+spec:
+  clusterIP: None
+  selector:
+    name: mssql-pod
+  ports:
+    - name: mssql-port
+      port: 1433
+      targetPort: 1433
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mssql-statefulset
+  namespace: mssql
+spec:
+  serviceName: "mssql-headless"
+  replicas: 1
+  podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      name: mssql-pod
+  template:
+    metadata:
+      labels:
+        name: mssql-pod
+    spec:
+      securityContext:
+        fsGroup: 10001
+      containers:
+        - name: mssql-container
+          image: mcr.microsoft.com/mssql/server:2022-CU16-ubuntu-20.04
+          ports:
+            - containerPort: 1433
+              name: mssql-port
+          env:
+            - name: MSSQL_PID
+              value: "Developer"
+            - name: ACCEPT_EULA
+              value: "Y"
+            - name: MSSQL_AGENT_ENABLED
+              value: "1"
+            - name: MSSQL_SA_PASSWORD
+              value: "Testing1122"
+          resources:
+            requests:
+              memory: "1024Mi"
+              cpu: "500m"
+            limits:
+              memory: "2048Mi"
+              cpu: "2000m"
+          volumeMounts:
+            - name: sqlsystem
+              mountPath: /var/opt/mssql
+            - name: sqldata
+              mountPath: /opt/sqlserver/data
+            - name: sqllog
+              mountPath: /opt/sqlserver/log
+  volumeClaimTemplates:
+    - metadata:
+        name: sqlsystem
+#        namespace: mssql # This is useless because implicit.
+      spec:
+        accessModes:
+         - ReadWriteOnce # Pod
+        storageClassName: mssql-sc
+        resources:
+          requests:
+            storage: 512M # 25Gi
+    - metadata:
+        name: sqldata
+#        namespace: mssql # This is useless because implicit.
+      spec:
+        accessModes:
+         - ReadWriteOnce # Pod
+        storageClassName: mssql-sc
+        resources:
+          requests:
+            storage: 512M # 25Gi
+    - metadata:
+        name: sqllog
+#        namespace: mssql # This is useless because implicit.
+      spec:
+        accessModes:
+         - ReadWriteOnce # Pod
+        storageClassName: mssql-sc
+        resources:
+          requests:
+            storage: 512M # 25Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mssql-service
+  namespace: mssql
+spec:
+  ports:
+  - name: mssql-ports
+    port: 1433
+    targetPort: 1433
+  selector:
+    name: mssql-pod
+  type: LoadBalancer

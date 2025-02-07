@@ -187,7 +187,7 @@ New mappings can be easily defined in custom configuration files (see [examples/
 
 Posts and blogs about **KubeDiagrams**:
 * [Facebook Kubernetes Users Group](https://www.facebook.com/groups/kubernetes.users/permalink/2818586068320504)
-* [Visualising SQL Server in Kubernetes](https://www.sqlservercentral.com/blogs/visualising-sql-server-in-kubernetes)
+* [Visualising SQL Server in Kubernetes](https://dbafromthecold.com/2025/02/06/visualising-sql-server-in-kubernetes/)
 
 ## License
 
