@@ -183,6 +183,12 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 
 New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2), [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L2),  [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L2), and [examples/towards5gs-helm/KubeDiagrams.yml](examples/towards5gs-helm/KubeDiagrams.yml#L2)) and provided to **KubeDiagrams** via the `--config` command-line option.
 
+## What do they say about it?
+
+Posts and blogs about **KubeDiagrams**:
+* [Facebook Kubernetes Users Group](https://www.facebook.com/groups/kubernetes.users/permalink/2818586068320504)
+* [Visualising SQL Server in Kubernetes](https://www.sqlservercentral.com/blogs/visualising-sql-server-in-kubernetes)
+
 ## License
 
 This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) file for details.
