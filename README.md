@@ -1,76 +1,80 @@
 # KubeDiagrams
 
-[![license](https://img.shields.io/github/license/philippemerle/KubeDiagrams)](/LICENSE)
+[![license](https://img.shields.io/github/license/philippemerle/KubeDiagrams)](https://github.com/philippemerle/KubeDiagrams/blob/main/LICENSE)
+[![pypi version](https://badge.fury.io/py/KubeDiagrams.svg)](https://badge.fury.io/py/KubeDiagrams)
+[![PyPI Downloads](https://static.pepy.tech/badge/KubeDiagrams)](https://pepy.tech/projects/KubeDiagrams)
 ![python version](https://img.shields.io/badge/python-%3E%3D%203.9-blue?logo=python)
 ![contributors](https://img.shields.io/github/contributors/philippemerle/KubeDiagrams)
 
 Generate Kubernetes architecture diagrams from Kubernetes manifest files, kustomization files, Helm charts, and actual cluster state.
 
 There are several tools to generate Kubernetes architecture diagrams (see **[here](https://github.com/philippemerle/Awesome-Kubernetes-Architecture-Diagrams)**).
-The main originality of **KubeDiagrams** is its **[configurability](bin/kube-diagrams.yaml)** allowing for instance to deal with custom Kubernetes resources.
+The main originality of **KubeDiagrams** is its **[configurability](https://github.com/philippemerle/KubeDiagrams/blob/main/bin/kube-diagrams.yaml)** allowing for instance to deal with custom Kubernetes resources.
 
 ## Examples
 
 Architecture diagram for **[official Kubernetes WordPress tutorial](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)** manifests:
-![WordPress Manifests](examples/wordpress/wordpress.png)
+![WordPress Manifests](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/wordpress/wordpress.png)
 
 Architecture diagram for **[official Kubernetes ZooKeeper tutorial](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/)** manifests:
-![ZooKeeper Manifest](examples/zookeeper/zookeeper.png)
+![ZooKeeper Manifest](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/zookeeper/zookeeper.png)
 
 Architecture diagram of a deployed **[Cassandra](https://kubernetes.io/docs/tutorials/stateful-application/cassandra/)** instance:
-![Deployed Cassandra Instance](examples/cassandra/default.png)
+![Deployed Cassandra Instance](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/cassandra/default.png)
 
 Architecture diagram for **[Train Ticket：A Benchmark Microservice System](https://github.com/FudanSELab/train-ticket/)**:
-![train-ticket.png](examples/train-ticket/train-ticket.png)
+![train-ticket.png](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/train-ticket/train-ticket.png)
 
 Architecture diagram of the Minikube Ingress Addon:
-![Minikube Ingress Addon](examples/minikube/minikube-ingress-nginx.png)
+![Minikube Ingress Addon](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/minikube/minikube-ingress-nginx.png)
 
 Architecture diagram for the **[Kube Prometheus Stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)** chart:
-![kube-prometheus-stack.png](examples/kube-prometheus-stack/kube-prometheus-stack.png)
+![kube-prometheus-stack.png](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/kube-prometheus-stack/kube-prometheus-stack.png)
 
 Architecture diagram for **[free5gc-k8s](https://github.com/niloysh/free5gc-k8s)** manifests:
-![free5gc-k8s-diagram.png](examples/free5gc-k8s/free5gc-k8s-diagram.png)
+![free5gc-k8s-diagram.png](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/free5gc-k8s/free5gc-k8s-diagram.png)
 
 Architecture diagram for **[open5gs-k8s](https://github.com/niloysh/open5gs-k8s)** manifests:
-![open5gs-k8s-diagram.png](examples/open5gs-k8s/open5gs-k8s-diagram.png)
+![open5gs-k8s-diagram.png](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/open5gs-k8s/open5gs-k8s-diagram.png)
 
 Architecture diagram for the **[Towards5GS-helm](https://github.com/Orange-OpenSource/towards5gs-helm)** chart:
-![towards5gs_free5gc.png](examples/towards5gs-helm/towards5gs_free5gc.png)
+![towards5gs_free5gc.png](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/towards5gs-helm/towards5gs_free5gc.png)
 
 Architecture diagram for a deployed **CronJob** instance:
-![cronjob-deployed.png](examples/miscellaneous/cronjob-deployed.png)
+![cronjob-deployed.png](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/miscellaneous/cronjob-deployed.png)
 
-Architecture diagram for **NetworkPolicy** resources: ![network_policies.png](examples/miscellaneous/network_policies.png)
+Architecture diagram for **NetworkPolicy** resources: ![network_policies.png](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/examples/miscellaneous/network_policies.png)
 
-Many other architecture diagrams are available into [examples/](examples/).
+Many other architecture diagrams are available into [examples/](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/).
 
 All the examples are
-1. [official Kubernetes WordPress tutorial](examples/wordpress/)
-1. [official Kubernetes ZooKeeper tutorial](examples/zookeeper/)
-1. [official Kubernetes Cassandra tutorial](examples/cassandra/)
-1. [Train Ticket](examples/train-ticket/)
-1. [minikube architecture diagrams](examples/minikube/)
-1. [k0s architecture diagrams](examples/k0s/)
-1. [Kube Prometheus Stack](examples/kube-prometheus-stack/)
-1. [free5gc-k8s](examples/free5gc-k8s/)
-1. [open5gs-k8s](examples/open5gs-k8s/)
-1. [Towards5GS-helm](examples/towards5gs-helm/)
-1. [Miscellaneous examples](examples/miscellaneous/)
-1. [Some Helm charts](examples/helm-charts/)
+1. [official Kubernetes WordPress tutorial](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/wordpress/)
+1. [official Kubernetes ZooKeeper tutorial](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/zookeeper/)
+1. [official Kubernetes Cassandra tutorial](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/cassandra/)
+1. [Train Ticket](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/train-ticket/)
+1. [minikube architecture diagrams](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/minikube/)
+1. [k0s architecture diagrams](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/k0s/)
+1. [Kube Prometheus Stack](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/kube-prometheus-stack/)
+1. [free5gc-k8s](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/free5gc-k8s/)
+1. [open5gs-k8s](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/open5gs-k8s/)
+1. [Towards5GS-helm](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/towards5gs-helm/)
+1. [Miscellaneous examples](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/miscellaneous/)
+1. [Some Helm charts](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/helm-charts/)
 
 ## Prerequisites
 
-* [Python](https://www.python.org) 3.9 or higher with
-  * [PyYAML](https://pyyaml.org)
-    ```sh
-    $ pip install pyyaml
-    ```
-  * [Diagrams](https://diagrams.mingrammer.com/)
-    ```sh
-    $ pip install diagrams
-    ```
+Following software must be installed:
+* [Python](https://www.python.org) 3.9 or higher
 * `dot` command ([Graphviz](https://www.graphviz.org/))
+
+## Getting Started
+
+Following command installs **KubeDiagrams** and all its Python dependencies, i.e., [PyYAML](https://pyyaml.org) and [Diagrams](https://diagrams.mingrammer.com/).
+
+```ssh
+# using pip (pip3)
+$ pip install KubeDiagrams
+```
 
 ## Usage
 
@@ -143,9 +147,9 @@ Supported `kind`/`apiVersion` resource types are 42 ones:
 * ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1
 * VolumeAttachment/storage.k8s.io/v1
 
-**Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L65).
+**Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/bin/kube-diagrams.yaml#L65).
 
-**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](examples/kube-prometheus-stack/KubeDiagrams.yaml#L3).
+**Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/kube-prometheus-stack/KubeDiagrams.yaml#L3).
 
 Currently, unsupported `kind`/`apiGroup` resource types are 20 ones:
 * Binding/
@@ -171,7 +175,7 @@ Currently, unsupported `kind`/`apiGroup` resource types are 20 ones:
 
 ### Kubernetes resources clustering
 
-With **KubeDiagrams**, Kubernetes resources can be clustered within the architecture diagrams automatically. **KubeDiagrams** uses the `metadata.namespace` resource field as first clustering criteria. Then, the `metadata.labels` keys can be used to define subclusters. Following table lists the predefined mappings between label keys and cluster titles as defined in the [bin/kube-diagrams.yml](bin/kube-diagrams.yaml#L37) file (see the `clusters` list).
+With **KubeDiagrams**, Kubernetes resources can be clustered within the architecture diagrams automatically. **KubeDiagrams** uses the `metadata.namespace` resource field as first clustering criteria. Then, the `metadata.labels` keys can be used to define subclusters. Following table lists the predefined mappings between label keys and cluster titles as defined in the [bin/kube-diagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/bin/kube-diagrams.yaml#L37) file (see the `clusters` list).
 
 | Label | Cluster Title |
 | :--------: | :-------: |
@@ -185,7 +189,7 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 | `service` | Microservice |
 | `tier` | Tier |
 
-New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](examples/minikube/KubeDiagrams.yml#L2), [examples/k0s/KubeDiagrams.yml](examples/k0s/KubeDiagrams.yml#L5), [examples/free5gc-k8s/KubeDiagrams.yml](examples/free5gc-k8s/KubeDiagrams.yml#L2),  [examples/open5gs-k8s/KubeDiagrams.yml](examples/open5gs-k8s/KubeDiagrams.yml#L2), and [examples/towards5gs-helm/KubeDiagrams.yml](examples/towards5gs-helm/KubeDiagrams.yml#L2)) and provided to **KubeDiagrams** via the `--config` command-line option.
+New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/minikube/KubeDiagrams.yml#L2), [examples/k0s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/k0s/KubeDiagrams.yml#L5), [examples/free5gc-k8s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/free5gc-k8s/KubeDiagrams.yml#L2),  [examples/open5gs-k8s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/open5gs-k8s/KubeDiagrams.yml#L2), and [examples/towards5gs-helm/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/towards5gs-helm/KubeDiagrams.yml#L2)) and provided to **KubeDiagrams** via the `--config` command-line option.
 
 ## What do they say about it?
 
@@ -195,4 +199,4 @@ Posts and blogs about **KubeDiagrams**:
 
 ## License
 
-This project is licensed under the GPL-3.0 license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GPL-3.0 license - see the [LICENSE](https://github.com/philippemerle/KubeDiagrams/blob/main/LICENSE) file for details.
