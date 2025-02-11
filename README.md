@@ -194,6 +194,7 @@ New mappings can be easily defined in custom configuration files (see [examples/
 ## What do they say about it?
 
 Posts and blogs about **KubeDiagrams**:
+* [Announce on reddit](https://www.reddit.com/r/kubernetes/comments/1ihjujy/kubediagrams)
 * [Facebook Kubernetes Users Group](https://www.facebook.com/groups/kubernetes.users/permalink/2818586068320504)
 * [Visualising SQL Server in Kubernetes](https://dbafromthecold.com/2025/02/06/visualising-sql-server-in-kubernetes/)
 
