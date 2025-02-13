@@ -13,7 +13,9 @@ helm repo remove towards5gs
 
 # Generate the towards5gs-helm architecture diagrams.
 kube-diagrams -c KubeDiagrams.yml towards5gs_free5gc.yaml
+kube-diagrams -c KubeDiagrams.yml towards5gs_free5gc.yaml --without-namespace -o towards5gs_free5gc-without-namespace
 kube-diagrams -c KubeDiagrams.yml towards5gs_ueransim.yaml
+kube-diagrams -c KubeDiagrams.yml towards5gs_ueransim.yaml --without-namespace -o towards5gs_ueransim-without-namespace
 kube-diagrams -c KubeDiagrams.yml towards5gs_ueransim-corrected.yaml
 kube-diagrams -c KubeDiagrams.yml --without-namespace -o towards5gs_ueransim-corrected-without-namespace towards5gs_ueransim-corrected.yaml
 
