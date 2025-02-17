@@ -191,12 +191,18 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 
 New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/minikube/KubeDiagrams.yml#L2), [examples/k0s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/k0s/KubeDiagrams.yml#L5), [examples/free5gc-k8s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/free5gc-k8s/KubeDiagrams.yml#L2),  [examples/open5gs-k8s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/open5gs-k8s/KubeDiagrams.yml#L2), and [examples/towards5gs-helm/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/towards5gs-helm/KubeDiagrams.yml#L2)) and provided to **KubeDiagrams** via the `--config` command-line option.
 
+## Talks
+
+* [Visualizing cloud-native applications with KubeDiagrams](https://mybox.inria.fr/f/61de0e6e5be94b7a941f/?dl=1), February 17, 2025
+
 ## What do they say about it?
 
 Posts and blogs about **KubeDiagrams**:
 * [Announce on reddit](https://www.reddit.com/r/kubernetes/comments/1ihjujy/kubediagrams)
 * [Facebook Kubernetes Users Group](https://www.facebook.com/groups/kubernetes.users/permalink/2818586068320504)
 * [Visualising SQL Server in Kubernetes](https://dbafromthecold.com/2025/02/06/visualising-sql-server-in-kubernetes/)
+* [Tool of the day](https://www.techopsexamples.com/p/understanding-kubernetes-etcd-locks)
+* [Post on DevSecOps](https://tlgrm.ru/channels/@devsecops_weekly/1145)
 
 ## License
 
