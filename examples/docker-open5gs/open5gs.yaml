@@ -1,0 +1,1003 @@
+---
+# Source: open5gs/charts/amf/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-amf-configmap
+  namespace: default
+data:
+  amf.yaml: |
+    
+    logger:
+      file:
+        path: /var/log/open5gs/amf.log
+    
+    global:
+    
+    amf:
+      sbi:
+        server:
+          - dev: eth0
+            port: 80
+        client:
+          nrf:
+            - uri: http://open5gs-nrf-service-sbi:80
+      ngap:
+        server:
+          - dev: eth0
+      guami:
+        - plmn_id:
+            mcc: 001
+            mnc: 01
+          amf_id:
+            region: 2
+            set: 1
+      tai:
+        - plmn_id:
+            mcc: 001
+            mnc: 01
+          tac: 1
+      plmn_support:
+        - plmn_id:
+            mcc: 001
+            mnc: 01
+          s_nssai:
+            - sst: 1
+              sd: 000001
+      security:
+          integrity_order : [ NIA2, NIA1, NIA0 ]
+          ciphering_order : [ NEA0, NEA1, NEA2 ]
+      network_name:
+        full: Open5GS
+      amf_name: open5gs-open5gs-amf
+      time:
+        t3512:
+          value: 540
+---
+# Source: open5gs/charts/ausf/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-ausf-configmap
+  namespace: default
+data:
+  ausf.yaml: |
+    
+    logger:
+      file:
+        path: /var/log/open5gs/ausf.log
+    
+    global:
+    
+    ausf:
+      sbi:
+        server:
+          - dev: eth0
+            port: 80
+        client:
+          nrf:
+            - uri: http://open5gs-nrf-service-sbi:80
+---
+# Source: open5gs/charts/bsf/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-bsf-configmap
+  namespace: default
+data:
+  bsf.yaml: |
+    
+    logger:
+      file:
+        path: /var/log/open5gs/bsf.log
+    
+    global:
+    
+    bsf:
+      sbi:
+        server:
+          - dev: eth0
+            port: 80
+        client:
+          nrf:
+            - uri: http://open5gs-nrf-service-sbi:80
+---
+# Source: open5gs/charts/db/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-db-configmap
+  namespace: default
+data:
+  mongod.conf: |
+    
+    systemLog:
+      destination: file
+      logAppend: true
+      path: /var/log/mongodb/mongod.log
+    
+    storage:
+      dbPath: /data/db
+    
+    processManagement:
+      timeZoneInfo: /usr/share/zoneinfo
+    
+    net:
+      port: 27017
+      bindIp: 0.0.0.0
+---
+# Source: open5gs/charts/nrf/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-nrf-configmap
+  namespace: default
+data:
+  nrf.yaml: |
+    
+    logger:
+      file:
+        path: /var/log/open5gs/nrf.log
+    
+    global:
+    
+    nrf:
+      sbi:
+        server:
+          - dev: eth0
+            port: 80
+---
+# Source: open5gs/charts/nssf/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-nssf-configmap
+  namespace: default
+data:
+  nssf.yaml: |
+    
+    logger:
+      file:
+        path: /var/log/open5gs/nssf.log
+    
+    global:
+    
+    nssf:
+      sbi:
+        server:
+          - dev: eth0
+            port: 80
+        client:
+          nrf:
+            - uri: http://open5gs-nrf-service-sbi:80
+          nsi:
+            - uri: http://open5gs-nrf-service-sbi:80
+              s_nssai:
+                sst: 1
+                sd: 000001
+---
+# Source: open5gs/charts/pcf/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-pcf-configmap
+  namespace: default
+data:
+  pcf.yaml: |
+    
+    
+    db_uri: mongodb://open5gs-db-service/open5gs
+    
+    logger:
+      file:
+        path: /var/log/open5gs/pcf.log
+    
+    global:
+    
+    pcf:
+      sbi:
+        server:
+          - dev: eth0
+            port: 80
+        client:
+          nrf:
+            - uri: http://open5gs-nrf-service-sbi:80
+---
+# Source: open5gs/charts/smf/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-smf-configmap
+  namespace: default
+data:
+  smf.yaml: |
+    
+    logger:
+      file:
+        path: /var/log/open5gs/smf.log
+    
+    global:
+    
+    smf:
+      sbi:
+        server:
+          - dev: eth0
+            port: 80
+        client:
+          nrf:
+            - uri: http://open5gs-nrf-service-sbi:80
+      pfcp:
+        server:
+          - dev: eth0
+        client:
+      gtpu:
+        server:
+          - dev: eth0
+      session:
+        - subnet: 10.45.0.0/16
+          gateway: 10.45.0.1
+          dnn: internet
+      dns:
+        - 8.8.8.8
+        - 8.8.4.4
+      mtu: 1400
+---
+# Source: open5gs/charts/udm/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-udm-configmap
+  namespace: default
+data:
+  udm.yaml: |
+    
+    logger:
+      file:
+        path: /var/log/open5gs/udm.log
+    
+    global:
+    
+    udm:
+      sbi:
+        server:
+          - dev: eth0
+            port: 80
+        client:
+          nrf:
+            - uri: http://open5gs-nrf-service-sbi:80
+---
+# Source: open5gs/charts/udr/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-udr-configmap
+  namespace: default
+data:
+  udr.yaml: |
+    
+    
+    db_uri: mongodb://open5gs-db-service/open5gs
+    
+    logger:
+      file:
+        path: /var/log/open5gs/udr.log
+    
+    global:
+    
+    udr:
+      sbi:
+        server:
+          - dev: eth0
+            port: 80
+        client:
+          nrf:
+            - uri: http://open5gs-nrf-service-sbi:80
+---
+# Source: open5gs/charts/upf/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-upf-configmap
+  namespace: default
+data:
+  upf.yaml: |
+    
+    logger:
+      file:
+        path: /var/log/open5gs/upf.log
+    
+    global:
+    
+    upf:
+      pfcp:
+        server:
+          - dev: eth0
+        client:
+          smf:
+            - address: open5gs-smf-service-pfcp
+      gtpu:
+        server:
+          - dev: eth0
+            advertise: 10.33.0.3
+      session:
+        - subnet: 10.45.0.0/16
+          gateway: 10.45.0.1
+          dnn: internet
+---
+# Source: open5gs/charts/db/templates/persistentvolumeclaim.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: open5gs-db-pvc-data
+spec:
+  
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ""
+---
+# Source: open5gs/charts/amf/templates/service-ngap.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-amf-service-ngap
+  namespace: default
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.33.0.2
+spec:
+  selector:
+    nf: amf
+  ports:
+    - name: ngap
+      port: 38412
+      targetPort: 38412
+      protocol: SCTP
+  type: LoadBalancer
+---
+# Source: open5gs/charts/amf/templates/service-sbi.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-amf-service-sbi
+  namespace: default
+spec:
+  selector:
+    nf: amf
+  ports:
+    - name: sbi
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+# Source: open5gs/charts/ausf/templates/service-sbi.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-ausf-service-sbi
+  namespace: default
+spec:
+  selector:
+    nf: ausf
+  ports:
+    - name: sbi
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+# Source: open5gs/charts/bsf/templates/service-sbi.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-bsf-service-sbi
+  namespace: default
+spec:
+  selector:
+    nf: bsf
+  ports:
+    - name: sbi
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+# Source: open5gs/charts/db/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-db-service
+  namespace: default
+spec:
+  selector:
+    app: db
+  ports:
+    - name: db
+      port: 27017
+      targetPort: 27017
+      nodePort: 30007
+  type: NodePort
+---
+# Source: open5gs/charts/nrf/templates/service-sbi.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-nrf-service-sbi
+  namespace: default
+spec:
+  selector:
+    nf: nrf
+  ports:
+    - name: sbi
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+# Source: open5gs/charts/nssf/templates/service-sbi.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-nssf-service-sbi
+  namespace: default
+spec:
+  selector:
+    nf: nssf
+  ports:
+    - name: sbi
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+# Source: open5gs/charts/pcf/templates/service-sbi.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-pcf-service-sbi
+  namespace: default
+spec:
+  selector:
+    nf: pcf
+  ports:
+    - name: sbi
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+# Source: open5gs/charts/smf/templates/service-pfcp.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-smf-service-pfcp
+  namespace: default
+  annotations:
+spec:
+  selector:
+    nf: smf
+  ports:
+    - name: pfcp
+      port: 8805
+      targetPort: 8805
+      protocol: UDP
+  type: ClusterIP
+---
+# Source: open5gs/charts/smf/templates/service-sbi.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-smf-service-sbi
+  namespace: default
+spec:
+  selector:
+    nf: smf
+  ports:
+    - name: sbi
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+# Source: open5gs/charts/udm/templates/service-sbi.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-udm-service-sbi
+  namespace: default
+spec:
+  selector:
+    nf: udm
+  ports:
+    - name: sbi
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+# Source: open5gs/charts/udr/templates/service-sbi.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-udr-service-sbi
+  namespace: default
+spec:
+  selector:
+    nf: udr
+  ports:
+    - name: sbi
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+# Source: open5gs/charts/upf/templates/service-gtpu.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-upf-service-gtpu
+  namespace: default
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.33.0.3
+spec:
+  selector:
+    nf: upf
+  ports:
+    - name: gtpu
+      port: 2152
+      targetPort: 2152
+      protocol: UDP
+  type: LoadBalancer
+---
+# Source: open5gs/charts/upf/templates/service-pfcp.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-upf-service-pfcp
+  namespace: default
+spec:
+  selector:
+    nf: upf
+  ports:
+    - name: pfcp
+      port: 8805
+      targetPort: 8805
+      protocol: UDP
+  type: ClusterIP
+---
+# Source: open5gs/charts/webui/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-webui-service
+  namespace: default
+spec:
+  selector:
+    app: webui
+  ports:
+    - name: webui
+      port: 9999
+      targetPort: 9999
+      nodePort: 30999
+  type: NodePort
+---
+# Source: open5gs/charts/amf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-amf-deployment
+  namespace: default
+  labels:
+    nf: amf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: amf
+  template:
+    metadata:
+      labels:
+        nf: amf
+    spec:
+      containers:
+      - name: open5gs-amf
+        image: ghcr.io/borjis131/amf:v2.7.2
+        args: ["-c", "/open5gs/config/amf.yaml"]
+        ports:
+        - name: sbi
+          containerPort: 80
+        - name: ngap
+          containerPort: 38412
+          protocol: SCTP
+        volumeMounts:
+        - name: amf-volume-config
+          mountPath: /open5gs/config/amf.yaml
+          subPath: amf.yaml
+      volumes:
+      - name: amf-volume-config
+        configMap:
+          name: open5gs-amf-configmap
+---
+# Source: open5gs/charts/ausf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-ausf-deployment
+  namespace: default
+  labels:
+    nf: ausf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: ausf
+  template:
+    metadata:
+      labels:
+        nf: ausf
+    spec:
+      containers:
+      - name: open5gs-ausf
+        image: ghcr.io/borjis131/ausf:v2.7.2
+        args: ["-c", "/open5gs/config/ausf.yaml"]
+        ports:
+        - name: sbi
+          containerPort: 80
+        volumeMounts:
+        - name: ausf-volume-config
+          mountPath: /open5gs/config/ausf.yaml
+          subPath: ausf.yaml
+      volumes:
+      - name: ausf-volume-config
+        configMap:
+          name: open5gs-ausf-configmap
+---
+# Source: open5gs/charts/bsf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-bsf-deployment
+  namespace: default
+  labels:
+    nf: bsf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: bsf
+  template:
+    metadata:
+      labels:
+        nf: bsf
+    spec:
+      containers:
+      - name: open5gs-bsf
+        image: ghcr.io/borjis131/bsf:v2.7.2
+        args: ["-c", "/open5gs/config/bsf.yaml"]
+        ports:
+        - name: sbi
+          containerPort: 80
+        volumeMounts:
+        - name: bsf-volume-config
+          mountPath: /open5gs/config/bsf.yaml
+          subPath: bsf.yaml
+      volumes:
+      - name: bsf-volume-config
+        configMap:
+          name: open5gs-bsf-configmap
+---
+# Source: open5gs/charts/db/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-db-deployment
+  namespace: default
+  labels:
+    app: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: open5gs-db
+        image: docker.io/mongo:6.0
+        #args: ["--bind_ip 0.0.0.0 --port 27017"]
+        ports:
+        - name: db
+          containerPort: 27017
+        volumeMounts:
+        - name: db-volume-data
+          mountPath: /data/db
+        #- name: db-volume-config
+          #mountPath: /etc/mongod.conf
+          #subPath: mongod.conf
+      volumes:
+      - name: db-volume-data
+        persistentVolumeClaim:
+          claimName: open5gs-db-pvc-data
+      #- name: db-volume-config
+        #configMap:
+          #name: open5gs-db-configmap
+---
+# Source: open5gs/charts/nrf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-nrf-deployment
+  namespace: default
+  labels:
+    nf: nrf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: nrf
+  template:
+    metadata:
+      labels:
+        nf: nrf
+    spec:
+      containers:
+      - name: open5gs-nrf
+        image: ghcr.io/borjis131/nrf:v2.7.2
+        args: ["-c", "/open5gs/config/nrf.yaml"]
+        ports:
+        - name: sbi
+          containerPort: 80
+        volumeMounts:
+        - name: nrf-volume-config
+          mountPath: /open5gs/config/nrf.yaml
+          subPath: nrf.yaml
+      volumes:
+      - name: nrf-volume-config
+        configMap:
+          name: open5gs-nrf-configmap
+---
+# Source: open5gs/charts/nssf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-nssf-deployment
+  namespace: default
+  labels:
+    nf: nssf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: nssf
+  template:
+    metadata:
+      labels:
+        nf: nssf
+    spec:
+      containers:
+      - name: open5gs-nssf
+        image: ghcr.io/borjis131/nssf:v2.7.2
+        args: ["-c", "/open5gs/config/nssf.yaml"]
+        ports:
+        - name: sbi
+          containerPort: 80
+        volumeMounts:
+        - name: nssf-volume-config
+          mountPath: /open5gs/config/nssf.yaml
+          subPath: nssf.yaml
+      volumes:
+      - name: nssf-volume-config
+        configMap:
+          name: open5gs-nssf-configmap
+---
+# Source: open5gs/charts/pcf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-pcf-deployment
+  namespace: default
+  labels:
+    nf: pcf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: pcf
+  template:
+    metadata:
+      labels:
+        nf: pcf
+    spec:
+      containers:
+      - name: open5gs-pcf
+        image: ghcr.io/borjis131/pcf:v2.7.2
+        args: ["-c", "/open5gs/config/pcf.yaml"]
+        ports:
+        - name: sbi
+          containerPort: 80
+        volumeMounts:
+        - name: pcf-volume-config
+          mountPath: /open5gs/config/pcf.yaml
+          subPath: pcf.yaml
+      volumes:
+      - name: pcf-volume-config
+        configMap:
+          name: open5gs-pcf-configmap
+---
+# Source: open5gs/charts/smf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-smf-deployment
+  namespace: default
+  labels:
+    nf: smf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: smf
+  template:
+    metadata:
+      labels:
+        nf: smf
+    spec:
+      containers:
+      - name: open5gs-smf
+        image: ghcr.io/borjis131/smf:v2.7.2
+        args: ["-c", "/open5gs/config/smf.yaml"]
+        ports:
+        - name: sbi
+          containerPort: 80
+        - name: pfcp
+          containerPort: 8805
+          protocol: UDP
+        volumeMounts:
+        - name: smf-volume-config
+          mountPath: /open5gs/config/smf.yaml
+          subPath: smf.yaml
+      volumes:
+      - name: smf-volume-config
+        configMap:
+          name: open5gs-smf-configmap
+---
+# Source: open5gs/charts/udm/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-udm-deployment
+  namespace: default
+  labels:
+    nf: udm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: udm
+  template:
+    metadata:
+      labels:
+        nf: udm
+    spec:
+      containers:
+      - name: open5gs-udm
+        image: ghcr.io/borjis131/udm:v2.7.2
+        args: ["-c", "/open5gs/config/udm.yaml"]
+        ports:
+        - name: sbi
+          containerPort: 80
+        volumeMounts:
+        - name: udm-volume-config
+          mountPath: /open5gs/config/udm.yaml
+          subPath: udm.yaml
+      volumes:
+      - name: udm-volume-config
+        configMap:
+          name: open5gs-udm-configmap
+---
+# Source: open5gs/charts/udr/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-udr-deployment
+  namespace: default
+  labels:
+    nf: udr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: udr
+  template:
+    metadata:
+      labels:
+        nf: udr
+    spec:
+      containers:
+      - name: open5gs-udr
+        image: ghcr.io/borjis131/udr:v2.7.2
+        args: ["-c", "/open5gs/config/udr.yaml"]
+        ports:
+        - name: sbi
+          containerPort: 80
+        volumeMounts:
+        - name: udr-volume-config
+          mountPath: /open5gs/config/udr.yaml
+          subPath: udr.yaml
+      volumes:
+      - name: udr-volume-config
+        configMap:
+          name: open5gs-udr-configmap
+---
+# Source: open5gs/charts/upf/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-upf-deployment
+  namespace: default
+  labels:
+    nf: upf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nf: upf
+  template:
+    metadata:
+      labels:
+        nf: upf
+    spec:
+      containers:
+      - name: open5gs-upf
+        image: ghcr.io/borjis131/upf:v2.7.2
+        args: ["-c", "/open5gs/config/upf.yaml"]
+        ports:
+        - name: gtpu
+          containerPort: 2152
+          protocol: UDP
+        - name: pfcp
+          containerPort: 8805
+          protocol: UDP
+        securityContext:
+          privileged: true
+          capabilities:
+            add: ["NET_ADMIN"]
+        volumeMounts:
+        - name: upf-volume-config
+          mountPath: /open5gs/config/upf.yaml
+          subPath: upf.yaml
+      volumes:
+      - name: upf-volume-config
+        configMap:
+          name: open5gs-upf-configmap
+---
+# Source: open5gs/charts/webui/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-webui-deployment
+  namespace: default
+  labels:
+    app: webui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webui
+  template:
+    metadata:
+      labels:
+        app: webui
+    spec:
+      containers:
+      - name: open5gs-webui
+        image: ghcr.io/borjis131/webui:v2.7.2
+        args: ["run", "dev"]
+        env:
+        - name: DB_URI
+          value: "mongodb://open5gs-db-service/open5gs"
+        - name: HOSTNAME
+          value: "0.0.0.0"
+        - name: PORT
+          value: "9999"
+        - name: NODE_ENV
+          value: "dev"
+        ports:
+        - name: webui
+          containerPort: 9999
