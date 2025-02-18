@@ -1,0 +1,206 @@
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: runc
+handler: runc
+---
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: gvisor
+handler: gvisor
+---
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: kata
+handler: kata
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-1
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          runtimeClassName: runc
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-2
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          runtimeClassName: gvisor
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-3
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          runtimeClassName: kata
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds-1
+spec:
+  template:
+    spec:
+      runtimeClassName: runc
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds-2
+spec:
+  template:
+    spec:
+      runtimeClassName: gvisor
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds-3
+spec:
+  template:
+    spec:
+      runtimeClassName: kata
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-1
+spec:
+  template:
+    spec:
+      runtimeClassName: runc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-2
+spec:
+  template:
+    spec:
+      runtimeClassName: gvisor
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-3
+spec:
+  template:
+    spec:
+      runtimeClassName: kata
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-1
+spec:
+  template:
+    spec:
+      runtimeClassName: runc
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-2
+spec:
+  template:
+    spec:
+      runtimeClassName: gvisor
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-3
+spec:
+  template:
+    spec:
+      runtimeClassName: kata
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+spec:
+  runtimeClassName: runc
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-2
+spec:
+  runtimeClassName: gvisor
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-3
+spec:
+  runtimeClassName: kata
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-1
+spec:
+  template:
+    spec:
+      runtimeClassName: runc
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-2
+spec:
+  template:
+    spec:
+      runtimeClassName: gvisor
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-3
+spec:
+  template:
+    spec:
+      runtimeClassName: kata
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sts-1
+spec:
+  template:
+    spec:
+      runtimeClassName: runc
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sts-2
+spec:
+  template:
+    spec:
+      runtimeClassName: gvisor
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sts-3
+spec:
+  template:
+    spec:
+      runtimeClassName: kata

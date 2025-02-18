@@ -104,6 +104,9 @@ nodes:
       edges.add_wait_for_services("spec.jobTemplate.spec.template.spec.initContainers")
       edges.add_networks("spec.jobTemplate.spec.template.metadata.annotations")
       edges.add_priority_class("spec.jobTemplate.spec.template.spec.priorityClassName")
+      runtimeClassName = query_path(resource, "spec.jobTemplate.spec.template.spec.runtimeClassName")
+      if runtimeClassName != None:
+        edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
   CronJob/batch/v1beta1: CronJob/batch/v1
   CustomResourceDefinition/apiextensions.k8s.io/v1:
     scope: Cluster
@@ -126,6 +129,9 @@ nodes:
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
       edges.add_priority_class("spec.template.spec.priorityClassName")
+      runtimeClassName = query_path(resource, "spec.template.spec.runtimeClassName")
+      if runtimeClassName != None:
+        edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
   Deployment/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Deploy
@@ -137,6 +143,9 @@ nodes:
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
       edges.add_priority_class("spec.template.spec.priorityClassName")
+      runtimeClassName = query_path(resource, "spec.template.spec.runtimeClassName")
+      if runtimeClassName != None:
+        edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
   Deployment/apps/v1beta1: Deployment/apps/v1
   Endpoints/v1:
     scope: Namespaced
@@ -219,6 +228,9 @@ nodes:
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
       edges.add_priority_class("spec.template.spec.priorityClassName")
+      runtimeClassName = query_path(resource, "spec.template.spec.runtimeClassName")
+      if runtimeClassName != None:
+        edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
   Job/batch/v1beta1: Job/batch/v1
   Lease/coordination.k8s.io/v1:
     scope: Namespaced
@@ -285,6 +297,9 @@ nodes:
         edges.append([nid, "REFERENCE"])
       edges.add_networks("metadata.annotations")
       edges.add_priority_class("spec.priorityClassName")
+      runtimeClassName = query_path(resource, "spec.runtimeClassName")
+      if runtimeClassName != None:
+        edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
   PodDisruptionBudget/policy/v1:
     scope: Namespaced
     custom_icon: $KD/icons/pdb.png
@@ -310,6 +325,9 @@ nodes:
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
       edges.add_priority_class("spec.template.spec.priorityClassName")
+      runtimeClassName = query_path(resource, "spec.template.spec.runtimeClassName")
+      if runtimeClassName != None:
+        edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
   ResourceQuota/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.clusterconfig.Quota
@@ -326,6 +344,9 @@ nodes:
       edges.add_role("roleRef")
       edges.add_subjects()
   RoleBinding/rbac.authorization.k8s.io/v1beta1: RoleBinding/rbac.authorization.k8s.io/v1
+  RuntimeClass/node.k8s.io/v1:
+    scope: Cluster
+    custom_icon: $KD/icons/runtimeclass.png
   Secret/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.podconfig.Secret
@@ -362,6 +383,9 @@ nodes:
       edges.add_wait_for_services("spec.template.spec.initContainers")
       edges.add_networks("spec.template.metadata.annotations")
       edges.add_priority_class("spec.template.spec.priorityClassName")
+      runtimeClassName = query_path(resource, "spec.template.spec.runtimeClassName")
+      if runtimeClassName != None:
+        edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
       edges.add_volume_claim_templates("spec.volumeClaimTemplates")
       edges.add_service("spec.serviceName")
   StatefulSet/apps/v1beta2: StatefulSet/apps/v1

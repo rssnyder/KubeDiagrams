@@ -105,7 +105,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 42 ones:
+Supported `kind`/`apiVersion` resource types are 43 ones:
 * APIService/apiregistration.k8s.io/v1
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
@@ -140,6 +140,7 @@ Supported `kind`/`apiVersion` resource types are 42 ones:
 * ResourceQuota/v1
 * Role/rbac.authorization.k8s.io/v1
 * RoleBinding/rbac.authorization.k8s.io/v1
+* RuntimeClass/node.k8s.io/v1
 * Secret/v1
 * Service/v1
 * ServiceAccount/v1
@@ -153,7 +154,7 @@ Supported `kind`/`apiVersion` resource types are 42 ones:
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/kube-prometheus-stack/KubeDiagrams.yaml#L3).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 20 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 19 ones:
 * Binding/
 * ComponentStatus/
 * Event/
@@ -171,7 +172,6 @@ Currently, unsupported `kind`/`apiGroup` resource types are 20 ones:
 * PriorityLevelConfiguration/flowcontrol.apiserver.k8s.io
 * NodeMetrics/metrics.k8s.io
 * PodMetrics/metrics.k8s.io
-* RuntimeClass/node.k8s.io
 * CSINode/storage.k8s.io
 * CSIStorageCapacity/storage.k8s.io
 

@@ -35,4 +35,5 @@ echo_run kube-diagrams -v -o all-in-one \
   limit-ranges.yaml	\
   network_policies.yaml \
   nginx.yaml \
-  quotas.yaml
+  quotas.yaml \
+  runtime_classes.yaml

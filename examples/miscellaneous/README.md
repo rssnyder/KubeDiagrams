@@ -41,5 +41,8 @@ Architecture diagram for [network_policies.yaml](network_policies.yaml):
 Architecture diagram for [quotas.yaml](quotas.yaml):
 ![quotas.png](quotas.png)
 
+Architecture diagram for [runtime_classes.yaml](runtime_classes.yaml):
+![runtime_classes.png](runtime_classes.png)
+
 All-in-one architecture diagram:
 ![all-in-one.png](all-in-one.png)
