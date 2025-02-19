@@ -118,6 +118,18 @@ nodes:
     custom_icon: $KD/icons/csidriver.png
     # no edges
   CSIDriver/storage.k8s.io/v1beta1: CSIDriver/storage.k8s.io/v1
+  CSINode/storage.k8s.io/v1:
+    scope: Cluster
+    custom_icon: $KD/icons/csinode.png
+    edges: |
+      for driver in query_path(resource, "spec.drivers", []):
+        edges.append([f"{driver['name']}/CSIDriver/storage.k8s.io/v1", "REFERENCE"])
+  CSIStorageCapacity/storage.k8s.io/v1:
+    scope: Namescaped
+    custom_icon: $KD/icons/csisc.png
+    edges: |
+      storageClassName = query_path(resource, "storageClassName")
+      edges.append([f"{storageClassName}/StorageClass/storage.k8s.io/v1", "REFERENCE"])
   DaemonSet/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.DS
@@ -266,7 +278,8 @@ nodes:
   Node/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.infra.Node
-    # no edges
+    edges: |
+      edges.add_owned_resources()
   PersistentVolume/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.storage.PV
@@ -392,7 +405,10 @@ nodes:
   StorageClass/storage.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.storage.SC
-    # no edges
+    edges: |
+      pid = f"{resource['provisioner']}/CSIDriver/storage.k8s.io/v1"
+      if pid in resources:
+        edges.append([pid, "REFERENCE"])
   User/rbac.authorization.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.rbac.User

@@ -1,0 +1,415 @@
+apiVersion: v1
+items:
+- apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile"},"name":"csi-hostpath-sc"},"provisioner":"hostpath.csi.k8s.io","reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
+    creationTimestamp: "2025-02-18T04:39:55Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:addonmanager.kubernetes.io/mode: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-02-18T04:39:55Z"
+    name: csi-hostpath-sc
+    resourceVersion: "293580"
+    uid: 633aa4fb-3964-475f-8278-c8f2a8282db2
+  provisioner: hostpath.csi.k8s.io
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+- apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"},"labels":{"addonmanager.kubernetes.io/mode":"EnsureExists"},"name":"standard"},"provisioner":"k8s.io/minikube-hostpath"}
+      storageclass.kubernetes.io/is-default-class: "true"
+    creationTimestamp: "2025-02-07T15:46:26Z"
+    labels:
+      addonmanager.kubernetes.io/mode: EnsureExists
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+            f:storageclass.kubernetes.io/is-default-class: {}
+          f:labels:
+            .: {}
+            f:addonmanager.kubernetes.io/mode: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-02-07T15:46:26Z"
+    name: standard
+    resourceVersion: "263"
+    uid: e37439c9-344c-44e0-97a1-a34bd791da17
+  provisioner: k8s.io/minikube-hostpath
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      csi.volume.kubernetes.io/nodeid: '{"hostpath.csi.k8s.io":"minikube"}'
+      kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/cri-dockerd.sock
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2025-02-07T15:46:20Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: minikube
+      kubernetes.io/os: linux
+      minikube.k8s.io/commit: ddac20b4b34a9c8c857fc602203b6ba2679794d3
+      minikube.k8s.io/name: minikube
+      minikube.k8s.io/primary: "true"
+      minikube.k8s.io/updated_at: 2025_02_07T16_46_23_0700
+      minikube.k8s.io/version: v1.29.0
+      node-role.kubernetes.io/control-plane: ""
+      node.kubernetes.io/exclude-from-external-load-balancers: ""
+      topology.hostpath.csi/node: minikube
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/os: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-02-07T15:46:20Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubeadm.alpha.kubernetes.io/cri-socket: {}
+          f:labels:
+            f:node-role.kubernetes.io/control-plane: {}
+            f:node.kubernetes.io/exclude-from-external-load-balancers: {}
+      manager: kubeadm
+      operation: Update
+      time: "2025-02-07T15:46:23Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:minikube.k8s.io/commit: {}
+            f:minikube.k8s.io/name: {}
+            f:minikube.k8s.io/primary: {}
+            f:minikube.k8s.io/updated_at: {}
+            f:minikube.k8s.io/version: {}
+      manager: kubectl-label
+      operation: Update
+      time: "2025-02-07T15:46:24Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:node.alpha.kubernetes.io/ttl: {}
+        f:spec:
+          f:podCIDR: {}
+          f:podCIDRs:
+            .: {}
+            v:"10.244.0.0/24": {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-02-07T18:26:15Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:csi.volume.kubernetes.io/nodeid: {}
+          f:labels:
+            f:topology.hostpath.csi/node: {}
+        f:status:
+          f:conditions:
+            k:{"type":"DiskPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"MemoryPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"PIDPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"Ready"}:
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+          f:images: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-02-18T13:32:51Z"
+    name: minikube
+    resourceVersion: "309386"
+    uid: b8b1c5e1-cd8e-4514-b95a-f2005a1f80b6
+  spec:
+    podCIDR: 10.244.0.0/24
+    podCIDRs:
+    - 10.244.0.0/24
+  status:
+    addresses:
+    - address: 192.168.49.2
+      type: InternalIP
+    - address: minikube
+      type: Hostname
+    allocatable:
+      cpu: "4"
+      ephemeral-storage: 22097744Ki
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 8157696Ki
+      pods: "110"
+    capacity:
+      cpu: "4"
+      ephemeral-storage: 22097744Ki
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 8157696Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2025-02-18T13:32:51Z"
+      lastTransitionTime: "2025-02-07T15:46:16Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2025-02-18T13:32:51Z"
+      lastTransitionTime: "2025-02-07T15:46:16Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2025-02-18T13:32:51Z"
+      lastTransitionTime: "2025-02-07T15:46:16Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2025-02-18T13:32:51Z"
+      lastTransitionTime: "2025-02-07T18:26:25Z"
+      message: kubelet is posting ready status
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - mcr.microsoft.com/mssql/server@sha256:765ee89617f72002ea48edd2976445aa16d866309834dd5f9e2d27167c6d65df
+      - mcr.microsoft.com/mssql/server:2022-CU16-ubuntu-20.04
+      sizeBytes: 1597100217
+    - names:
+      - registry.k8s.io/etcd@sha256:dd75ec974b0a2a6f6bb47001ba09207976e625db898d1b16735528c009cb171c
+      - registry.k8s.io/etcd:3.5.6-0
+      sizeBytes: 299475478
+    - names:
+      - kubernetesui/dashboard@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
+      sizeBytes: 245710051
+    - names:
+      - registry.k8s.io/kube-apiserver@sha256:99e1ed9fbc8a8d36a70f148f25130c02e0e366875249906be0bcb2c2d9df0c26
+      - registry.k8s.io/kube-apiserver:v1.26.1
+      sizeBytes: 133837801
+    - names:
+      - registry.k8s.io/kube-controller-manager@sha256:40adecbe3a40aa147c7d6e9a1f5fbd99b3f6d42d5222483ed3a47337d4f9a10b
+      - registry.k8s.io/kube-controller-manager:v1.26.1
+      sizeBytes: 123655426
+    - names:
+      - registry.k8s.io/kube-proxy@sha256:85f705e7d98158a67432c53885b0d470c673b0fad3693440b45d07efebcda1c3
+      - registry.k8s.io/kube-proxy:v1.26.1
+      sizeBytes: 65623686
+    - names:
+      - kindest/kindnetd@sha256:273469d84ede51824194a31f6a405e3d3686b8b87cd161ea40f6bc3ff8e04ffe
+      - kindest/kindnetd:v20221004-44d545d1
+      sizeBytes: 61770893
+    - names:
+      - registry.k8s.io/kube-scheduler@sha256:af0292c2c4fa6d09ee8544445eef373c1c280113cb6c968398a37da3744c41e4
+      - registry.k8s.io/kube-scheduler:v1.26.1
+      sizeBytes: 56321282
+    - names:
+      - k8s.gcr.io/sig-storage/csi-provisioner@sha256:20c828075d1e36f679d6a91e905b0927141eef5e15be0c9a1ca4a6a0ed9313d2
+      sizeBytes: 51645752
+    - names:
+      - k8s.gcr.io/sig-storage/csi-snapshotter@sha256:51f2dfde5bccac7854b3704689506aeecfb793328427b91115ba253a93e60782
+      sizeBytes: 49559562
+    - names:
+      - k8s.gcr.io/sig-storage/csi-attacher@sha256:50c3cfd458fc8e0bf3c8c521eac39172009382fc66dc5044a330d137c6ed0b09
+      sizeBytes: 49195358
+    - names:
+      - k8s.gcr.io/sig-storage/csi-resizer@sha256:7a5ba58a44e0d749e0767e4e37315bcf6a61f33ce3185c1991848af4db0fb70a
+      sizeBytes: 49176472
+    - names:
+      - k8s.gcr.io/sig-storage/csi-external-health-monitor-controller@sha256:14988b598a180cc0282f3f4bc982371baf9a9c9b80878fb385f8ae8bd04ecf16
+      sizeBytes: 49046993
+    - names:
+      - k8s.gcr.io/sig-storage/csi-external-health-monitor-agent@sha256:c20d4a4772599e68944452edfcecc944a1df28c19e94b942d526ca25a522ea02
+      sizeBytes: 48909241
+    - names:
+      - registry.k8s.io/coredns/coredns@sha256:8e352a029d304ca7431c6507b56800636c321cb52289686a581ab70aaa8a2e2a
+      - registry.k8s.io/coredns/coredns:v1.9.3
+      sizeBytes: 48803555
+    - names:
+      - kubernetesui/metrics-scraper@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
+      sizeBytes: 43815949
+    - names:
+      - gcr.io/k8s-minikube/storage-provisioner@sha256:18eb69d1418e854ad5a19e399310e52808a8321e4c441c1dddad8977a0d7a944
+      - gcr.io/k8s-minikube/storage-provisioner:v5
+      sizeBytes: 31465472
+    - names:
+      - k8s.gcr.io/sig-storage/hostpathplugin@sha256:b526bd29630261eceecf2d38c84d4f340a424d57e1e2661111e2649a4663b659
+      sizeBytes: 29291658
+    - names:
+      - k8s.gcr.io/sig-storage/csi-node-driver-registrar@sha256:e07f914c32f0505e4c470a62a40ee43f84cbf8dc46ff861f31b14457ccbad108
+      sizeBytes: 17997083
+    - names:
+      - k8s.gcr.io/sig-storage/livenessprobe@sha256:48da0e4ed7238ad461ea05f68c25921783c37b315f21a5c5a2780157a6460994
+      sizeBytes: 17776649
+    - names:
+      - registry.k8s.io/pause@sha256:7031c1b283388d2c2e09b57badb803c05ebed362dc88d84b480cc47f72a21097
+      - registry.k8s.io/pause:3.9
+      sizeBytes: 743952
+    - names:
+      - registry.k8s.io/pause@sha256:3d380ca8864549e74af4b29c10f9cb0956236dfb01c40ca076fb6c37253234db
+      - registry.k8s.io/pause:3.6
+      sizeBytes: 682696
+    nodeInfo:
+      architecture: amd64
+      bootID: 0624cc5a-eb87-42cb-8930-7f1f9ca2a8d0
+      containerRuntimeVersion: docker://20.10.23
+      kernelVersion: 4.19.76-linuxkit
+      kubeProxyVersion: v1.26.1
+      kubeletVersion: v1.26.1
+      machineID: f1a46cb41c9d45969ef9bdf4a48d9b28
+      operatingSystem: linux
+      osImage: Ubuntu 20.04.5 LTS
+      systemUUID: 8cbd293b-e2d8-4b55-b58a-626bfa339bfc
+- apiVersion: storage.k8s.io/v1
+  kind: CSINode
+  metadata:
+    annotations:
+      storage.alpha.kubernetes.io/migrated-plugins: kubernetes.io/aws-ebs,kubernetes.io/azure-disk,kubernetes.io/azure-file,kubernetes.io/cinder,kubernetes.io/gce-pd,kubernetes.io/vsphere-volume
+    creationTimestamp: "2025-02-07T15:46:20Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:storage.alpha.kubernetes.io/migrated-plugins: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"b8b1c5e1-cd8e-4514-b95a-f2005a1f80b6"}: {}
+        f:spec:
+          f:drivers:
+            k:{"name":"hostpath.csi.k8s.io"}:
+              .: {}
+              f:name: {}
+              f:nodeID: {}
+              f:topologyKeys: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-02-18T04:41:56Z"
+    name: minikube
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: minikube
+      uid: b8b1c5e1-cd8e-4514-b95a-f2005a1f80b6
+    resourceVersion: "293753"
+    uid: 4e974cc3-a026-42ca-86d9-5769a09371e8
+  spec:
+    drivers:
+    - name: hostpath.csi.k8s.io
+      nodeID: minikube
+      topologyKeys:
+      - topology.hostpath.csi/node
+- apiVersion: storage.k8s.io/v1
+  kind: CSIDriver
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"storage.k8s.io/v1","kind":"CSIDriver","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile"},"name":"hostpath.csi.k8s.io"},"spec":{"podInfoOnMount":true,"volumeLifecycleModes":["Persistent","Ephemeral"]}}
+    creationTimestamp: "2025-02-18T04:39:54Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:addonmanager.kubernetes.io/mode: {}
+        f:spec:
+          f:attachRequired: {}
+          f:fsGroupPolicy: {}
+          f:podInfoOnMount: {}
+          f:requiresRepublish: {}
+          f:storageCapacity: {}
+          f:volumeLifecycleModes:
+            .: {}
+            v:"Ephemeral": {}
+            v:"Persistent": {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-02-18T04:39:54Z"
+    name: hostpath.csi.k8s.io
+    resourceVersion: "293541"
+    uid: 55d63199-9acc-4a42-a3f6-08e5de9457d5
+  spec:
+    attachRequired: true
+    fsGroupPolicy: ReadWriteOnceWithFSType
+    podInfoOnMount: true
+    requiresRepublish: false
+    storageCapacity: false
+    volumeLifecycleModes:
+    - Persistent
+    - Ephemeral
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
+---
+apiVersion: storage.k8s.io/v1
+kind: CSIStorageCapacity
+metadata:
+  name: csi-storage-capacity
+storageClassName: csi-hostpath-sc

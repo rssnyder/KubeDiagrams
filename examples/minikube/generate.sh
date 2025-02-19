@@ -44,3 +44,5 @@ generate_kar ${cluster_name}-ingress-nginx.yml
 kubectl get configmap,ds,deployment,hpa,ingress,job,pod,replicaset,role,rolebinding,secret,service,serviceaccount -n kube-system -o=yaml > ${cluster_name}-kube-system.yml
 # Generate Kubernetes architecture diagram.
 generate_kar ${cluster_name}-kube-system.yml
+
+generate_kar ${cluster_name}-storage-resources.yml

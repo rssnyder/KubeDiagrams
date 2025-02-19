@@ -45,3 +45,6 @@ Architecture diagram of all minikube Kubernetes resources:
 
 Architecture diagram of all minikube RBAC-related Kubernetes resources:
 ![Minikube RBAC](minikube-rbac.png)
+
+Architecture diagram of the minikube `csi-hostpath-driver` addon storage resources:
+![Minikube RBAC](minikube-storage-resources.png)
