@@ -381,8 +381,12 @@ class EdgesContext(list):
         for _, resource in resources.items():
             for ownerReference in query_path(resource, "metadata.ownerReferences", []):
                 if ownerReference.get("uid") == uid:
+                    if get_node_config(self.resource).get("scope") == "Namespaced":
+                        rid = f"{resource['metadata']['name']}/{resource['metadata']['namespace']}/{resource['kind']}/{resource['apiVersion']}"
+                    else:
+                        rid = f"{resource['metadata']['name']}/{resource['kind']}/{resource['apiVersion']}"
                     self.append([
-                        f"{resource['metadata']['name']}/{resource['metadata']['namespace']}/{resource['kind']}/{resource['apiVersion']}",
+                        rid,
                         "OWNER"
                     ])
 
