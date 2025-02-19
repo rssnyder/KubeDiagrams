@@ -8,7 +8,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -21,13 +21,13 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
 type: Opaque
 data:
-  jenkins-admin-password: "dzF6TFlLeDk2WUlIUldVRG5tUGRzOA=="
+  jenkins-admin-password: "am9YcXVERk9BeGVNbG84NVFoaWdnWg=="
   jenkins-admin-user: "YWRtaW4="
 ---
 # Source: jenkins/templates/config.yaml
@@ -76,7 +76,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": jenkins
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -126,7 +126,7 @@ data:
           templates:
             - name: "default"
               namespace: "default"
-              id: 7b68818f8b4901ff2afd650378a729dbafd70ccb9d161a6d83690c0a2c944ba5
+              id: 0f44a80b3bf6b147376c079267d2b9f80580ee043443af3e27fb0dea3b1e2ab1
               containers:
               - name: "jnlp"
                 alwaysPullImage: false
@@ -135,7 +135,7 @@ data:
                   - envVar:
                       key: "JENKINS_URL"
                       value: "http://jenkins.default.svc.cluster.local:8080/"
-                image: "jenkins/inbound-agent:3283.v92c105e0f819-7"
+                image: "jenkins/inbound-agent:3283.v92c105e0f819-9"
                 privileged: "false"
                 resourceLimitCpu: 512m
                 resourceLimitMemory: 512Mi
@@ -153,6 +153,7 @@ data:
               slaveConnectTimeoutStr: "100"
               yamlMergeStrategy: override
               inheritYamlMergeStrategy: false
+      slaveAgentPort: 50000
       crumbIssuer:
         standard:
           excludeClientIPFromCrumb: true
@@ -173,7 +174,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -193,7 +194,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -215,7 +216,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -234,7 +235,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -255,7 +256,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -276,7 +277,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -298,7 +299,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -320,7 +321,7 @@ metadata:
   namespace: default
   labels:
     "app.kubernetes.io/name": 'jenkins'
-    "helm.sh/chart": "jenkins-5.8.10"
+    "helm.sh/chart": "jenkins-5.8.14"
     "app.kubernetes.io/managed-by": "Helm"
     "app.kubernetes.io/instance": "jenkins"
     "app.kubernetes.io/component": "jenkins-controller"
@@ -565,7 +566,7 @@ data:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "jenkins-ui-test-jklmm"
+  name: "jenkins-ui-test-871af"
   namespace: default
   annotations:
     "helm.sh/hook": test-success
