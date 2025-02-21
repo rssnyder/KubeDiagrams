@@ -10,6 +10,7 @@ import json
 import os
 import traceback
 from pprint import pprint
+import sys
 import yaml
 from diagrams import Diagram, Edge, Cluster
 from diagrams.aws.enablement import ManagedServices
@@ -579,6 +580,13 @@ args = parser.parse_args()
 # Process arguments.
 if args.output is None:
     args.output = args.filename[0][:args.filename[0].rfind('.')]
+
+SUPPORTED_OUTPUT_FORMATS = ["png", "jpg", "svg", "pdf", "dot"]
+SOF = "' or '".join(SUPPORTED_OUTPUT_FORMATS)
+if args.format not in SUPPORTED_OUTPUT_FORMATS:
+    print(f"Error: '{args.format}' output format unsupported,"
+            f" use '{SOF}' instead!", file=sys.stderr)
+    sys.exit(1)
 
 if args.config is not None:
     with open(args.config, encoding="utf-8") as f:
