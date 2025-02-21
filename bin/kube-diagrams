@@ -580,6 +580,11 @@ args = parser.parse_args()
 # Process arguments.
 if args.output is None:
     args.output = args.filename[0][:args.filename[0].rfind('.')]
+else:
+    dot_idx = args.output.rfind('.')
+    if dot_idx != -1:
+        args.format = args.output[dot_idx+1:]
+        args.output = args.output[:dot_idx]
 
 SUPPORTED_OUTPUT_FORMATS = ["png", "jpg", "svg", "pdf", "dot"]
 SOF = "' or '".join(SUPPORTED_OUTPUT_FORMATS)
