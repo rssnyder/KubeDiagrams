@@ -143,6 +143,7 @@ nodes:
       runtimeClassName = query_path(resource, "spec.template.spec.runtimeClassName")
       if runtimeClassName != None:
         edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
+  DaemonSet/apps/v1beta2: DaemonSet/apps/v1
   Deployment/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Deploy
@@ -158,6 +159,7 @@ nodes:
       if runtimeClassName != None:
         edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
   Deployment/apps/v1beta1: Deployment/apps/v1
+  Deployment/apps/v1beta2: Deployment/apps/v1
   Endpoints/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.network.Endpoint
@@ -294,6 +296,7 @@ nodes:
     scope: Cluster
     custom_icon: $KD/icons/pc.png
     # no edges
+  PriorityClass/scheduling.k8s.io/v1beta1: PriorityClass/scheduling.k8s.io/v1
   Pod/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Pod
@@ -400,6 +403,7 @@ nodes:
         edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
       edges.add_volume_claim_templates("spec.volumeClaimTemplates")
       edges.add_service("spec.serviceName")
+  StatefulSet/apps/v1beta1: StatefulSet/apps/v1
   StatefulSet/apps/v1beta2: StatefulSet/apps/v1
   StorageClass/storage.k8s.io/v1:
     scope: Cluster
@@ -408,6 +412,7 @@ nodes:
       pid = f"{resource['provisioner']}/CSIDriver/storage.k8s.io/v1"
       if pid in resources:
         edges.append([pid, "REFERENCE"])
+  StorageClass/storage.k8s.io/v1beta1: StorageClass/storage.k8s.io/v1
   User/rbac.authorization.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.rbac.User
@@ -439,10 +444,20 @@ cluster-resources:
   - admin/ClusterRole/rbac.authorization.k8s.io/v1
   - cluster-admin/ClusterRole/rbac.authorization.k8s.io/v1
   - edit/ClusterRole/rbac.authorization.k8s.io/v1
+  - generic-garbage-collector/kube-system/ServiceAccount/v1
   - standard/StorageClass/storage.k8s.io/v1
+  - system:anonymous/User/rbac.authorization.k8s.io/v1
   - system:auth-delegator/ClusterRole/rbac.authorization.k8s.io/v1
   - system:authenticated/Group/rbac.authorization.k8s.io/v1
+  - system:coredns/ClusterRole/rbac.authorization.k8s.io/v1
+  - system:discovery/ClusterRole/rbac.authorization.k8s.io/v1
+  - system:node-proxier/ClusterRole/rbac.authorization.k8s.io/v1
+  - system:nodes/Group/rbac.authorization.k8s.io/v1
   - system:unauthenticated/Group/rbac.authorization.k8s.io/v1
+  - system:persistent-volume-provisioner/ClusterRole/rbac.authorization.k8s.io/v1
+  - system:service-account-issuer-discovery/ClusterRole/rbac.authorization.k8s.io/v1
+  - system:serviceaccounts/Group/rbac.authorization.k8s.io/v1
+  - system:volume-scheduler/ClusterRole/rbac.authorization.k8s.io/v1
   - system-cluster-critical/PriorityClass/scheduling.k8s.io/v1
   - system-node-critical/PriorityClass/scheduling.k8s.io/v1
   - view/ClusterRole/rbac.authorization.k8s.io/v1
