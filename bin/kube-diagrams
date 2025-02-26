@@ -487,6 +487,7 @@ class EdgesContext(list):
             return
         build_in_workload_resources = {
             "Pod": "metadata.labels",
+            "PodTemplate": "template.metadata.labels",
             "Deployment": "spec.template.metadata.labels",
             "ReplicaSet": "spec.template.metadata.labels",
             "StatefulSet": "spec.template.metadata.labels",

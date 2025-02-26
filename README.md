@@ -105,7 +105,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 45 ones:
+Supported `kind`/`apiVersion` resource types are 46 ones:
 * APIService/apiregistration.k8s.io/v1
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
@@ -138,6 +138,7 @@ Supported `kind`/`apiVersion` resource types are 45 ones:
 * Pod/v1
 * PodDisruptionBudget/policy/v1
 * PodSecurityPolicy/policy/v1beta1
+* PodTemplate/v1
 * ReplicaSet/apps/v1
 * ResourceQuota/v1
 * Role/rbac.authorization.k8s.io/v1
@@ -156,11 +157,10 @@ Supported `kind`/`apiVersion` resource types are 45 ones:
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/kube-prometheus-stack/KubeDiagrams.yaml#L3).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 17 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 16 ones:
 * Binding/
 * ComponentStatus/
 * Event/
-* PodTemplate/
 * ReplicationController/
 * ControllerRevision/apps
 * TokenReview/authentication.k8s.io

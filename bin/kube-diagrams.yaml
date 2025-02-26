@@ -329,6 +329,24 @@ nodes:
     diagram_node_classname: diagrams.k8s.others.PSP
     # no edges
   PodSecurityPolicy/policy/v1beta1: PodSecurityPolicy/policy/v1
+  PodTemplate/v1:
+    scope: Namespaced
+    custom_icon: $KD/icons/podtemplate.png
+    edges: |
+      edges.add_service_account("template.spec")
+      edges.add_all_volume_resources("template.spec.volumes")
+      edges.add_containers_env_value_from("template.spec.containers")
+      edges.add_wait_for_services("template.spec.initContainers")
+      nid = "%s/Node/v1" % (
+        query_path(resource, "template.spec.nodeName"),
+      )
+      if nid in resources:
+        edges.append([nid, "REFERENCE"])
+      edges.add_networks("template.metadata.annotations")
+      edges.add_priority_class("template.spec.priorityClassName")
+      runtimeClassName = query_path(resource, "template.spec.runtimeClassName")
+      if runtimeClassName != None:
+        edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
   ReplicaSet/apps/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.RS
