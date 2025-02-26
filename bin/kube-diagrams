@@ -490,6 +490,7 @@ class EdgesContext(list):
             "PodTemplate": "template.metadata.labels",
             "Deployment": "spec.template.metadata.labels",
             "ReplicaSet": "spec.template.metadata.labels",
+            "ReplicationController": "spec.template.metadata.labels",
             "StatefulSet": "spec.template.metadata.labels",
             "DaemonSet": "spec.template.metadata.labels",
             "Job": "spec.template.metadata.labels",

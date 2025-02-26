@@ -105,7 +105,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 46 ones:
+Supported `kind`/`apiVersion` resource types are 47 ones:
 * APIService/apiregistration.k8s.io/v1
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
@@ -140,6 +140,7 @@ Supported `kind`/`apiVersion` resource types are 46 ones:
 * PodSecurityPolicy/policy/v1beta1
 * PodTemplate/v1
 * ReplicaSet/apps/v1
+* ReplicationController/v1
 * ResourceQuota/v1
 * Role/rbac.authorization.k8s.io/v1
 * RoleBinding/rbac.authorization.k8s.io/v1
@@ -157,11 +158,10 @@ Supported `kind`/`apiVersion` resource types are 46 ones:
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/kube-prometheus-stack/KubeDiagrams.yaml#L3).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 16 ones:
+Currently, unsupported `kind`/`apiGroup` resource types are 15 ones:
 * Binding/
 * ComponentStatus/
 * Event/
-* ReplicationController/
 * ControllerRevision/apps
 * TokenReview/authentication.k8s.io
 * LocalSubjectAccessReview/authorization.k8s.io

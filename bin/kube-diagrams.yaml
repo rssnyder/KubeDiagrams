@@ -361,6 +361,20 @@ nodes:
       runtimeClassName = query_path(resource, "spec.template.spec.runtimeClassName")
       if runtimeClassName != None:
         edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
+  ReplicationController/v1:
+    scope: Namespaced
+    custom_icon: $KD/icons/rc.png
+    edges: |
+      edges.add_owned_resources()
+      edges.add_service_account("spec.template.spec")
+      edges.add_all_volume_resources("spec.template.spec.volumes")
+      edges.add_containers_env_value_from("spec.template.spec.containers")
+      edges.add_wait_for_services("spec.template.spec.initContainers")
+      edges.add_networks("spec.template.metadata.annotations")
+      edges.add_priority_class("spec.template.spec.priorityClassName")
+      runtimeClassName = query_path(resource, "spec.template.spec.runtimeClassName")
+      if runtimeClassName != None:
+        edges.append([f"{runtimeClassName}/RuntimeClass/node.k8s.io/v1", "REFERENCE"])
   ResourceQuota/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.clusterconfig.Quota
