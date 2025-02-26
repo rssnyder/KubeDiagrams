@@ -105,7 +105,7 @@ options:
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 47 ones:
+Supported `kind`/`apiVersion` resource types are 48 ones:
 * APIService/apiregistration.k8s.io/v1
 * ClusterRole/rbac.authorization.k8s.io/v1
 * ClusterRoleBinding/rbac.authorization.k8s.io/v1
@@ -152,6 +152,7 @@ Supported `kind`/`apiVersion` resource types are 47 ones:
 * StorageClass/storage.k8s.io/v1
 * User/rbac.authorization.k8s.io/v1
 * ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1
+* VerticalPodAutoscaler/autoscaling.k8s.io/v1
 * VolumeAttachment/storage.k8s.io/v1
 
 **Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/bin/kube-diagrams.yaml#L65).

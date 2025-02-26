@@ -455,6 +455,11 @@ nodes:
     edges: |
       edges.add_webhooks()
   ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1beta1: ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1
+  VerticalPodAutoscaler/autoscaling.k8s.io/v1:
+    scoped: Namespaced
+    custom_icon: $KD/icons/vpa.png
+    edges: |
+      edges.add_resource("spec.targetRef")
   VolumeAttachment/storage.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.storage.Volume
