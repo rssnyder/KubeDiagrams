@@ -16,6 +16,13 @@ from diagrams import Diagram, Edge, Cluster
 from diagrams.aws.enablement import ManagedServices
 from diagrams.custom import Custom
 
+# According to https://github.com/yaml/pyyaml/issues/89, PyYAML raises
+# yaml.constructor.ConstructorError: could not determine a constructor for
+#   the tag 'tag:yaml.org,2002:value'
+# when loading a string equals to the unquoted value '='.
+# A proposed fix is
+yaml.SafeLoader.yaml_implicit_resolvers.pop("=")
+
 # Maximum length for diagram node labels
 MAX_NODE_LABEL_LENGTH = 16
 
@@ -74,7 +81,18 @@ def get_type(resource):
     """
         Get the type of a Kubernetes resource, i.e., "kind/apiVersion".
     """
-    return resource["kind"] + "/" + resource["apiVersion"]
+    return resource.get("kind", "kind-NOT-SET") + "/" \
+            + resource.get("apiVersion", "apiVersion-NOT-SET")
+
+def get_name(resource):
+    """
+        Get the name of a Kubernetes resource.
+    """
+    name = query_path(resource, "metadata.name")
+    if name is None:
+        print("Warning: metadata.name not set or set to null!")
+        name = "name-NOT-SET"
+    return name
 
 def get_namespace(resource):
     """
@@ -88,7 +106,7 @@ def create_diagram_node(resource, fontcolor="black"):
         Create a diagram node from a Kubernetes resource.
     """
     # Format node label
-    node_label = resource["metadata"]["name"]
+    node_label = get_name(resource)
     if len(node_label) > MAX_NODE_LABEL_LENGTH:
         def split_node_label(node_label, separator):
             parts = node_label.split(separator)
@@ -217,9 +235,11 @@ class EdgesContext(list):
             return False
         resource_found = False
         for rid, resource in resources.items():
-            if resource["kind"] != kind:
+            if resource.get("kind") != kind:
                 continue
             labels = query_path(resource, resource_labels_path, {})
+            if not isinstance(labels, dict):
+                continue # skip these labels because this is not a dictionary.
             found = True
             for sk, sv in match_labels.items():
                 if labels.get(sk) != sv:
@@ -269,7 +289,9 @@ class EdgesContext(list):
                         "REFERENCE"
                     ])
                 elif "projected" in volume:
-                    add_volumes(query_path(volume, "projected.sources"))
+                    volumes = query_path(volume, "projected.sources")
+                    if volumes is not None:
+                        add_volumes(volumes)
 
         volumes = query_path(self.resource, path)
         if volumes is not None:
@@ -360,6 +382,8 @@ class EdgesContext(list):
             Add a reference edge to a service account resource.
         """
         pod_spec = query_path(self.resource, path)
+        if pod_spec is None:
+            return
         service_account_name = pod_spec.get("serviceAccountName")
         if service_account_name is None:
             service_account_name = pod_spec.get("serviceAccount")
@@ -386,7 +410,7 @@ class EdgesContext(list):
             print(f"Warning: {self.resource['kind']}"
                     f" {self.resource['metadata']['name']} {path} equals to \"\"!")
             api_group = "rbac.authorization.k8s.io"
-        if role_ref["kind"] == "Role":
+        if role_ref.get("kind") == "Role":
             namespace = f"/{self.namespace}"
         else:
             namespace = ""
@@ -401,7 +425,7 @@ class EdgesContext(list):
         """
         for subject in query_path(self.resource, "subjects", []):
             namespace = subject.get("namespace")
-            if namespace is None and subject["kind"] == "ServiceAccount":
+            if namespace is None and subject.get("kind") == "ServiceAccount":
                 namespace = get_namespace(self.resource)
             if namespace is not None:
                 api_version = query_path(subject, "apiGroup", "v1")
@@ -409,8 +433,13 @@ class EdgesContext(list):
                     api_version = "v1"
                 rid = f"{subject['name']}/{namespace}/{subject['kind']}/{api_version}"
             else:
+                api_group = query_path(subject, "apiGroup", "rbac.authorization.k8s.io")
+                if api_group == "":
+                    print(f"Warning: {self.resource['kind']}"
+                          f" {self.resource['metadata']['name']} apiGroup equals to \"\"!")
+                    api_group = "rbac.authorization.k8s.io"
                 rid = f"{subject['name']}/{subject['kind']}" \
-                        f"/{query_path(subject, 'apiGroup', 'rbac.authorization.k8s.io')}/v1"
+                        f"/{api_group}/v1"
             self.append([rid,"REFERENCE-UP"])
 
     def add_service(self, path, data=None):
@@ -536,7 +565,13 @@ class EdgesContext(list):
         if annotations is not None:
             networks = annotations.get("k8s.v1.cni.cncf.io/networks")
             if networks is not None:
-                for network in json.loads(networks):
+                try:
+                    networks = json.loads(networks)
+                except json.decoder.JSONDecodeError:
+                    print(f"Warning: {path} k8s.v1.cni.cncf.io/networks"
+                            f"equals to '{networks}' is not valid JSON!")
+                    return
+                for network in networks:
                     self.append([
                         f"{network['name']}/{get_namespace(self.resource)}"
                             f"/NetworkAttachmentDefinition/k8s.cni.cncf.io/v1",
@@ -617,11 +652,11 @@ def process_resource(resource):
         Process a resource.
     """
     cluster = resource_cluster
-    name = resource["metadata"]["name"]
+    name = get_name(resource)
     if get_node_config(resource).get("scope") == "Cluster":
         rid = name + "/" + get_type(resource)
         resources[rid] = resource
-        if not(args.without_namespace) and resource["kind"] == "Namespace":
+        if not(args.without_namespace) and resource.get("kind") == "Namespace":
             cluster = resource_cluster.get_or_create_cluster(f"Namespace: {name}")
     else: # scope = Namespaced
         rid = name + "/" + get_namespace(resource) + "/" + get_type(resource)
@@ -639,7 +674,7 @@ def process_resource(resource):
             if "label" in cluster_config:
                 label = cluster_config["label"]
                 labels = query_path(resource, "metadata.labels")
-                if labels is not None and label in labels:
+                if isinstance(labels, dict) and label in labels:
                     cluster = cluster.get_or_create_cluster(
                                 f"{cluster_config['title']}: {labels[label]}"
                     )
@@ -670,16 +705,25 @@ def process_resource(resource):
             process_resource(node)
 
 for filename in args.filename:
-    print(f"Load {filename}...")
-    with open(filename, encoding="utf-8") as f:
-        for yaml_data in yaml.safe_load_all(f): # load YAML file
-            if yaml_data is None:
-                continue # Skip empty YAML content
-            if yaml_data["kind"] == "List":
-                for r in yaml_data["items"]:
-                    process_resource(r)
-            else:
-                process_resource(yaml_data)
+    try:
+        with open(filename, encoding="utf-8") as f:
+            print(f"Load {filename}...")
+            for yaml_data in yaml.safe_load_all(f): # load YAML file
+                if yaml_data is None:
+                    continue # Skip empty YAML content
+                if yaml_data.get("kind") == "List":
+                    for r in yaml_data["items"]:
+                        process_resource(r)
+                else:
+                    process_resource(yaml_data)
+    except FileNotFoundError:
+        print(f"Error: file '{filename}' not found!")
+        if len(args.filename) == 1:
+            sys.exit(1)
+    except yaml.scanner.ScannerError as error:
+        print("Error: " + str(error).replace('\n', ' ') + "!")
+    except yaml.constructor.ConstructorError as error:
+        print("Error: " + str(error).replace('\n', ' ') + "!")
 
 # Print loaded Kubernetes resources
 if args.verbose:
@@ -737,7 +781,7 @@ def process_edges():
                     }
                 else:
                     rsrc = {
-                        "apiVersion": tmp[2] + "/" + tmp[3],
+                        "apiVersion": "/".join(tmp[2:]),
                         "kind": tmp[1],
                         "metadata": {
                             "name": tmp[0]
