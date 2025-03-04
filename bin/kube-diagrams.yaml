@@ -13,16 +13,6 @@ edges:
     color: black
     style: dashed
     direction: up
-  SELECTOR-INGRESS:
-    xlabel: ingress
-    color: black
-    style: dashed
-    direction: up
-  SELECTOR-EGRESS:
-    xlabel: egress
-    color: black
-    style: dashed
-    direction: up
   CONTROLLED_BY:
     xlabel: controller
     color: black
@@ -30,10 +20,16 @@ edges:
   OWNER:
     color: black
     style: dotted
+  COMMUNICATION:
+    color: green
   DEPENDENCE:
     color: darkgrey
   UNDEFINED:
     color: red
+  INVISIBLE:
+    color: transparent
+    style: invisible
+    direction: up
 clusters:
   - label: app.kubernetes.io/instance
     title: K8s Instance
@@ -273,6 +269,7 @@ nodes:
     edges: |
       edges.add_all_workload_resources(
         "spec.podSelector.matchLabels",
+        {},
         edge_kind="SELECTOR-UP"
       )
       edges.add_ingress_and_egress_rules()
