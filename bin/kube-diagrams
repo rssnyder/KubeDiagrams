@@ -258,6 +258,8 @@ class EdgesContext(list):
             for volume in volumes:
                 if "configMap" in volume:
                     config_map = volume["configMap"]
+                    if config_map is None:
+                        continue # skip this config map
                     config_map_id = f"{config_map.get('name')}/{self.namespace}/ConfigMap/v1"
                     if config_map.get("optional") is True:
                         if config_map_id not in resources:
@@ -269,6 +271,8 @@ class EdgesContext(list):
                     ])
                 elif "secret" in volume:
                     secret = volume["secret"]
+                    if secret is None:
+                        continue # skip this secret
                     secret_name = secret.get("secretName")
                     if secret_name is None:
                         # Warning: jenkins chart uses 'name' instead of 'secretName'!
