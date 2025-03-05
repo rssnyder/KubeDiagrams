@@ -589,7 +589,22 @@ class EdgesContext(list):
             Add edges from a service resource to workload resources,
             endpoint slices and endpoints.
         """
-        self.add_all_workload_resources("spec.selector")
+        labels = []
+        for service_port in query_path(self.resource, "spec.ports", []):
+            port = service_port.get('port')
+            targetPort = service_port.get('targetPort')
+            protocol = service_port.get('protocol', 'TCP')
+            if targetPort is None or targetPort == port:
+                label = f"{port}/{protocol}"
+            else:
+                label = f"{port}->{targetPort}/{protocol}"
+            labels.append(label)
+        edge = {
+            **get_edge_config("SELECTOR"),
+            "label": f" {'\n'.join(labels)}",
+            "fontsize": "10"
+        }
+        self.add_all_workload_resources("spec.selector", edge_kind=edge)
         self.add_all_resources_matching_labels(
                 "EndpointSlice",
                 {
@@ -809,9 +824,9 @@ def process_edges():
                 else:
                     edge_configuration = get_edge_config(edge_name)
                 if edge_configuration.get("direction") == "up":
-                    _ = diagram_nodes[edge_from] \
+                    _ = diagram_nodes[edge_to] \
                         >> Edge(**get_edge_config("INVISIBLE")) \
-                        >> diagram_nodes[edge_to]
+                        >> diagram_nodes[edge_from]
                 _ = diagram_nodes[edge_from] \
                     >> Edge(**edge_configuration) \
                     >> diagram_nodes[edge_to]
