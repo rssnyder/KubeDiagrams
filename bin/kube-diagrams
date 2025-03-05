@@ -506,6 +506,7 @@ class EdgesContext(list):
                 edge = {
                     **get_edge_config("COMMUNICATION"),
                     "headlabel": f"ingress\n{', '.join(ports)}",
+                    "fontsize": "10"
                 }
                 for rid_from in [e[0] for e in self[current_index:]]:
                     for rid_to in selected_nodes:
@@ -528,6 +529,7 @@ class EdgesContext(list):
                 edge = {
                     **get_edge_config("COMMUNICATION"),
                     "taillabel": f"egress\n{', '.join(ports)}",
+                    "fontsize": "10"
                 }
                 for rid_to in [e[0] for e in self[current_index:]]:
                     for rid_from in selected_nodes:
@@ -601,7 +603,7 @@ class EdgesContext(list):
             labels.append(label)
         edge = {
             **get_edge_config("SELECTOR"),
-            "label": f" {'\n'.join(labels)}",
+            "xlabel": '\n'.join(labels),
             "fontsize": "10"
         }
         self.add_all_workload_resources("spec.selector", edge_kind=edge)
