@@ -594,12 +594,12 @@ class EdgesContext(list):
         labels = []
         for service_port in query_path(self.resource, "spec.ports", []):
             port = service_port.get('port')
-            targetPort = service_port.get('targetPort')
+            target_port = service_port.get('targetPort')
             protocol = service_port.get('protocol', 'TCP')
-            if targetPort is None or targetPort == port:
+            if target_port is None or target_port == port:
                 label = f"{port}/{protocol}"
             else:
-                label = f"{port}->{targetPort}/{protocol}"
+                label = f"{port}->{target_port}/{protocol}"
             labels.append(label)
         edge = {
             **get_edge_config("SELECTOR"),
