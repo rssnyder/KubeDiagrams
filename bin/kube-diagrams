@@ -621,7 +621,7 @@ class EdgesContext(list):
 
     def add_networks(self, path):
         """
-            Add edges from a workload resource to its referenced 
+            Add edges from a workload resource to its referenced
             NetworkAttachmentDefinition resources.
         """
         annotations = query_path(self.resource, path)
@@ -769,8 +769,8 @@ def process_resource(resource):
 
 for filename in args.filename:
     try:
-        with open(filename, encoding="utf-8") as f:
-            print(f"Load {filename}...")
+        with open(0 if filename == '-' else filename, encoding="utf-8") as f:
+            print(f"Load {'from stdin' if filename == '-' else filename}...")
             for yaml_data in yaml.safe_load_all(f): # load YAML file
                 if yaml_data is None:
                     continue # Skip empty YAML content
