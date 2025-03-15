@@ -75,13 +75,19 @@ Following command installs **KubeDiagrams** and all its Python dependencies, i.e
 
 ```ssh
 # using pip (pip3)
-$ pip install KubeDiagrams
+pip install KubeDiagrams
 ```
 
 ## Usage
 
+**KubeDiagrams** provides two commands: `kube-diagrams` and `helm-diagrams`.
+
+### `kube-diagrams`
+
+`kube-diagram` generates a Kubernetes architecture diagram from one or several Kubernetes manifest files.
+
 ```sh
-$ kube-diagrams -h
+kube-diagrams -h
 usage: kube-diagrams [-h] [-o OUTPUT] [-f FORMAT] [-c CONFIG] [-v] [--without-namespace] filename [filename ...]
 
 Generate Kubernetes architecture diagrams from Kubernetes manifest files
@@ -99,6 +105,29 @@ options:
                         custom kube-diagrams configuration file
   -v, --verbose         verbosity, set to false by default
   --without-namespace   disable namespace cluster generation
+```
+Examples:
+```ssh
+# generate a diagram from a manifest
+kube-diagrams -o cassandra.png examples/cassandra/cassandra.yml
+
+# generate a diagram from the actual cluster state
+kubectl get all -o yaml | kube-diagrams -o default-namespace.png -
+```
+
+### `helm-diagrams`
+
+`helm-diagrams` generates a Kubernetes architecture diagram from an Helm chart.
+
+`helm-diagrams` takes only one argument - the URL of the Helm chart - but requires that the `helm` command was installed.
+
+Examples:
+```ssh
+# generate a diagram for the Helm chart 'cert-manager' available in HTTP repository 'charts.jetstack.io'
+helm-diagrams https://charts.jetstack.io/cert-manager
+
+# generate a diagram for the Helm chart 'argo-cd' available in OCI repository 'ghcr.io'
+helm-diagrams oci://ghcr.io/argoproj/argo-helm/argo-cd
 ```
 
 ### With podman
