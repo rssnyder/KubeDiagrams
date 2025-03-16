@@ -1,9 +1,12 @@
 # KubeDiagrams
 
 [![license](https://img.shields.io/github/license/philippemerle/KubeDiagrams)](https://github.com/philippemerle/KubeDiagrams/blob/main/LICENSE)
+![python version](https://img.shields.io/badge/python-%3E%3D%203.9-blue?logo=python)
 [![pypi version](https://badge.fury.io/py/KubeDiagrams.svg)](https://badge.fury.io/py/KubeDiagrams)
 [![PyPI Downloads](https://static.pepy.tech/badge/kubediagrams)](https://pepy.tech/projects/kubediagrams)
-![python version](https://img.shields.io/badge/python-%3E%3D%203.9-blue?logo=python)
+![Docker Stars](https://img.shields.io/docker/stars/philippemerle/kubediagrams)
+[![Docker Image Version](https://img.shields.io/docker/v/philippemerle/kubediagrams)](https://hub.docker.com/r/philippemerle/kubediagrams)
+![Docker Pulls](https://img.shields.io/docker/pulls/philippemerle/kubediagrams)
 ![contributors](https://img.shields.io/github/contributors/philippemerle/KubeDiagrams)
 
 Generate Kubernetes architecture diagrams from Kubernetes manifest files, kustomization files, Helm charts, and actual cluster state.
@@ -84,7 +87,7 @@ pip install KubeDiagrams
 
 ### `kube-diagrams`
 
-`kube-diagram` generates a Kubernetes architecture diagram from one or several Kubernetes manifest files.
+`kube-diagrams` generates a Kubernetes architecture diagram from one or several Kubernetes manifest files.
 
 ```sh
 kube-diagrams -h
@@ -128,6 +131,24 @@ helm-diagrams https://charts.jetstack.io/cert-manager
 
 # generate a diagram for the Helm chart 'argo-cd' available in OCI repository 'ghcr.io'
 helm-diagrams oci://ghcr.io/argoproj/argo-helm/argo-cd
+```
+
+### With Docker
+
+**KubeDiagrams** images are available in [Docker Hub](https://hub.docker.com/r/philippemerle/kubediagrams).
+
+```ssh
+# generate a diagram from a manifest
+docker run -v "$(pwd)":/work philippemerle/kubediagrams kube-diagrams -o cassandra.png examples/cassandra/cassandra.yml
+
+# generate a diagram from the actual cluster state
+kubectl get all -o yaml | docker run -v "$(pwd)":/work -i philippemerle/kubediagrams kube-diagrams -o default-namespace.png -
+
+# generate a diagram for the Helm chart 'cert-manager' available in HTTP repository 'charts.jetstack.io'
+docker run -v "$(pwd)":/work philippemerle/kubediagrams helm-diagrams https://charts.jetstack.io/cert-manager
+
+# generate a diagram for the Helm chart 'argo-cd' available in OCI repository 'ghcr.io'
+docker run -v "$(pwd)":/work philippemerle/kubediagrams helm-diagrams oci://ghcr.io/argoproj/argo-helm/argo-cd
 ```
 
 ### With podman
