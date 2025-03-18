@@ -4,9 +4,9 @@
 ![python version](https://img.shields.io/badge/python-%3E%3D%203.9-blue?logo=python)
 [![pypi version](https://badge.fury.io/py/KubeDiagrams.svg)](https://badge.fury.io/py/KubeDiagrams)
 [![PyPI Downloads](https://static.pepy.tech/badge/kubediagrams)](https://pepy.tech/projects/kubediagrams)
-![Docker Stars](https://img.shields.io/docker/stars/philippemerle/kubediagrams)
+[![Docker Stars](https://img.shields.io/docker/stars/philippemerle/kubediagrams)](https://hub.docker.com/r/philippemerle/kubediagrams)
 [![Docker Image Version](https://img.shields.io/docker/v/philippemerle/kubediagrams)](https://hub.docker.com/r/philippemerle/kubediagrams)
-![Docker Pulls](https://img.shields.io/docker/pulls/philippemerle/kubediagrams)
+[![Docker Pulls](https://img.shields.io/docker/pulls/philippemerle/kubediagrams)](https://hub.docker.com/r/philippemerle/kubediagrams)
 ![contributors](https://img.shields.io/github/contributors/philippemerle/KubeDiagrams)
 
 Generate Kubernetes architecture diagrams from Kubernetes manifest files, kustomization files, Helm charts, and actual cluster state.
@@ -263,6 +263,10 @@ Posts and blogs about **KubeDiagrams**:
 * [Kubetools - Curated List of Kubernetes Tools](https://github.com/collabnix/kubetools/)
 * [Awesome Open Source K8s And Container Tools](https://github.com/vilaca/awesome-k8s-tools)
 * [Discussion on Reddit](https://www.reddit.com/r/kubernetes/comments/1jabdoa/anyone_know_of_any_reposopen_source_tools_that/)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=philippemerle/KubeDiagrams&type=Date)](https://www.star-history.com/#philippemerle/KubeDiagrams&Date)
 
 ## License
 
