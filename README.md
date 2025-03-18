@@ -258,11 +258,11 @@ Posts and blogs about **KubeDiagrams**:
 * [Visualising SQL Server in Kubernetes](https://dbafromthecold.com/2025/02/06/visualising-sql-server-in-kubernetes/)
 * [Tool of the day](https://www.techopsexamples.com/p/understanding-kubernetes-etcd-locks)
 * [Post on DevSecOps](https://tlgrm.ru/channels/@devsecops_weekly/1145)
-* [Diagrams](https://github.com/mingrammer/diagrams)
 * [GitHub mingrammer/diagrams](https://github.com/mingrammer/diagrams)
 * [Kubetools - Curated List of Kubernetes Tools](https://github.com/collabnix/kubetools/)
 * [Awesome Open Source K8s And Container Tools](https://github.com/vilaca/awesome-k8s-tools)
 * [Discussion on Reddit](https://www.reddit.com/r/kubernetes/comments/1jabdoa/anyone_know_of_any_reposopen_source_tools_that/)
+* [French post on LinkedIn](https://www.linkedin.com/posts/pepr-cloud_kubediagrams-activity-7307698605371379713-BqRp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAemi4BApQnQWOvw041B_9Tbc_ljWmw1-E)
 
 ## Star History
 
