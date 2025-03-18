@@ -133,11 +133,13 @@ helm-diagrams https://charts.jetstack.io/cert-manager
 helm-diagrams oci://ghcr.io/argoproj/argo-helm/argo-cd
 ```
 
-### With Docker
+### With Docker/Podman
 
 **KubeDiagrams** images are available in [Docker Hub](https://hub.docker.com/r/philippemerle/kubediagrams).
 
 ```ssh
+# For usage with Podman, replace 'docker' by 'podman' in following lines.
+
 # generate a diagram from a manifest
 docker run -v "$(pwd)":/work philippemerle/kubediagrams kube-diagrams -o cassandra.png examples/cassandra/cassandra.yml
 
@@ -149,27 +151,6 @@ docker run -v "$(pwd)":/work philippemerle/kubediagrams helm-diagrams https://ch
 
 # generate a diagram for the Helm chart 'argo-cd' available in OCI repository 'ghcr.io'
 docker run -v "$(pwd)":/work philippemerle/kubediagrams helm-diagrams oci://ghcr.io/argoproj/argo-helm/argo-cd
-```
-
-### With podman
-
-```
-podman build -t kd . # set the local name of the image to kd
-chmod 0777 ./examples/cassandra/cassandra.yml # make sure the file can be accessed in the pod
-# runs kube-diagrams in podman, in a container named kd without any pod.
-podman run --security-opt label=disable \
-    -v ./examples/cassandra/cassandra.yml:/cassandra.yml \
-    --name kd kd \
-    kube-diagrams cassandra.yml
-podman cp kd:/cassandra.png cassandra.png # copy results file from the container to host
-podman rm kd # remove container
-
-# runs helm-diagrams in podman, in a container named kd without any pod.
-podman run \
-    --name kd kd \
-    helm-diagrams https://charts.jetstack.io/cert-manager
-podman cp kd:cert-manager.png ./cert-manager.png # copy results file from the container to host
-podman rm kd # remove container
 ```
 
 ## Features
