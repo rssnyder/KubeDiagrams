@@ -21,7 +21,7 @@ edges:
     color: black
     style: dotted
   COMMUNICATION:
-    color: green
+    color: brown
   DEPENDENCE:
     color: darkgrey
   UNDEFINED:
