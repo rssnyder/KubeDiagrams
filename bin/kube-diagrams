@@ -827,11 +827,12 @@ def process_edges():
                     edge_configuration = get_edge_config(edge_name)
                 if edge_configuration.get("direction") == "up":
                     _ = diagram_nodes[edge_to] \
-                        >> Edge(**get_edge_config("INVISIBLE")) \
-                        >> diagram_nodes[edge_from]
-                _ = diagram_nodes[edge_from] \
-                    >> Edge(**edge_configuration) \
-                    >> diagram_nodes[edge_to]
+                        << Edge(**edge_configuration) \
+                        << diagram_nodes[edge_from]
+                else:
+                    _ = diagram_nodes[edge_from] \
+                        >> Edge(**edge_configuration) \
+                        >> diagram_nodes[edge_to]
             except KeyError as ke:
                 if edge_to in config["cluster-resources"]:
                     print(f"Info: referenced {edge_to} resource is provided"
