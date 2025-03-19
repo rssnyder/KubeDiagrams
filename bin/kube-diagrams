@@ -116,10 +116,17 @@ def create_diagram_node(resource, fontcolor="black"):
                 if current_length + len(part) >= MAX_NODE_LABEL_LENGTH:
                     node_label += "\n"
                     current_length = 0
-                node_label = node_label + separator + part
-                current_length = current_length + 1 + len(part)
+                node_label += separator
+                if len(part) >= MAX_NODE_LABEL_LENGTH:
+                    node_label += part[:MAX_NODE_LABEL_LENGTH]
+                    node_label += "\n"
+                    node_label += part[MAX_NODE_LABEL_LENGTH:]
+                    current_length = len(part[MAX_NODE_LABEL_LENGTH:])
+                else:
+                    node_label += part
+                    current_length = current_length + 1 + len(part)
             return node_label
-        for separator in ["-", "."]:
+        for separator in [":", "-", "."]:
             if separator in node_label:
                 node_label = split_node_label(node_label, separator)
                 break
