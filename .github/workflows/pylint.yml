@@ -3,6 +3,7 @@ name: Pylint
 on:
   push:
     paths:
+      - .pylintrc
       - bin/kube-diagrams
       - '**.py'
 jobs:
