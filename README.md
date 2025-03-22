@@ -157,76 +157,81 @@ docker run -v "$(pwd)":/work philippemerle/kubediagrams helm-diagrams oci://ghcr
 
 ### Kubernetes resources
 
-Supported `kind`/`apiVersion` resource types are 48 ones:
-* APIService/apiregistration.k8s.io/v1
-* ClusterRole/rbac.authorization.k8s.io/v1
-* ClusterRoleBinding/rbac.authorization.k8s.io/v1
-* ConfigMap/v1
-* CronJob/batch/v1
-* CustomResourceDefinition/apiextensions.k8s.io/v1
-* CSIDriver/storage.k8s.io/v1
-* CSINode/storage.k8s.io/v1
-* CSIStorageCapacity/storage.k8s.io/v1
-* DaemonSet/apps/v1
-* Deployment/apps/v1
-* Endpoints/v1
-* EndpointSlice/discovery.k8s.io/v1
-* Group/rbac.authorization.k8s.io/v1
-* HorizontalPodAutoscaler/autoscaling/v1
-* HorizontalPodAutoscaler/autoscaling/v2
-* Ingress/networking.k8s.io/v1
-* IngressClass/networking.k8s.io/v1
-* Job/batch/v1
-* Lease/coordination.k8s.io/v1
-* LimitRange/v1
-* MutatingWebhookConfiguration/admissionregistration.k8s.io/v1
-* Namespace/v1
-* NetworkAttachmentDefinition/k8s.cni.cncf.io/v1
-* NetworkPolicy/networking.k8s.io/v1
-* Node/v1
-* PersistentVolume/v1
-* PersistentVolumeClaim/v1
-* PriorityClass/scheduling.k8s.io/v1
-* Pod/v1
-* PodDisruptionBudget/policy/v1
-* PodSecurityPolicy/policy/v1beta1
-* PodTemplate/v1
-* ReplicaSet/apps/v1
-* ReplicationController/v1
-* ResourceQuota/v1
-* Role/rbac.authorization.k8s.io/v1
-* RoleBinding/rbac.authorization.k8s.io/v1
-* RuntimeClass/node.k8s.io/v1
-* Secret/v1
-* Service/v1
-* ServiceAccount/v1
-* StatefulSet/apps/v1
-* StorageClass/storage.k8s.io/v1
-* User/rbac.authorization.k8s.io/v1
-* ValidatingWebhookConfiguration/admissionregistration.k8s.io/v1
-* VerticalPodAutoscaler/autoscaling.k8s.io/v1
-* VolumeAttachment/storage.k8s.io/v1
+**KubeDiagrams** supported the following 47 Kubernetes resource types:
+
+| Kind          | ApiGroup                    | Versions |
+| :--------: | :-------: | :-------: |
+| `APIService` | `apiregistration.k8s.io` | `v1beta1` `v1` |
+| `ClusterRole` | `rbac.authorization.k8s.io` | `v1beta1` `v1` |
+| `ClusterRoleBinding` | `rbac.authorization.k8s.io` | `v1beta1` `v1` |
+| `ConfigMap` | | `v1` |
+| `CronJob` | `batch` | `v1beta1` `v1` |
+| `CSIDriver` | `storage.k8s.io` | `v1beta1` `v1` |
+| `CSINode` | `storage.k8s.io` | `v1` |
+| `CSIStorageCapacity` | `storage.k8s.io` | `v1` |
+| `CustomResourceDefinition` | `apiextensions.k8s.io` | `v1beta1` `v1` |
+| `DaemonSet` | `apps` | `v1beta2` `v1` |
+| `Deployment` | `apps` | `v1beta1` `v1beta2` `v1` |
+| `Endpoints` | | `v1` |
+| `EndpointSlice` | `discovery.k8s.io` | `v1` |
+| `Group` | `rbac.authorization.k8s.io` | `v1` |
+| `HorizontalPodAutoscaler` | `autoscaling` | `v1` `v2beta1` `v2beta2` `v2` |
+| `Ingress` | `networking.k8s.io` | `v1beta1` `v1` |
+| `IngressClass` | `networking.k8s.io` | `v1beta1` `v1` |
+| `Job` | `batch` | `v1beta1` `v1` |
+| `Lease` | `coordination.k8s.io` | `v1` |
+| `LimitRange` | | `v1` |
+| `MutatingWebhookConfiguration` | `admissionregistration.k8s.io` | `v1beta1` `v1` |
+| `Namespace` | | `v1` |
+| `NetworkAttachmentDefinition` | `k8s.cni.cncf.io` | `v1` |
+| `NetworkPolicy` | `networking.k8s.io` | `v1` |
+| `Node` | | `v1` |
+| `PersistentVolume` | | `v1` |
+| `PersistentVolumeClaim` | | `v1` |
+| `Pod` | | `v1` |
+| `PodDisruptionBudget` | `policy` | `v1beta1` `v1` |
+| `PodSecurityPolicy` | `policy` | `v1beta1` `v1` |
+| `PodTemplate` | | `v1` |
+| `PriorityClass` | `scheduling.k8s.io` | `v1beta1` `v1` |
+| `ReplicaSet` | `apps` | `v1` |
+| `ReplicationController` | | `v1` |
+| `ResourceQuota` | | `v1` |
+| `Role` | `rbac.authorization.k8s.io` | `v1beta1` `v1` |
+| `RoleBinding` | `rbac.authorization.k8s.io` | `v1beta1` `v1` |
+| `RuntimeClass` | `node.k8s.io` | `v1` |
+| `Secret` | | `v1` |
+| `Service` | | `v1` |
+| `ServiceAccount` | | `v1` |
+| `StatefulSet` | `apps` | `v1beta1` `v1beta2` `v1` |
+| `StorageClass` | `storage.k8s.io` | `v1beta1` `v1` |
+| `User` | `rbac.authorization.k8s.io` | `v1` |
+| `ValidatingWebhookConfiguration` | `admissionregistration.k8s.io` | `v1beta1` `v1` |
+| `VerticalPodAutoscaler` | `autoscaling.k8s.io` | `v1` |
+| `VolumeAttachment` | `storage.k8s.io` | `v1` |
 
 **Note**: The mapping between these supported Kubernetes resources and architecture diagrams is defined into [bin/kube-diagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/bin/kube-diagrams.yaml#L61).
 
 **Note**: The mapping for any Kubernetes custom resources can be also defined into **KubeDiagrams** configuration files as illustrated in [examples/k0s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/k0s/KubeDiagrams.yml#L10) and [examples/kube-prometheus-stack/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/kube-prometheus-stack/KubeDiagrams.yaml#L3).
 
-Currently, unsupported `kind`/`apiGroup` resource types are 15 ones:
-* Binding/
-* ComponentStatus/
-* Event/
-* ControllerRevision/apps
-* TokenReview/authentication.k8s.io
-* LocalSubjectAccessReview/authorization.k8s.io
-* SelfSubjectAccessReview/authorization.k8s.io
-* SelfSubjectRulesReview/authorization.k8s.io
-* SubjectAccessReview/authorization.k8s.io
-* CertificateSigningRequest/certificates.k8s.io
-* Event/events.k8s.io
-* FlowSchema/flowcontrol.apiserver.k8s.io
-* PriorityLevelConfiguration/flowcontrol.apiserver.k8s.io
-* NodeMetrics/metrics.k8s.io
-* PodMetrics/metrics.k8s.io
+Currently, there are 15 unsupported Kubernetes resource types:
+
+| Kind          | ApiGroup                    |
+| :--------: | :-------: |
+| `Binding` | |
+| `ComponentStatus` | |
+| `Event`| |
+| `ControllerRevision` | `apps`|
+| `TokenReview` | `authentication.k8s.io`|
+| `LocalSubjectAccessReview` | `authorization.k8s.io` |
+| `SelfSubjectAccessReview` | `authorization.k8s.io` |
+| `SelfSubjectRulesReview` | `authorization.k8s.io` |
+| `SubjectAccessReview` `authorization.k8s.io`|
+| `CertificateSigningRequest` | `certificates.k8s.io` |
+| `Event` | `events.k8s.io` |
+| `FlowSchema` | `flowcontrol.apiserver.k8s.io` |
+| `PriorityLevelConfiguration`  | `flowcontrol.apiserver.k8s.io` |
+| `NodeMetrics` | `metrics.k8s.io` |
+| `PodMetrics` |  `metrics.k8s.io` |
 
 ### Kubernetes resources clustering
 
