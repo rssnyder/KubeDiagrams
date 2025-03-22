@@ -225,7 +225,7 @@ Currently, there are 15 unsupported Kubernetes resource types:
 | `LocalSubjectAccessReview` | `authorization.k8s.io` |
 | `SelfSubjectAccessReview` | `authorization.k8s.io` |
 | `SelfSubjectRulesReview` | `authorization.k8s.io` |
-| `SubjectAccessReview` `authorization.k8s.io`|
+| `SubjectAccessReview` | `authorization.k8s.io`|
 | `CertificateSigningRequest` | `certificates.k8s.io` |
 | `Event` | `events.k8s.io` |
 | `FlowSchema` | `flowcontrol.apiserver.k8s.io` |
