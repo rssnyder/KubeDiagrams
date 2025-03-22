@@ -217,6 +217,7 @@ nodes:
       )
       if ic in resources:
         edges.append([ic, "REFERENCE"])
+  Ingress/networking.k8s.io/v1beta1: Ingress/networking.k8s.io/v1
   IngressClass/networking.k8s.io/v1:
     scope: Cluster
     custom_icon: $KD/icons/ic.png
@@ -225,7 +226,7 @@ nodes:
       # been tested with any other ingress implementations.
       edges.add_all_resources_matching_labels("Pod", "metadata.labels",
        edge_kind="CONTROLLED_BY")
-  Ingress/networking.k8s.io/v1beta1: Ingress/networking.k8s.io/v1
+  IngressClass/networking.k8s.io/v1beta1: IngressClass/networking.k8s.io/v1
   Job/batch/v1:
     scope: Namespaced
     diagram_node_classname: diagrams.k8s.compute.Job
