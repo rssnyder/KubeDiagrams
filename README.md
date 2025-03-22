@@ -138,7 +138,7 @@ helm-diagrams oci://ghcr.io/argoproj/argo-helm/argo-cd
 **KubeDiagrams** images are available in [Docker Hub](https://hub.docker.com/r/philippemerle/kubediagrams).
 
 ```ssh
-# For usage with Podman, replace 'docker' by 'podman' in following lines.
+# For usage with Podman, replace 'docker' by 'podman' in the following lines.
 
 # generate a diagram from a manifest
 docker run -v "$(pwd)":/work philippemerle/kubediagrams kube-diagrams -o cassandra.png examples/cassandra/cassandra.yml
@@ -253,7 +253,7 @@ New mappings can be easily defined in custom configuration files (see [examples/
 ## What do they say about it?
 
 Posts and blogs about **KubeDiagrams**:
-* [Announce on reddit](https://www.reddit.com/r/kubernetes/comments/1ihjujy/kubediagrams)
+* [Announce on Reddit](https://www.reddit.com/r/kubernetes/comments/1ihjujy/kubediagrams)
 * [Facebook Kubernetes Users Group](https://www.facebook.com/groups/kubernetes.users/permalink/2818586068320504)
 * [Visualising SQL Server in Kubernetes](https://dbafromthecold.com/2025/02/06/visualising-sql-server-in-kubernetes/)
 * [Tool of the day](https://www.techopsexamples.com/p/understanding-kubernetes-etcd-locks)
@@ -262,7 +262,7 @@ Posts and blogs about **KubeDiagrams**:
 * [Kubetools - Curated List of Kubernetes Tools](https://github.com/collabnix/kubetools/)
 * [Awesome Open Source K8s And Container Tools](https://github.com/vilaca/awesome-k8s-tools)
 * [Discussion on Reddit](https://www.reddit.com/r/kubernetes/comments/1jabdoa/anyone_know_of_any_reposopen_source_tools_that/)
-* [French post on LinkedIn](https://www.linkedin.com/posts/pepr-cloud_kubediagrams-activity-7307698605371379713-BqRp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAemi4BApQnQWOvw041B_9Tbc_ljWmw1-E)
+* [Post on LinkedIn](https://www.linkedin.com/posts/pepr-cloud_kubediagrams-activity-7307698605371379713-BqRp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAemi4BApQnQWOvw041B_9Tbc_ljWmw1-E)
 
 ## Star History
 
