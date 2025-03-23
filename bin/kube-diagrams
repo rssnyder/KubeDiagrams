@@ -55,8 +55,38 @@ def get_edge_config(edge_kind):
     """
     edge_config = config.get("edges", {}).get(edge_kind)
     if edge_config is None:
-        print(f"Warning: {edge_kind} edge configuration not found!")
+        print(f"Error: {edge_kind} edge configuration not found!")
     return edge_config if edge_config else {}
+
+def report(kind, resource, path, msg, end):
+    """
+        Report.
+    """
+    rm = f"[{kind}] " \
+        + resource.get("kind", "NO-KIND") + ":" \
+        + query_path(resource, "metadata.name", "NO-NAME")
+    if path is not None:
+        rm += f":{path}"
+    rm += f" - {msg}{end}"
+    print(rm)
+
+def info(resource, path, msg):
+    """
+        Report an information message.
+    """
+    report("Info", resource, path, msg, '.')
+
+def warning(resource, path, msg):
+    """
+        Report a warning message.
+    """
+    report("Warning", resource, path, msg, '!')
+
+def error(resource, path, msg):
+    """
+        Report an error message.
+    """
+    report("Error", resource, path, msg, '!')
 
 # Get config associated to a resource.
 already_warned_node_configs = set()
@@ -68,12 +98,12 @@ def get_node_config(resource):
     node_config = config.get("nodes", {}).get(resource_type)
     while isinstance(node_config, str):
         if node_config not in already_warned_node_configs:
-            print(f"Warning: {resource_type} used instead of {node_config}!")
+            warning(resource, None, f"{resource_type} used instead of {node_config}")
             already_warned_node_configs.add(node_config)
         node_config = config.get("nodes", {}).get(node_config)
     if node_config is None:
         if resource_type not in already_warned_node_configs:
-            print(f"Warning: {resource_type} node configuration undefined!")
+            warning(resource, None, f"{resource_type} node configuration undefined")
             already_warned_node_configs.add(resource_type)
     return node_config if node_config else {}
 
@@ -90,8 +120,8 @@ def get_name(resource):
     """
     name = query_path(resource, "metadata.name")
     if name is None:
-        print("Warning: metadata.name not set or set to null!")
-        name = "name-NOT-SET"
+        warning(resource, "metadata.name", "Not set or set to null")
+        name = "NO-NAME"
     return name
 
 def get_namespace(resource):
@@ -197,28 +227,85 @@ class EdgesContext(list):
         self.resource = resource
         self.namespace = get_namespace(resource)
 
+    def info(self, path, msg):
+        """
+            Report an information message.
+        """
+        info(self.resource, path, msg)
+
+    def warning(self, path, msg):
+        """
+            Report a warning message.
+        """
+        warning(self.resource, path, msg)
+
+    def error(self, path, msg):
+        """
+            Report an error message.
+        """
+        error(self.resource, path, msg)
+
+    def add_edge_to_rid(self, path, rid, edge_kind):
+        """
+            Add an edge to a resource identifier.
+        """
+        if rid in resources:
+            self.append([
+                rid,
+                edge_kind
+            ])
+        else:
+            if rid in config["cluster-resources"]:
+                self.info(path, f"'{rid}' provided by Kubernetes cluster")
+            else:
+                self.warning(path, f"'{rid}' undefined")
+
+    def add_edge_to(self, path, name, namespace, kind, api_version, edge_kind):
+        """
+            Add an edge to a resource.
+        """
+        if namespace is not None:
+            rid = f"{name}/{namespace}/{kind}/{api_version}"
+        else:
+            rid = f"{name}/{kind}/{api_version}"
+        if rid in resources:
+            self.append([
+                rid,
+                edge_kind
+            ])
+        else:
+            if rid in config["cluster-resources"]:
+                self.info(path, f"{kind} '{name}' provided by Kubernetes cluster")
+            else:
+                self.warning(path, f"{kind} '{name}' undefined")
+
     def add_resource(self, path):
         """
             Add a reference edge to a resource.
         """
         target = query_path(self.resource, path)
-        self.append([
-            f"{target['name']}/{self.namespace}/{target['kind']}/{target['apiVersion']}",
+        self.add_edge_to(
+            path,
+            target['name'],
+            self.namespace,
+            target['kind'],
+            target['apiVersion'],
             "REFERENCE"
-        ])
+        )
 
     def add_resources(self, path, name_path, namespace_path, kind, api_version):
         """
             Add reference edges to a set of resources.
         """
         for resource in query_path(self.resource, path, []):
-            self.append([
-                resource[name_path] \
-                    + "/" + resource.get(namespace_path, self.namespace) \
-                    + "/" + kind \
-                    + "/" + api_version,
+            self.add_edge_to(
+                path,
+                resource[name_path],
+                resource.get(namespace_path, self.namespace),
+                kind,
+                api_version,
                 "REFERENCE"
-            ])
+            )
 
     def add_all_resources_matching_labels(
             self,
@@ -254,7 +341,7 @@ class EdgesContext(list):
                     found = False
                     break
             if found:
-                self.append([rid, edge_kind])
+                self.add_edge_to_rid(None, rid, edge_kind)
                 resource_found = True
         return resource_found
 
@@ -262,21 +349,29 @@ class EdgesContext(list):
         """
             All edges for resources referenced into volumes.
         """
-        def add_volumes(volumes):
-            for volume in volumes:
+        def add_volumes(volumes, path):
+            for idx, volume in enumerate(volumes):
                 if "configMap" in volume:
                     config_map = volume["configMap"]
                     if config_map is None:
                         continue # skip this config map
-                    config_map_id = f"{config_map.get('name')}/{self.namespace}/ConfigMap/v1"
+                    config_name = config_map.get("name")
+                    config_map_id = f"{config_name}/{self.namespace}/ConfigMap/v1"
                     if config_map.get("optional") is True:
                         if config_map_id not in resources:
-                            print(f"Warning: optional config map {config_map_id} undefined!")
+                            self.warning(
+                                f"{path}[{idx}].configMap",
+                                f"ConfigMap '{config_name}' undefined but optional"
+                            )
                             continue # skip it
-                    self.append([
-                        config_map_id,
+                    self.add_edge_to(
+                        f"{path}[{idx}].configMap",
+                        config_name,
+                        self.namespace,
+                        "ConfigMap",
+                        "v1",
                         "REFERENCE"
-                    ])
+                    )
                 elif "secret" in volume:
                     secret = volume["secret"]
                     if secret is None:
@@ -288,26 +383,36 @@ class EdgesContext(list):
                     secret_id = f"{secret_name}/{self.namespace}/Secret/v1"
                     if secret.get("optional") is True:
                         if secret_id not in resources:
-                            print(f"Warning: optional secret {secret_id} undefined!")
+                            self.warning(
+                                f"{path}[{idx}].secret",
+                                f"Secret '{secret_name}' undefined but optional"
+                            )
                             continue # skip it
-                    self.append([
-                        secret_id,
+                    self.add_edge_to(
+                        f"{path}[{idx}].secret",
+                        secret_name,
+                        self.namespace,
+                        "Secret",
+                        "v1",
                         "REFERENCE"
-                    ])
+                    )
                 elif "persistentVolumeClaim" in volume:
-                    self.append([
-                        f"{volume['persistentVolumeClaim']['claimName']}"
-                            f"/{self.namespace}/PersistentVolumeClaim/v1",
+                    self.add_edge_to(
+                        f"{path}[{idx}].persistentVolumeClaim",
+                        query_path(volume, "persistentVolumeClaim.claimName"),
+                        self.namespace,
+                        "PersistentVolumeClaim",
+                        "v1",
                         "REFERENCE"
-                    ])
+                    )
                 elif "projected" in volume:
                     volumes = query_path(volume, "projected.sources")
                     if volumes is not None:
-                        add_volumes(volumes)
+                        add_volumes(volumes, path + "projected.sources")
 
         volumes = query_path(self.resource, path)
         if volumes is not None:
-            add_volumes(volumes)
+            add_volumes(volumes, path)
 
     def add_containers_env_value_from(self, path):
         """
@@ -329,23 +434,30 @@ class EdgesContext(list):
                     secret_id = f"{secret_key_ref_name}/{self.namespace}/Secret/v1"
                     if query_path(env, "valueFrom.secretKeyRef.optional") is True:
                         if secret_id not in resources:
-                            print(f"Warning: optional secret {secret_id} undefined!")
+                            self.warning(
+                                path,
+                                f"Secret '{secret_key_ref_name}' undefined but optional"
+                            )
                             continue # skip it
                     target_resources.add(
                         secret_id
                     )
         for target_resource in target_resources:
-            self.append([target_resource, "REFERENCE"])
+            self.add_edge_to_rid(path, target_resource, "REFERENCE")
 
     def add_volume_claim_templates(self, path):
         """
             Add reference edges to volume claim templates.
         """
         for vct in query_path(self.resource, path, []):
-            self.append([
-                f"{vct['metadata']['name']}/{self.namespace}/PersistentVolumeClaim/v1",
+            self.add_edge_to(
+                path,
+                vct['metadata']['name'],
+                self.namespace,
+                "PersistentVolumeClaim",
+                "v1",
                 "REFERENCE"
-            ])
+            )
 
     def add_storage_class(self, path, data=None):
         """
@@ -355,14 +467,17 @@ class EdgesContext(list):
             data = self.resource
         storage_class_name = query_path(data, path)
         if storage_class_name == "":
-            print(f"Warning: {self.resource['kind']}"
-                    f" {self.resource['metadata']['name']} {path} equals to \"\"!")
+            self.warning(path, "Set to \"\"")
             storage_class_name = None
         if storage_class_name is not None:
-            self.append([
-                f"{storage_class_name}/StorageClass/storage.k8s.io/v1",
+            self.add_edge_to(
+                path,
+                storage_class_name,
+                None,
+                "StorageClass",
+                "storage.k8s.io/v1",
                 "REFERENCE"
-            ])
+            )
 
     def add_volume(self, path):
         """
@@ -370,10 +485,14 @@ class EdgesContext(list):
         """
         volume_name = query_path(self.resource, path)
         if volume_name is not None:
-            self.append([
-                f"{volume_name}/PersistentVolume/v1",
+            self.add_edge_to(
+                path,
+                volume_name,
+                None,
+                "PersistentVolume",
+                "v1",
                 "REFERENCE"
-            ])
+            )
 
     def add_wait_for_services(self, path):
         """
@@ -384,10 +503,14 @@ class EdgesContext(list):
                 for arg in query_path(ic, "args", []):
                     if arg.startswith("-service="):
                         sn = arg[len("-service="):]
-                        self.append([
-                            f"{sn}/{self.namespace}/Service/v1",
+                        self.add_edge_to(
+                            path,
+                            sn,
+                            self.namespace,
+                            "Service",
+                            "v1",
                             "DEPENDENCE"
-                        ])
+                        )
 
     def add_service_account(self, path):
         """
@@ -400,17 +523,19 @@ class EdgesContext(list):
         if service_account_name is None:
             service_account_name = pod_spec.get("serviceAccount")
             if service_account_name is not None:
-                print(f"Warning: {self.resource['kind']}"
-                        f" {self.resource['metadata']['name']} {path}.serviceAccount deprecated!")
+                self.warning(f"{path}.serviceAccount", "Deprecated")
         if service_account_name == "":
-            print(f"Warning: {self.resource['kind']} "
-                  f"{self.resource['metadata']['name']} {path}.serviceAccountName equals to \"\"!")
+            self.warning(f"{path}.serviceAccountName", "Set to \"\"")
             service_account_name = None
         if service_account_name is not None:
-            self.append([
-                f"{service_account_name}/{self.namespace}/ServiceAccount/v1",
+            self.add_edge_to(
+                f"{path}.serviceAccountName",
+                service_account_name,
+                self.namespace,
+                "ServiceAccount",
+                "v1",
                 "REFERENCE"
-            ])
+            )
 
     def add_role(self, path):
         """
@@ -419,23 +544,26 @@ class EdgesContext(list):
         role_ref = self.resource[path]
         api_group = query_path(role_ref, "apiGroup", "rbac.authorization.k8s.io")
         if api_group == "":
-            print(f"Warning: {self.resource['kind']}"
-                    f" {self.resource['metadata']['name']} {path} equals to \"\"!")
+            self.warning(path, "Set to \"\"")
             api_group = "rbac.authorization.k8s.io"
         if role_ref.get("kind") == "Role":
-            namespace = f"/{self.namespace}"
+            namespace = self.namespace
         else:
-            namespace = ""
-        self.append([
-            f"{role_ref['name']}{namespace}/{role_ref['kind']}/{api_group}/v1",
+            namespace = None
+        self.add_edge_to(
+            f"{path}.apiGroup",
+            role_ref["name"],
+            namespace,
+            role_ref["kind"],
+            f"{api_group}/v1",
             "REFERENCE"
-      ])
+        )
 
     def add_subjects(self):
         """
             Add reference edges for subject resources.
         """
-        for subject in query_path(self.resource, "subjects", []):
+        for idx, subject in enumerate(query_path(self.resource, "subjects", [])):
             namespace = subject.get("namespace")
             if namespace is None and subject.get("kind") == "ServiceAccount":
                 namespace = get_namespace(self.resource)
@@ -443,16 +571,20 @@ class EdgesContext(list):
                 api_version = query_path(subject, "apiGroup", "v1")
                 if api_version == "":
                     api_version = "v1"
-                rid = f"{subject['name']}/{namespace}/{subject['kind']}/{api_version}"
             else:
                 api_group = query_path(subject, "apiGroup", "rbac.authorization.k8s.io")
                 if api_group == "":
-                    print(f"Warning: {self.resource['kind']}"
-                          f" {self.resource['metadata']['name']} apiGroup equals to \"\"!")
+                    self.warning(f"subjects[{idx}].apiGroup", "Set to \"\"")
                     api_group = "rbac.authorization.k8s.io"
-                rid = f"{subject['name']}/{subject['kind']}" \
-                        f"/{api_group}/v1"
-            self.append([rid,"REFERENCE-UP"])
+                api_version = f"{api_group}/v1"
+            self.add_edge_to(
+                f"subjects[{idx}]",
+                subject['name'],
+                namespace,
+                subject['kind'],
+                api_version,
+                "REFERENCE-UP"
+            )
 
     def add_service(self, path, data=None):
         """
@@ -462,14 +594,17 @@ class EdgesContext(list):
             data = self.resource
         name = query_path(data, path)
         if name == "":
-            print(f"Warning: {self.resource['kind']}"
-                    f" {self.resource['metadata']['name']} {path} equals to \"\"!")
+            self.warning(path, "Set to \"\"")
             name = None
         if name is not None:
-            self.append([
-                f"{name}/{self.namespace}/Service/v1",
+            self.add_edge_to(
+                path,
+                name,
+                self.namespace,
+                "Service",
+                "v1",
                 "REFERENCE"
-            ])
+            )
 
     def add_owned_resources(self):
         """
@@ -480,16 +615,17 @@ class EdgesContext(list):
             for owner_reference in query_path(resource, "metadata.ownerReferences", []):
                 if owner_reference.get("uid") == uid:
                     if get_node_config(resource).get("scope") == "Namespaced":
-                        rid = f"{resource['metadata']['name']}" \
-                                f"/{get_namespace(resource)}/{resource['kind']}" \
-                                f"/{resource['apiVersion']}"
+                        namespace = get_namespace(resource)
                     else:
-                        rid = f"{resource['metadata']['name']}" \
-                                f"/{resource['kind']}/{resource['apiVersion']}"
-                    self.append([
-                        rid,
+                        namespace = None
+                    self.add_edge_to(
+                        None,
+                        resource['metadata']['name'],
+                        namespace,
+                        resource['kind'],
+                        resource['apiVersion'],
                         "OWNER"
-                    ])
+                    )
 
     def add_ingress_and_egress_rules(self):
         """
@@ -546,13 +682,17 @@ class EdgesContext(list):
         """
             Add reference edges for webhooks.
         """
-        for webhook in query_path(self.resource, "webhooks", []):
+        for idx, webhook in enumerate(query_path(self.resource, "webhooks", [])):
             service = query_path(webhook, "clientConfig.service")
             if service is not None:
-                self.append([
-                    f"{service['name']}/{service['namespace']}/Service/v1",
+                self.add_edge_to(
+                    f"webhooks[{idx}].clientConfig.service",
+                    service['name'],
+                    service['namespace'],
+                    "Service",
+                    "v1",
                     "REFERENCE"
-                ])
+                )
 
     def add_all_workload_resources(
         self,
@@ -590,8 +730,7 @@ class EdgesContext(list):
                 if default_selector is None:
                     break
         if resource_not_found:
-            print(f"Warning: No workload resource matches labels({selector})"
-                    f" for {self.resource['kind']}({self.resource['metadata']['name']})!")
+            self.warning(path, f"No workload resource matches metadata labels {selector}")
 
     def add_edges_for_service(self):
         """
@@ -638,15 +777,18 @@ class EdgesContext(list):
                 try:
                     networks = json.loads(networks)
                 except json.decoder.JSONDecodeError:
-                    print(f"Warning: {path} k8s.v1.cni.cncf.io/networks"
-                            f"equals to '{networks}' is not valid JSON!")
+                    self.warning(f"{path}:k8s.v1.cni.cncf.io/networks",
+                            f"Invalid JSON '{networks}'")
                     return
                 for network in networks:
-                    self.append([
-                        f"{network['name']}/{get_namespace(self.resource)}"
-                            f"/NetworkAttachmentDefinition/k8s.cni.cncf.io/v1",
+                    self.add_edge_to(
+                        path + ":k8s.v1.cni.cncf.io/networks",
+                        network['name'],
+                        get_namespace(self.resource),
+                        "NetworkAttachmentDefinition",
+                        "k8s.cni.cncf.io/v1",
                         "REFERENCE"
-                    ])
+                    )
 
     def add_priority_class(self, path):
         """
@@ -654,14 +796,17 @@ class EdgesContext(list):
         """
         priority_class_name = query_path(self.resource, path)
         if priority_class_name == "":
-            print(f"Warning: {self.resource['kind']} "
-                    f"{self.resource['metadata']['name']} {path} equals to \"\"!")
+            self.warning(path, "Set to \"\"")
             priority_class_name = None
         if priority_class_name is not None:
-            self.append([
-                f"{priority_class_name}/PriorityClass/scheduling.k8s.io/v1",
+            self.add_edge_to(
+                path,
+                priority_class_name,
+                None,
+                "PriorityClass",
+                "scheduling.k8s.io/v1",
                 "REFERENCE"
-            ])
+            )
 
 # Parse arguments
 parser = argparse.ArgumentParser(
@@ -802,7 +947,7 @@ if args.verbose:
 
 def process_edges():
     """
-        TODO: Document
+        Process diagram edges.
     """
     for resource_id, resource in resources.items():
         edges = EdgesContext(resource_id, resource)
@@ -842,34 +987,35 @@ def process_edges():
                         >> diagram_nodes[edge_to]
             except KeyError as ke:
                 if edge_to in config["cluster-resources"]:
-                    print(f"Info: referenced {edge_to} resource is provided"
+                    info(resource, None, f"Referenced {edge_to} resource is provided"
                             " by K8s clusters.")
                     continue # skip this edge as the resource is provided by K8s clusters.
-                print(f"Error: {ke} resource not found!")
-                tmp = str(edge_to).split("/")
-                #TODO: avoid specific cases
-                if tmp[2] in ["ServiceAccount", "Service", "ConfigMap", "Secret",
-                        "PersistentVolumeClaim", "Role", "Issuer", "Deployment"]:
-                    rsrc = {
-                        "apiVersion": "/".join(tmp[3:]),
-                        "kind": tmp[2],
-                        "metadata": {
-                            "name": tmp[1] + "/" + tmp[0]
-                        }
-                    }
-                else:
-                    rsrc = {
-                        "apiVersion": "/".join(tmp[2:]),
-                        "kind": tmp[1],
-                        "metadata": {
-                            "name": tmp[0]
-                        }
-                    }
-                diagram_node = undefined_nodes.get(edge_to)
-                if diagram_node is None:
-                    diagram_node = create_diagram_node(rsrc, UNDEFINED_EDGE.get("color"))
-                    undefined_nodes[edge_to] = diagram_node
-                _ = diagram_nodes[edge_from] >> Edge(**UNDEFINED_EDGE) >> diagram_node
+                error(resource, None, f"{ke} resource not found")
+                # TODO: remove later
+                # tmp = str(edge_to).split("/")
+                # #TODO: avoid specific cases
+                # if tmp[2] in ["ServiceAccount", "Service", "ConfigMap", "Secret",
+                #         "PersistentVolumeClaim", "Role", "Issuer", "Deployment"]:
+                #     rsrc = {
+                #         "apiVersion": "/".join(tmp[3:]),
+                #         "kind": tmp[2],
+                #         "metadata": {
+                #             "name": tmp[1] + "/" + tmp[0]
+                #         }
+                #     }
+                # else:
+                #     rsrc = {
+                #         "apiVersion": "/".join(tmp[2:]),
+                #         "kind": tmp[1],
+                #         "metadata": {
+                #             "name": tmp[0]
+                #         }
+                #     }
+                # diagram_node = undefined_nodes.get(edge_to)
+                # if diagram_node is None:
+                #     diagram_node = create_diagram_node(rsrc, UNDEFINED_EDGE.get("color"))
+                #     undefined_nodes[edge_to] = diagram_node
+                # _ = diagram_nodes[edge_from] >> Edge(**UNDEFINED_EDGE) >> diagram_node
 
 # Generate diagram
 with Diagram("", filename=args.output, show=False, direction="TB", outformat=args.format):

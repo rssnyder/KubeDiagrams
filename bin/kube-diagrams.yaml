@@ -180,15 +180,14 @@ nodes:
         for endpoint in resource.get("endpoints", []):
           if "targetRef" in endpoint:
             target = endpoint["targetRef"]
-            edges.append([
-              "%s/%s/%s/%s" % (
-                target["name"],
-                target["namespace"],
-                target["kind"],
-                "v1",
-              ),
+            edges.add_edge_to(
+              "endpoints.targetRef",
+              target["name"],
+              target["namespace"],
+              target["kind"],
+              "v1",
               "REFERENCE"
-            ])
+            )
   Group/rbac.authorization.k8s.io/v1:
     scope: Cluster
     diagram_node_classname: diagrams.k8s.rbac.Group
