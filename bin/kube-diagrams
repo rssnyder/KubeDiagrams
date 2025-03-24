@@ -911,7 +911,7 @@ def process_resource(resource):
             exec(nodes_script)
         except Exception as exc:
             print("Error:", type(exc), ":", exc.args)
-            traceback.print_exception(exc)
+            traceback.print_exc()
             print("Nodes script:\n", nodes_script)
             print("Resource:")
             pprint(resource)
@@ -959,7 +959,7 @@ def process_edges():
                 exec(code_to_exec)
             except Exception as exc:
                 print("Error:", type(exc), ":", exc.args)
-                traceback.print_exception(exc)
+                traceback.print_exc()
                 print("Edges script:\n", code_to_exec)
                 print("Resource:")
                 pprint(resource)
