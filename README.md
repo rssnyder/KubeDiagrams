@@ -116,7 +116,7 @@ Examples:
 # generate a diagram from a manifest
 kube-diagrams -o cassandra.png examples/cassandra/cassandra.yml
 
-# generate a diagram from the actual cluster state
+# generate a diagram from the actual default namespace state
 kubectl get all -o yaml | kube-diagrams -o default-namespace.png -
 ```
 
@@ -145,7 +145,7 @@ helm-diagrams oci://ghcr.io/argoproj/argo-helm/argo-cd
 # generate a diagram from a manifest
 docker run -v "$(pwd)":/work philippemerle/kubediagrams kube-diagrams -o cassandra.png examples/cassandra/cassandra.yml
 
-# generate a diagram from the actual cluster state
+# generate a diagram from the actual default namespace state
 kubectl get all -o yaml | docker run -v "$(pwd)":/work -i philippemerle/kubediagrams kube-diagrams -o default-namespace.png -
 
 # generate a diagram for the Helm chart 'cert-manager' available in HTTP repository 'charts.jetstack.io'
@@ -270,6 +270,7 @@ Posts and blogs about **KubeDiagrams**:
 * [Awesome Open Source K8s And Container Tools](https://github.com/vilaca/awesome-k8s-tools)
 * [Discussion on Reddit](https://www.reddit.com/r/kubernetes/comments/1jabdoa/anyone_know_of_any_reposopen_source_tools_that/)
 * [Post on LinkedIn](https://www.linkedin.com/posts/pepr-cloud_kubediagrams-activity-7307698605371379713-BqRp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAemi4BApQnQWOvw041B_9Tbc_ljWmw1-E)
+* [Announce release 0.2.0 on Reddit](https://www.reddit.com/r/kubernetes/comments/1jjjw6j/kubediagrams_020_is_out/)
 
 ## Star History
 
