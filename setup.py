@@ -7,7 +7,7 @@ from setuptools import setup
 with open("README.md", encoding="utf-8") as readme:
     setup(
         name="KubeDiagrams",
-        version="0.1.0",
+        version="0.2.0",
         author="Philippe Merle",
         author_email="philippe.merle@inria.fr",
         maintainer="Philippe Merle",
@@ -40,6 +40,8 @@ with open("README.md", encoding="utf-8") as readme:
             "PyYAML",
             "diagrams",
         ],
+        packages=[],
+        package_dir={},
         scripts=[
             "bin/kube-diagrams",
             "bin/helm-diagrams",
