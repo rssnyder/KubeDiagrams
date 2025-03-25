@@ -9,6 +9,8 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/philippemerle/kubediagrams)](https://hub.docker.com/r/philippemerle/kubediagrams)
 ![contributors](https://img.shields.io/github/contributors/philippemerle/KubeDiagrams)
 
+![KubeDiagrams Logo](images/KubeDiagrams.png)
+
 Generate Kubernetes architecture diagrams from Kubernetes manifest files, kustomization files, Helm charts, and actual cluster state.
 
 There are several tools to generate Kubernetes architecture diagrams (see **[here](https://github.com/philippemerle/Awesome-Kubernetes-Architecture-Diagrams)**).
