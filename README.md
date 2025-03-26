@@ -116,8 +116,14 @@ Examples:
 # generate a diagram from a manifest
 kube-diagrams -o cassandra.png examples/cassandra/cassandra.yml
 
+# generate a diagram from a kustomize folder
+kubectl kustomize path_to_a_kustomize_folder | kube-diagrams - -o diagram.png
+
 # generate a diagram from the actual default namespace state
 kubectl get all -o yaml | kube-diagrams -o default-namespace.png -
+
+# generate a diagram of all workload and service resources from all namespaces
+kubectl get all --all-namespaces -o yaml | kube-diagrams -o all-namespaces.png -
 ```
 
 ### `helm-diagrams`
@@ -148,8 +154,14 @@ helm-diagrams some-path/some-chart
 # generate a diagram from a manifest
 docker run -v "$(pwd)":/work philippemerle/kubediagrams kube-diagrams -o cassandra.png examples/cassandra/cassandra.yml
 
+# generate a diagram from a kustomize folder
+kubectl kustomize path_to_a_kustomize_folder | docker run -v "$(pwd)":/work -i philippemerle/kubediagrams kube-diagrams - -o diagram.png
+
 # generate a diagram from the actual default namespace state
 kubectl get all -o yaml | docker run -v "$(pwd)":/work -i philippemerle/kubediagrams kube-diagrams -o default-namespace.png -
+
+# generate a diagram of all workload and service resources from all namespaces
+kubectl get all --all-namespaces -o yaml | docker run -v "$(pwd)":/work -i philippemerle/kubediagrams kube-diagrams -o all-namespaces.png -
 
 # generate a diagram for the Helm chart 'cert-manager' available in HTTP repository 'charts.jetstack.io'
 docker run -v "$(pwd)":/work philippemerle/kubediagrams helm-diagrams https://charts.jetstack.io/cert-manager
@@ -284,4 +296,3 @@ Posts and blogs about **KubeDiagrams**:
 This project is licensed under the GPL-3.0 license - see the [LICENSE](https://github.com/philippemerle/KubeDiagrams/blob/main/LICENSE) file for details.
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fphilippemerle%2FKubeDiagrams.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fphilippemerle%2FKubeDiagrams?ref=badge_large&issueType=license)
-
