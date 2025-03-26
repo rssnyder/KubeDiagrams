@@ -133,6 +133,9 @@ helm-diagrams https://charts.jetstack.io/cert-manager
 
 # generate a diagram for the Helm chart 'argo-cd' available in OCI repository 'ghcr.io'
 helm-diagrams oci://ghcr.io/argoproj/argo-helm/argo-cd
+
+# generate a diagram for the Helm chart 'some-chart' available locally
+helm-diagrams some-path/some-chart
 ```
 
 ### With Docker/Podman

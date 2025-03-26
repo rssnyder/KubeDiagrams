@@ -19,7 +19,8 @@ if [[ ${repository} == oci* ]]
 then
   # Deal with OCI registries.
   helm template ${chart} $1 2> /dev/null | kube-diagrams $KD_OPTS --without-namespace -o $chart -
-else
+elif [[ ${repository} == http* ]]
+then
   # Deal with HTTP registries.
 
   # Add a Helm repository.
@@ -31,4 +32,7 @@ else
 
   # Remove the Helm repository.
   helm repo remove $rid >/dev/null
+else
+  # Deal with local charts
+  helm template ${repository}/${chart} 2> /dev/null | kube-diagrams $KD_OPTS --without-namespace -o local-$chart -
 fi
