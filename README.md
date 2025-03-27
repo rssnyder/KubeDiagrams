@@ -286,6 +286,7 @@ Posts and blogs about **KubeDiagrams**:
 * [Discussion on Reddit](https://www.reddit.com/r/kubernetes/comments/1jabdoa/anyone_know_of_any_reposopen_source_tools_that/)
 * [Post on LinkedIn](https://www.linkedin.com/posts/pepr-cloud_kubediagrams-activity-7307698605371379713-BqRp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAemi4BApQnQWOvw041B_9Tbc_ljWmw1-E)
 * [Announce release 0.2.0 on Reddit](https://www.reddit.com/r/kubernetes/comments/1jjjw6j/kubediagrams_020_is_out/)
+* [KubeDiagrams 0.2.0 Makes It Way Easier to Visualize Your Kubernetes Setup](https://medium.com/@PlanB./kubediagrams-0-2-0-makes-it-way-easier-to-visualize-your-kubernetes-setup-bb65dd72668c)
 
 ## Star History
 
