@@ -268,26 +268,48 @@ With **KubeDiagrams**, Kubernetes resources can be clustered within the architec
 
 New mappings can be easily defined in custom configuration files (see [examples/minikube/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/minikube/KubeDiagrams.yml#L2), [examples/k0s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/k0s/KubeDiagrams.yml#L5), [examples/free5gc-k8s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/free5gc-k8s/KubeDiagrams.yml#L2),  [examples/open5gs-k8s/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/open5gs-k8s/KubeDiagrams.yml#L2), and [examples/towards5gs-helm/KubeDiagrams.yml](https://github.com/philippemerle/KubeDiagrams/blob/main/examples/towards5gs-helm/KubeDiagrams.yml#L2)) and provided to **KubeDiagrams** via the `--config` command-line option.
 
-## Talks
-
-* [Visualizing cloud-native applications with KubeDiagrams](https://mybox.inria.fr/f/61de0e6e5be94b7a941f/?dl=1), February 17, 2025
-
 ## What do they say about it?
 
-Posts and blogs about **KubeDiagrams**:
-* [Announce on Reddit](https://www.reddit.com/r/kubernetes/comments/1ihjujy/kubediagrams)
-* [Facebook Kubernetes Users Group](https://www.facebook.com/groups/kubernetes.users/permalink/2818586068320504)
-* [Visualising SQL Server in Kubernetes](https://dbafromthecold.com/2025/02/06/visualising-sql-server-in-kubernetes/)
-* [Tool of the day](https://www.techopsexamples.com/p/understanding-kubernetes-etcd-locks)
-* [Post on DevSecOps](https://tlgrm.ru/channels/@devsecops_weekly/1145)
-* [GitHub mingrammer/diagrams](https://github.com/mingrammer/diagrams)
-* [Kubetools - Curated List of Kubernetes Tools](https://github.com/collabnix/kubetools/)
-* [Awesome Open Source K8s And Container Tools](https://github.com/vilaca/awesome-k8s-tools)
-* [Discussion on Reddit](https://www.reddit.com/r/kubernetes/comments/1jabdoa/anyone_know_of_any_reposopen_source_tools_that/)
-* [Post on LinkedIn](https://www.linkedin.com/posts/pepr-cloud_kubediagrams-activity-7307698605371379713-BqRp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAemi4BApQnQWOvw041B_9Tbc_ljWmw1-E)
-* [Announce release 0.2.0 on Reddit](https://www.reddit.com/r/kubernetes/comments/1jjjw6j/kubediagrams_020_is_out/)
-* [KubeDiagrams 0.2.0 Makes It Way Easier to Visualize Your Kubernetes Setup](https://medium.com/@PlanB./kubediagrams-0-2-0-makes-it-way-easier-to-visualize-your-kubernetes-setup-bb65dd72668c)
-* [Generate Kubernetes Architecture Maps Directly from Your Cluster](https://blog.abhimanyu-saharan.com/posts/generate-kubernetes-architecture-maps-directly-from-your-cluster)
+## Talks
+
+1. [Visualizing cloud-native applications with KubeDiagrams](https://mybox.inria.fr/f/61de0e6e5be94b7a941f/?dl=1), Philippe Merle, [PEPR Cloud Taranis Project](https://pepr-cloud.fr/en/project-taranis/), February 17, 2025.
+
+### Blogs
+
+1. [Generate Kubernetes Architecture Maps Directly from Your Cluster](https://blog.abhimanyu-saharan.com/posts/generate-kubernetes-architecture-maps-directly-from-your-cluster), Abhimanyu Saharan, March 29, 2025.
+
+1. [KubeDiagrams 0.2.0 Makes It Way Easier to Visualize Your Kubernetes Setup](https://medium.com/@PlanB./kubediagrams-0-2-0-makes-it-way-easier-to-visualize-your-kubernetes-setup-bb65dd72668c), Mr.PlanB, Medium, March 27, 2025.
+
+1. [Visualising SQL Server in Kubernetes](https://dbafromthecold.com/2025/02/06/visualising-sql-server-in-kubernetes/), Andrew Pruski, February 6, 2025.
+
+### Social Networks
+
+1. [Michael Cade's post](https://x.com/MichaelCade1/status/1905964723809427625) on X, March 29, 2025.
+
+1. [KubeDiagrams 0.2.0 is out!](https://www.reddit.com/r/kubernetes/comments/1jjjw6j/kubediagrams_020_is_out/) on Reddit, March 25, 2025.
+
+1. [KubeDiagrams: Revolutionizing Cloud Cluster Management!
+](https://www.linkedin.com/posts/pepr-cloud_kubediagrams-activity-7307698605371379713-BqRp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAemi4BApQnQWOvw041B_9Tbc_ljWmw1-E) on LinkedIn, March 18, 2025.
+
+1. [Anyone know of any repos/open source tools that can create k8 diagrams?](https://www.reddit.com/r/kubernetes/comments/1jabdoa/anyone_know_of_any_reposopen_source_tools_that/) on Reddit, March 13, 2025.
+
+* [Automation of diagram creation for Kubernetes](https://tlgrm.ru/channels/@devsecops_weekly/1145), DevSecOps, February/March 2025.
+
+* [Facebook Kubernetes Users Group](https://www.facebook.com/groups/kubernetes.users/permalink/2818586068320504), February 6, 2025.
+
+1. [KubeDiagrams](https://www.reddit.com/r/kubernetes/comments/1ihjujy/kubediagrams) on Reddit, February 4, 2025.
+
+### Referencing
+
+1. [Cloud Native Landscape](https://landscape.cncf.io/)
+
+1. [Awesome Open Source K8s And Container Tools](https://github.com/vilaca/awesome-k8s-tools)
+
+1. [Kubetools - Curated List of Kubernetes Tools](https://github.com/collabnix/kubetools/)
+
+1. [GitHub mingrammer/diagrams](https://github.com/mingrammer/diagrams)
+
+1. [Tool of the day](https://www.techopsexamples.com/p/understanding-kubernetes-etcd-locks), TechOps Examples, February 11, 2025.
 
 ## Star History
 
