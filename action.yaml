@@ -1,0 +1,35 @@
+name: "KubeDiagrams GitHub Action"
+author: "Philippe Merle"
+description: "A github action to generate Kubernetes diagrams with KubeDiagrams"
+inputs:
+  fileName:
+    default: "."
+    description: "The Kubernetes manifest filename to process"
+    required: false
+  output:
+    description: "Output diagram filename"
+    required: true
+  config:
+    default: ""
+    description: "Custom kube-diagrams configuration file"
+    required: false
+  format:
+    default: "png"
+    description: "Output format, allowed formats are png (default), jpg, svg, pdf, and dot"
+    required: false
+    options:
+    - png
+    - jpg
+    - svg
+    - pdf
+    - dot
+
+runs:
+  using: docker
+  image: docker://philippemerle/kubediagrams:0.2.0
+  args:
+    - kube-diagrams
+    - "-o=${{ inputs.output }}"
+    - "-f=${{ inputs.format }}"
+    - "-c=${{ inputs.config }}"
+    - "${{ inputs.fileName }}"
